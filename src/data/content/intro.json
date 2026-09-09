@@ -1,0 +1,151 @@
+{
+  "id": "intro",
+  "titre": "Découvrir les bases de la finance",
+  "description": "Un tour d'horizon rapide avant de choisir ta voie : Banque, Marché ou Entreprise.",
+  "ordre": 0,
+  "type": "intro",
+  "version": 1,
+  "etapes": [
+    {
+      "id": "intro-lecon-1",
+      "ordre": 1,
+      "titre": "Pourquoi s'intéresser à la finance ?",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La finance, ce n'est pas réservé aux traders ou aux banquiers : c'est l'ensemble des décisions qui touchent à l'argent — épargner, emprunter, investir. Comprendre les bases te permet de faire des choix éclairés pour toi-même."
+        },
+        {
+          "type": "definition",
+          "terme": "Finance personnelle",
+          "texte": "La gestion de son propre argent : budget, épargne, emprunt, investissement."
+        },
+        {
+          "type": "texte",
+          "texte": "Dans ce parcours d'introduction, tu vas voir un exemple chiffré, répondre à un petit quiz, et te mettre à la place d'un conseiller face à un client. Ensuite, trois voies s'ouvriront à toi : Banque, Marché et Entreprise."
+        }
+      ]
+    },
+    {
+      "id": "intro-exemple-1",
+      "ordre": 2,
+      "titre": "L'effet des intérêts composés",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quand un capital rapporte des intérêts, et que ces intérêts rapportent eux-mêmes des intérêts l'année suivante, on parle d'intérêts composés. Essaie de faire varier le capital, le taux et la durée pour voir l'effet sur le résultat."
+        }
+      ],
+      "simulateur": {
+        "formule": "interet_compose",
+        "variables": [
+          {
+            "id": "capital",
+            "label": "Capital de départ",
+            "unite": "€",
+            "min": 100,
+            "max": 10000,
+            "pas": 100,
+            "valeurParDefaut": 1000
+          },
+          {
+            "id": "taux",
+            "label": "Taux d'intérêt annuel",
+            "unite": "%",
+            "min": 0,
+            "max": 10,
+            "pas": 0.5,
+            "valeurParDefaut": 3
+          },
+          {
+            "id": "duree",
+            "label": "Durée de placement",
+            "unite": "ans",
+            "min": 1,
+            "max": 30,
+            "pas": 1,
+            "valeurParDefaut": 10
+          }
+        ],
+        "resultat": {
+          "label": "Capital final",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "intro-quiz-1",
+      "ordre": 3,
+      "titre": "Vérifie tes connaissances",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un petit quiz pour voir si les bases sont bien acquises avant de continuer."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "intro-quiz-1-q1",
+            "question": "Que veut dire \"intérêts composés\" ?",
+            "choix": [
+              "Les intérêts sont reversés à la banque chaque année",
+              "Les intérêts d'une année s'ajoutent au capital et rapportent eux-mêmes des intérêts",
+              "Le taux d'intérêt augmente automatiquement chaque année"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "intro-quiz-1-q2",
+            "question": "La finance personnelle concerne...",
+            "choix": [
+              "Uniquement les personnes qui investissent en bourse",
+              "Uniquement les banquiers professionnels",
+              "Toute décision liée à la gestion de son propre argent"
+            ],
+            "bonneReponseIndex": 2
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "intro-situation-1",
+      "ordre": 4,
+      "titre": "Ta première décision d'épargne",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Mets-toi à la place d'un conseiller : un client te demande où placer une petite somme d'argent qu'il n'aura pas besoin d'utiliser à court terme."
+        }
+      ],
+      "situation": {
+        "contexte": "Un client a 1000€ de côté. Il n'en aura pas besoin avant au moins 2 ans et souhaite un placement simple, sans risque de perdre son capital. Que lui conseilles-tu ?",
+        "choix": [
+          {
+            "id": "livret-a",
+            "texte": "Un Livret A",
+            "feedback": "Bon choix : le Livret A est sans risque, disponible à tout moment, et rapporte un peu plus que de l'argent qui dort sur un compte courant.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "especes",
+            "texte": "Garder l'argent en espèces chez lui",
+            "feedback": "Ça ne rapporte rien et l'argent perd de la valeur avec l'inflation au fil du temps — ce n'est pas la meilleure option pour une somme mise de côté.",
+            "qualite": "deconseille"
+          },
+          {
+            "id": "actions",
+            "texte": "Tout investir en actions",
+            "feedback": "Les actions peuvent bien rapporter sur le long terme, mais elles comportent un risque de perte en capital — pas idéal pour quelqu'un qui veut avant tout la sécurité de son épargne.",
+            "qualite": "acceptable"
+          }
+        ]
+      }
+    }
+  ]
+}
