@@ -1,66 +1,51 @@
 import { useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
-import type { EtapeExemple, SimulateurVariable } from "../../domain/parcours/types";
+import type { EtapeExemple } from "../../domain/parcours/types";
 import type { ResultatEtape } from "../../domain/parcours/progress";
-import { resoudreFormule } from "../../domain/parcours/simulateurs";
+import { formaterEffort, valeursDepart, variablesPersonnalisees } from "../../domain/parcours/profilFinancier";
+import { formaterResultat, resoudreFormule } from "../../domain/parcours/simulateurs";
+import { echantillonnerSimulateur } from "../../domain/parcours/simulateurs/courbe";
+import { useProgressStore } from "../../state/progressStore";
+import { useCouleurs, useStyles } from "../../theme/ModeCouleur";
+import type { Couleurs } from "../../theme/palettes";
+import { PRESSION, RAYONS, type ThemeParcours } from "../../theme/parcoursTheme";
+import { TYPO } from "../../theme/typographie";
+import { Apparition } from "../ui/Apparition";
 import { BoutonContinuer } from "./BoutonContinuer";
 import { ContenuBlocs } from "./ContenuBlocs";
-
-function arrondirPas(valeur: number, pas: number): number {
-  const decimales = (pas.toString().split(".")[1] ?? "").length;
-  return Number(valeur.toFixed(decimales));
-}
-
-function Stepper({
-  variable,
-  valeur,
-  onChanger,
-}: {
-  variable: SimulateurVariable;
-  valeur: number;
-  onChanger: (valeur: number) => void;
-}) {
-  return (
-    <View style={styles.variable}>
-      <Text style={styles.variableLabel}>{variable.label}</Text>
-      <View style={styles.stepper}>
-        <Pressable
-          style={styles.stepperBouton}
-          onPress={() => onChanger(Math.max(variable.min, arrondirPas(valeur - variable.pas, variable.pas)))}
-        >
-          <Text style={styles.stepperBoutonTexte}>−</Text>
-        </Pressable>
-        <Text style={styles.stepperValeur}>
-          {valeur}
-          {variable.unite ? ` ${variable.unite}` : ""}
-        </Text>
-        <Pressable
-          style={styles.stepperBouton}
-          onPress={() => onChanger(Math.min(variable.max, arrondirPas(valeur + variable.pas, variable.pas)))}
-        >
-          <Text style={styles.stepperBoutonTexte}>+</Text>
-        </Pressable>
-      </View>
-    </View>
-  );
-}
+import { CourbeSimulateur } from "./CourbeSimulateur";
+import { Stepper } from "./Stepper";
 
 export function Exemple({
   etape,
   onTerminer,
+  theme,
 }: {
   etape: EtapeExemple;
   onTerminer: (resultat: ResultatEtape) => void;
+  theme: ThemeParcours;
 }) {
+  const couleurs = useCouleurs();
+  const styles = useStyles(creerStyles);
   const { simulateur } = etape;
-  const [valeurs, setValeurs] = useState<Record<string, number>>(() =>
-    Object.fromEntries(simulateur.variables.map((variable) => [variable.id, variable.valeurParDefaut]))
-  );
+  const router = useRouter();
+  const profil = useProgressStore((state) => state.profilFinancier);
+
+  // Le profil ne sert qu'au point de départ : une fois l'écran ouvert, les curseurs
+  // appartiennent à l'utilisateur et ne sont plus repris en main.
+  const [valeurs, setValeurs] = useState<Record<string, number>>(() => valeursDepart(simulateur, profil));
   const [aInteragi, setAInteragi] = useState(false);
 
   const calculer = useMemo(() => resoudreFormule(simulateur.formule), [simulateur.formule]);
   const resultat = calculer(valeurs);
+  const echantillon = useMemo(() => echantillonnerSimulateur(simulateur, valeurs), [simulateur, valeurs]);
+
+  const personnalisees = variablesPersonnalisees(simulateur, profil);
+  const effort =
+    simulateur.resultat.unite === "€" && profil?.revenuNet ? formaterEffort(resultat, profil.revenuNet) : undefined;
 
   function changerValeur(variableId: string, valeur: number) {
     setAInteragi(true);
@@ -68,31 +53,58 @@ export function Exemple({
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.conteneur}>
-      <ContenuBlocs blocs={etape.contenu} />
+    <ScrollView contentContainerStyle={styles.conteneur} showsVerticalScrollIndicator={false}>
+      <ContenuBlocs blocs={etape.contenu} theme={theme} />
 
-      {simulateur.variables.map((variable) => (
-        <Stepper
-          key={variable.id}
-          variable={variable}
-          valeur={valeurs[variable.id]}
-          onChanger={(valeur) => changerValeur(variable.id, valeur)}
-        />
-      ))}
+      {echantillon && (
+        <Apparition delai={200}>
+          <CourbeSimulateur echantillon={echantillon} theme={theme} unite={simulateur.resultat.unite} />
+        </Apparition>
+      )}
 
-      <View style={styles.resultatConteneur}>
-        <Text style={styles.resultatLabel}>{simulateur.resultat.label}</Text>
-        <Text style={styles.resultatValeur}>
-          {resultat.toLocaleString("fr-FR", { maximumFractionDigits: 2 })}
-          {simulateur.resultat.unite ? ` ${simulateur.resultat.unite}` : ""}
-        </Text>
+      {personnalisees.length > 0 && (
+        <Pressable
+          onPress={() => router.push("/mes-chiffres")}
+          accessibilityRole="button"
+          accessibilityHint="Modifier tes chiffres personnels"
+          style={({ pressed }) => [styles.pilulePerso, { backgroundColor: theme.tint }, pressed && PRESSION]}
+        >
+          <Ionicons name="person-circle-outline" size={15} color={theme.primary} />
+          <Text style={[styles.pilulePersoTexte, { color: theme.primary }]}>
+            Départ calé sur tes chiffres
+          </Text>
+          <Ionicons name="chevron-forward" size={13} color={theme.primary} />
+        </Pressable>
+      )}
+
+      <View style={styles.controles}>
+        {simulateur.variables.map((variable, index) => (
+          <Apparition key={variable.id} delai={260 + index * 90}>
+            <Stepper
+              variable={variable}
+              valeur={valeurs[variable.id]}
+              couleur={theme.primary}
+              onChanger={(valeur) => changerValeur(variable.id, valeur)}
+            />
+          </Apparition>
+        ))}
       </View>
 
+      <Apparition mode="pop" delai={520} style={[styles.resultatConteneur, { backgroundColor: theme.primary }]}>
+        <Text style={styles.resultatLabel}>{simulateur.resultat.label}</Text>
+        <Text style={styles.resultatValeur}>{formaterResultat(resultat, simulateur.resultat.unite)}</Text>
+        {effort && <Text style={styles.resultatEffort}>≈ {effort}</Text>}
+      </Apparition>
+
       {!aInteragi && (
-        <Text style={styles.indication}>Fais varier au moins une valeur pour continuer.</Text>
+        <View style={styles.indication}>
+          <Ionicons name="hand-left" size={15} color={couleurs.texteAttenue} />
+          <Text style={styles.indicationTexte}>Fais varier au moins une valeur pour continuer.</Text>
+        </View>
       )}
 
       <BoutonContinuer
+        theme={theme}
         disabled={!aInteragi}
         onPress={() => onTerminer({ type: "exemple", aInteragi })}
       />
@@ -100,64 +112,57 @@ export function Exemple({
   );
 }
 
-const styles = StyleSheet.create({
-  conteneur: {
-    padding: 20,
-    gap: 24,
-  },
-  variable: {
-    gap: 8,
-  },
-  variableLabel: {
-    fontSize: 14,
-    fontWeight: "600",
-    color: "#1a1a1a",
-  },
-  stepper: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: "#f2f4f7",
-    borderRadius: 10,
-    padding: 8,
-  },
-  stepperBouton: {
-    width: 40,
-    height: 40,
-    borderRadius: 8,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  stepperBoutonTexte: {
-    fontSize: 20,
-    fontWeight: "700",
-    color: "#4f7cff",
-  },
-  stepperValeur: {
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#1a1a1a",
-  },
-  resultatConteneur: {
-    backgroundColor: "#eef2ff",
-    borderRadius: 12,
-    padding: 16,
-    alignItems: "center",
-    gap: 4,
-  },
-  resultatLabel: {
-    fontSize: 13,
-    color: "#4f5b76",
-  },
-  resultatValeur: {
-    fontSize: 24,
-    fontWeight: "700",
-    color: "#1a1a1a",
-  },
-  indication: {
-    fontSize: 13,
-    color: "#666",
-    textAlign: "center",
-  },
-});
+const creerStyles = (couleurs: Couleurs) =>
+  StyleSheet.create({
+    conteneur: {
+      padding: 22,
+      paddingBottom: 40,
+      gap: 22,
+    },
+    pilulePerso: {
+      flexDirection: "row",
+      alignItems: "center",
+      alignSelf: "flex-start",
+      gap: 7,
+      paddingHorizontal: 12,
+      paddingVertical: 8,
+      borderRadius: RAYONS.pilule,
+      marginTop: -8,
+    },
+    pilulePersoTexte: {
+      ...TYPO.legende,
+      fontSize: 12,
+    },
+    controles: {
+      gap: 16,
+    },
+    resultatConteneur: {
+      borderRadius: RAYONS.carte,
+      paddingVertical: 24,
+      paddingHorizontal: 18,
+      alignItems: "center",
+      gap: 6,
+    },
+    resultatLabel: {
+      ...TYPO.surtitre,
+      color: "rgba(255,255,255,0.75)",
+    },
+    resultatValeur: {
+      ...TYPO.chiffre,
+      color: "#FFFFFF",
+    },
+    resultatEffort: {
+      ...TYPO.legende,
+      color: "rgba(255,255,255,0.85)",
+    },
+    indication: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 7,
+    },
+    indicationTexte: {
+      ...TYPO.legende,
+      color: couleurs.texteAttenue,
+    },
+  });
