@@ -93,14 +93,14 @@ export function CelebrationEtape({
   const surtitre = estParcours ? "Parcours terminé" : estSession ? "Session terminée" : "Étape validée";
   const titre = estParcours
     ? typeParcours === "intro"
-      ? "Les trois voies s'ouvrent à toi"
+      ? "Les quatre voies s'ouvrent à toi"
       : "Ta récompense est débloquée"
     : estSession && celebration.session
       ? celebration.session.titre
       : celebration.titreEtape;
   const texte = estParcours
     ? typeParcours === "intro"
-      ? "Tu as posé toutes les fondations. Banque, Marché ou Entreprise : à toi de choisir par où continuer."
+      ? "Tu as posé toutes les fondations. Banque, Marché, Entreprise ou Quotidien : à toi de choisir par où continuer."
       : "Tu es allé jusqu'au bout. Ton code promo t'attend au sommet du chemin."
     : estSession
       ? `Session ${celebration.session?.numero} bouclée. La suivante t'attend sur le chemin.`

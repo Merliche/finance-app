@@ -2,7 +2,7 @@
 // Types purs uniquement : aucune logique ici (le calcul de progression vit dans progress.ts).
 
 /**
- * Un parcours de leçons : l'intro et les 3 voies (Banque, Marché, Entreprise)
+ * Un parcours de leçons : l'intro et les 4 voies (Banque, Marché, Entreprise, Quotidien)
  * sont toutes des instances de ce même type — aucune logique spécifique par voie.
  */
 export interface Parcours {
@@ -11,7 +11,7 @@ export interface Parcours {
   description: string;
   ordre: number;
   type: "intro" | "voie";
-  prerequisParcoursId?: string; // les 3 voies dépendent de "intro"
+  prerequisParcoursId?: string; // les 4 voies dépendent de "intro"
   etapes: Etape[];
   /**
    * Supplément de fin de voie, quand un livre partenaire existe. La récompense elle-même

@@ -25,7 +25,7 @@ const SESSIONS_PAR_PARCOURS: Record<string, Record<number, InfosSession>> = {
     2: { titre: "Intérêts simples et composés", icone: "trending-up-outline", niveau: 1, accroche: "Le mécanisme qui fait grossir une épargne toute seule." },
     3: { titre: "L'inflation", icone: "cash-outline", niveau: 1, accroche: "Pourquoi 100 € d'aujourd'hui ne vaudront pas 100 € demain." },
     4: { titre: "Le crédit", icone: "card-outline", niveau: 1, accroche: "Emprunter sans se faire avoir : mensualité, taux, coût total." },
-    5: { titre: "Aperçu des 3 mondes", icone: "compass-outline", niveau: 1, accroche: "Trois voies s'ouvrent : laquelle te ressemble ?" },
+    5: { titre: "Aperçu des 4 mondes", icone: "compass-outline", niveau: 1, accroche: "Quatre voies s'ouvrent : laquelle te ressemble ?" },
   },
   banque: {
     1: { titre: "Le compte au quotidien", icone: "card-outline", niveau: 1, accroche: "Ce que ton compte te coûte sans que tu le voies." },

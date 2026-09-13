@@ -36,7 +36,7 @@ const ESPACE_APRES_BANNIERE = 28;
  *
  * Les deux extrémités sont centrées : le premier nœud est la base du tronc (c'est ce
  * qu'on voit en ouvrant l'app), le dernier est le point d'où partent la fourche vers les
- * trois voies (map) ou le trait vers la récompense (voie) — une fourche qui démarre sur
+ * quatre voies (map) ou le trait vers la récompense (voie) — une fourche qui démarre sur
  * le côté casse la symétrie de l'arbre. Comme le nombre d'étapes n'est presque jamais un
  * multiple de 3 plus un, on ne peut pas centrer les deux bouts en gardant l'alternance
  * partout : les un ou deux derniers nœuds restent alors au centre, et le chemin se

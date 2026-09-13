@@ -16,7 +16,7 @@ export interface ThemeParcours {
 }
 
 export const THEMES_PARCOURS: Record<string, ThemeParcours> = {
-  // Tronc commun : violet profond — distinct des 3 voies (bleu, orange, vert) et assez
+  // Tronc commun : violet profond — distinct des 4 voies (bleu, orange, vert, framboise) et assez
   // vif pour que le premier écran de l'app ne soit pas gris. C'est lui qu'on voit d'abord.
   intro: { primary: "#5B4BDB", primaryDark: "#4032B2", tint: "#ECEAFB", tintFort: "#D8D3F6" },
   // Banque : bleu — confiance, classique du secteur bancaire.

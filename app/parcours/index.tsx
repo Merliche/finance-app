@@ -28,7 +28,7 @@ import { PRESSION, RAYONS, themeDuParcours } from "../../src/theme/parcoursTheme
 import { TYPO } from "../../src/theme/typographie";
 import { haptiqueLegere } from "../../src/utils/haptique";
 
-// Écran d'accueil : le chemin de l'intro, puis la fourche vers les 3 voies au sommet.
+// Écran d'accueil : le chemin de l'intro, puis la fourche vers les 4 voies au sommet.
 // Le header natif est masqué (voir _layout.tsx) : le bandeau gère la zone sûre du haut.
 export default function Map() {
   const mode = useMode();

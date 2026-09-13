@@ -1,10 +1,10 @@
 {
   "id": "intro",
   "titre": "Découvrir les bases de la finance",
-  "description": "5 sessions courtes pour comprendre ton argent, avant de choisir ta voie : Banque, Marché ou Entreprise.",
+  "description": "5 sessions courtes pour comprendre ton argent, avant de choisir ta voie : Banque, Marché, Entreprise ou Quotidien.",
   "ordre": 0,
   "type": "intro",
-  "version": 8,
+  "version": 9,
   "chiffresVerifiesLe": "2026-09-12",
   "sources": [
     {
@@ -900,9 +900,54 @@
       ]
     },
     {
-      "id": "s5-quiz",
+      "id": "s5-lecon-quotidien",
       "ordre": 20,
-      "titre": "Quiz · Les 3 voies",
+      "titre": "Le monde du quotidien",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La voie Quotidien part de ce que tu as déjà sous les yeux : la fiche de paie, le bail, l'assurance, les achats, les aides auxquelles tu as droit. Aucune notion de bourse, que des décisions qu'on prend vraiment — souvent sans y penser, et parfois pour plusieurs années."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Un mois, du salaire à ce qui reste",
+            "etapes": [
+              {
+                "label": "Le net tombe sur le compte",
+                "detail": "une fois cotisations et impôt retirés"
+              },
+              {
+                "label": "Les charges fixes partent seules",
+                "detail": "loyer, énergie, assurances, abonnements"
+              },
+              {
+                "label": "Les dépenses courantes suivent",
+                "detail": "courses, transports, imprévus"
+              },
+              {
+                "label": "Ce qui reste est ta marge",
+                "detail": "c'est elle qu'on cherche à protéger"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Paie, logement, assurance, achats, aides : la vie de tous les jours",
+            "La voie qui sert le plus tôt, souvent avant d'avoir de l'épargne",
+            "Douze sessions, la plus longue des quatre"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5-quiz",
+      "ordre": 21,
+      "titre": "Quiz · Les 4 voies",
       "type": "quiz",
       "contenu": [
         {
@@ -914,11 +959,12 @@
         "questions": [
           {
             "id": "s5-quiz-q1",
-            "question": "Quelle voie explore les comptes, livrets et crédits au quotidien ?",
+            "question": "Quelle voie explore les comptes, livrets et crédits proposés par une banque ?",
             "choix": [
               "Marché",
               "Banque",
-              "Entreprise"
+              "Entreprise",
+              "Quotidien"
             ],
             "bonneReponseIndex": 1
           },
@@ -928,7 +974,8 @@
             "choix": [
               "Marché",
               "Banque",
-              "Entreprise"
+              "Entreprise",
+              "Quotidien"
             ],
             "bonneReponseIndex": 0
           },
@@ -938,9 +985,21 @@
             "choix": [
               "Marché",
               "Banque",
-              "Entreprise"
+              "Entreprise",
+              "Quotidien"
             ],
             "bonneReponseIndex": 2
+          },
+          {
+            "id": "s5-quiz-q4",
+            "question": "Quelle voie parle de la fiche de paie, du bail et des aides ?",
+            "choix": [
+              "Marché",
+              "Banque",
+              "Entreprise",
+              "Quotidien"
+            ],
+            "bonneReponseIndex": 3
           }
         ],
         "seuilReussite": 70

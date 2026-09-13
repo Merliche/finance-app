@@ -22,7 +22,7 @@ const ARGUMENTS: { icone: keyof typeof Ionicons.glyphMap; titre: string; texte: 
   {
     icone: "map",
     titre: "Un chemin, pas un cours",
-    texte: "Des sessions courtes qui s'enchaînent : budget, intérêts, inflation, crédit… puis trois voies à explorer.",
+    texte: "Des sessions courtes qui s'enchaînent : budget, intérêts, inflation, crédit… puis quatre voies à explorer.",
     couleur: THEMES_PARCOURS.banque.primary,
   },
   {

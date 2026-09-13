@@ -7,7 +7,7 @@ import type { Couleurs } from "../src/theme/palettes";
 
 // Point d'entrée : l'écran de bienvenue au tout premier lancement, sinon "/parcours",
 // la map — elle affiche le chemin de l'intro et, une fois celle-ci terminée, la fourche
-// vers les 3 voies.
+// vers les 4 voies.
 export default function Index() {
   const couleurs = useCouleurs();
   const styles = useStyles(creerStyles);

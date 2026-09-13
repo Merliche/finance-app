@@ -8,13 +8,13 @@ App mobile **gratuite**, **en français**, d'introduction à la finance.
 
 Parcours utilisateur :
 1. L'utilisateur suit un **parcours d'intro** (obligatoire).
-2. Une fois l'intro terminée, **3 voies** se débloquent, chacune un parcours à part entière : **Banque**, **Marché**, **Entreprise**.
+2. Une fois l'intro terminée, **4 voies** se débloquent, chacune un parcours à part entière : **Banque**, **Marché**, **Entreprise**, **Quotidien**.
 3. À la fin de chaque voie, l'utilisateur débloque une **fiche de synthèse** fabriquée à
    partir du contenu de la voie, qu'il peut emporter. Un livre partenaire pourra s'y
    ajouter plus tard, sans prix ni incitation à l'achat.
 4. L'app capture l'**email** de l'utilisateur (à un moment du flow, ex: fin de parcours) pour le prévenir des sorties de livres.
 
-Le système est **générique** : l'intro et les 3 voies sont toutes des instances d'un même concept de `Parcours`. Aucune logique spécifique câblée en dur par voie — tout vient du contenu.
+Le système est **générique** : l'intro et les 4 voies sont toutes des instances d'un même concept de `Parcours`. Aucune logique spécifique câblée en dur par voie — tout vient du contenu.
 
 ## 2. Décisions de conception actées
 
@@ -43,7 +43,7 @@ app/                          # Expo Router (écrans)
   _layout.tsx
   index.tsx                   # entrée : redirige vers parcours/intro si non terminé, sinon vers parcours/
   parcours/
-    index.tsx                 # choix des 3 voies (débloqué une fois "intro" terminé)
+    index.tsx                 # choix des 4 voies (débloqué une fois "intro" terminé)
     [parcoursId]/              # "intro" | "banque" | "marche" | "entreprise" — même route pour tous
       index.tsx                # sommaire du parcours
       etape/[etapeId].tsx      # écran d'étape (rendu selon le type)
@@ -75,7 +75,7 @@ supabase/
 PROJECT.md
 ```
 
-Une seule arborescence de routes pour l'intro et les 3 voies (`parcours/[parcoursId]/...`), pas de système séparé pour l'onboarding : l'intro est un `Parcours` comme les autres (§5), rendue par les mêmes composants d'étape. La seule différence entre "intro" et une "voie" est gérée en logique (redirection dans `app/index.tsx`, absence de `recompense`), pas en routing.
+Une seule arborescence de routes pour l'intro et les 4 voies (`parcours/[parcoursId]/...`), pas de système séparé pour l'onboarding : l'intro est un `Parcours` comme les autres (§5), rendue par les mêmes composants d'étape. La seule différence entre "intro" et une "voie" est gérée en logique (redirection dans `app/index.tsx`, absence de `recompense`), pas en routing.
 
 ## 5. Modèle de données
 
@@ -88,7 +88,7 @@ interface Parcours {
   description: string;
   ordre: number;
   type: "intro" | "voie";
-  prerequisParcoursId?: string;  // les 3 voies dépendent de "intro"
+  prerequisParcoursId?: string;  // les 4 voies dépendent de "intro"
   etapes: Etape[];
   recompense?: {
     livre: { titre: string; urlAmazon: string; imageUrl?: string };
@@ -235,9 +235,9 @@ Phase actuelle : **application complète et navigable de bout en bout**.
 Fait :
 - Schéma Supabase (`parcours`, `email_subscribers`) + RLS, contrainte d'unicité sur l'email.
 - Contenu des 5 parcours écrit et publié (Supabase + fallback JSON bundlé identique) :
-  intro (20 étapes, 5 sessions), banque (40, 9 sessions), marché (38, 9), entreprise (36, 9),
+  intro (21 étapes, 5 sessions), banque (40, 9 sessions), marché (38, 9), entreprise (36, 9),
   quotidien (48, 12) — difficulté croissante (`src/constants/sessions.ts`). Chaque leçon se
-  ferme sur un « À retenir », chaque session sur un quiz. **182 étapes, 44 sessions.**
+  ferme sur un « À retenir », chaque session sur un quiz. **183 étapes, 44 sessions.**
 - 6 types d'étape : `lecon`, `quiz`, `exemple` (simulateur), `situation`, `exercice`
   (problèmes chiffrés ou vrai/faux) et `scenario` (étude de cas : cinq décisions
   enchaînées, conséquences et bilan — une par voie).

@@ -209,3 +209,35 @@ describe("exercices : chaque question doit tenir debout seule", () => {
     }
   });
 });
+
+describe("l'intro présente toutes les voies", () => {
+  // La dernière session de l'intro consacre une leçon à chaque monde, et c'est là qu'on
+  // découvre qu'il existe plusieurs voies. Une voie ajoutée sans sa leçon devient
+  // invisible : son rond manque sur le chemin, juste avant la fourche, et rien ne signale
+  // l'oubli. C'est exactement ce qui était arrivé à la voie Quotidien.
+  const intro = recupererParcoursBundle("intro")!;
+
+  test.each(VOIES.map((voie) => voie.id))("la voie « %s » a sa leçon de présentation", (id) => {
+    const lecon = intro.etapes.find((etape) => etape.id === `s5-lecon-${id}`);
+    expect(lecon).toBeDefined();
+    expect(lecon?.type).toBe("lecon");
+  });
+
+  test("le quiz final interroge sur chaque voie", () => {
+    const quiz = intro.etapes.find((etape) => etape.id === "s5-quiz");
+    if (quiz?.type !== "quiz") throw new Error("quiz final de l'intro introuvable");
+    expect(quiz.quiz.questions.length).toBeGreaterThanOrEqual(VOIES.length);
+    // Chaque voie doit être une réponse possible, sinon la bonne se devine par élimination.
+    for (const voie of VOIES) {
+      const citee = quiz.quiz.questions.some((question) =>
+        question.choix.some((choix) => choix.toLowerCase().includes(voie.labelParDefaut.toLowerCase()))
+      );
+      expect(`${voie.id} citée dans les choix : ${citee}`).toBe(`${voie.id} citée dans les choix : true`);
+    }
+  });
+
+  test("la dernière session porte le bon nombre de mondes", () => {
+    const infos = infosSession("intro", 5);
+    expect(infos?.titre).toContain(String(VOIES.length));
+  });
+});
