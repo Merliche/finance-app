@@ -1,0 +1,76 @@
+{
+  "miseAJour": "2026-09-13",
+  "sections": [
+    {
+      "titre": "En résumé",
+      "paragraphes": [
+        "Cette application fonctionne sans compte. Ta progression, tes chiffres personnels et tes réglages restent sur ton téléphone et ne sont envoyés nulle part.",
+        "La seule donnée qui peut nous parvenir est ton adresse email, et uniquement si tu choisis de la laisser. Rien dans l'application ne l'exige."
+      ]
+    },
+    {
+      "titre": "Ce qui reste sur ton téléphone",
+      "paragraphes": [
+        "Ces informations sont enregistrées dans le stockage privé de l'application, sur ton appareil. Elles ne quittent jamais le téléphone, ne sont sauvegardées sur aucun de nos serveurs, et disparaissent si tu désinstalles l'application."
+      ],
+      "points": [
+        "Ta progression : les étapes validées, les dates, ta série de jours, tes badges et ton expérience.",
+        "Les questions que tu as manquées, pour te les reproposer en révision.",
+        "Tes chiffres personnels, si tu les renseignes dans « Mes chiffres » : revenu net, loyer, épargne. Ils servent uniquement à personnaliser les simulateurs sur ton appareil et ne sont jamais transmis.",
+        "Tes réglages, comme le thème clair ou sombre.",
+        "Une copie du contenu des parcours, pour que l'application fonctionne hors connexion."
+      ]
+    },
+    {
+      "titre": "Ton adresse email",
+      "paragraphes": [
+        "À la fin d'une voie, un encart facultatif te propose de laisser ton adresse pour être prévenu des sorties de livres liés à l'application, et plus largement de ses nouveautés. Tu peux refuser : ta fiche de synthèse, ta progression et la totalité des contenus restent accessibles sans donner quoi que ce soit.",
+        "Une case à cocher, décochée par défaut, doit être validée avant tout envoi. C'est cette case qui constitue ton consentement, et tu peux le retirer à tout moment.",
+        "Si tu laisses ton adresse, nous enregistrons trois choses : l'adresse elle-même, la voie depuis laquelle tu l'as envoyée, et la date. Rien d'autre. Ni nom, ni identifiant d'appareil, ni contenu de ta progression.",
+        "Elle sert uniquement à t'écrire au sujet de l'application et de ces sorties. Elle n'est ni vendue, ni louée, ni transmise à un tiers à des fins commerciales ou publicitaires."
+      ]
+    },
+    {
+      "titre": "Où ces données sont hébergées",
+      "paragraphes": [
+        "Les adresses email sont hébergées par Supabase, sur des serveurs situés en Irlande, donc dans l'Union européenne. Aucune donnée n'est transférée hors de l'Espace économique européen.",
+        "L'application télécharge le contenu des parcours depuis ce même hébergeur. Cette requête ne transporte aucune information sur toi."
+      ]
+    },
+    {
+      "titre": "Ce que nous ne faisons pas",
+      "paragraphes": [
+        "L'application ne contient ni publicité, ni traceur, ni mesure d'audience. Elle ne demande aucune autorisation système, ne lit ni tes contacts, ni ta position, ni ton presse-papiers, et ne crée aucun profil publicitaire.",
+        "Aucune décision automatisée n'est prise à partir de ce que tu fais dans l'application."
+      ]
+    },
+    {
+      "titre": "Combien de temps",
+      "paragraphes": [
+        "Les données de ton téléphone y restent tant que l'application est installée. Le Profil permet d'effacer ta progression, et « Mes chiffres » d'effacer tes montants, à tout moment.",
+        "Une adresse email est conservée jusqu'à ce que tu demandes son retrait, et au plus trois ans après le dernier message envoyé."
+      ]
+    },
+    {
+      "titre": "Tes droits",
+      "paragraphes": [
+        "Le règlement général sur la protection des données te donne, sur ton adresse email, un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité.",
+        "Concrètement : tu peux nous demander quelles données nous avons sur toi, les faire corriger, ou demander leur suppression définitive. Il suffit de nous écrire à l'adresse ci-dessous, et nous répondons sous un mois.",
+        "Les données qui restent sur ton téléphone, elles, sont déjà entre tes mains : tu les effaces toi-même depuis l'application, ou en la désinstallant.",
+        "Si une réponse ne te satisfait pas, tu peux introduire une réclamation auprès de la CNIL, l'autorité française de protection des données."
+      ]
+    },
+    {
+      "titre": "Pour les mineurs",
+      "paragraphes": [
+        "L'application est ouverte à tous, mais l'encart email s'adresse à un public majeur. Si tu as moins de quinze ans, ne laisse pas ton adresse sans l'accord de tes parents."
+      ]
+    },
+    {
+      "titre": "Modifications",
+      "paragraphes": [
+        "Si cette politique change, la date de mise à jour ci-dessous change aussi, et la nouvelle version remplace celle-ci dans l'application comme sur cette page."
+      ]
+    }
+  ]
+}
