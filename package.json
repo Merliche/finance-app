@@ -10,7 +10,8 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "site": "node scripts/generer-site.mjs"
+    "site": "node scripts/generer-site.mjs",
+    "icones": "node scripts/generer-icones.mjs"
   },
   "jest": {
     "preset": "jest-expo",
@@ -66,6 +67,7 @@
     "@types/react-test-renderer": "^19.2.0",
     "jest": "^29.2.1",
     "jest-expo": "~57.0.5",
+    "pngjs": "^3.4.0",
     "react-test-renderer": "19.2.3",
     "typescript": "~6.0.3"
   },
