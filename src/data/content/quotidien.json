@@ -5,7 +5,7 @@
   "ordre": 4,
   "type": "voie",
   "prerequisParcoursId": "intro",
-  "version": 4,
+  "version": 5,
   "chiffresVerifiesLe": "2026-09-12",
   "sources": [
     {
@@ -189,37 +189,31 @@
         "items": [
           {
             "id": "quotidien-s1-ex-1",
-            "type": "nombre",
-            "enonce": "Un salaire brut de 3 000 € avec 22 % de cotisations. Net à payer, avant impôt ?",
-            "reponse": 2340,
-            "tolerance": 40,
-            "unite": "€",
-            "indice": "22 % de 3 000 €, puis retire-les du brut.",
-            "explication": "3 000 − 660 = 2 340 €. C'est le montant versé, avant que le prélèvement à la source ne s'applique."
+            "type": "vrai_faux",
+            "enonce": "Le net à payer est toujours inférieur au brut, parce que les cotisations sont retirées entre les deux.",
+            "reponse": true,
+            "explication": "Vrai. Le brut est le chiffre du contrat, jamais celui qu'on touche. L'écart tourne autour d'un cinquième du brut pour un salarié."
           },
           {
             "id": "quotidien-s1-ex-2",
-            "type": "nombre",
-            "enonce": "Sur ces 2 340 €, un taux de prélèvement à la source de 5 %. Combien arrive sur le compte ?",
-            "reponse": 2223,
-            "tolerance": 30,
-            "unite": "€",
-            "explication": "2 340 − 117 = 2 223 €. Le taux s'applique en réalité au net imposable, légèrement plus élevé — l'écart reste de quelques euros.",
-            "indice": "5 %, c'est la moitié de 10 %."
+            "type": "vrai_faux",
+            "enonce": "Le prélèvement à la source est retiré après le calcul du net à payer.",
+            "reponse": true,
+            "explication": "Vrai. Les cotisations viennent d'abord, l'impôt ensuite. C'est pour cela que trois montants différents figurent sur une fiche de paie."
           },
           {
             "id": "quotidien-s1-ex-3",
             "type": "vrai_faux",
             "enonce": "Les cotisations retirées du brut sont de l'argent définitivement perdu.",
             "reponse": false,
-            "explication": "Faux : elles financent des droits qui te reviennent — remboursements de soins, indemnités chômage, trimestres de retraite. C'est un salaire différé, pas une taxe."
+            "explication": "Faux : elles achètent des droits. Assurance maladie, chômage, retraite. C'est un salaire différé, pas une taxe."
           },
           {
             "id": "quotidien-s1-ex-4",
             "type": "vrai_faux",
             "enonce": "Le taux de prélèvement à la source peut être modifié en cours d'année.",
             "reponse": true,
-            "explication": "Vrai : en cas de baisse de revenus, de naissance ou de séparation, on peut le faire ajuster sur le site des impôts. Beaucoup de gens paient trop toute l'année faute de le savoir."
+            "explication": "Vrai, et il faut y penser dès qu'un revenu change. Sans ça, on avance de l'impôt qu'on récupérera un an plus tard."
           }
         ]
       }
@@ -945,37 +939,34 @@
         "items": [
           {
             "id": "quotidien-s5-ex-1",
-            "type": "nombre",
-            "enonce": "Un abonnement à 12,99 € par mois. Combien sur un an ?",
-            "reponse": 156,
-            "tolerance": 3,
-            "unite": "€",
-            "explication": "155,88 €, arrondi à 156 €. C'est le chiffre à comparer au service rendu — pas les 12,99 €.",
-            "indice": "Arrondis à 13 € : 13 × 12."
+            "type": "vrai_faux",
+            "enonce": "Un abonnement mensuel se juge sur son coût annuel, pas sur son prix affiché chaque mois.",
+            "reponse": true,
+            "explication": "Vrai. Un prix mensuel est fait pour paraître petit. Douze fois par an, il ne l'est plus, et c'est ce chiffre-là qu'il faut comparer au service rendu."
           },
           {
             "id": "quotidien-s5-ex-2",
             "type": "nombre",
-            "enonce": "Un téléphone à 900 € payé « 4 × 240 € sans frais ». Combien paies-tu en tout ?",
+            "enonce": "Un téléphone payé « 4 × 240 € sans frais ». Combien paies-tu en tout ?",
             "reponse": 960,
             "tolerance": 5,
             "unite": "€",
             "indice": "4 × 240.",
-            "explication": "960 €, soit 60 € de plus que le prix comptant. « Sans frais » ne veut pas dire « sans surcoût » : vérifie toujours le total."
+            "explication": "960 €. Le paiement en plusieurs fois ne change pas le prix, il change seulement le moment où on le ressent."
           },
           {
             "id": "quotidien-s5-ex-3",
             "type": "vrai_faux",
             "enonce": "Le droit de rétractation de 14 jours s'applique aux achats en magasin.",
             "reponse": false,
-            "explication": "Faux : il ne concerne que les achats à distance. En magasin, un retour est une politique commerciale du vendeur, pas un droit."
+            "explication": "Faux : il vaut pour la vente à distance. En magasin, le vendeur n'est tenu à rien, sauf geste commercial ou défaut du produit."
           },
           {
             "id": "quotidien-s5-ex-4",
             "type": "vrai_faux",
             "enonce": "Une panne 18 mois après l'achat d'un appareil neuf est couverte gratuitement.",
             "reponse": true,
-            "explication": "Vrai, par la garantie légale de conformité : deux ans, et c'est au vendeur de prouver que le défaut n'était pas là au départ."
+            "explication": "Vrai : la garantie légale de conformité dure deux ans, elle est gratuite, et elle s'applique même si on a refusé l'extension vendue en caisse."
           }
         ]
       }
@@ -1723,17 +1714,15 @@
             "reponse": 440,
             "tolerance": 10,
             "unite": "€",
-            "indice": "2 000 × 22 %.",
-            "explication": "440 €. Ils ne sont jamais à toi, même s'ils sont sur ton compte pendant trois mois."
+            "indice": "22 % de 2 000 €.",
+            "explication": "440 €. Ils ne sont jamais à toi, même s'ils dorment sur ton compte pendant trois mois."
           },
           {
             "id": "quotidien-s9-ex-2",
-            "type": "nombre",
-            "enonce": "Sur ces mêmes 2 000 €, en appliquant la règle du tiers, combien mets-tu de côté ?",
-            "reponse": 667,
-            "tolerance": 20,
-            "unite": "€",
-            "explication": "Environ 667 €. Cela couvre les 440 € de cotisations, l'impôt à venir, et laisse une petite réserve. Le reste, 1 333 €, est ton vrai revenu du mois."
+            "type": "vrai_faux",
+            "enonce": "Mettre un tiers de chaque encaissement de côté couvre les cotisations et l'impôt à venir.",
+            "reponse": true,
+            "explication": "Vrai, et c'est volontairement un peu large. Ce léger excédent est exactement ce qui évite l'appel de cotisations qu'on ne peut pas payer."
           },
           {
             "id": "quotidien-s9-ex-3",
@@ -1743,7 +1732,7 @@
             "tolerance": 10,
             "unite": "€",
             "indice": "Pas la moyenne.",
-            "explication": "900 €, le mois le plus bas. Un budget calé sur la moyenne (autour de 1 750 €) serait en déficit tous les mois creux — c'est-à-dire la moitié de l'année."
+            "explication": "900 €, le mois le plus bas. Un budget calé sur la moyenne serait en déficit tous les mois creux, c'est-à-dire la moitié de l'année."
           },
           {
             "id": "quotidien-s9-ex-4",

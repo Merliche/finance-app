@@ -165,3 +165,47 @@ describe("éléments latéraux", () => {
     expect([...atteintes]).toEqual([1]);
   });
 });
+
+describe("exercices : chaque question doit tenir debout seule", () => {
+  // L'écran d'exercice n'affiche qu'une question à la fois, et la précédente disparaît.
+  // Une question qui renvoie à un énoncé antérieur — « combien d'intérêts dans CE crédit »,
+  // « et au bout de deux ans » — est donc littéralement impossible à résoudre : les
+  // chiffres dont elle a besoin ne sont plus à l'écran. Deux questions étaient dans ce cas.
+  const RENVOIS = /\b(ce crédit|cette offre|ce placement|ce montant|ces mêmes|mêmes\s|ci-dessus|précédent)/i;
+
+  const questionsChiffrees = PARCOURS.flatMap((parcours) =>
+    parcours.etapes.flatMap((etape) =>
+      etape.type === "exercice"
+        ? etape.exercice.items
+            .filter((item) => item.type === "nombre")
+            .map((item) => ({ etapeId: etape.id, item }))
+        : []
+    )
+  );
+
+  test("il y a bien des questions chiffrées à inspecter", () => {
+    expect(questionsChiffrees.length).toBeGreaterThan(5);
+  });
+
+  test("aucune ne renvoie à un énoncé qu'on ne voit plus", () => {
+    const fautives = questionsChiffrees
+      .filter(({ item }) => RENVOIS.test(item.enonce))
+      .map(({ etapeId, item }) => `${etapeId} :: ${item.enonce}`);
+    expect(fautives).toEqual([]);
+  });
+
+  test("chacune porte elle-même les nombres dont elle a besoin", () => {
+    // Une question chiffrée sans le moindre chiffre dans son propre énoncé tire
+    // forcément ses données d'ailleurs.
+    const fautives = questionsChiffrees
+      .filter(({ item }) => !/\d/.test(item.enonce))
+      .map(({ etapeId, item }) => `${etapeId} :: ${item.enonce}`);
+    expect(fautives).toEqual([]);
+  });
+
+  test("chacune donne la réponse dans son explication", () => {
+    for (const { etapeId, item } of questionsChiffrees) {
+      expect(`${etapeId} : ${item.explication}`.length).toBeGreaterThan(40);
+    }
+  });
+});

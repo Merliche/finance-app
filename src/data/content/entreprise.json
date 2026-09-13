@@ -5,7 +5,7 @@
   "ordre": 3,
   "type": "voie",
   "prerequisParcoursId": "intro",
-  "version": 9,
+  "version": 10,
   "chiffresVerifiesLe": "2026-09-12",
   "sources": [
     {
@@ -769,13 +769,10 @@
         "items": [
           {
             "id": "entreprise-s5-ex-1",
-            "type": "nombre",
-            "enonce": "Charges fixes de 8 000 € par mois, marge brute de 40 %. Quel chiffre d'affaires faut-il pour couvrir le mois ?",
-            "reponse": 20000,
-            "tolerance": 300,
-            "unite": "€",
-            "indice": "Charges fixes divisées par le taux de marge.",
-            "explication": "8 000 / 0,40 = 20 000 €. En dessous, le mois est perdant ; au-dessus, chaque euro de marge est du bénéfice."
+            "type": "vrai_faux",
+            "enonce": "Le point mort est le chiffre d'affaires à partir duquel l'entreprise couvre ses charges fixes.",
+            "reponse": true,
+            "explication": "Vrai. En dessous, chaque mois creuse le trou ; au-dessus, la marge dégagée commence à rester dans l'entreprise."
           },
           {
             "id": "entreprise-s5-ex-2",
@@ -784,24 +781,22 @@
             "reponse": 3,
             "tolerance": 0.2,
             "unite": "mois",
-            "explication": "45 000 / 15 000 = 3 mois. C'est le « runway » : le premier chiffre que regarde un investisseur, et le dernier qu'un dirigeant devrait ignorer."
+            "indice": "Trésorerie divisée par les charges d'un mois.",
+            "explication": "3 mois. C'est l'indicateur le plus utile d'une jeune entreprise : combien de temps elle survit si tout s'arrête."
           },
           {
             "id": "entreprise-s5-ex-3",
             "type": "vrai_faux",
             "enonce": "Une entreprise bénéficiaire ne peut pas se retrouver en cessation de paiement.",
             "reponse": false,
-            "explication": "Faux : le bénéfice est comptable, la cessation de paiement est une question de trésorerie. On peut être rentable et incapable de payer les salaires du mois."
+            "explication": "Faux, et c'est la cause de nombreuses défaillances. Un bénéfice comptable n'est pas de la trésorerie : si les clients paient à 60 jours, les salaires, eux, tombent le 30."
           },
           {
             "id": "entreprise-s5-ex-4",
-            "type": "nombre",
-            "enonce": "Un client paie à 60 jours au lieu de 30. Sur un chiffre d'affaires de 360 000 € par an, combien de trésorerie en plus faut-il avancer ?",
-            "reponse": 30000,
-            "tolerance": 2000,
-            "unite": "€",
-            "indice": "Le CA mensuel est de 30 000 €. Un mois de décalage supplémentaire, c'est…",
-            "explication": "30 000 € : un mois de chiffre d'affaires de plus immobilisé en permanence. Négocier les délais de paiement rapporte souvent plus que négocier les prix."
+            "type": "vrai_faux",
+            "enonce": "Allonger le délai de paiement accordé aux clients augmente le besoin de trésorerie, même à chiffre d'affaires inchangé.",
+            "reponse": true,
+            "explication": "Vrai. L'entreprise avance l'argent à la place de ses clients : un mois de délai en plus, c'est un mois de chiffre d'affaires à financer."
           }
         ]
       }
@@ -1560,13 +1555,10 @@
         "items": [
           {
             "id": "entreprise-s9-ex-1",
-            "type": "nombre",
-            "enonce": "Chiffre d'affaires 800 000 €, résultat net 48 000 €. Marge nette ?",
-            "reponse": 6,
-            "tolerance": 0.1,
-            "unite": "%",
-            "indice": "Résultat net / chiffre d'affaires × 100.",
-            "explication": "48 000 / 800 000 = 6 %. Correct pour du commerce, faible pour du logiciel."
+            "type": "vrai_faux",
+            "enonce": "La marge nette rapporte le résultat net au chiffre d'affaires.",
+            "reponse": true,
+            "explication": "Vrai. Elle dit ce qui reste sur 100 € vendus, une fois tout payé. À ne pas confondre avec la rentabilité des capitaux, qui répond à une autre question."
           },
           {
             "id": "entreprise-s9-ex-2",
@@ -1574,32 +1566,29 @@
             "enonce": "Capitaux propres 200 000 €, dettes financières 300 000 €. Ratio d'endettement ?",
             "reponse": 1.5,
             "tolerance": 0.05,
-            "indice": "Dettes / capitaux propres.",
-            "explication": "300 000 / 200 000 = 1,5 : la dette vaut une fois et demie les fonds propres. Au-dessus de 1, une banque commence à poser des questions."
+            "indice": "Dettes divisées par capitaux propres.",
+            "explication": "1,5. Au-delà de 1, l'entreprise doit plus qu'elle ne possède en propre : les banques y regardent de près avant tout nouveau prêt."
           },
           {
             "id": "entreprise-s9-ex-3",
             "type": "vrai_faux",
             "enonce": "Un ROE de 15 % signifie que l'entreprise gagne 15 € par an pour 100 € apportés par ses actionnaires.",
             "reponse": true,
-            "explication": "Vrai, c'est exactement la définition. Reste à vérifier que ce ROE n'est pas gonflé par une dette excessive."
+            "explication": "Vrai. C'est le rendement du capital investi, celui qu'un actionnaire compare à ce que lui rapporterait un autre placement."
           },
           {
             "id": "entreprise-s9-ex-4",
-            "type": "nombre",
-            "enonce": "Créances clients 120 000 €, chiffre d'affaires annuel 720 000 €. Délai de paiement clients (DSO), en jours, sur une année commerciale de 360 jours ?",
-            "reponse": 60,
-            "tolerance": 3,
-            "unite": "jours",
-            "indice": "Créances / CA × 360. Les créances pèsent un sixième d'une année.",
-            "explication": "120 000 / 720 000 = un sixième d'année, soit 60 jours. À la limite du seuil d'alerte : les clients paient à deux mois."
+            "type": "vrai_faux",
+            "enonce": "Un délai de paiement clients de 60 jours signifie que l'entreprise finance deux mois d'activité à la place de ses clients.",
+            "reponse": true,
+            "explication": "Vrai. C'est de la trésorerie immobilisée, qui ne sert ni à investir ni à payer les salaires. Au-delà de 60 jours, c'est un signal d'alerte."
           },
           {
             "id": "entreprise-s9-ex-5",
             "type": "vrai_faux",
             "enonce": "Un BFR qui augmente signifie que l'entreprise a besoin de moins de trésorerie.",
             "reponse": false,
-            "explication": "Faux : un BFR qui augmente immobilise plus d'argent dans les stocks et les créances. Il faut le financer — c'est le piège des entreprises qui grandissent vite."
+            "explication": "Faux : c'est l'inverse. Le besoin en fonds de roulement, c'est l'argent immobilisé dans le cycle d'exploitation. Plus il monte, plus il faut de trésorerie pour tenir."
           }
         ]
       }

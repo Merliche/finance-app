@@ -5,7 +5,7 @@
   "ordre": 1,
   "type": "voie",
   "prerequisParcoursId": "intro",
-  "version": 9,
+  "version": 10,
   "chiffresVerifiesLe": "2026-09-12",
   "sources": [
     {
@@ -750,37 +750,31 @@
         "items": [
           {
             "id": "banque-s4-ex-1",
-            "type": "nombre",
-            "enonce": "Offre A : 12 000 € remboursés 400 € par mois pendant 36 mois. Coût total du crédit ?",
-            "reponse": 2400,
-            "tolerance": 50,
-            "unite": "€",
-            "indice": "(400 × 36) − 12 000. Et 4 × 36 = 144.",
-            "explication": "400 × 36 = 14 400 €, soit 2 400 € d'intérêts et de frais."
+            "type": "vrai_faux",
+            "enonce": "Le coût total d'un crédit se trouve en multipliant la mensualité par le nombre de mois, puis en retirant le montant emprunté.",
+            "reponse": true,
+            "explication": "Vrai. C'est le calcul à faire devant chaque offre, et il ne demande rien d'autre que ce qui est écrit sur le contrat."
           },
           {
             "id": "banque-s4-ex-2",
-            "type": "nombre",
-            "enonce": "Offre B : mêmes 12 000 €, 250 € par mois pendant 60 mois. Coût total ?",
-            "reponse": 3000,
-            "tolerance": 50,
-            "unite": "€",
-            "explication": "250 × 60 = 15 000 €, soit 3 000 €. La mensualité est pourtant plus légère de 150 € : c'est la durée qui fait la différence, et elle ne se voit que sur le coût total.",
-            "indice": "(250 × 60) − 12 000. Et 25 × 6 = 150."
-          },
-          {
-            "id": "banque-s4-ex-3",
             "type": "vrai_faux",
             "enonce": "L'offre dont la mensualité est la plus basse est toujours la moins chère.",
             "reponse": false,
             "explication": "Faux : une mensualité basse vient souvent d'une durée longue, donc de plus d'intérêts. Seul le TAEG, ou le coût total, permet de trancher."
           },
           {
+            "id": "banque-s4-ex-3",
+            "type": "vrai_faux",
+            "enonce": "Deux crédits du même montant et de la même durée ont forcément le même coût.",
+            "reponse": false,
+            "explication": "Faux : le taux, les frais de dossier et l'assurance changent tout. C'est précisément ce que le TAEG rassemble en un seul chiffre."
+          },
+          {
             "id": "banque-s4-ex-4",
             "type": "vrai_faux",
             "enonce": "Le TAEG inclut les frais de dossier et l'assurance obligatoire.",
             "reponse": true,
-            "explication": "Vrai : c'est précisément ce qui en fait le seul chiffre comparable. Un taux nominal alléchant peut cacher des frais qui font bondir le TAEG."
+            "explication": "Vrai : c'est ce qui en fait le seul chiffre comparable. Un taux nominal alléchant peut cacher des frais qui font bondir le TAEG."
           }
         ]
       }
@@ -1731,36 +1725,31 @@
         "items": [
           {
             "id": "banque-s9-ex-1",
-            "type": "nombre",
-            "enonce": "Revenu imposable de 21 500 €, une part. Combien d'impôt, avec 0 % jusqu'à 11 500 € (seuil arrondi) puis 11 % au-delà ?",
-            "reponse": 1100,
-            "tolerance": 30,
-            "unite": "€",
-            "indice": "Seule la part au-dessus de 11 500 € est taxée : 10 000 × 11 %.",
-            "explication": "21 500 − 11 500 = 10 000 €, taxés à 11 % : 1 100 €. Le taux moyen n'est que de 5 %, pour une tranche marginale de 11 %."
+            "type": "vrai_faux",
+            "enonce": "La première tranche du barème n'est pas imposée, quel que soit le revenu total.",
+            "reponse": true,
+            "explication": "Vrai. Le barème s'applique par tranches : la part du revenu située sous le premier seuil échappe à l'impôt, même pour un très haut revenu."
           },
           {
             "id": "banque-s9-ex-2",
             "type": "vrai_faux",
             "enonce": "Passer dans la tranche à 30 % fait payer 30 % sur tout son revenu.",
             "reponse": false,
-            "explication": "Faux, et c'est l'erreur la plus répandue. Seuls les euros situés dans la tranche à 30 % sont taxés à 30 % ; le reste garde ses taux de 0 et 11 %."
+            "explication": "Faux, et c'est la peur la plus répandue. Seule la part du revenu au-dessus du seuil est taxée à 30 %. Gagner un euro de plus ne fait jamais perdre d'argent."
           },
           {
             "id": "banque-s9-ex-3",
-            "type": "nombre",
-            "enonce": "Un don de 100 € à une association ouvre droit à une réduction d'impôt de 66 %. Combien te coûte réellement ce don ?",
-            "reponse": 34,
-            "tolerance": 1,
-            "unite": "€",
-            "explication": "100 € donnés, 66 € rendus par l'impôt : le don ne coûte que 34 €. À condition de payer au moins 66 € d'impôt — sinon, la réduction est perdue."
+            "type": "vrai_faux",
+            "enonce": "Une réduction d'impôt de 66 % sur un don signifie que l'État en prend les deux tiers à sa charge.",
+            "reponse": true,
+            "explication": "Vrai. Sur 100 € donnés, 66 € reviennent en réduction d'impôt : le don coûte réellement 34 € à celui qui le fait."
           },
           {
             "id": "banque-s9-ex-4",
             "type": "vrai_faux",
             "enonce": "Une déduction de 1 000 € fait économiser plus à quelqu'un dont la TMI est de 30 % qu'à quelqu'un à 11 %.",
             "reponse": true,
-            "explication": "Vrai : la déduction retire 1 000 € du revenu, donc 1 000 € qui auraient été taxés à la TMI. 300 € économisés à 30 %, 110 € à 11 %."
+            "explication": "Vrai : une déduction s'impute sur le revenu, donc son effet vaut la tranche marginale. 300 € d'un côté, 110 € de l'autre."
           },
           {
             "id": "banque-s9-ex-5",
@@ -1769,8 +1758,8 @@
             "reponse": 600,
             "tolerance": 10,
             "unite": "€",
-            "indice": "Déduction × TMI.",
-            "explication": "2 000 € × 30 % = 600 € d'impôt en moins. Attention : à la sortie du PER, les sommes seront imposées — l'avantage est un report, pas un cadeau."
+            "indice": "30 % de 2 000 €.",
+            "explication": "600 €. L'argent reste le tien, simplement bloqué jusqu'à la retraite — l'économie d'impôt n'est pas un cadeau, c'est un report."
           }
         ]
       }

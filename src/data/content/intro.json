@@ -4,7 +4,7 @@
   "description": "5 sessions courtes pour comprendre ton argent, avant de choisir ta voie : Banque, Marché ou Entreprise.",
   "ordre": 0,
   "type": "intro",
-  "version": 7,
+  "version": 8,
   "chiffresVerifiesLe": "2026-09-12",
   "sources": [
     {
@@ -318,17 +318,15 @@
             "reponse": 1100,
             "tolerance": 5,
             "unite": "€",
-            "explication": "1 000 + 10 % = 1 100 €. La deuxième année, les 10 % porteront sur 1 100 € et non plus sur 1 000 : c'est là que le composé commence."
+            "indice": "10 % de 1 000 €, ajoutés au capital.",
+            "explication": "1 100 €. Les 100 € d'intérêts s'ajoutent au capital : c'est sur ce nouveau total que travaillera l'année suivante."
           },
           {
             "id": "s2-ex-2",
-            "type": "nombre",
-            "enonce": "Et au bout de deux ans, toujours à 10 % par an ?",
-            "reponse": 1210,
-            "tolerance": 5,
-            "unite": "€",
-            "indice": "Applique 10 % à ce que tu avais à la fin de la première année.",
-            "explication": "1 100 × 1,10 = 1 210 €. En intérêt simple, tu n'aurais eu que 1 200 € : 10 € d'écart en deux ans, des milliers en trente."
+            "type": "vrai_faux",
+            "enonce": "La deuxième année, les intérêts se calculent sur le capital déjà augmenté, pas sur la somme de départ.",
+            "reponse": true,
+            "explication": "Vrai, et c'est toute la différence entre intérêts simples et composés. À 10 %, la deuxième année rapporte 110 € et non 100 €, parce qu'elle travaille sur 1 100 €."
           },
           {
             "id": "s2-ex-3",
@@ -338,14 +336,14 @@
             "tolerance": 0.5,
             "unite": "ans",
             "indice": "72 divisé par le taux.",
-            "explication": "72 / 8 = 9 ans. Le calcul exact donne 9,006 ans — l'approximation est redoutable de précision."
+            "explication": "72 / 8 = 9 ans. La règle donne un ordre de grandeur immédiat, sans calculatrice."
           },
           {
             "id": "s2-ex-4",
             "type": "vrai_faux",
             "enonce": "Avec des intérêts composés, doubler la durée du placement double le capital final.",
             "reponse": false,
-            "explication": "Faux : la croissance est exponentielle, pas proportionnelle. 1 000 € à 7 % donnent 1 967 € en 10 ans, mais 3 870 € en 20 ans — bien plus que le double."
+            "explication": "Faux : il fait beaucoup plus que doubler. La croissance est exponentielle, pas proportionnelle — c'est la deuxième moitié du temps qui rapporte le plus."
           }
         ]
       }
@@ -698,36 +696,33 @@
           {
             "id": "s4-ex-1",
             "type": "nombre",
-            "enonce": "Un crédit de 6 000 € remboursé 300 € par mois pendant 24 mois. Combien rembourses-tu en tout ?",
+            "enonce": "Un crédit remboursé 300 € par mois pendant 24 mois. Combien rembourses-tu en tout ?",
             "reponse": 7200,
             "tolerance": 50,
             "unite": "€",
             "indice": "Mensualité × nombre de mois : 3 × 24 = 72.",
-            "explication": "300 × 24 = 7 200 €. Le crédit coûte donc 1 200 € d'intérêts, soit 20 % du montant emprunté."
+            "explication": "300 × 24 = 7 200 €. C'est la seule multiplication à faire pour connaître le vrai prix d'un crédit."
           },
           {
             "id": "s4-ex-2",
-            "type": "nombre",
-            "enonce": "Combien d'intérêts as-tu payés dans ce crédit ?",
-            "reponse": 1200,
-            "tolerance": 50,
-            "unite": "€",
-            "explication": "7 200 − 6 000 = 1 200 €. C'est le seul chiffre qui compte pour comparer deux offres de même durée.",
-            "indice": "Ce que tu rembourses, moins ce que tu as emprunté."
+            "type": "vrai_faux",
+            "enonce": "Le coût d'un crédit, c'est la différence entre ce qu'on rembourse en tout et ce qu'on a emprunté.",
+            "reponse": true,
+            "explication": "Vrai. C'est le seul chiffre qui permette de comparer deux offres, et c'est rarement celui qu'on met en avant."
           },
           {
             "id": "s4-ex-3",
             "type": "vrai_faux",
             "enonce": "Allonger la durée d'un crédit réduit la mensualité et le coût total.",
             "reponse": false,
-            "explication": "Faux : la mensualité baisse, mais on paie des intérêts plus longtemps. Le coût total augmente toujours."
+            "explication": "Faux : la mensualité baisse, le coût total monte. On paie des intérêts plus longtemps."
           },
           {
             "id": "s4-ex-4",
             "type": "vrai_faux",
             "enonce": "Une réserve d'argent renouvelable est en général le crédit le plus cher du marché.",
             "reponse": true,
-            "explication": "Vrai : ses taux frôlent souvent le taux d'usure, bien au-delà d'un crédit à la consommation classique — et elle se reconstitue à mesure qu'on rembourse."
+            "explication": "Vrai. Son taux est bien supérieur à celui d'un prêt personnel, et son remboursement minimal la fait durer très longtemps."
           }
         ]
       }
