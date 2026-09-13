@@ -12,6 +12,10 @@
 //   - situation  : complétée dès qu'un choix existant est sélectionné — `qualite` est
 //                  nuancée (recommande/acceptable/deconseille), il n'y a pas de seuil
 //                  de réussite, seul le fait d'avoir choisi et vu le feedback compte.
+//   - exercice   : comme un quiz, complété si le score atteint `exercice.seuilReussite`.
+//   - scenario   : complété dès qu'on est allé au bout des décisions — l'écran n'appelle
+//                  `completerEtape` qu'à ce moment-là. Le score sert au bilan narratif,
+//                  jamais à valider : aucune trajectoire de vie n'est « ratée ».
 
 import type { Etape, Parcours, ProgressionGlobale, ProgressionParcours } from "./types";
 
@@ -20,7 +24,9 @@ export type ResultatEtape =
   | { type: "lecon" }
   | { type: "quiz"; score: number }
   | { type: "exemple"; aInteragi: boolean }
-  | { type: "situation"; choixSelectionneId: string };
+  | { type: "situation"; choixSelectionneId: string }
+  | { type: "exercice"; score: number }
+  | { type: "scenario"; score: number };
 
 /** Vérifie la condition de complétion propre au type de l'étape (règle documentée en tête de fichier). */
 export function etapeEstCompletee(etape: Etape, resultat: ResultatEtape): boolean {
@@ -36,6 +42,10 @@ export function etapeEstCompletee(etape: Etape, resultat: ResultatEtape): boolea
         etape.type === "situation" &&
         etape.situation.choix.some((choix) => choix.id === resultat.choixSelectionneId)
       );
+    case "exercice":
+      return etape.type === "exercice" && resultat.score >= etape.exercice.seuilReussite;
+    case "scenario":
+      return etape.type === "scenario";
   }
 }
 
@@ -56,8 +66,13 @@ export function calculerStatutParcours(
 }
 
 /** true si le parcours est terminé et porte une récompense (un parcours "intro" n'en a pas). */
+/**
+ * Une voie terminée donne toujours sa fiche de synthèse : la récompense se fabrique à
+ * partir du contenu, il n'y a rien à renseigner pour qu'elle existe. L'intro, elle, n'en
+ * a pas — elle ouvre la fourche vers les voies, c'est sa conclusion.
+ */
 export function recompenseEstDebloquee(parcours: Parcours, progression: ProgressionParcours): boolean {
-  return progression.statut === "termine" && parcours.recompense !== undefined;
+  return progression.statut === "termine" && parcours.type === "voie";
 }
 
 /**
@@ -95,6 +110,7 @@ export function completerEtape(
     statut,
     dateDebut: progression.dateDebut ?? maintenant,
     dateFin: statut === "termine" ? progression.dateFin ?? maintenant : progression.dateFin,
+    derniereActivite: maintenant,
     recompenseDebloquee: recompenseEstDebloquee(parcours, { ...progression, statut }),
   };
 }
