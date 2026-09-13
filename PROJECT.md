@@ -435,6 +435,8 @@ Reste à faire avant publication :
   produite : tout n'a été validé que par le bundler Metro, `expo-doctor` (21/21) et les
   tests de rendu. Une première compilation EAS révèle souvent des choses qu'aucun test
   JavaScript ne voit — polices, icônes, permissions, plugins.
-- Le **mode test** (`ACTIVER_MODE_TEST`) reste actif en développement. Il est neutralisé
-  par `&& __DEV__`, donc inerte dans toute build de distribution : rien à faire avant
-  publication, et le laisser permet de continuer à explorer l'app librement.
+- Le **mode test** (`ACTIVER_MODE_TEST`) est désormais à `false` : l'application se
+  comporte en développement comme chez un utilisateur, verrous compris. Le repasser à
+  `true` rouvre tout le contenu sans progression, ce qui reste pratique pour relire une
+  session précise ; le garde-fou `&& __DEV__` l'empêche de toute façon d'exister dans une
+  build de distribution.

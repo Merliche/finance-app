@@ -9,6 +9,6 @@
 // même si quelqu'un oublie de le repasser à false.
 //
 // Pour revenir au comportement normal : passer ACTIVER_MODE_TEST à false.
-const ACTIVER_MODE_TEST = true;
+const ACTIVER_MODE_TEST = false;
 
 export const MODE_TEST_TOUT_ACCESSIBLE = ACTIVER_MODE_TEST && __DEV__;
