@@ -48,6 +48,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f8c55c79-2d1b-4d36-a42f-bb328d1ba0af"
+      }
+    },
+    "owner": "merliche"
   }
 }

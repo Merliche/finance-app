@@ -84,9 +84,18 @@ export async function viderCacheContenu(): Promise<void> {
   if (aSupprimer.length > 0) await AsyncStorage.multiRemove(aSupprimer);
 }
 
+/**
+ * Sans clés Supabase, il n'y a pas de source distante du tout. On lève comme pour une
+ * panne réseau : l'appelant descend alors sur le cache puis le bundle, chemin déjà éprouvé.
+ */
+function clientOuEchec() {
+  if (!supabase) throw new Error("Supabase non configuré : pas de source distante.");
+  return supabase;
+}
+
 async function recupererVersionDistante(parcoursId: string): Promise<number> {
   const { data, error } = await avecDelai(
-    supabase.from("parcours").select("version").eq("id", parcoursId).single(),
+    clientOuEchec().from("parcours").select("version").eq("id", parcoursId).single(),
     DELAI_RESEAU_MS
   );
   if (error) throw error;
@@ -96,7 +105,7 @@ async function recupererVersionDistante(parcoursId: string): Promise<number> {
 /** Contenu distant complet, déjà validé. Lève si le réseau échoue OU si le contenu est invalide. */
 async function recupererContenuDistant(parcoursId: string): Promise<Parcours> {
   const { data, error } = await avecDelai(
-    supabase.from("parcours").select("contenu").eq("id", parcoursId).single(),
+    clientOuEchec().from("parcours").select("contenu").eq("id", parcoursId).single(),
     DELAI_RESEAU_MS
   );
   if (error) throw error;

@@ -18,6 +18,12 @@ export async function inscrireEmail(
   email: string,
   sourceParcoursId?: string
 ): Promise<ResultatInscriptionEmail> {
+  if (!supabase) {
+    // Build sans clés Supabase : rien à quoi parler. L'écran de récompense affiche ce
+    // message et la fiche de synthèse reste accessible — c'est elle, la récompense.
+    return { statut: "erreur", message: "Inscription indisponible pour le moment." };
+  }
+
   const { error } = await supabase
     .from("email_subscribers")
     .insert({ email, source_parcours_id: sourceParcoursId ?? null });
