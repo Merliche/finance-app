@@ -4,10 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Politique de confidentialité — Finance de Poche</title>
-    <meta
-      name="description"
-      content="Ce que l'application Finance de Poche collecte, ce qu'elle n'en fait pas, et comment exercer tes droits."
-    />
+    <meta name="description" content="Ce que l'application Finance de Poche collecte, ce qu'elle n'en fait pas, et comment exercer tes droits." />
     <style>
       :root {
         color-scheme: light dark;
@@ -56,15 +53,35 @@
       p { margin: 0 0 12px; color: var(--attenue); }
       ul { margin: 0 0 12px; padding-left: 1.15rem; color: var(--attenue); }
       li { margin-bottom: 8px; }
-      .contact {
+      a { color: var(--accent); }
+      .encart {
         margin-top: 40px;
         padding: 22px;
         background: var(--surface);
         border: 1px solid var(--bordure);
         border-radius: 16px;
       }
-      .contact h2 { margin-top: 0; }
-      .contact a { color: var(--accent); font-weight: 600; word-break: break-all; }
+      .encart h2 { margin-top: 0; }
+      .encart a { font-weight: 600; word-break: break-all; }
+      .chiffres {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 22px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .chiffres li {
+        flex: 1 1 7rem;
+        margin: 0;
+        padding: 14px 12px;
+        text-align: center;
+        background: var(--surface);
+        border: 1px solid var(--bordure);
+        border-radius: 14px;
+      }
+      .chiffres strong { display: block; font-size: 1.5rem; color: var(--texte); }
+      .chiffres span { font-size: 0.82rem; color: var(--tertiaire); }
       footer { margin-top: 32px; color: var(--tertiaire); font-size: 0.85rem; }
       @media (max-width: 34rem) {
         header { padding-top: 36px; }
@@ -142,18 +159,20 @@
       <p>Si cette politique change, la date de mise à jour ci-dessous change aussi, et la nouvelle version remplace celle-ci dans l'application comme sur cette page.</p>
     </section>
 
-      <section class="contact">
-        <h2>Nous écrire</h2>
-        <p>
-          Pour toute question sur tes données, pour savoir ce que nous avons sur toi, ou pour
-          demander le retrait de ton adresse :
-        </p>
-        <p><a href="mailto:leshyni31@gmail.com">leshyni31@gmail.com</a></p>
-      </section>
+    <section class="encart">
+      <h2>Nous écrire</h2>
+      <p>
+        Pour toute question sur tes données, pour savoir ce que nous avons sur toi, ou pour
+        demander le retrait de ton adresse :
+      </p>
+      <p><a href="mailto:leshyni31@gmail.com">leshyni31@gmail.com</a></p>
+    </section>
 
-      <footer>
-        <p>Dernière mise à jour : 13 septembre 2026.</p>
-      </footer>
+    <footer>
+      <p>Dernière mise à jour : 13 septembre 2026.</p>
+      <p><a href="index.html">Retour à l'accueil</a></p>
+    </footer>
+
     </main>
   </body>
 </html>

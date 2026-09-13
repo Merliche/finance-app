@@ -279,8 +279,8 @@ Fait :
   email). Le bundle l'emporte quand sa version dépasse celle du distant.
 - **Confidentialité** : politique complète écrite sur ce que l'app fait réellement. Le
   texte n'existe qu'une fois (`src/constants/confidentialite.json`) et alimente DEUX
-  sorties : l'écran `app/confidentialite.tsx` et la page web `docs/confidentialite.html`,
-  régénérée par `npm run confidentialite`. Un texte juridique recopié à deux endroits
+  sorties : l'écran `app/confidentialite.tsx` et les pages web `docs/index.html` (accueil et support) et `docs/confidentialite.html`,
+  régénérée par `npm run site`. Un texte juridique recopié à deux endroits
   diverge en quelques mois, et un test vérifie que la page publiée reprend mot pour mot
   chaque paragraphe de l'application. La page est autonome, sans script ni ressource
   externe, et suit le thème du système. Elle est atteignable
@@ -394,7 +394,7 @@ Fait :
   famille et un filet à la couleur de leur voie), Glossaire, Profil, Bilan, Révision,
   Mes chiffres, À propos + disclaimer.
 - Mode test (`src/constants/modeTest.ts`) : tout accessible en `__DEV__`.
-- 386 tests, 32 suites (`npx jest`), dont un jeu d'invariants sur le contenu embarqué
+- 391 tests, 32 suites (`npx jest`), dont un jeu d'invariants sur le contenu embarqué
   (`src/data/content/__tests__/contenu.test.ts`) dérivé de `VOIES` — ajouter une voie sans
   la bundler fait échouer les tests —, six tests de rendu, un par type d'étape
   (`src/components/etape/__tests__/rendu.test.tsx`), cinq sur le chemin lui-même
@@ -423,8 +423,8 @@ Reste à faire avant publication :
 - **Publier la politique de confidentialité sur une page web.** Le texte existe
   (`src/constants/confidentialite.ts`) et l'écran `app/confidentialite.tsx` l'affiche ;
   Apple et Google exigent en plus une adresse publique atteignable sans installer l'app.
-  La page est déjà générée dans `docs/confidentialite.html` : n'importe quel hébergement
-  statique convient, et GitHub Pages sert un dossier `docs/` tel quel.
+  C'est fait : GitHub Pages sert le dossier `docs/`, avec une page d'accueil qui tient
+  lieu d'adresse de support et la politique.
 - **Renseigner la fiche du magasin** : description, captures (iPhone 6,7" et 6,5"),
   catégorie, classification d'âge, adresse de support, et la déclaration de collecte de
   données (« adresse email », finalité marketing, liée à l'identité).

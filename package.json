@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "confidentialite": "node scripts/generer-confidentialite.mjs"
+    "site": "node scripts/generer-site.mjs"
   },
   "jest": {
     "preset": "jest-expo",

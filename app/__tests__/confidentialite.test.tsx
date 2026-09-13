@@ -16,6 +16,7 @@ import { CONTACT_EMAIL, NOM_APP } from "../../src/constants/identite";
 // laisserait en ligne une version périmée — c'est-à-dire une politique fausse.
 
 const PAGE = readFileSync(resolve(__dirname, "../../docs/confidentialite.html"), "utf8");
+const ACCUEIL = readFileSync(resolve(__dirname, "../../docs/index.html"), "utf8");
 
 function textesRendus(arbre: ReactTestRenderer): string {
   return arbre.root
@@ -91,5 +92,41 @@ describe("écran Confidentialité de l'application", () => {
     }
     expect(affiche).toContain(CONTACT_EMAIL);
     act(() => arbre.unmount());
+  });
+});
+
+describe("page d'accueil publique", () => {
+  // Cette page sert d'adresse de support dans App Store Connect : elle doit donc
+  // toujours porter un moyen de contact et un lien vers la politique.
+  test("porte le nom de l'application et un contact cliquable", () => {
+    expect(ACCUEIL).toContain(NOM_APP);
+    expect(ACCUEIL).toContain(`mailto:${CONTACT_EMAIL}`);
+  });
+
+  test("renvoie vers la politique de confidentialité", () => {
+    expect(ACCUEIL).toContain('href="confidentialite.html"');
+  });
+
+  test("porte l'avertissement sur le conseil en investissement", () => {
+    // Le même avertissement que dans l'application : une app de finance qui l'oublie
+    // sur sa page publique se met en porte-à-faux.
+    expect(ACCUEIL).toContain("ne constitue en");
+    expect(ACCUEIL).toContain("conseil en investissement");
+  });
+
+  test("annonce des chiffres comptés dans le contenu réel", () => {
+    // Écrits à la main, ils seraient faux à la prochaine session ajoutée.
+    const parcours = ["intro", "banque", "marche", "entreprise", "quotidien"].map(
+      (id) => require(`../../src/data/content/${id}.json`) as { etapes: unknown[] }
+    );
+    const etapes = parcours.reduce((total, p) => total + p.etapes.length, 0);
+    expect(ACCUEIL).toContain(`<strong>${etapes}</strong>`);
+    expect(ACCUEIL).toContain(`<strong>${parcours.length}</strong>`);
+  });
+
+  test("est une page autonome : aucune ressource externe à charger", () => {
+    expect(ACCUEIL).not.toMatch(/<script/i);
+    expect(ACCUEIL).not.toMatch(/src="https?:/i);
+    expect(ACCUEIL).not.toMatch(/href="https?:/i);
   });
 });
