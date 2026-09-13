@@ -2,32 +2,35 @@ import { Redirect } from "expo-router";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 
 import { useProgressStore, useProgressionHydratee } from "../src/state/progressStore";
+import { useCouleurs, useStyles } from "../src/theme/ModeCouleur";
+import type { Couleurs } from "../src/theme/palettes";
 
-// Point d'entrée : redirige vers le parcours "intro" tant qu'il n'est pas terminé,
-// sinon vers le choix des voies (voir PROJECT.md §4).
+// Point d'entrée : l'écran de bienvenue au tout premier lancement, sinon "/parcours",
+// la map — elle affiche le chemin de l'intro et, une fois celle-ci terminée, la fourche
+// vers les 3 voies.
 export default function Index() {
+  const couleurs = useCouleurs();
+  const styles = useStyles(creerStyles);
   const hydratee = useProgressionHydratee();
-  const progressionIntro = useProgressStore((state) => state.parcours["intro"]);
+  const accueilVu = useProgressStore((state) => state.accueilVu);
 
   if (!hydratee) {
     return (
       <View style={styles.chargement}>
-        <ActivityIndicator />
+        <ActivityIndicator color={couleurs.texteAttenue} />
       </View>
     );
   }
 
-  if (progressionIntro?.statut === "termine") {
-    return <Redirect href="/parcours" />;
-  }
-
-  return <Redirect href="/parcours/intro" />;
+  return <Redirect href={accueilVu ? "/parcours" : "/bienvenue"} />;
 }
 
-const styles = StyleSheet.create({
-  chargement: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+const creerStyles = (couleurs: Couleurs) =>
+  StyleSheet.create({
+    chargement: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: couleurs.fond,
+    },
+  });
