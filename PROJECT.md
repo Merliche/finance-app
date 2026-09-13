@@ -9,7 +9,9 @@ App mobile **gratuite**, **en français**, d'introduction à la finance.
 Parcours utilisateur :
 1. L'utilisateur suit un **parcours d'intro** (obligatoire).
 2. Une fois l'intro terminée, **3 voies** se débloquent, chacune un parcours à part entière : **Banque**, **Marché**, **Entreprise**.
-3. À la fin de chaque voie, l'utilisateur débloque un **code promo** pour un livre correspondant (vendu sur Amazon, lien externe).
+3. À la fin de chaque voie, l'utilisateur débloque une **fiche de synthèse** fabriquée à
+   partir du contenu de la voie, qu'il peut emporter. Un livre partenaire pourra s'y
+   ajouter plus tard, sans prix ni incitation à l'achat.
 4. L'app capture l'**email** de l'utilisateur (à un moment du flow, ex: fin de parcours) pour le prévenir des sorties de livres.
 
 Le système est **générique** : l'intro et les 3 voies sont toutes des instances d'un même concept de `Parcours`. Aucune logique spécifique câblée en dur par voie — tout vient du contenu.
@@ -81,7 +83,7 @@ Une seule arborescence de routes pour l'intro et les 3 voies (`parcours/[parcour
 
 ```ts
 interface Parcours {
-  id: string;                    // "intro" | "banque" | "marche" | "entreprise"
+  id: string;                    // "intro" | "banque" | "marche" | "entreprise" | "quotidien"
   titre: string;
   description: string;
   ordre: number;
@@ -93,6 +95,8 @@ interface Parcours {
     code: string;
   };
   version: number;               // invalide le cache local à chaque édition de contenu
+  chiffresVerifiesLe?: string;   // "AAAA-MM-JJ", affiché dans À propos et le Bilan
+  sources?: { libelle: string; url: string }[]; // https uniquement, vérifié au chargement
 }
 ```
 
@@ -199,6 +203,7 @@ interface ProgressionParcours {
   statut: "non_commence" | "en_cours" | "termine";
   dateDebut?: string;
   dateFin?: string;
+  derniereActivite?: string;     // sert à choisir la voie proposée par « Reprendre »
   recompenseDebloquee: boolean;
 }
 
@@ -215,9 +220,216 @@ interface ProgressionGlobale {
 
 - Sync multi-appareil via ID anonyme persistant côté Supabase (si le besoin apparaît sans vouloir imposer un login).
 - Nouveaux types d'étapes (le modèle en union discriminée permet d'en ajouter sans casser l'existant).
-- Nouvelles formules de simulateur au-delà de `interet_compose` / `mensualite_credit`.
 - Codes promo uniques par utilisateur si la réutilisation/partage du code fixe devient un problème.
+- Notifications locales pour entretenir la série (le défi du jour est déjà là, il ne manque
+  que le rappel).
+- Respect de la taille de police système (`allowFontScaling`) : les écrans utilisent des
+  tailles fixes, une passe dédiée est nécessaire pour supporter les réglages
+  d'accessibilité sans casser les mises en page.
+- Mesure d'usage anonyme (quelles étapes sont abandonnées, quels outils sont ouverts),
+  à n'envisager qu'avec un consentement explicite.
+- Mode maintenance piloté depuis Supabase, pour afficher un message si le contenu distant
+  doit être retiré en urgence.
 
 ## 7. Statut
 
-Phase actuelle : **cadrage**, aucun code écrit. Prochaine étape à discuter : scaffolding Expo + mise en place Supabase (schéma + seed du contenu d'intro).
+Phase actuelle : **application complète et navigable de bout en bout**.
+
+Fait :
+- Schéma Supabase (`parcours`, `email_subscribers`) + RLS, contrainte d'unicité sur l'email.
+- Contenu des 5 parcours écrit et publié (Supabase + fallback JSON bundlé identique) :
+  intro (20 étapes, 5 sessions), banque (40, 9 sessions), marché (38, 9), entreprise (36, 9),
+  quotidien (48, 12) — difficulté croissante (`src/constants/sessions.ts`). Chaque leçon se
+  ferme sur un « À retenir », chaque session sur un quiz. **182 étapes, 44 sessions.**
+- 6 types d'étape : `lecon`, `quiz`, `exemple` (simulateur), `situation`, `exercice`
+  (problèmes chiffrés ou vrai/faux) et `scenario` (étude de cas : cinq décisions
+  enchaînées, conséquences et bilan — une par voie).
+- 11 formules de simulateur (`src/domain/parcours/simulateurs/`), chacune documentant ses
+  variables dans `VARIABLES_PAR_FORMULE` — ce que vérifient les tests de contenu. Chaque
+  simulateur trace sa **courbe en direct** : bouger un curseur déforme la courbe
+  (`CourbeSimulateur`, échantillonnage dans `simulateurs/courbe.ts`).
+- 46 schémas animés dans les leçons (`src/components/schema/`) : courbes qui se tracent,
+  barres qui se remplissent, anneau de répartition, enchaînement de flux. Décrits en
+  données, dessinés par le code, rejouables au tap.
+- **Validation du contenu distant** (`src/domain/parcours/validation.ts`) : rien venant du
+  réseau ou du cache n'atteint l'écran sans passer un validateur exhaustif (types d'étape
+  et de bloc, index de bonne réponse dans les bornes, variables de simulateur conformes à
+  la formule, séries de schéma cohérentes, sources en https). Un cache invalide est
+  supprimé, un distant invalide est ignoré au profit du bundle. Un test garantit que le
+  contenu embarqué passe sa propre validation.
+- **Filet anti-crash** (`src/components/ui/LimiteErreur.tsx`) : une erreur de rendu affiche
+  un écran de secours qui propose de réessayer ou de vider le contenu téléchargé, et
+  rappelle que la progression est intacte.
+- **Reprise** (`src/domain/parcours/reprise.ts`) : une pastille « Reprendre » mène
+  directement à la première étape non validée de la voie la plus récemment travaillée.
+- **Chiffres et sources** : chaque parcours porte une date de vérification
+  (`chiffresVerifiesLe`) et ses sources officielles, affichées dans À propos et rappelées
+  dans le Bilan (`src/domain/parcours/sources.ts`).
+- **Glossaire global** (`app/glossaire.tsx`) : 129 termes issus des leçons et des glossaires
+  de session, index A–Z, recherche insensible aux accents, doublons fusionnés sur la
+  définition la plus complète (`src/domain/glossaire.ts`).
+- « Mes chiffres » (`app/mes-chiffres.tsx`) : revenu, loyer, épargne saisis une fois et
+  gardés sur le téléphone. Ils personnalisent le départ des simulateurs et permettent
+  d'afficher les montants en heures de travail (`domain/parcours/profilFinancier.ts`).
+- Révision des erreurs : les questions manquées sont mémorisées, ressortent en priorité
+  dans le défi du jour, et se retravaillent dans `app/revision.tsx`.
+- Bilan (`app/bilan.tsx`) : « ce que tu sais maintenant », reconstruit à partir des blocs
+  « À retenir » et des définitions des étapes réellement validées.
+- Moteur de progression, store Zustand persisté, repositories (contenu avec cache/version,
+  email). Le bundle l'emporte quand sa version dépasse celle du distant.
+- **Confidentialité** : politique complète écrite sur ce que l'app fait réellement. Le
+  texte n'existe qu'une fois (`src/constants/confidentialite.json`) et alimente DEUX
+  sorties : l'écran `app/confidentialite.tsx` et la page web `docs/confidentialite.html`,
+  régénérée par `npm run confidentialite`. Un texte juridique recopié à deux endroits
+  diverge en quelques mois, et un test vérifie que la page publiée reprend mot pour mot
+  chaque paragraphe de l'application. La page est autonome, sans script ni ressource
+  externe, et suit le thème du système. Elle est atteignable
+  depuis À propos et depuis l'encart email lui-même. L'encart porte une case de
+  consentement décochée par défaut, sans laquelle le bouton d'envoi reste inerte, et rien
+  dans l'application ne dépend de l'adresse. Les emails sont hébergés en Irlande, donc
+  dans l'Union européenne.
+- **Configuration de publication** : `app.json` porte le nom, l'identifiant de paquet,
+  `userInterfaceStyle: "automatic"` (sans quoi le mode sombre ne pourrait jamais suivre le
+  système), la déclaration d'exemption de chiffrement, et un splash déclinué clair/sombre.
+  L'identifiant de paquet est `com.merliche.finance`, volontairement générique : il est
+  figé dès la première soumission, alors que le nom affiché peut encore changer.
+  `eas.json` définit trois profils de build. Icône, icône adaptative, splash et favicon
+  sont générés aux couleurs de l'app, l'icône iOS étant sans canal alpha comme l'exige
+  l'App Store.
+- **Fiche de synthèse de fin de voie** (`domain/parcours/fiche.ts`, `FicheSyntheseVue`) :
+  la récompense se fabrique à partir du contenu, il n'y a rien à rédiger pour qu'elle
+  existe et elle suit le contenu quand il change. Elle rassemble les points clés et le
+  vocabulaire par session, plus les bons réflexes et les pièges tirés des choix
+  recommandés et déconseillés des mises en situation. Entre 45 et 66 points clés par voie.
+  Un bouton l'exporte en texte brut, lisible tel quel dans une note ou un mail.
+  La déduplication des termes se fait PAR SESSION : un même mot redéfini plus loin désigne
+  souvent autre chose, et garder « la plus longue » ferait apparaître la mauvaise
+  définition sous le mauvais titre.
+- Le bloc du livre partenaire reste en place dans l'écran récompense, prêt à l'accueillir,
+  mais ne s'affiche que si le contenu en déclare un. Le code s'y copie d'un tap
+  (`expo-clipboard`). Jamais de prix, jamais « acheter » : c'est un supplément, pas la
+  récompense.
+- Engagement : XP, niveaux, série de jours, défi du jour, célébrations (dont une bannière
+  « Niveau N atteint »), 44 badges — un par session —, calendrier d'activité et partage de
+  progression dans le Profil. Chaque badge de la grille ouvre sa fiche (`FicheBadge`) :
+  d'où il vient, ce qu'il récompense, et la condition exacte pour l'obtenir avec
+  l'avancement de sa session. Un badge non obtenu y devient une consigne plutôt qu'un
+  cadenas.
+- Visuel : chemin façon Duolingo orienté bas → haut, départ et arrivée centrés (le tronc
+  de l'arbre), fourche à quatre branches, thème par `parcoursId`, squelettes de chargement,
+  transitions par type de navigation. Le calcul du chemin est mémoïsé (`VueChemin`), le
+  rendu ne recalcule plus les positions à chaque frame.
+- **Mode sombre** (`src/theme/palettes.ts`, `ModeCouleur.tsx`) : deux palettes complètes,
+  un fournisseur au-dessus de la navigation, et un réglage à trois positions dans le Profil
+  — Système, Clair, Sombre — enregistré avec la progression. Aucune couleur d'interface
+  n'est plus écrite en dur : chaque feuille de style est une fabrique
+  `creerStyles(couleurs)`, construite une fois par palette (`useStyles`), et les couleurs
+  en ligne se lisent par `useCouleurs()`. Les voiles des parcours (`tint`, `tintFort`) sont
+  DÉRIVÉS du mode plutôt qu'écrits deux fois, donc une nouvelle voie suit toute seule et
+  les deux modes ne peuvent pas diverger. En sombre, une surface se détache en étant plus
+  claire que son fond, pas en portant une ombre, et l'on évite le noir et le blanc purs.
+- **Grammaire de mouvement partagée** (`src/theme/animation.ts`) : cinq durées, quatre
+  courbes, trois ressorts, un décalage de cascade plafonné. Aucune durée ne s'écrit au cas
+  par cas — c'est ce qui fait que deux écrans différents bougent de la même façon.
+- **Bandeau commun à tous les écrans secondaires** (`EnteteEcran`) : dégradé en diagonale,
+  trame de points, reflet qui passe de loin en loin, grande icône en filigrane, bouton de
+  retour. Les en-têtes natifs sont masqués partout — une barre système claire au-dessus
+  d'un contenu coloré coupait l'écran en deux. Chaque écran a sa teinte propre
+  (`TEINTES_ECRAN`), toutes de la même famille profonde et peu saturée.
+- **Ciel du chemin** (`CielParcours`) : le fond change avec l'altitude. En bas, au départ,
+  il est clair et tiède ; en montant, deux voiles aux couleurs du parcours se révèlent l'un
+  après l'autre et une grande lueur s'allume derrière le sommet. On sait où on en est sans
+  lire un pourcentage, et l'arrivée se voit venir. Seules des opacités sont animées, donc
+  tout suit le doigt côté natif ; le fond de base reste opaque en toute position.
+- **Fond « aurore »** (`FondAnime`) : cinq nappes en dégradé radial (`Halo`) qui dérivent
+  sur des périodes toutes différentes, glissent en parallaxe avec le défilement, et dont
+  la palette se réchauffe à mesure que le parcours avance. Des particules montent lentement
+  derrière le chemin (`Poussiere`). Tout passe par le driver natif : le fond ne coûte rien
+  au thread JS pendant le défilement.
+- **Chemin** : la portion parcourue est un câble plein — lueur large, dégradé du sombre au
+  clair, filet de reflet ; la portion restante garde ses pointillés mais sur un sillon
+  continu teinté du parcours, sans quoi elle disparaissait sur fond clair (c'était le cas
+  de l'intro, dont presque tout le chemin est encore à faire) ; une comète
+  (`CometeChemin`) remonte de temps à autre le trajet déjà fait, en suivant les courbes
+  réelles (`echantillonnerChemin`) et à vitesse constante (`progressionCumulee`) ; un foyer
+  de lumière en dégradé radial désigne l'étape en cours. Les nœuds sont des billes en
+  dégradé avec reflet et lèvre d'ombre, l'étape en cours portant deux halos qui battent en
+  décalé.
+- **Interactions** : les fiches qui montent du bas (outil, comparateur, anecdote, session)
+  se referment en tirant la barre du haut vers le bas (`FeuilleModale`) — le geste n'est
+  capté que sur la barre, pas sur la feuille, pour ne pas entrer en conflit avec le
+  défilement du contenu ; la barre et le fond restent tapables, donc le geste n'est jamais
+  le seul moyen de sortir ; appui long sur un nœud pour un aperçu de l'étape — type, durée,
+  XP, premières lignes — sans l'ouvrir (`ApercuEtape`) ; retour sur ressort à chaque appui
+  (`AppuiRessort`) ; pastille flottante qui ramène à l'étape en cours dès qu'on s'en
+  éloigne (`BoutonRetourEtape`, avec hystérésis pour ne pas clignoter) ; correction de quiz
+  qui fait bondir la bonne réponse et secoue la mauvaise (`Reaction`) ; confettis sur les
+  vrais paliers seulement, session ou parcours (`Confettis`) ; reflet qui traverse les
+  bandeaux, le bouton principal et la barre de progression (`Reflet`).
+- **Micro-interactions** : appui sur ressort partout où l'on tape une carte
+  (`AppuiRessort`, avec un ressort de retour moins amorti que celui de l'enfoncement) ;
+  bond ou secousse à la correction d'un quiz, d'un exercice et au choix d'une mise en
+  situation (`Reaction`) ; squelettes de chargement traversés par une lumière, décalés les
+  uns des autres (`Squelette`) ; compteurs qui montent au lieu de s'afficher.
+- **Cartes de leçon** : définition à barre dégradée et contour teinté, exemple sur dégradé,
+  liste à pastilles numérotées pleines, et « À retenir » qui ferme la leçon sur un dégradé
+  sombre parcouru d'un reflet, ses points apparaissant l'un après l'autre.
+- **Transitions cohérentes** : les écrans de parcours glissent latéralement, les écrans
+  utilitaires montent du bas comme des panneaux. La direction dit à elle seule si on
+  s'enfonce dans le contenu ou si on ouvre un outil par-dessus.
+- **Mouvement réduit respecté** (`useMouvementReduit`) : le réglage d'accessibilité du
+  système arrête toutes les animations décoratives — nappes, poussière, comète, reflets,
+  confettis, ressorts, reflets, squelettes — et laisse les animations qui portent du sens. L'abonnement suit le
+  réglage même s'il change pendant l'exécution.
+- 120 éléments latéraux (calculateurs, comparateurs, saviez-vous, glossaires, badges),
+  définis en données et rattachés à une session. Chaque rond porte un anneau d'aura à la
+  couleur de sa catégorie et flotte très lentement, sur une phase qui lui est propre pour
+  qu'aucun voisin ne monte en même temps. Ils occupent l'intérieur de la plage de
+  leur session, jamais la hauteur exacte de son premier ou de son dernier nœud, et
+  `ecarterDesBandes` les écarte des bannières et de la bulle « À suivre » en cherchant la
+  place libre la plus proche — un simple décalage vers le bas les déposait dans l'obstacle
+  suivant, ou hors de l'écran.
+- Écrans Outils (bandeau graphite propre à la boîte à outils, avancement des outils
+  débloqués, recherche plein texte, filtre par parcours, cartes portant l'icône de leur
+  famille et un filet à la couleur de leur voie), Glossaire, Profil, Bilan, Révision,
+  Mes chiffres, À propos + disclaimer.
+- Mode test (`src/constants/modeTest.ts`) : tout accessible en `__DEV__`.
+- 386 tests, 32 suites (`npx jest`), dont un jeu d'invariants sur le contenu embarqué
+  (`src/data/content/__tests__/contenu.test.ts`) dérivé de `VOIES` — ajouter une voie sans
+  la bundler fait échouer les tests —, six tests de rendu, un par type d'étape
+  (`src/components/etape/__tests__/rendu.test.tsx`), cinq sur le chemin lui-même
+  (`src/components/chemin/__tests__/vueChemin.test.tsx`), qui garantissent qu'il se monte
+  et reste lisible malgré ses dégradés, ses SVG et ses animations natives, et quatre sur
+  les fiches latérales, qui vérifient qu'il reste toujours un moyen annoncé de refermer,
+  quatre sur l'écran Outils, et quinze sur les écrans secondaires — dont un invariant qui
+  vérifie que chacun, état vide compris, offre un retour : les en-têtes natifs étant
+  masqués, un écran sans bouton de retour serait un cul-de-sac (c'était le cas du Bilan
+  vide, trouvé par ce test). Un autre invariant remonte, pour chaque texte blanc, jusqu'au
+  premier ancêtre qui peint réellement derrière lui, et refuse qu'il s'agisse d'un fond
+  clair opaque : c'est ce qui rendait les trois pastilles du Profil illisibles, blanc sur
+  blanc, sans que rien dans le rendu ne le signale. Le même principe garde le mode sombre
+  durable (`app/__tests__/modeSombre.test.tsx`) : quatre écrans sont montés réellement en
+  sombre et aucune couleur propre au mode clair ne doit y apparaître, donc un composant
+  ajouté plus tard avec une couleur en dur fait échouer la suite. Enfin, les palettes
+  elles-mêmes sont testées (`src/theme/__tests__/palettes.test.ts`) : mêmes jetons de part
+  et d'autre, et contrastes au-dessus des seuils AA — ce test a d'ailleurs révélé que le
+  texte atténué et le texte tertiaire du mode CLAIR étaient sous les seuils depuis le
+  début, et ils ont été assombris juste ce qu'il fallait.
+- Tous les énoncés chiffrés se font de tête : aucun exercice ne demande de calculatrice.
+  C'est une contrainte de rédaction du contenu, à tenir pour toute nouvelle question —
+  les nombres se choisissent ronds, et un `indice` donne le chemin de calcul.
+
+Reste à faire avant publication :
+- **Publier la politique de confidentialité sur une page web.** Le texte existe
+  (`src/constants/confidentialite.ts`) et l'écran `app/confidentialite.tsx` l'affiche ;
+  Apple et Google exigent en plus une adresse publique atteignable sans installer l'app.
+  La page est déjà générée dans `docs/confidentialite.html` : n'importe quel hébergement
+  statique convient, et GitHub Pages sert un dossier `docs/` tel quel.
+- **Renseigner la fiche du magasin** : description, captures (iPhone 6,7" et 6,5"),
+  catégorie, classification d'âge, adresse de support, et la déclaration de collecte de
+  données (« adresse email », finalité marketing, liée à l'identité).
+- **Vérification sur appareil réel** (iOS/Android) : tout n'a été validé qu'au bundle et
+  par les tests de rendu.
+- Le **mode test** (`ACTIVER_MODE_TEST`) reste actif en développement. Il est neutralisé
+  par `&& __DEV__`, donc inerte dans toute build de distribution : rien à faire avant
+  publication, et le laisser permet de continuer à explorer l'app librement.
