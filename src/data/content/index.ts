@@ -5,9 +5,17 @@
 // façon correcte d'indexer les JSON bundlés par id de parcours.
 import type { Parcours } from "../../domain/parcours/types";
 import introJson from "./intro.json";
+import banqueJson from "./banque.json";
+import marcheJson from "./marche.json";
+import entrepriseJson from "./entreprise.json";
+import quotidienJson from "./quotidien.json";
 
 const PARCOURS_BUNDLES: Partial<Record<string, Parcours>> = {
   intro: introJson as Parcours,
+  banque: banqueJson as Parcours,
+  marche: marcheJson as Parcours,
+  entreprise: entrepriseJson as Parcours,
+  quotidien: quotidienJson as Parcours,
 };
 
 /** Contenu bundlé pour un parcours, ou `undefined` s'il n'a pas (encore) été bundlé. */

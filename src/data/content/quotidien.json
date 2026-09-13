@@ -1,0 +1,2431 @@
+{
+  "id": "quotidien",
+  "titre": "La voie Quotidien",
+  "description": "Fiche de paie, logement, assurance, arnaques, retraite : l'argent de la vraie vie.",
+  "ordre": 4,
+  "type": "voie",
+  "prerequisParcoursId": "intro",
+  "version": 4,
+  "chiffresVerifiesLe": "2026-09-12",
+  "sources": [
+    {
+      "libelle": "Service-public.fr — logement, travail, famille",
+      "url": "https://www.service-public.fr"
+    },
+    {
+      "libelle": "ameli.fr — Assurance Maladie",
+      "url": "https://www.ameli.fr"
+    },
+    {
+      "libelle": "info-retraite.fr — relevé de carrière",
+      "url": "https://www.info-retraite.fr"
+    },
+    {
+      "libelle": "mesdroitssociaux.gouv.fr — simulateur d'aides",
+      "url": "https://www.mesdroitssociaux.gouv.fr"
+    },
+    {
+      "libelle": "ANIL — information sur le logement",
+      "url": "https://www.anil.org"
+    }
+  ],
+  "etapes": [
+    {
+      "id": "quotidien-s1-lecon-brut-net",
+      "ordre": 1,
+      "titre": "Du brut au net",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "On te propose un poste « à 2 500 € ». Le mois suivant, 1 950 € arrivent sur ton compte. Il ne s'est rien passé d'anormal : c'est le fonctionnement normal d'une fiche de paie, et personne ne prend jamais le temps de l'expliquer."
+        },
+        {
+          "type": "definition",
+          "terme": "Salaire brut",
+          "texte": "Le salaire tel qu'il est écrit dans le contrat, avant tout prélèvement. C'est le chiffre dont on parle en entretien d'embauche — et celui qu'on ne touche jamais."
+        },
+        {
+          "type": "definition",
+          "terme": "Cotisations sociales",
+          "texte": "Les sommes retirées du brut pour financer l'assurance maladie, la retraite, le chômage et la famille. Ce n'est pas de l'argent perdu : c'est ce qui te paiera quand tu seras malade, au chômage ou à la retraite."
+        },
+        {
+          "type": "definition",
+          "terme": "Salaire net à payer",
+          "texte": "Ce qui reste après cotisations. C'est le montant versé sur ton compte — une fois le prélèvement à la source retiré, qu'on voit à la leçon suivante."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "2 500 € brut, étage par étage",
+            "legende": "Chaque marche a une raison. Aucune n'est une erreur de calcul.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Salaire brut",
+                "valeur": 2500,
+                "role": "attenue"
+              },
+              {
+                "label": "Net à payer",
+                "valeur": 1950,
+                "role": "principal"
+              },
+              {
+                "label": "Après impôt à la source",
+                "valeur": 1820,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "texte",
+          "texte": "L'ordre de grandeur à retenir : un non-cadre touche environ 78 % de son brut en net, un cadre environ 75 %. Pour convertir de tête, multiplier le brut par 0,78 donne une estimation très correcte."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Brut : le chiffre du contrat, jamais versé",
+            "Net à payer ≈ 78 % du brut",
+            "Les cotisations achètent des droits, elles ne disparaissent pas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s1-exemple-net",
+      "ordre": 2,
+      "titre": "Brut annoncé, net reçu",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Fais glisser le brut et regarde le net suivre. Le taux de cotisations dépend de ton statut : autour de 22 % pour un non-cadre, 25 % pour un cadre — les cadres cotisent davantage pour la retraite complémentaire."
+        }
+      ],
+      "simulateur": {
+        "formule": "salaire_net",
+        "variables": [
+          {
+            "id": "brut",
+            "label": "Salaire brut mensuel",
+            "unite": "€",
+            "min": 1500,
+            "max": 8000,
+            "pas": 50,
+            "valeurParDefaut": 2500
+          },
+          {
+            "id": "cotisations",
+            "label": "Taux de cotisations",
+            "unite": "%",
+            "min": 15,
+            "max": 30,
+            "pas": 0.5,
+            "valeurParDefaut": 22
+          }
+        ],
+        "resultat": {
+          "label": "Net à payer, avant impôt",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "quotidien-s1-lecon-prelevement",
+      "ordre": 3,
+      "titre": "Le prélèvement à la source",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Depuis 2019, l'impôt sur le revenu est retiré directement du salaire. Ça n'a rien changé au montant dû : seulement au moment où on le paie."
+        },
+        {
+          "type": "definition",
+          "terme": "Net imposable",
+          "texte": "La base sur laquelle l'impôt est calculé. Elle est légèrement supérieure au net à payer, car une petite partie des cotisations n'est pas déductible. C'est ce chiffre-là qu'il faut reporter, et il est écrit sur la fiche de paie."
+        },
+        {
+          "type": "definition",
+          "terme": "Taux de prélèvement",
+          "texte": "Le pourcentage appliqué par l'employeur, calculé par l'administration à partir de ta dernière déclaration. Tu peux le faire modifier à tout moment si ta situation change — et tu peux choisir un taux « neutre » pour que ton employeur ne connaisse pas tes autres revenus."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Le piège du premier emploi",
+          "texte": "La première année, le taux est souvent nul ou très faible : l'administration ne connaît pas encore tes revenus. L'impôt n'est pas annulé pour autant, il sera régularisé plus tard. Mettre de côté environ 5 % de son net pendant cette première année évite une très mauvaise surprise."
+        },
+        {
+          "type": "texte",
+          "texte": "À lire absolument sur ta fiche : le net à payer, le net imposable, le taux appliqué, et le cumul depuis janvier. Quatre lignes qui suffisent à vérifier qu'on ne te prélève pas n'importe quoi."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le prélèvement change le moment, pas le montant",
+            "Le net imposable est au-dessus du net versé",
+            "Premier emploi : anticipe la régularisation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s1-exercice-paie",
+      "ordre": 4,
+      "titre": "Décoder une fiche de paie",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre calculs faits sur une vraie fiche de paie, avec des ordres de grandeur réels."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 50,
+        "items": [
+          {
+            "id": "quotidien-s1-ex-1",
+            "type": "nombre",
+            "enonce": "Un salaire brut de 3 000 € avec 22 % de cotisations. Net à payer, avant impôt ?",
+            "reponse": 2340,
+            "tolerance": 40,
+            "unite": "€",
+            "indice": "22 % de 3 000 €, puis retire-les du brut.",
+            "explication": "3 000 − 660 = 2 340 €. C'est le montant versé, avant que le prélèvement à la source ne s'applique."
+          },
+          {
+            "id": "quotidien-s1-ex-2",
+            "type": "nombre",
+            "enonce": "Sur ces 2 340 €, un taux de prélèvement à la source de 5 %. Combien arrive sur le compte ?",
+            "reponse": 2223,
+            "tolerance": 30,
+            "unite": "€",
+            "explication": "2 340 − 117 = 2 223 €. Le taux s'applique en réalité au net imposable, légèrement plus élevé — l'écart reste de quelques euros.",
+            "indice": "5 %, c'est la moitié de 10 %."
+          },
+          {
+            "id": "quotidien-s1-ex-3",
+            "type": "vrai_faux",
+            "enonce": "Les cotisations retirées du brut sont de l'argent définitivement perdu.",
+            "reponse": false,
+            "explication": "Faux : elles financent des droits qui te reviennent — remboursements de soins, indemnités chômage, trimestres de retraite. C'est un salaire différé, pas une taxe."
+          },
+          {
+            "id": "quotidien-s1-ex-4",
+            "type": "vrai_faux",
+            "enonce": "Le taux de prélèvement à la source peut être modifié en cours d'année.",
+            "reponse": true,
+            "explication": "Vrai : en cas de baisse de revenus, de naissance ou de séparation, on peut le faire ajuster sur le site des impôts. Beaucoup de gens paient trop toute l'année faute de le savoir."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s1-quiz",
+      "ordre": 5,
+      "titre": "Quiz · La fiche de paie",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions pour vérifier que la feuille ne te fait plus peur."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s1-quiz-q1",
+            "question": "Le salaire annoncé en entretien est en général…",
+            "choix": [
+              "Le net versé sur le compte",
+              "Le brut, avant cotisations",
+              "Le net imposable"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s1-quiz-q2",
+            "question": "Pour estimer un net à partir d'un brut, on multiplie environ par…",
+            "choix": [
+              "0,5",
+              "0,78",
+              "0,95"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s1-quiz-q3",
+            "question": "Le net imposable est…",
+            "choix": [
+              "Égal au net à payer",
+              "Légèrement supérieur au net à payer",
+              "Égal au brut"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s2-lecon-bail",
+      "ordre": 6,
+      "titre": "Le bail, et ce qu'il engage",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Signer un bail, c'est prendre le plus gros engagement mensuel de sa vie d'adulte. Trois documents décident de tout ce qui suivra, et deux d'entre eux se règlent le jour de l'entrée."
+        },
+        {
+          "type": "definition",
+          "terme": "Bail",
+          "texte": "Le contrat de location. Il fixe le loyer, les charges, la durée (3 ans en location vide, 1 an en meublé) et le préavis. Une clause qui contredit la loi est nulle, même signée : le locataire ne peut pas renoncer à ses protections."
+        },
+        {
+          "type": "definition",
+          "terme": "Dépôt de garantie",
+          "texte": "La somme versée à l'entrée, plafonnée à un mois de loyer hors charges en location vide (deux en meublé). Elle doit être rendue dans le mois suivant le départ si l'état des lieux est conforme, deux mois sinon."
+        },
+        {
+          "type": "definition",
+          "terme": "État des lieux",
+          "texte": "Le constat de l'état du logement à l'entrée et à la sortie. C'est lui, et lui seul, qui décide de ce qui sera retenu sur le dépôt de garantie. Un état des lieux d'entrée bâclé se paie toujours à la sortie."
+        },
+        {
+          "type": "liste",
+          "titre": "À faire avant de signer",
+          "items": [
+            "Photographier chaque pièce, chaque défaut, le jour de l'entrée — daté.",
+            "Vérifier que le montant des charges est détaillé, et s'il s'agit d'un forfait ou d'une provision régularisée.",
+            "Lire le diagnostic de performance énergétique : une passoire thermique coûte des centaines d'euros de chauffage par an.",
+            "Vérifier le préavis de départ : un mois en zone tendue ou en meublé, trois mois sinon."
+          ]
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "L'état des lieux d'entrée protège ton dépôt",
+            "Le dépôt est plafonné et doit être rendu sous un mois",
+            "Une clause illégale reste illégale, même signée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s2-lecon-cout-reel",
+      "ordre": 7,
+      "titre": "Ce qu'un logement coûte vraiment",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le loyer affiché n'est jamais ce qu'on paie. Entre l'annonce et le relevé bancaire, il y a une série de lignes que personne n'additionne avant de signer."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Un « 600 € » qui en coûte 810",
+          "texte": "600 € de loyer, 60 € de charges de copropriété, 90 € d'électricité et de chauffage, 15 € d'assurance habitation, 30 € d'internet, et une taxe d'habitation nulle sur la résidence principale mais une taxe d'ordures ménagères parfois refacturée. Le vrai coût mensuel approche 810 €, soit 35 % de plus que l'annonce."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "repartition",
+            "titre": "Où part l'argent du logement",
+            "legende": "Le loyer domine, mais le reste pèse un tiers de plus que prévu.",
+            "parts": [
+              {
+                "label": "Loyer",
+                "valeur": 600
+              },
+              {
+                "label": "Énergie",
+                "valeur": 90
+              },
+              {
+                "label": "Charges",
+                "valeur": 60
+              },
+              {
+                "label": "Internet",
+                "valeur": 30
+              },
+              {
+                "label": "Assurance",
+                "valeur": 15
+              }
+            ]
+          }
+        },
+        {
+          "type": "texte",
+          "texte": "La règle la plus répandue : le logement complet ne devrait pas dépasser le tiers du revenu net. Ce n'est pas une loi, mais au-delà, la moindre dépense imprévue devient un problème — c'est exactement ce que vérifie une banque avant de prêter."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le loyer affiché n'est jamais le coût réel",
+            "Compte énergie, charges, assurance et internet",
+            "Viser un tiers du revenu net, tout compris"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s2-exemple-reste",
+      "ordre": 8,
+      "titre": "Ce qu'il te reste vraiment",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le chiffre qui décide de tout : ce qui survit au logement et aux charges fixes. Fais monter le loyer de 100 € et regarde ce que ça retire à ta liberté du mois."
+        }
+      ],
+      "simulateur": {
+        "formule": "reste_a_vivre",
+        "variables": [
+          {
+            "id": "revenu",
+            "label": "Revenu net mensuel",
+            "unite": "€",
+            "min": 800,
+            "max": 6000,
+            "pas": 50,
+            "valeurParDefaut": 1900
+          },
+          {
+            "id": "loyer",
+            "label": "Loyer, charges comprises",
+            "unite": "€",
+            "min": 0,
+            "max": 2500,
+            "pas": 50,
+            "valeurParDefaut": 650
+          },
+          {
+            "id": "charges",
+            "label": "Autres charges fixes",
+            "unite": "€",
+            "min": 0,
+            "max": 1500,
+            "pas": 25,
+            "valeurParDefaut": 250
+          }
+        ],
+        "resultat": {
+          "label": "Reste à vivre",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "quotidien-s2-quiz",
+      "ordre": 9,
+      "titre": "Quiz · Se loger",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions avant de signer quoi que ce soit."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s2-quiz-q1",
+            "question": "Le dépôt de garantie d'une location vide est plafonné à…",
+            "choix": [
+              "Un mois de loyer hors charges",
+              "Trois mois de loyer",
+              "Il n'y a pas de plafond"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "quotidien-s2-quiz-q2",
+            "question": "Ce qui décide de ce qui sera retenu sur le dépôt, c'est…",
+            "choix": [
+              "La parole du propriétaire",
+              "La comparaison des états des lieux d'entrée et de sortie",
+              "L'ancienneté du locataire"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s2-quiz-q3",
+            "question": "Le coût réel d'un logement dépasse le loyer affiché d'environ…",
+            "choix": [
+              "Rien du tout",
+              "Un tiers",
+              "Le double"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s3-lecon-obligations",
+      "ordre": 10,
+      "titre": "Ce qui est obligatoire, ce qui ne l'est pas",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "L'assurance est le seul produit qu'on achète en espérant ne jamais s'en servir. D'où la tentation de prendre le moins cher — ou de tout prendre « au cas où ». Les deux coûtent cher."
+        },
+        {
+          "type": "definition",
+          "terme": "Responsabilité civile",
+          "texte": "Elle couvre les dommages que tu causes à autrui. C'est la garantie la plus importante de toutes : un dégât des eaux chez le voisin ou un accident de vélo peuvent représenter des dizaines de milliers d'euros. Elle est souvent incluse dans l'assurance habitation."
+        },
+        {
+          "type": "definition",
+          "terme": "Assurance habitation",
+          "texte": "Obligatoire pour un locataire, et exigée par toute copropriété pour un propriétaire. Sans elle, le bail peut être résilié — et le moindre sinistre reste entièrement à ta charge."
+        },
+        {
+          "type": "definition",
+          "terme": "Assurance auto au tiers",
+          "texte": "Le minimum légal : elle ne couvre que les dommages causés aux autres, jamais ton propre véhicule. Rouler sans assurance est un délit, pas une simple infraction."
+        },
+        {
+          "type": "liste",
+          "titre": "Ce qui n'est jamais obligatoire",
+          "items": [
+            "Les extensions de garantie sur l'électroménager, qui font doublon avec la garantie légale.",
+            "L'assurance sur les moyens de paiement, souvent déjà incluse dans la carte bancaire.",
+            "L'assurance téléphone, dont la franchise dépasse fréquemment la moitié du prix de l'appareil."
+          ]
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "La responsabilité civile passe avant tout",
+            "Habitation obligatoire en location, auto au tiers minimum",
+            "Les extensions vendues en caisse font souvent doublon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s3-lecon-franchise",
+      "ordre": 11,
+      "titre": "Franchise, plafond, exclusions",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une assurance ne se compare pas sur son prix mensuel mais sur trois lignes du contrat, toujours les mêmes, toujours écrites petit."
+        },
+        {
+          "type": "definition",
+          "terme": "Franchise",
+          "texte": "La part qui reste à ta charge à chaque sinistre. Un contrat à 12 € par mois avec 500 € de franchise coûte souvent plus cher, au premier pépin, qu'un contrat à 18 € avec 150 €."
+        },
+        {
+          "type": "definition",
+          "terme": "Plafond de garantie",
+          "texte": "Le maximum que l'assureur versera. Au-delà, c'est pour toi. Un plafond mobilier de 10 000 € pour un logement qui en contient 25 000 laisse un trou de 15 000 €."
+        },
+        {
+          "type": "definition",
+          "terme": "Exclusion",
+          "texte": "Ce que le contrat ne couvre pas, quoi qu'il arrive : vol sans effraction, dégât sur un appareil mal entretenu, sinistre survenu pendant une longue absence. C'est la section qu'il faut lire en premier."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Un sinistre de 1 200 €, deux contrats",
+            "legende": "Le contrat le moins cher coûte 350 € de plus le jour du sinistre.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Remboursé, franchise 150 €",
+                "valeur": 1050,
+                "role": "principal"
+              },
+              {
+                "label": "Remboursé, franchise 500 €",
+                "valeur": 700,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Comparer la franchise autant que la cotisation",
+            "Vérifier le plafond face à la valeur réelle de tes biens",
+            "Lire les exclusions avant de signer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s3-situation-degat",
+      "ordre": 12,
+      "titre": "Le dégât des eaux",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un cas banal, qui tourne mal uniquement quand on réagit mal."
+        }
+      ],
+      "situation": {
+        "contexte": "Tu rentres chez toi : une fuite du ballon d'eau chaude a inondé ton salon et traversé chez le voisin du dessous. Les dégâts sont visibles des deux côtés. Que fais-tu en premier ?",
+        "choix": [
+          {
+            "id": "declarer",
+            "texte": "Couper l'eau, photographier tout, prévenir le voisin, puis déclarer à ton assurance sous cinq jours",
+            "feedback": "L'ordre exact. On arrête d'abord le sinistre, on constitue la preuve tant qu'elle est visible, et on déclare dans le délai contractuel — cinq jours ouvrés en général. Un constat amiable dégât des eaux signé avec le voisin accélère tout le reste.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "reparer",
+            "texte": "Faire réparer tout de suite par un plombier et envoyer la facture à l'assurance ensuite",
+            "feedback": "Compréhensible dans l'urgence, et faire cesser la fuite est indispensable. Mais une remise en état complète avant déclaration prive l'assureur de constater les dégâts : il peut réduire son indemnisation. On sécurise, on photographie, puis on déclare avant les gros travaux.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "attendre",
+            "texte": "Attendre de voir l'ampleur réelle des dégâts avant d'en parler à qui que ce soit",
+            "feedback": "Le pire choix. Passé le délai de déclaration, l'assureur peut refuser la prise en charge. Et l'humidité chez le voisin s'aggrave chaque jour — avec, en face, ta responsabilité civile.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s3-quiz",
+      "ordre": 13,
+      "titre": "Quiz · S'assurer",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions sur le contrat que personne ne lit."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s3-quiz-q1",
+            "question": "La franchise, c'est…",
+            "choix": [
+              "La part qui reste à ta charge à chaque sinistre",
+              "Le maximum remboursé par l'assureur",
+              "La cotisation mensuelle"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "quotidien-s3-quiz-q2",
+            "question": "Pour un locataire, l'assurance habitation est…",
+            "choix": [
+              "Facultative",
+              "Obligatoire",
+              "Obligatoire seulement en meublé"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s3-quiz-q3",
+            "question": "Une assurance auto « au tiers » couvre…",
+            "choix": [
+              "Ton véhicule uniquement",
+              "Les dommages causés aux autres uniquement",
+              "Tout, sans franchise"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s4-lecon-signatures",
+      "ordre": 14,
+      "titre": "Les six signatures d'une arnaque",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Les arnaques du quotidien ne visent pas les naïfs : elles visent les gens pressés. Toutes utilisent les mêmes leviers, et savoir les nommer suffit à s'en protéger."
+        },
+        {
+          "type": "liste",
+          "titre": "Ce qui doit déclencher l'alerte",
+          "items": [
+            "L'urgence : « sous 24 h », « votre compte va être bloqué », « dernier rappel ».",
+            "La peur : une amende, un colis perdu, un piratage, une dette inconnue.",
+            "Un lien ou un numéro fourni dans le message lui-même, jamais celui que tu connais.",
+            "Une demande de code reçu par SMS — aucun organisme légitime ne le demandera jamais.",
+            "Un moyen de paiement inhabituel : virement immédiat, carte cadeau, crypto.",
+            "Une adresse qui ressemble sans être exacte : impots-gouv.net au lieu de impots.gouv.fr."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "La parade tient en une phrase : on ne clique jamais sur le lien reçu, on raccroche et on rappelle soi-même le numéro officiel, celui qui est au dos de sa carte ou sur le site qu'on connaît."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Urgence + peur = arnaque, presque toujours",
+            "Aucun code SMS ne se communique, jamais",
+            "Rappelle toujours toi-même, sur le numéro officiel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s4-lecon-faux-conseiller",
+      "ordre": 15,
+      "titre": "Le faux conseiller bancaire",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "C'est l'arnaque la plus coûteuse du pays, et la plus difficile à déjouer : quelqu'un appelle, connaît ton nom, ta banque, parfois tes dernières opérations, et le numéro affiché est bien celui de ton agence."
+        },
+        {
+          "type": "definition",
+          "terme": "Hameçonnage",
+          "texte": "L'envoi massif de messages imitant un organisme connu pour récupérer identifiants, codes ou coordonnées bancaires. Les données ainsi volées servent souvent à rendre crédible un appel téléphonique, des semaines plus tard."
+        },
+        {
+          "type": "definition",
+          "terme": "Usurpation de numéro",
+          "texte": "Une technique qui permet d'afficher n'importe quel numéro sur l'écran de la personne appelée, y compris celui de sa propre banque. Un numéro affiché ne prouve donc absolument rien."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Le déroulé, toujours le même",
+            "legende": "Le seul moment où l'on peut encore agir est la troisième case.",
+            "etapes": [
+              {
+                "label": "Un appel alarmant",
+                "detail": "« des paiements frauduleux sur votre compte »"
+              },
+              {
+                "label": "Mise en confiance",
+                "detail": "il connaît ton nom, ta banque, tes opérations"
+              },
+              {
+                "label": "La demande décisive",
+                "detail": "valider une notification, donner un code"
+              },
+              {
+                "label": "Le virement part",
+                "detail": "autorisé par toi — donc difficile à contester"
+              }
+            ]
+          }
+        },
+        {
+          "type": "texte",
+          "texte": "La règle absolue : un conseiller ne demande jamais de valider quoi que ce soit pendant un appel. Face au moindre doute, on raccroche et on rappelle le numéro au dos de sa carte. Un vrai conseiller ne s'en formalisera jamais."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le numéro affiché peut être usurpé",
+            "Un conseiller ne fait jamais valider une opération au téléphone",
+            "Raccrocher n'est jamais impoli : c'est la bonne réaction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s4-situation-sms",
+      "ordre": 16,
+      "titre": "Le SMS du colis",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Celui que tout le monde a déjà reçu."
+        }
+      ],
+      "situation": {
+        "contexte": "Tu reçois un SMS : « Votre colis n'a pas pu être livré, des frais de douane de 1,95 € restent dus. Régularisez sous 48 h : [lien] ». Tu attends effectivement un colis. Que fais-tu ?",
+        "choix": [
+          {
+            "id": "ignorer",
+            "texte": "Supprimer le SMS et suivre le colis directement depuis l'application ou le site du transporteur",
+            "feedback": "Exactement. Le montant dérisoire est là pour désarmer la méfiance : l'objectif n'est pas 1,95 €, c'est ton numéro de carte, qui servira ensuite à des paiements bien plus gros. Un vrai suivi de colis se consulte toujours depuis la source, jamais depuis un lien reçu.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "verifier",
+            "texte": "Ouvrir le lien pour voir à quoi ça ressemble, sans rien saisir",
+            "feedback": "Risqué sans être catastrophique : la page seule vole rarement quelque chose. Mais ces sites imitent parfaitement les vrais, et la tentation de « juste vérifier » en saisissant son numéro de suivi est précisément le piège. Mieux vaut ne pas ouvrir.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "payer",
+            "texte": "Payer les 1,95 € pour débloquer la livraison, c'est un tout petit montant",
+            "feedback": "C'est le scénario prévu. La carte saisie est immédiatement enregistrée, et les débits arrivent parfois des semaines plus tard, pour des centaines d'euros. Le faible montant n'est pas une preuve d'honnêteté : c'est l'appât.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s4-quiz",
+      "ordre": 17,
+      "titre": "Quiz · Repérer les arnaques",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions qui peuvent valoir très cher."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s4-quiz-q1",
+            "question": "Le numéro affiché lors d'un appel prouve…",
+            "choix": [
+              "L'identité de l'appelant",
+              "Rien du tout : il peut être usurpé",
+              "Que l'appel vient de France"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s4-quiz-q2",
+            "question": "Un vrai conseiller bancaire peut-il te demander un code reçu par SMS ?",
+            "choix": [
+              "Oui, pour vérifier ton identité",
+              "Jamais, en aucune circonstance",
+              "Seulement s'il connaît ton nom"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s4-quiz-q3",
+            "question": "Face à un message alarmant, le bon réflexe est…",
+            "choix": [
+              "Cliquer vite pour régulariser",
+              "Rappeler soi-même le numéro officiel",
+              "Répondre au message pour vérifier"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s5-lecon-garanties",
+      "ordre": 18,
+      "titre": "Garantie légale et rétractation",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Deux droits protègent tout achat en France, ils sont gratuits, automatiques, et la plupart des gens les ignorent — ce qui permet de leur vendre des « extensions » qui font doublon."
+        },
+        {
+          "type": "definition",
+          "terme": "Garantie légale de conformité",
+          "texte": "Deux ans après l'achat d'un produit neuf, le vendeur doit le réparer ou le remplacer s'il tombe en panne sans faute de ta part. C'est au vendeur de prouver que le défaut n'existait pas — pas à toi de prouver l'inverse."
+        },
+        {
+          "type": "definition",
+          "terme": "Droit de rétractation",
+          "texte": "Quatorze jours pour changer d'avis sur un achat à distance, sans avoir à se justifier. Il ne s'applique pas en magasin : là, un « satisfait ou remboursé » est un geste commercial, pas un droit."
+        },
+        {
+          "type": "definition",
+          "terme": "Garantie commerciale",
+          "texte": "L'extension payante proposée en caisse. Elle ne remplace jamais la garantie légale, elle s'y ajoute — et pendant les deux premières années, elle fait souvent doublon avec un droit que tu as déjà."
+        },
+        {
+          "type": "texte",
+          "texte": "Le réflexe utile : avant d'accepter une extension de garantie, demander ce qu'elle couvre en plus des deux ans légaux. La réponse est souvent embarrassée."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Deux ans de garantie légale, gratuits et automatiques",
+            "Quatorze jours de rétractation, à distance uniquement",
+            "L'extension payante fait souvent doublon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s5-lecon-abonnements",
+      "ordre": 19,
+      "titre": "Les abonnements qui dorment",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un abonnement est conçu pour être oublié. Neuf euros par mois ne déclenchent aucune alerte mentale — et c'est exactement le but."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Le calcul que personne ne fait",
+          "texte": "Deux plateformes vidéo, une musique, une salle de sport dont on ne va plus, un stockage en ligne : 11 + 10 + 30 + 3 = 54 € par mois, soit 648 € par an. C'est un budget de vacances, prélevé sans qu'aucune décision n'ait jamais été prise."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Ce qu'un abonnement coûte sur un an",
+            "legende": "Le prix mensuel est conçu pour paraître petit. L'annuel est la vraie question.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "5 €/mois",
+                "valeur": 60,
+                "role": "attenue"
+              },
+              {
+                "label": "10 €/mois",
+                "valeur": 120,
+                "role": "principal"
+              },
+              {
+                "label": "30 €/mois",
+                "valeur": 360,
+                "role": "principal"
+              },
+              {
+                "label": "Les quatre cumulés",
+                "valeur": 648,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "texte",
+          "texte": "Le geste à faire une fois par an : ouvrir la liste des prélèvements récurrents de son compte, et se demander pour chacun « est-ce que je le reprendrais aujourd'hui, au prix affiché ? ». Tout ce qui obtient un non se résilie dans la minute."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Raisonne toujours en coût annuel",
+            "Passe en revue tes prélèvements une fois par an",
+            "La bonne question : est-ce que je le reprendrais aujourd'hui ?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s5-exercice-prix",
+      "ordre": 20,
+      "titre": "Le vrai prix",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre calculs pour voir ce qui se cache derrière un prix affiché."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 50,
+        "items": [
+          {
+            "id": "quotidien-s5-ex-1",
+            "type": "nombre",
+            "enonce": "Un abonnement à 12,99 € par mois. Combien sur un an ?",
+            "reponse": 156,
+            "tolerance": 3,
+            "unite": "€",
+            "explication": "155,88 €, arrondi à 156 €. C'est le chiffre à comparer au service rendu — pas les 12,99 €.",
+            "indice": "Arrondis à 13 € : 13 × 12."
+          },
+          {
+            "id": "quotidien-s5-ex-2",
+            "type": "nombre",
+            "enonce": "Un téléphone à 900 € payé « 4 × 240 € sans frais ». Combien paies-tu en tout ?",
+            "reponse": 960,
+            "tolerance": 5,
+            "unite": "€",
+            "indice": "4 × 240.",
+            "explication": "960 €, soit 60 € de plus que le prix comptant. « Sans frais » ne veut pas dire « sans surcoût » : vérifie toujours le total."
+          },
+          {
+            "id": "quotidien-s5-ex-3",
+            "type": "vrai_faux",
+            "enonce": "Le droit de rétractation de 14 jours s'applique aux achats en magasin.",
+            "reponse": false,
+            "explication": "Faux : il ne concerne que les achats à distance. En magasin, un retour est une politique commerciale du vendeur, pas un droit."
+          },
+          {
+            "id": "quotidien-s5-ex-4",
+            "type": "vrai_faux",
+            "enonce": "Une panne 18 mois après l'achat d'un appareil neuf est couverte gratuitement.",
+            "reponse": true,
+            "explication": "Vrai, par la garantie légale de conformité : deux ans, et c'est au vendeur de prouver que le défaut n'était pas là au départ."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s5-quiz",
+      "ordre": 21,
+      "titre": "Quiz · Consommer",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions qui rapportent, littéralement."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s5-quiz-q1",
+            "question": "La garantie légale de conformité dure…",
+            "choix": [
+              "6 mois",
+              "2 ans",
+              "5 ans"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s5-quiz-q2",
+            "question": "Le droit de rétractation de 14 jours concerne…",
+            "choix": [
+              "Tous les achats",
+              "Les achats à distance",
+              "Les achats en magasin"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s5-quiz-q3",
+            "question": "Un abonnement à 15 € par mois représente sur l'année…",
+            "choix": [
+              "90 €",
+              "180 €",
+              "360 €"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s6-lecon-voiture",
+      "ordre": 22,
+      "titre": "Le coût réel d'une voiture",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une voiture ne coûte pas son prix d'achat : elle coûte son prix d'achat, moins ce qu'on en retire à la revente, plus tout ce qu'on paie entre les deux. C'est cette somme-là qu'il faut comparer entre deux options."
+        },
+        {
+          "type": "definition",
+          "terme": "Coût total de possession",
+          "texte": "Achat, carburant, assurance, entretien, pneus, contrôle technique, stationnement, et surtout décote — la valeur perdue chaque année. Une voiture neuve perd souvent 20 % dès la première année."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "repartition",
+            "titre": "Une citadine, sur un an (ordres de grandeur)",
+            "legende": "La ligne la plus chère est invisible : c'est la valeur qui s'évapore.",
+            "parts": [
+              {
+                "label": "Décote",
+                "valeur": 1500
+              },
+              {
+                "label": "Carburant",
+                "valeur": 1200
+              },
+              {
+                "label": "Assurance",
+                "valeur": 700
+              },
+              {
+                "label": "Entretien",
+                "valeur": 500
+              }
+            ]
+          }
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Neuf, occasion, LOA",
+          "texte": "Le neuf offre la garantie et la tranquillité, au prix d'une décote brutale les trois premières années. L'occasion de 3 à 5 ans laisse la décote au premier propriétaire, mais demande une réserve pour les réparations. La location longue durée (LOA) lisse tout en mensualités — sans jamais rien posséder, et avec des frais de remise en état à la restitution qui surprennent souvent."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Compare le coût total, jamais le prix affiché",
+            "La décote est la dépense la plus grosse et la moins visible",
+            "En LOA, on paie l'usage : on ne possède rien au bout"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s6-exemple-credit-auto",
+      "ordre": 23,
+      "titre": "Ce que coûte un crédit auto",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "12 000 € empruntés pour une voiture. Fais varier la durée : la mensualité baisse, mais regarde la facture d'intérêts grimper pendant qu'à côté, la voiture, elle, perd de la valeur."
+        }
+      ],
+      "simulateur": {
+        "formule": "cout_total_credit",
+        "variables": [
+          {
+            "id": "montant",
+            "label": "Montant emprunté",
+            "unite": "€",
+            "min": 2000,
+            "max": 40000,
+            "pas": 500,
+            "valeurParDefaut": 12000
+          },
+          {
+            "id": "taux",
+            "label": "TAEG",
+            "unite": "%",
+            "min": 0,
+            "max": 15,
+            "pas": 0.25,
+            "valeurParDefaut": 5.5
+          },
+          {
+            "id": "duree",
+            "label": "Durée",
+            "unite": "mois",
+            "min": 12,
+            "max": 96,
+            "pas": 6,
+            "valeurParDefaut": 48
+          }
+        ],
+        "resultat": {
+          "label": "Intérêts payés en tout",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "quotidien-s6-situation-voiture",
+      "ordre": 24,
+      "titre": "La voiture de Yanis",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le premier vrai arbitrage d'un jeune actif."
+        }
+      ],
+      "situation": {
+        "contexte": "Yanis, 24 ans, gagne 1 800 € nets et doit s'acheter une voiture pour son nouveau travail. Il a 3 000 € d'épargne. Trois options : une occasion de 5 ans à 7 000 €, une neuve en LOA à 249 € par mois sur 4 ans, ou une neuve à crédit à 18 000 €. Que lui conseilles-tu ?",
+        "choix": [
+          {
+            "id": "occasion",
+            "texte": "L'occasion à 7 000 € : 3 000 € d'apport et un petit crédit, en gardant une réserve pour l'entretien",
+            "feedback": "Le choix le plus solide à ce niveau de revenu. La grosse décote a déjà été payée par le premier propriétaire, l'engagement mensuel reste faible, et Yanis possède un bien qu'il peut revendre à tout moment. Il faut simplement prévoir 500 à 800 € de réserve pour les réparations.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "loa",
+            "texte": "La LOA à 249 € : mensualité connue, voiture neuve, aucune mauvaise surprise mécanique",
+            "feedback": "Défendable si les kilomètres annuels sont bien estimés et la tranquillité importante. Mais 249 € pendant 48 mois, c'est près de 12 000 € pour ne rien posséder au bout — et les frais de restitution (kilométrage dépassé, rayures) surprennent régulièrement.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "neuve",
+            "texte": "La neuve à 18 000 € à crédit : c'est un investissement qui dure",
+            "feedback": "Une voiture n'est jamais un investissement : c'est un bien qui perd de la valeur dès la sortie du garage, environ 20 % la première année. À 1 800 € nets, un crédit de 18 000 € pèserait près d'un quart du revenu, sur un bien qui vaudra 11 000 € dans trois ans.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s6-quiz",
+      "ordre": 25,
+      "titre": "Quiz · Se déplacer",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions avant de signer chez le concessionnaire."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s6-quiz-q1",
+            "question": "La dépense la plus importante d'une voiture neuve est en général…",
+            "choix": [
+              "Le carburant",
+              "La décote",
+              "L'assurance"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s6-quiz-q2",
+            "question": "À la fin d'une LOA sans option d'achat, tu possèdes…",
+            "choix": [
+              "La voiture",
+              "Rien : elle est restituée",
+              "La moitié de sa valeur"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s6-quiz-q3",
+            "question": "Une voiture neuve perd environ, la première année…",
+            "choix": [
+              "2 % de sa valeur",
+              "20 % de sa valeur",
+              "Rien, si elle est bien entretenue"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s7-lecon-qui-paie",
+      "ordre": 26,
+      "titre": "Qui paie quoi",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une consultation à 30 € ne te coûte pas 30 €, ni zéro. Trois acteurs se partagent la facture, et savoir lequel paie quoi évite de payer deux fois la même chose."
+        },
+        {
+          "type": "definition",
+          "terme": "Assurance maladie (Sécu)",
+          "texte": "Elle rembourse une part fixée par type de soin : 70 % d'une consultation, 65 % de la plupart des médicaments, 80 % d'une hospitalisation. Ce pourcentage s'applique à un tarif de référence, pas au prix réellement payé."
+        },
+        {
+          "type": "definition",
+          "terme": "Ticket modérateur",
+          "texte": "La part qui reste après le remboursement de la Sécu. C'est exactement ce que vient couvrir une complémentaire santé."
+        },
+        {
+          "type": "definition",
+          "terme": "Reste à charge",
+          "texte": "Ce qui te reste vraiment à payer, tout compris : ticket modérateur non couvert, participation forfaitaire de 2 € par consultation, et surtout dépassements d'honoraires, que la Sécu ne rembourse jamais."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Une consultation à 30 €",
+            "legende": "La participation forfaitaire de 2 € reste toujours à ta charge, quelle que soit la mutuelle.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Remboursé par la Sécu",
+                "valeur": 21,
+                "role": "principal"
+              },
+              {
+                "label": "Remboursé par la mutuelle",
+                "valeur": 7,
+                "role": "principal"
+              },
+              {
+                "label": "Reste à ta charge",
+                "valeur": 2,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "La Sécu rembourse un pourcentage d'un tarif de référence",
+            "La mutuelle couvre le ticket modérateur",
+            "Les dépassements d'honoraires ne sont jamais remboursés par la Sécu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s7-lecon-mutuelle",
+      "ordre": 27,
+      "titre": "Choisir une complémentaire",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Les mutuelles se comparent mal parce qu'elles affichent des pourcentages qui ne parlent à personne : « 200 % BR », « 300 % BR ». Ce n'est pourtant pas compliqué."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Ce que veut dire « 200 % BR »",
+          "texte": "BR signifie « base de remboursement », le tarif de référence de la Sécu — 25 € pour un généraliste. Une garantie à 200 % couvre jusqu'à 50 €, Sécu comprise. Si ton médecin facture 30 €, tu es couvert ; s'il facture 60 €, il reste 10 € à ta charge."
+        },
+        {
+          "type": "liste",
+          "titre": "Ce qu'il faut regarder, dans cet ordre",
+          "items": [
+            "Tes propres dépenses de l'an dernier : lunettes, dentiste, spécialistes. C'est le seul point de départ honnête.",
+            "Les postes où tu dépenses vraiment : inutile de payer pour de l'optique renforcée si tu n'as pas de lunettes.",
+            "Les délais de carence : certaines garanties ne s'activent qu'après plusieurs mois.",
+            "Si ton employeur en propose une : elle est obligatoire, financée pour moitié au minimum, et presque toujours plus avantageuse."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Le piège classique est de surassurer : payer 60 € par mois pour des garanties qu'on n'utilisera jamais coûte plus cher, sur une année, que le reste à charge qu'on redoutait."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "« % BR » se lit à partir du tarif de la Sécu",
+            "Pars de tes dépenses réelles, pas des brochures",
+            "La mutuelle d'entreprise est financée pour moitié au moins"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s7-quiz",
+      "ordre": 28,
+      "titre": "Quiz · Se soigner",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions sur les remboursements."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s7-quiz-q1",
+            "question": "La Sécu rembourse une consultation de généraliste à hauteur de…",
+            "choix": [
+              "30 %",
+              "70 %",
+              "100 %"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s7-quiz-q2",
+            "question": "Le ticket modérateur, c'est…",
+            "choix": [
+              "La part qui reste après le remboursement de la Sécu",
+              "Le prix de la mutuelle",
+              "Une taxe sur les médicaments"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "quotidien-s7-quiz-q3",
+            "question": "Les dépassements d'honoraires sont remboursés…",
+            "choix": [
+              "Par la Sécu",
+              "Jamais par la Sécu, parfois par la mutuelle",
+              "Toujours intégralement"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s8-lecon-fonctionnement",
+      "ordre": 29,
+      "titre": "Comment marche la retraite",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "À 25 ans, la retraite paraît absurde à regarder. C'est pourtant le seul sujet financier où le temps fait tout le travail — et où l'attendre coûte le plus cher."
+        },
+        {
+          "type": "definition",
+          "terme": "Répartition",
+          "texte": "Le système français : les cotisations des actifs d'aujourd'hui paient les pensions des retraités d'aujourd'hui. Tu ne mets pas d'argent de côté pour toi — tu acquiers des droits."
+        },
+        {
+          "type": "definition",
+          "terme": "Trimestre",
+          "texte": "L'unité du régime de base. Il ne s'obtient pas avec du temps mais avec un revenu : environ 150 fois le SMIC horaire suffit à valider un trimestre, et on ne peut jamais en valider plus de quatre par an. Un petit boulot d'été bien payé peut donc valider un trimestre entier."
+        },
+        {
+          "type": "definition",
+          "terme": "Points",
+          "texte": "L'unité de la retraite complémentaire (Agirc-Arrco pour les salariés du privé). Les cotisations achètent des points, convertis en euros au moment du départ."
+        },
+        {
+          "type": "texte",
+          "texte": "Le réflexe utile dès maintenant : créer son compte sur info-retraite.fr et vérifier une fois par an que tous les employeurs et toutes les périodes y figurent. Les erreurs sont fréquentes, et beaucoup plus faciles à corriger à 25 ans qu'à 60."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "La France fonctionne par répartition, pas par capitalisation",
+            "Un trimestre s'obtient par un revenu, pas par une durée",
+            "Vérifie ton relevé de carrière une fois par an"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s8-lecon-commencer-tot",
+      "ordre": 30,
+      "titre": "Pourquoi commencer tôt change tout",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La retraite par répartition assure un socle, rarement le niveau de vie qu'on avait. Compléter soi-même est donc un choix raisonnable — et le moment où l'on commence pèse bien plus lourd que le montant."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "courbes",
+            "titre": "100 € par mois, à 5 % par an",
+            "legende": "Quinze ans de retard ne coûtent pas 18 000 € : ils coûtent plus du double.",
+            "axeX": [
+              "25 ans",
+              "35 ans",
+              "45 ans",
+              "55 ans",
+              "65 ans"
+            ],
+            "unite": "€",
+            "series": [
+              {
+                "label": "En commençant à 25 ans",
+                "role": "principal",
+                "points": [
+                  0,
+                  15528,
+                  41103,
+                  83226,
+                  152602
+                ]
+              },
+              {
+                "label": "En commençant à 40 ans",
+                "role": "secondaire",
+                "points": [
+                  0,
+                  0,
+                  6829,
+                  26073,
+                  57779
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Le calcul exact",
+          "texte": "100 € par mois de 25 à 65 ans, à 5 % l'an, donnent environ 152 000 €. Les mêmes 100 € commencés à 40 ans donnent environ 58 000 €. Quinze ans de versements en moins, c'est 18 000 € de versements économisés — mais 94 000 € de capital en moins à l'arrivée. Tout l'écart vient des intérêts qui n'ont pas eu le temps de travailler."
+        },
+        {
+          "type": "texte",
+          "texte": "Cela ne veut pas dire qu'il faut bloquer son argent à 25 ans. L'épargne de précaution passe avant, et un PEA ouvert tôt remplit souvent mieux ce rôle qu'un produit retraite bloqué jusqu'à 64 ans."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le socle public ne remplace pas le niveau de vie",
+            "Commencer tôt pèse plus lourd que verser gros",
+            "Précaution d'abord, blocage long ensuite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s8-exemple-retraite",
+      "ordre": 31,
+      "titre": "Ce que donnerait un petit versement",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Choisis un versement mensuel que tu pourrais réellement tenir, puis fais varier la durée. C'est elle, pas le montant, qui fait la différence."
+        }
+      ],
+      "simulateur": {
+        "formule": "epargne_programmee",
+        "variables": [
+          {
+            "id": "versement",
+            "label": "Versement mensuel",
+            "unite": "€",
+            "min": 25,
+            "max": 600,
+            "pas": 25,
+            "valeurParDefaut": 100
+          },
+          {
+            "id": "taux",
+            "label": "Rendement annuel moyen",
+            "unite": "%",
+            "min": 0,
+            "max": 8,
+            "pas": 0.5,
+            "valeurParDefaut": 5
+          },
+          {
+            "id": "duree",
+            "label": "Pendant combien d'années",
+            "unite": "ans",
+            "min": 5,
+            "max": 45,
+            "pas": 1,
+            "valeurParDefaut": 40
+          }
+        ],
+        "resultat": {
+          "label": "Capital à l'arrivée",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "quotidien-s8-quiz",
+      "ordre": 32,
+      "titre": "Quiz · La retraite",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions sur le sujet qu'on repousse toujours."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s8-quiz-q1",
+            "question": "Le système français de retraite fonctionne par…",
+            "choix": [
+              "Capitalisation : chacun épargne pour soi",
+              "Répartition : les actifs paient les retraités",
+              "Tirage au sort"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s8-quiz-q2",
+            "question": "Un trimestre de retraite s'obtient…",
+            "choix": [
+              "En travaillant trois mois",
+              "En atteignant un certain revenu dans l'année",
+              "En cotisant volontairement"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s8-quiz-q3",
+            "question": "Commencer à épargner 15 ans plus tard réduit le capital final d'environ…",
+            "choix": [
+              "15 %",
+              "Un tiers",
+              "Plus de la moitié"
+            ],
+            "bonneReponseIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s9-lecon-budget-irregulier",
+      "ordre": 33,
+      "titre": "Budgéter sans salaire fixe",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Tout ce qu'on a vu jusqu'ici suppose un montant identique qui tombe le même jour chaque mois. Pour un intérimaire, un saisonnier, un indépendant, un étudiant qui cumule des contrats ou quelqu'un au chômage partiel, ce montant n'existe pas — et les méthodes habituelles s'effondrent."
+        },
+        {
+          "type": "definition",
+          "terme": "Revenu plancher",
+          "texte": "Le plus bas mois des douze derniers. C'est sur lui, et non sur la moyenne, qu'un budget à revenus irréguliers doit être construit : un budget calé sur la moyenne est en déficit la moitié de l'année."
+        },
+        {
+          "type": "definition",
+          "terme": "Compte de lissage",
+          "texte": "Un second compte, séparé du compte courant, où l'on verse tout ce qui dépasse le revenu plancher les bons mois. Les mois creux, on se verse à soi-même la différence. C'est ce qui transforme des revenus irréguliers en salaire régulier."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "courbes",
+            "titre": "Douze mois de revenus, et le budget qui tient",
+            "legende": "Le budget se cale sur le plancher. Le surplus des bons mois finance les creux.",
+            "axeX": [
+              "Janv.",
+              "Avril",
+              "Juil.",
+              "Oct.",
+              "Déc."
+            ],
+            "unite": "€",
+            "series": [
+              {
+                "label": "Revenus réels",
+                "role": "secondaire",
+                "points": [
+                  1400,
+                  2300,
+                  900,
+                  2600,
+                  1800
+                ]
+              },
+              {
+                "label": "Budget lissé",
+                "role": "principal",
+                "points": [
+                  1400,
+                  1400,
+                  1400,
+                  1400,
+                  1400
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "texte",
+          "texte": "Conséquence directe : l'épargne de précaution n'est pas un objectif lointain, c'est l'outil de travail. Là où trois mois de dépenses suffisent à un salarié en CDI, six mois sont un minimum quand les revenus sautent — parce que le creux n'est pas un imprévu, c'est une certitude."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Budgète sur ton plus bas mois, jamais sur la moyenne",
+            "Un compte de lissage transforme l'irrégulier en régulier",
+            "Six mois de précaution, pas trois"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s9-lecon-independant",
+      "ordre": 34,
+      "titre": "Indépendant : la part qui n'est pas à toi",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "C'est l'erreur qui coûte le plus cher aux micro-entrepreneurs, et elle se commet dès le premier encaissement : confondre ce qui arrive sur le compte avec ce qu'on a gagné."
+        },
+        {
+          "type": "definition",
+          "terme": "Cotisations sociales",
+          "texte": "Prélevées sur le chiffre d'affaires encaissé, pas sur le bénéfice. Le taux dépend de l'activité — autour de 22 % pour une prestation de services, nettement moins pour de la vente de marchandises. Vérifie le tien : ces taux sont révisés régulièrement."
+        },
+        {
+          "type": "definition",
+          "terme": "Impôt sur le revenu",
+          "texte": "Il s'ajoute aux cotisations. Soit au barème après un abattement forfaitaire, soit par versement libératoire si tu l'as choisi — un petit pourcentage prélevé en même temps que les cotisations. Dans les deux cas, ce n'est jamais compris dans ce que tu as encaissé."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "repartition",
+            "titre": "Sur 1 000 € encaissés en prestation de services",
+            "legende": "Ordres de grandeur : les taux exacts dépendent de ton activité et de tes options.",
+            "parts": [
+              {
+                "label": "Ce qui te reste",
+                "valeur": 66
+              },
+              {
+                "label": "Cotisations sociales",
+                "valeur": 22
+              },
+              {
+                "label": "Impôt",
+                "valeur": 8
+              },
+              {
+                "label": "Réserve pro",
+                "valeur": 4
+              }
+            ]
+          }
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "La règle du tiers",
+          "texte": "À chaque encaissement, vire immédiatement un tiers sur un compte séparé, et ne le touche plus. Cotisations, impôt et réserve sortiront de là. Ce qui reste sur le compte courant est vraiment à toi. C'est grossier, c'est légèrement excédentaire — et c'est précisément ce qui évite l'appel de cotisations qu'on ne peut pas payer."
+        },
+        {
+          "type": "texte",
+          "texte": "Deux points qu'on découvre trop tard : la TVA devient obligatoire au-delà d'un seuil de chiffre d'affaires (ce seuil a beaucoup bougé ces dernières années, vérifie celui en vigueur), et un chiffre d'affaires faible valide peu de trimestres de retraite — il faut un revenu minimum pour en valider ne serait-ce qu'un."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le chiffre d'affaires encaissé n'est pas un salaire",
+            "Mets un tiers de côté dès l'encaissement, sur un compte séparé",
+            "Un petit chiffre d'affaires valide peu de trimestres"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s9-exercice-independant",
+      "ordre": 35,
+      "titre": "Ce que tu peux vraiment dépenser",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre calculs, ceux qu'il faut refaire à chaque facture encaissée."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 50,
+        "items": [
+          {
+            "id": "quotidien-s9-ex-1",
+            "type": "nombre",
+            "enonce": "Tu encaisses 2 000 € de prestations. Avec 22 % de cotisations, combien pars-tu devoir à l'Urssaf ?",
+            "reponse": 440,
+            "tolerance": 10,
+            "unite": "€",
+            "indice": "2 000 × 22 %.",
+            "explication": "440 €. Ils ne sont jamais à toi, même s'ils sont sur ton compte pendant trois mois."
+          },
+          {
+            "id": "quotidien-s9-ex-2",
+            "type": "nombre",
+            "enonce": "Sur ces mêmes 2 000 €, en appliquant la règle du tiers, combien mets-tu de côté ?",
+            "reponse": 667,
+            "tolerance": 20,
+            "unite": "€",
+            "explication": "Environ 667 €. Cela couvre les 440 € de cotisations, l'impôt à venir, et laisse une petite réserve. Le reste, 1 333 €, est ton vrai revenu du mois."
+          },
+          {
+            "id": "quotidien-s9-ex-3",
+            "type": "nombre",
+            "enonce": "Tes douze derniers mois vont de 900 à 2 600 €. Sur quel montant construis-tu ton budget mensuel ?",
+            "reponse": 900,
+            "tolerance": 10,
+            "unite": "€",
+            "indice": "Pas la moyenne.",
+            "explication": "900 €, le mois le plus bas. Un budget calé sur la moyenne (autour de 1 750 €) serait en déficit tous les mois creux — c'est-à-dire la moitié de l'année."
+          },
+          {
+            "id": "quotidien-s9-ex-4",
+            "type": "vrai_faux",
+            "enonce": "Les cotisations d'un micro-entrepreneur se calculent sur son bénéfice.",
+            "reponse": false,
+            "explication": "Faux : elles se calculent sur le chiffre d'affaires encaissé. Même une activité qui ne dégage aucun bénéfice après charges doit ses cotisations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s9-situation-mois-creux",
+      "ordre": 36,
+      "titre": "Le mois à 900 €",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un mois creux, et trois façons de le traverser."
+        }
+      ],
+      "situation": {
+        "contexte": "Sarah est graphiste indépendante. Ses six derniers mois ont oscillé entre 900 et 2 600 €. Ce mois-ci, elle encaisse 900 €, alors que ses charges fixes s'élèvent à 1 200 €. Elle a 2 800 € sur son compte de lissage et 1 500 € qui attendent le paiement des cotisations. Que fait-elle ?",
+        "choix": [
+          {
+            "id": "lissage",
+            "texte": "Se verser 300 € depuis le compte de lissage, sans toucher à la réserve de cotisations",
+            "feedback": "Exactement l'usage prévu. Le compte de lissage existe pour ça : les bons mois financent les creux. La réserve de cotisations, elle, n'est pas à elle — la toucher revient à emprunter à l'Urssaf, avec majorations à la clé.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "reduire",
+            "texte": "Réduire ses dépenses du mois de 300 € pour ne rien prélever",
+            "feedback": "Discipliné, et ça préserve les réserves. Mais des charges fixes sont fixes : on ne coupe pas un loyer. Si c'est du variable qui saute, très bien ; sinon, le lissage reste fait pour ça.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "cotisations",
+            "texte": "Utiliser une partie des 1 500 € réservés aux cotisations, elle les remboursera le mois prochain",
+            "feedback": "C'est le début de l'engrenage le plus courant chez les indépendants. L'appel de cotisations tombe à date fixe, quel que soit le chiffre d'affaires du trimestre, et les majorations de retard s'ajoutent. Cet argent n'a jamais été le sien.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s9-quiz",
+      "ordre": 37,
+      "titre": "Quiz · Revenus irréguliers",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions pour ceux dont la paie ne tombe pas le 30."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s9-quiz-q1",
+            "question": "Un budget à revenus irréguliers se construit sur…",
+            "choix": [
+              "La moyenne des douze derniers mois",
+              "Le mois le plus bas des douze derniers",
+              "Le meilleur mois"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s9-quiz-q2",
+            "question": "Les cotisations d'un micro-entrepreneur portent sur…",
+            "choix": [
+              "Le bénéfice",
+              "Le chiffre d'affaires encaissé",
+              "Le chiffre d'affaires facturé"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s9-quiz-q3",
+            "question": "Avec des revenus irréguliers, l'épargne de précaution devrait couvrir…",
+            "choix": [
+              "Un mois de dépenses",
+              "Trois mois, comme pour tout le monde",
+              "Au moins six mois"
+            ],
+            "bonneReponseIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s10-lecon-comptes",
+      "ordre": 38,
+      "titre": "Compte joint, comptes séparés, ou les deux",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "C'est l'une des premières décisions financières d'un couple, elle se prend souvent sans y réfléchir, et elle structure tout le reste — y compris ce qui se passera en cas de séparation."
+        },
+        {
+          "type": "definition",
+          "terme": "Compte joint",
+          "texte": "Un compte à deux titulaires, où chacun peut tout retirer seul. La solidarité est totale : un découvert engage les deux, et un chèque sans provision émis par l'un peut entraîner une interdiction bancaire pour les deux."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "La formule qui fonctionne le mieux",
+          "texte": "Trois comptes : un compte joint alimenté par chacun pour les dépenses communes (loyer, courses, énergie), et un compte personnel chacun pour le reste. Les dépenses communes sont couvertes sans discussion mensuelle, et personne n'a à justifier ce qu'il fait de son argent."
+        },
+        {
+          "type": "definition",
+          "terme": "Contribution proportionnelle",
+          "texte": "Alimenter le compte joint au prorata des revenus plutôt qu'à parts égales. Avec 1 800 € et 2 600 €, une répartition 50/50 laisse au premier beaucoup moins de reste à vivre qu'au second — pour les mêmes dépenses partagées."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "repartition",
+            "titre": "1 800 € et 2 600 € : la contribution au prorata",
+            "legende": "Chacun garde la même proportion de son revenu pour lui. À parts égales, ce n'est pas le cas.",
+            "parts": [
+              {
+                "label": "Contribution de 1 800 €",
+                "valeur": 41
+              },
+              {
+                "label": "Contribution de 2 600 €",
+                "valeur": 59
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le compte joint rend les deux solidaires de tout",
+            "Trois comptes : un commun, un chacun",
+            "Contribuer au prorata des revenus, pas à parts égales"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s10-lecon-statuts",
+      "ordre": 39,
+      "titre": "Concubinage, PACS, mariage : ce que ça change",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois statuts, trois régimes financiers très différents. Beaucoup de couples découvrent lequel s'applique à eux au pire moment : une séparation, un décès, ou un créancier qui se présente."
+        },
+        {
+          "type": "definition",
+          "terme": "Concubinage",
+          "texte": "Aucun lien patrimonial. Chacun reste propriétaire de ce qu'il achète, chacun répond de ses seules dettes, et il n'y a aucun droit d'héritage entre concubins — le survivant ne reçoit rien sans testament, et paie des droits de succession très élevés s'il en reçoit."
+        },
+        {
+          "type": "definition",
+          "terme": "PACS",
+          "texte": "Depuis 2007, le régime par défaut est la séparation des patrimoines : chacun garde ce qu'il achète. Mais les partenaires sont solidaires des dettes de la vie courante, et le partenaire survivant est exonéré de droits de succession — encore faut-il un testament pour qu'il hérite."
+        },
+        {
+          "type": "definition",
+          "terme": "Mariage",
+          "texte": "Sans contrat, c'est la communauté réduite aux acquêts : tout ce qui est acquis pendant le mariage appartient aux deux, même acheté par un seul. Les époux sont solidaires des dettes du ménage, et le conjoint survivant hérite de droit, sans droits de succession."
+        },
+        {
+          "type": "liste",
+          "titre": "Les conséquences concrètes",
+          "items": [
+            "Acheter un logement à deux sans être marié : préciser la part de chacun dans l'acte, sinon la répartition sera présumée à parts égales quoi qu'on ait payé.",
+            "Financer seul un bien acheté au nom de l'autre : sans trace écrite, l'argent est considéré comme donné.",
+            "Un emprunt souscrit seul n'engage que celui qui signe — sauf dette du ménage en PACS ou mariage.",
+            "Sans testament, un concubin ou un partenaire de PACS n'hérite de rien."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Aucun de ces statuts n'est meilleur : ils protègent des choses différentes. Ce qui coûte cher, c'est de ne pas savoir lequel s'applique — et de découvrir la réponse le jour où ça compte."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Concubinage : aucun lien, aucun héritage",
+            "PACS : séparation des biens, solidarité sur la vie courante",
+            "Mariage sans contrat : tout ce qui est acquis est commun"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s10-situation-qui-paie",
+      "ordre": 40,
+      "titre": "Qui paie quoi",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La conversation que presque aucun couple n'a eue explicitement."
+        }
+      ],
+      "situation": {
+        "contexte": "Inès gagne 1 700 € nets, Tom 2 700 €. Ils emménagent ensemble : 900 € de loyer, environ 500 € de courses et charges. Tom propose de tout partager en deux, « c'est plus simple et plus juste ». Que dis-tu ?",
+        "choix": [
+          {
+            "id": "prorata",
+            "texte": "Proposer une contribution au prorata : environ 39 % pour Inès, 61 % pour Tom, sur un compte joint",
+            "feedback": "C'est ce qui égalise réellement l'effort. À parts égales, Inès verse 700 € et garde 1 000 €, Tom verse 700 € et garde 2 000 € : pour les mêmes dépenses communes, l'un a deux fois plus de marge. Au prorata, chacun conserve la même proportion de son revenu.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "postes",
+            "texte": "Se répartir les postes : Tom prend le loyer, Inès les courses et les charges",
+            "feedback": "Simple et lisible, et ça tombe ici à peu près juste (900 contre 500). Mais la répartition se dérègle dès qu'un poste augmente, et personne ne la recalcule. Elle demande d'être revue chaque année.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "moitie",
+            "texte": "Accepter le 50/50 : c'est effectivement le plus simple",
+            "feedback": "Simple, mais pas neutre. Partager à parts égales des dépenses communes quand les revenus diffèrent de 1 000 € transfère mécaniquement de la marge de l'un vers l'autre — et c'est une source de tension d'autant plus forte qu'elle n'est jamais nommée.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s10-quiz",
+      "ordre": 41,
+      "titre": "Quiz · L'argent à deux",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions à poser avant d'emménager, pas après."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s10-quiz-q1",
+            "question": "Sur un compte joint, un découvert créé par l'un…",
+            "choix": [
+              "N'engage que celui qui l'a créé",
+              "Engage les deux titulaires",
+              "Est automatiquement partagé en deux par la banque"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s10-quiz-q2",
+            "question": "Le régime par défaut du PACS depuis 2007 est…",
+            "choix": [
+              "L'indivision de tous les biens",
+              "La séparation des patrimoines",
+              "La communauté réduite aux acquêts"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s10-quiz-q3",
+            "question": "Sans testament, un concubin survivant hérite…",
+            "choix": [
+              "De la moitié des biens",
+              "De rien",
+              "De la totalité"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s11-lecon-non-recours",
+      "ordre": 42,
+      "titre": "Des milliards qui ne sont jamais demandés",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Il existe en France des dizaines d'aides auxquelles des millions de personnes ont droit sans les demander. Ce n'est pas de la négligence : c'est la conséquence directe de dispositifs nombreux, mal connus, et qui supposent presque tous une démarche."
+        },
+        {
+          "type": "definition",
+          "terme": "Non-recours",
+          "texte": "Le fait de ne pas percevoir une aide à laquelle on a droit. Les études publiques l'estiment à environ un tiers des ayants droit pour les principaux dispositifs de solidarité — c'est-à-dire une personne éligible sur trois."
+        },
+        {
+          "type": "liste",
+          "titre": "Les aides les plus souvent oubliées",
+          "items": [
+            "Les aides au logement (APL, ALS), qui concernent aussi bien des étudiants que des actifs modestes, locataires comme colocataires.",
+            "La prime d'activité, versée à des personnes qui travaillent — beaucoup pensent à tort qu'elle est réservée aux sans-emploi.",
+            "La complémentaire santé solidaire, qui prend en charge tout ou partie d'une mutuelle.",
+            "Le chèque énergie, et les aides locales à la rénovation ou à la mobilité.",
+            "Les bourses et aides d'urgence du CROUS, y compris en cours d'année."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Deux idées reçues à écarter tout de suite : « je travaille, donc je n'y ai pas droit » est faux pour la plupart de ces dispositifs, et « ça se déclenche tout seul à partir de mes impôts » n'est vrai que pour une minorité d'entre eux."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Environ un ayant droit sur trois ne demande rien",
+            "Travailler n'exclut pas d'avoir droit à une aide",
+            "La plupart des aides exigent une démarche"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s11-lecon-verifier",
+      "ordre": 43,
+      "titre": "Vérifier en dix minutes",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Il existe un simulateur public unique qui interroge la plupart des dispositifs d'un coup, sans création de compte et sans transmettre quoi que ce soit tant qu'on ne demande rien."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Le réflexe complet",
+          "texte": "Sur mesdroitssociaux.gouv.fr, on renseigne sa situation (revenus, logement, composition du foyer) et on obtient la liste des aides potentiellement ouvertes, avec des montants estimés. Compter dix minutes, et avoir sous la main son dernier avis d'imposition et son montant de loyer."
+        },
+        {
+          "type": "liste",
+          "titre": "Les quatre moments où il faut refaire le test",
+          "items": [
+            "Un déménagement, surtout vers un loyer plus élevé.",
+            "Une baisse de revenus : fin de contrat, passage à temps partiel, arrêt d'activité.",
+            "Un changement de foyer : naissance, séparation, départ d'un enfant.",
+            "Une fois par an de toute façon, car les barèmes et les plafonds bougent chaque année."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Un point qui décourage beaucoup de gens : certaines aides ne sont pas rétroactives, ou ne le sont que de quelques mois. Attendre « d'avoir le temps » coûte donc de l'argent réel — c'est probablement le quart d'heure le mieux rémunéré de l'année."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Un simulateur public unique couvre la plupart des aides",
+            "Refais le test à chaque changement de situation",
+            "Beaucoup d'aides ne sont pas rétroactives : attendre coûte"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s11-situation-leo",
+      "ordre": 44,
+      "titre": "Léo pense qu'il n'y a pas droit",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le raisonnement le plus répandu, et le plus coûteux."
+        }
+      ],
+      "situation": {
+        "contexte": "Léo, 23 ans, est en CDI à temps partiel : 1 150 € nets par mois, un studio à 520 € charges comprises. Un collègue lui parle des aides au logement. Il répond : « je travaille, et je ne suis pas dans le besoin, ce n'est pas pour moi ». Que lui dis-tu ?",
+        "choix": [
+          {
+            "id": "simuler",
+            "texte": "Lui proposer de faire le simulateur public avec lui, maintenant : dix minutes, sans engagement",
+            "feedback": "La seule réponse utile. Avec ce niveau de revenu et ce loyer, il est très probablement éligible à une aide au logement et à la prime d'activité — deux dispositifs faits précisément pour des gens qui travaillent. Et la seule façon de le savoir est de tester, pas de supposer.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "caf",
+            "texte": "Lui conseiller de contacter la CAF pour se renseigner",
+            "feedback": "Ça finira par marcher, mais c'est plus lent et plus intimidant qu'un simulateur anonyme. Beaucoup renoncent à l'étape du rendez-vous. Autant commencer par le test, qui donne déjà la réponse.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "laisser",
+            "texte": "Le laisser : s'il y avait droit, l'administration l'aurait prévenu",
+            "feedback": "C'est l'idée reçue qui produit le non-recours. La quasi-totalité de ces aides suppose une démarche : personne ne prévient. Et une partie n'est pas rétroactive, donc chaque mois d'attente est définitivement perdu.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s11-quiz",
+      "ordre": 45,
+      "titre": "Quiz · Tes droits",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions qui peuvent rapporter plusieurs centaines d'euros."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 70,
+        "questions": [
+          {
+            "id": "quotidien-s11-quiz-q1",
+            "question": "La prime d'activité s'adresse…",
+            "choix": [
+              "Aux personnes sans emploi",
+              "À des personnes qui travaillent, avec des revenus modestes",
+              "Aux seuls étudiants"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s11-quiz-q2",
+            "question": "La plupart des aides sociales sont…",
+            "choix": [
+              "Versées automatiquement à partir des impôts",
+              "Conditionnées à une démarche de l'ayant droit",
+              "Réservées aux personnes sans revenus"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s11-quiz-q3",
+            "question": "Quand faut-il refaire une simulation de ses droits ?",
+            "choix": [
+              "Jamais, une fois suffit",
+              "À chaque changement de situation, et une fois par an",
+              "Uniquement en cas de perte d'emploi"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s12-lecon-budget",
+      "ordre": 46,
+      "titre": "Un budget qui tient",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Tu as maintenant toutes les pièces. Reste à les assembler en quelque chose qui tient un mois entier, puis douze — et qui survit à un imprévu."
+        },
+        {
+          "type": "liste",
+          "titre": "Les quatre règles d'un budget qui tient",
+          "items": [
+            "Le logement complet sous le tiers du revenu net : au-delà, tout le reste devient fragile.",
+            "Une épargne de précaution avant toute autre épargne : trois mois de dépenses, disponibles tout de suite.",
+            "Un virement automatique le jour de la paie, même modeste : ce qui dépend de la volonté ne survit pas à l'hiver.",
+            "Une revue des prélèvements récurrents une fois par an : c'est là que l'argent fuit sans décision."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Un budget n'est pas un carcan : c'est ce qui permet de dire oui à une sortie sans se demander si le mois va tenir. Il sert à décider avant, pour ne plus avoir à arbitrer dans l'urgence."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Logement sous un tiers du revenu net",
+            "Précaution avant rendement, toujours",
+            "Automatise, puis revois une fois par an"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quotidien-s12-scenario-premiere-annee",
+      "ordre": 47,
+      "titre": "Ta première année seul",
+      "type": "scenario",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une année entière, cinq décisions. Elles s'enchaînent : chacune part de ce que la précédente a laissé."
+        }
+      ],
+      "scenario": {
+        "intro": "Tu viens de décrocher ton premier vrai travail : 1 900 € nets par mois. Tu quittes le logement familial et tout est à construire. Douze mois vont défiler.",
+        "decisions": [
+          {
+            "id": "logement",
+            "situation": "Deux logements te plaisent. Un studio à 780 € charges comprises, en centre-ville, à dix minutes à pied du travail. Un deux-pièces à 560 € charges comprises, à vingt-cinq minutes en transport. Que choisis-tu ?",
+            "options": [
+              {
+                "id": "deux-pieces",
+                "texte": "Le deux-pièces à 560 €",
+                "consequence": "Le logement pèse 29 % de ton revenu. Il te reste plus de 1 300 € par mois pour tout le reste — de la marge, et la possibilité d'épargner dès le premier mois.",
+                "points": 2
+              },
+              {
+                "id": "studio",
+                "texte": "Le studio à 780 €",
+                "consequence": "Le logement pèse 41 % de ton revenu, bien au-dessus du tiers conseillé. Tu gagnes du temps chaque jour, mais chaque dépense imprévue devra être arbitrée.",
+                "points": 0
+              },
+              {
+                "id": "coloc",
+                "texte": "Chercher encore et prendre une colocation à 450 €",
+                "consequence": "Le logement tombe à 24 % du revenu. C'est la marge la plus confortable des trois, au prix d'une vie partagée qui ne convient pas à tout le monde.",
+                "points": 2
+              }
+            ]
+          },
+          {
+            "id": "assurance",
+            "situation": "Il faut assurer le logement. Un comparateur propose un contrat à 9 € par mois avec 450 € de franchise, et un autre à 15 € avec 150 € de franchise. L'agent te propose aussi une extension « appareils nomades » à 6 € de plus.",
+            "options": [
+              {
+                "id": "franchise-basse",
+                "texte": "Le contrat à 15 €, sans extension",
+                "consequence": "72 € de plus par an, mais 300 € de moins à sortir au premier sinistre. Avec une épargne encore mince, c'est la franchise qui compte le plus.",
+                "points": 2
+              },
+              {
+                "id": "moins-cher",
+                "texte": "Le contrat à 9 €, sans extension",
+                "consequence": "Tu économises 6 € par mois. Si rien n'arrive, c'était le bon calcul ; au premier dégât des eaux, les 450 € de franchise tomberont au pire moment.",
+                "points": 1
+              },
+              {
+                "id": "extension",
+                "texte": "Le contrat à 9 € avec l'extension nomade",
+                "consequence": "Tu paies pour une garantie dont la franchise dépasse souvent la valeur d'un téléphone d'occasion — tout en gardant la franchise élevée sur le logement lui-même.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "epargne",
+            "situation": "Après trois mois, ton budget est stable et il te reste environ 250 € en fin de mois. Ton compte courant affiche 900 €.",
+            "options": [
+              {
+                "id": "virement",
+                "texte": "Mettre en place un virement automatique de 200 € le lendemain de la paie, vers un livret",
+                "consequence": "En neuf mois, près de 1 800 € s'accumulent sans que tu aies jamais eu à y penser. Ton filet de sécurité se construit tout seul.",
+                "points": 2
+              },
+              {
+                "id": "fin-de-mois",
+                "texte": "Virer ce qui reste, à la fin de chaque mois",
+                "consequence": "Certains mois 250 €, d'autres 40 €, d'autres rien. Au bout de neuf mois, tu as mis de côté trois fois moins qu'avec un virement automatique.",
+                "points": 1
+              },
+              {
+                "id": "attendre",
+                "texte": "Laisser sur le compte courant : c'est disponible, et ça rassure de voir le solde monter",
+                "consequence": "L'argent visible sur le compte courant se dépense. Neuf mois plus tard, le solde n'a presque pas bougé et rien n'a été mis de côté.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "arnaque",
+            "situation": "Un soir, ton téléphone sonne : le numéro affiché est celui de ta banque. Une conseillère t'annonce des paiements frauduleux et te demande de valider une notification dans l'application pour les bloquer.",
+            "options": [
+              {
+                "id": "raccrocher",
+                "texte": "Raccrocher et rappeler toi-même le numéro au dos de ta carte",
+                "consequence": "Ta banque n'a jamais appelé : le numéro était usurpé, et la notification à valider aurait autorisé un virement. Tu viens d'éviter de perdre ton épargne de précaution.",
+                "points": 2
+              },
+              {
+                "id": "questionner",
+                "texte": "Demander son nom et son service, puis décider",
+                "consequence": "Elle répond sans hésiter, avec des détails crédibles — ces appels sont préparés. Tu finis par douter et raccrocher, mais tu as failli valider.",
+                "points": 1
+              },
+              {
+                "id": "valider",
+                "texte": "Valider la notification : il vaut mieux bloquer vite",
+                "consequence": "Le virement part. Comme tu l'as autorisé toi-même, la banque conteste tout remboursement. Ton épargne de neuf mois disparaît en une soirée.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "voiture",
+            "situation": "Onzième mois : ton nouveau poste demande d'être mobile. Tu as environ 2 000 € de côté. Un concessionnaire propose une neuve en LOA à 229 € par mois ; une occasion de quatre ans coûte 6 500 €.",
+            "options": [
+              {
+                "id": "occasion",
+                "texte": "L'occasion, avec 2 000 € d'apport et un petit crédit sur trois ans",
+                "consequence": "Environ 135 € par mois, un bien qui t'appartient, revendable à tout moment. Il faudra reconstituer une réserve pour l'entretien, mais ton budget encaisse.",
+                "points": 2
+              },
+              {
+                "id": "loa",
+                "texte": "La LOA à 229 € par mois",
+                "consequence": "Aucune panne à craindre pendant quatre ans, mais 11 000 € versés pour ne rien posséder au bout — et des frais de restitution à prévoir.",
+                "points": 1
+              },
+              {
+                "id": "attendre-voiture",
+                "texte": "Repousser l'achat et continuer en transport encore un an",
+                "consequence": "Prudent sur le plan budgétaire, mais le poste demandait la mobilité : repousser peut coûter plus cher qu'une voiture, en évolution de carrière.",
+                "points": 1
+              }
+            ]
+          }
+        ],
+        "bilans": [
+          {
+            "seuil": 80,
+            "titre": "Une année qui pose des fondations",
+            "texte": "Tu as tenu la règle du tiers sur le logement, choisi une assurance sur sa franchise et non sur son prix, automatisé ton épargne, déjoué l'arnaque la plus coûteuse du pays et acheté un bien que tu possèdes. À la fin de l'année, tu as une réserve, aucune dette chère, et de la marge pour la suite."
+          },
+          {
+            "seuil": 50,
+            "titre": "Une année solide, avec deux leçons payées",
+            "texte": "L'essentiel tient : tu finis l'année sans dette dangereuse et avec de l'épargne. Certains choix t'ont coûté plus qu'ils n'auraient dû — une franchise trop haute, une épargne qui dépendait de ta volonté, ou une mensualité pour un bien qui ne t'appartient pas. Ce sont exactement les décisions à reprendre l'an prochain."
+          },
+          {
+            "seuil": 0,
+            "titre": "Une année qui apprend cher",
+            "texte": "Le logement trop cher a rogné toutes les marges, l'épargne n'a pas eu le temps de se constituer, et le moindre imprévu est devenu un problème. Rien n'est irréversible : les mêmes décisions, prises dans l'autre sens, changent complètement la deuxième année. C'est précisément pour ça qu'on les a jouées ici d'abord."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quotidien-s12-quiz",
+      "ordre": 48,
+      "titre": "Quiz final · Voie Quotidien",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le tout dernier quiz de la voie. Quatre questions, il en faut trois."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 75,
+        "questions": [
+          {
+            "id": "quotidien-s12-quiz-q1",
+            "question": "Le logement complet ne devrait pas dépasser…",
+            "choix": [
+              "La moitié du revenu net",
+              "Le tiers du revenu net",
+              "Le quart du revenu brut"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s12-quiz-q2",
+            "question": "La façon la plus efficace d'épargner régulièrement est…",
+            "choix": [
+              "Virer ce qui reste en fin de mois",
+              "Un virement automatique le jour de la paie",
+              "Laisser l'argent sur le compte courant"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s12-quiz-q3",
+            "question": "Un appel de ta banque qui te demande de valider une notification, c'est…",
+            "choix": [
+              "Une procédure de sécurité normale",
+              "Une arnaque : un conseiller ne demande jamais ça",
+              "Normal si le numéro affiché est le bon"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "quotidien-s12-quiz-q4",
+            "question": "Entre deux assurances, le critère le plus important quand on a peu d'épargne est…",
+            "choix": [
+              "La cotisation mensuelle",
+              "La franchise",
+              "Le nom de l'assureur"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    }
+  ]
+}

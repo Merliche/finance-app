@@ -1,41 +1,263 @@
 {
   "id": "intro",
   "titre": "Découvrir les bases de la finance",
-  "description": "Un tour d'horizon rapide avant de choisir ta voie : Banque, Marché ou Entreprise.",
+  "description": "5 sessions courtes pour comprendre ton argent, avant de choisir ta voie : Banque, Marché ou Entreprise.",
   "ordre": 0,
   "type": "intro",
-  "version": 1,
+  "version": 7,
+  "chiffresVerifiesLe": "2026-09-12",
+  "sources": [
+    {
+      "libelle": "Service-public.fr — argent et budget",
+      "url": "https://www.service-public.fr"
+    },
+    {
+      "libelle": "INSEE — indice des prix à la consommation",
+      "url": "https://www.insee.fr"
+    },
+    {
+      "libelle": "Banque de France — éducation financière",
+      "url": "https://www.banque-france.fr"
+    }
+  ],
   "etapes": [
     {
-      "id": "intro-lecon-1",
+      "id": "s1-lecon-argent",
       "ordre": 1,
-      "titre": "Pourquoi s'intéresser à la finance ?",
+      "titre": "Ton argent, à quoi ça sert ?",
       "type": "lecon",
       "contenu": [
         {
           "type": "texte",
-          "texte": "La finance, ce n'est pas réservé aux traders ou aux banquiers : c'est l'ensemble des décisions qui touchent à l'argent — épargner, emprunter, investir. Comprendre les bases te permet de faire des choix éclairés pour toi-même."
+          "texte": "Chaque mois, de l'argent entre (ton salaire, une bourse, un cadeau...) et de l'argent sort (loyer, courses, sorties...). Ce parcours va t'aider à comprendre comment cet argent circule, et comment le faire travailler pour toi plutôt que l'inverse."
         },
         {
           "type": "definition",
-          "terme": "Finance personnelle",
-          "texte": "La gestion de son propre argent : budget, épargne, emprunt, investissement."
+          "terme": "Revenu",
+          "texte": "Toute somme d'argent que tu reçois : salaire, allocation, cadeau, vente d'un objet..."
+        },
+        {
+          "type": "definition",
+          "terme": "Dépense",
+          "texte": "Toute somme d'argent que tu donnes en échange d'un bien ou d'un service."
         },
         {
           "type": "texte",
-          "texte": "Dans ce parcours d'introduction, tu vas voir un exemple chiffré, répondre à un petit quiz, et te mettre à la place d'un conseiller face à un client. Ensuite, trois voies s'ouvriront à toi : Banque, Marché et Entreprise."
+          "texte": "La différence entre ce que tu gagnes et ce que tu dépenses, c'est ton épargne. Si elle est positive, tu peux la faire fructifier ; si elle est négative, tu t'endettes."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Revenus − dépenses = épargne",
+            "Épargne positive : elle peut travailler pour toi",
+            "Épargne négative : c'est une dette qui grossit"
+          ]
         }
       ]
     },
     {
-      "id": "intro-exemple-1",
+      "id": "s1-lecon-budget",
       "ordre": 2,
-      "titre": "L'effet des intérêts composés",
+      "titre": "Construire un budget simple",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un budget, ce n'est rien de plus qu'un plan qui répartit ton argent avant de le dépenser, plutôt que de subir la fin de mois."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Une règle simple : 50/30/20",
+          "texte": "50% de tes revenus pour les besoins essentiels (logement, nourriture, transport), 30% pour tes envies (loisirs, sorties), 20% pour l'épargne ou le remboursement de dettes. Ce n'est pas une loi gravée dans le marbre, juste un repère facile à retenir."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "repartition",
+            "titre": "La règle 50/30/20",
+            "legende": "Sur 1 500 € de revenus : 750 € de besoins, 450 € d'envies, 300 € d'épargne.",
+            "parts": [
+              {
+                "label": "Besoins essentiels",
+                "valeur": 50
+              },
+              {
+                "label": "Envies",
+                "valeur": 30
+              },
+              {
+                "label": "Épargne ou dettes",
+                "valeur": 20
+              }
+            ]
+          }
+        },
+        {
+          "type": "texte",
+          "texte": "L'idée n'est pas de te priver, mais de savoir où va ton argent avant qu'il ne soit trop tard pour le décider."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Un budget se décide avant, pas après",
+            "50/30/20 : un repère, pas une règle",
+            "Savoir où va l'argent, c'est déjà le reprendre"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s1-situation-budget",
+      "ordre": 3,
+      "titre": "Le mois est trop court",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Première mise en situation : un ami te demande conseil. Il n'y a pas de bonne réponse unique, mais certaines sont meilleures que d'autres."
+        }
+      ],
+      "situation": {
+        "contexte": "Un ami gagne 1 500 € par mois et se retrouve à découvert dès le 20 du mois, presque tous les mois. Il ne sait pas vraiment où part son argent. Que lui conseilles-tu en premier ?",
+        "choix": [
+          {
+            "id": "noter-depenses",
+            "texte": "Noter toutes ses dépenses pendant un mois, sans rien changer d'autre",
+            "feedback": "C'est le point de départ de tout budget : on ne peut pas décider quoi couper tant qu'on ne voit pas où va l'argent. Un mois de relevé suffit souvent à faire apparaître deux ou trois postes surprenants.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "epargner-debut",
+            "texte": "Virer 100 € sur un livret dès le jour de paie",
+            "feedback": "Bonne intuition — épargner dès le début plutôt qu'avec ce qui reste est un excellent réflexe. Mais sans comprendre d'abord pourquoi le mois est trop court, ce virement risque de finir en découvert supplémentaire.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "demander-decouvert",
+            "texte": "Demander à sa banque un découvert autorisé plus élevé",
+            "feedback": "Ça déplace le problème sans le résoudre, et ça le rend plus cher : un découvert coûte des intérêts. Le mois restera trop court, avec une facture en plus.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s1-quiz",
+      "ordre": 4,
+      "titre": "Quiz · Budget",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un petit quiz pour vérifier que les bases du budget sont bien acquises."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "s1-quiz-q1",
+            "question": "Que représente ton épargne ?",
+            "choix": [
+              "La somme totale de tes revenus",
+              "La différence entre tes revenus et tes dépenses",
+              "Le montant de tes dettes"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "s1-quiz-q2",
+            "question": "Dans la règle 50/30/20, à quoi correspondent les 20% ?",
+            "choix": [
+              "Aux loisirs et sorties",
+              "Aux besoins essentiels",
+              "À l'épargne ou au remboursement de dettes"
+            ],
+            "bonneReponseIndex": 2
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "s2-lecon-interets",
+      "ordre": 5,
+      "titre": "Intérêt simple vs intérêt composé",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quand tu places de l'argent, la banque (ou un placement) te verse des intérêts en échange. Il existe deux façons de les calculer."
+        },
+        {
+          "type": "definition",
+          "terme": "Intérêt simple",
+          "texte": "Chaque année, les intérêts sont calculés uniquement sur le capital de départ. Ils ne changent jamais si tu ne rajoutes pas d'argent."
+        },
+        {
+          "type": "definition",
+          "terme": "Intérêt composé",
+          "texte": "Chaque année, les intérêts de l'année précédente s'ajoutent au capital, et rapportent eux-mêmes des intérêts l'année suivante. Le capital grossit donc de plus en plus vite."
+        },
+        {
+          "type": "texte",
+          "texte": "Sur le long terme, cette différence peut devenir énorme : c'est l'effet \"boule de neige\" des intérêts composés."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "courbes",
+            "titre": "1 000 € placés à 5 %",
+            "legende": "Même taux, même départ : au bout de trente ans, l'intérêt composé a presque doublé l'écart.",
+            "axeX": [
+              "Départ",
+              "10 ans",
+              "20 ans",
+              "30 ans"
+            ],
+            "unite": "€",
+            "series": [
+              {
+                "label": "Intérêt composé",
+                "role": "principal",
+                "points": [
+                  1000,
+                  1629,
+                  2653,
+                  4322
+                ]
+              },
+              {
+                "label": "Intérêt simple",
+                "role": "secondaire",
+                "points": [
+                  1000,
+                  1500,
+                  2000,
+                  2500
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Simple : les intérêts ne rapportent rien",
+            "Composé : les intérêts font des intérêts",
+            "Le temps est l'ingrédient principal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2-exemple-interet-compose",
+      "ordre": 6,
+      "titre": "Simule tes intérêts composés",
       "type": "exemple",
       "contenu": [
         {
           "type": "texte",
-          "texte": "Quand un capital rapporte des intérêts, et que ces intérêts rapportent eux-mêmes des intérêts l'année suivante, on parle d'intérêts composés. Essaie de faire varier le capital, le taux et la durée pour voir l'effet sur le résultat."
+          "texte": "Fais varier le capital de départ, le taux et la durée pour voir l'effet des intérêts composés sur ton épargne."
         }
       ],
       "simulateur": {
@@ -76,35 +298,239 @@
       }
     },
     {
-      "id": "intro-quiz-1",
-      "ordre": 3,
-      "titre": "Vérifie tes connaissances",
+      "id": "s2-exercice-interets",
+      "ordre": 7,
+      "titre": "Calcule avant de placer",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre calculs pour que les intérêts composés arrêtent d'être une idée abstraite."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 50,
+        "items": [
+          {
+            "id": "s2-ex-1",
+            "type": "nombre",
+            "enonce": "1 000 € placés à 10 % pendant un an. Combien as-tu à la fin ?",
+            "reponse": 1100,
+            "tolerance": 5,
+            "unite": "€",
+            "explication": "1 000 + 10 % = 1 100 €. La deuxième année, les 10 % porteront sur 1 100 € et non plus sur 1 000 : c'est là que le composé commence."
+          },
+          {
+            "id": "s2-ex-2",
+            "type": "nombre",
+            "enonce": "Et au bout de deux ans, toujours à 10 % par an ?",
+            "reponse": 1210,
+            "tolerance": 5,
+            "unite": "€",
+            "indice": "Applique 10 % à ce que tu avais à la fin de la première année.",
+            "explication": "1 100 × 1,10 = 1 210 €. En intérêt simple, tu n'aurais eu que 1 200 € : 10 € d'écart en deux ans, des milliers en trente."
+          },
+          {
+            "id": "s2-ex-3",
+            "type": "nombre",
+            "enonce": "Règle des 72 : à 8 % par an, en combien d'années un capital double-t-il ?",
+            "reponse": 9,
+            "tolerance": 0.5,
+            "unite": "ans",
+            "indice": "72 divisé par le taux.",
+            "explication": "72 / 8 = 9 ans. Le calcul exact donne 9,006 ans — l'approximation est redoutable de précision."
+          },
+          {
+            "id": "s2-ex-4",
+            "type": "vrai_faux",
+            "enonce": "Avec des intérêts composés, doubler la durée du placement double le capital final.",
+            "reponse": false,
+            "explication": "Faux : la croissance est exponentielle, pas proportionnelle. 1 000 € à 7 % donnent 1 967 € en 10 ans, mais 3 870 € en 20 ans — bien plus que le double."
+          }
+        ]
+      }
+    },
+    {
+      "id": "s2-quiz",
+      "ordre": 8,
+      "titre": "Quiz · Intérêts",
       "type": "quiz",
       "contenu": [
         {
           "type": "texte",
-          "texte": "Un petit quiz pour voir si les bases sont bien acquises avant de continuer."
+          "texte": "Vérifie que la différence entre intérêt simple et intérêt composé est claire."
         }
       ],
       "quiz": {
         "questions": [
           {
-            "id": "intro-quiz-1-q1",
-            "question": "Que veut dire \"intérêts composés\" ?",
+            "id": "s2-quiz-q1",
+            "question": "Avec un intérêt composé, les intérêts d'une année...",
             "choix": [
-              "Les intérêts sont reversés à la banque chaque année",
-              "Les intérêts d'une année s'ajoutent au capital et rapportent eux-mêmes des intérêts",
-              "Le taux d'intérêt augmente automatiquement chaque année"
+              "Disparaissent l'année suivante",
+              "S'ajoutent au capital et rapportent eux-mêmes des intérêts",
+              "Sont reversés à l'État"
             ],
             "bonneReponseIndex": 1
           },
           {
-            "id": "intro-quiz-1-q2",
-            "question": "La finance personnelle concerne...",
+            "id": "s2-quiz-q2",
+            "question": "Sur une longue durée, comparé à l'intérêt simple, l'intérêt composé...",
             "choix": [
-              "Uniquement les personnes qui investissent en bourse",
-              "Uniquement les banquiers professionnels",
-              "Toute décision liée à la gestion de son propre argent"
+              "Donne exactement le même résultat",
+              "Fait grossir le capital plus vite",
+              "Fait perdre de l'argent"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "s3-lecon-inflation",
+      "ordre": 9,
+      "titre": "Pourquoi les prix augmentent",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "L'inflation, c'est la hausse générale des prix au fil du temps. Concrètement, avec la même somme d'argent, tu peux acheter un peu moins chaque année."
+        },
+        {
+          "type": "definition",
+          "terme": "Inflation",
+          "texte": "Le pourcentage moyen d'augmentation des prix sur une période donnée, en général une année."
+        },
+        {
+          "type": "texte",
+          "texte": "Si ton argent dort sans rapporter d'intérêts (ou avec un taux inférieur à l'inflation), sa valeur réelle diminue avec le temps, même si le montant affiché sur ton compte, lui, ne bouge pas."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "courbes",
+            "titre": "Ce que valent 1 000 € qui dorment",
+            "legende": "Le chiffre sur le compte ne bouge pas. Ce qu'il permet d'acheter, si.",
+            "axeX": [
+              "Aujourd'hui",
+              "5 ans",
+              "10 ans",
+              "15 ans"
+            ],
+            "unite": "€",
+            "series": [
+              {
+                "label": "Inflation à 2 %",
+                "role": "principal",
+                "points": [
+                  1000,
+                  906,
+                  820,
+                  743
+                ]
+              },
+              {
+                "label": "Inflation à 4 %",
+                "role": "secondaire",
+                "points": [
+                  1000,
+                  822,
+                  676,
+                  555
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "L'inflation, c'est la hausse générale des prix",
+            "Un argent qui ne rapporte rien perd de la valeur",
+            "Il faut rapporter au moins l'inflation pour ne pas reculer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3-exemple-inflation",
+      "ordre": 10,
+      "titre": "L'érosion de ton épargne par l'inflation",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Ce simulateur réutilise le calcul des intérêts composés, mais avec un taux négatif : c'est exactement ce que fait l'inflation à une épargne qui ne rapporte rien. Fais varier le taux d'inflation et la durée pour voir la perte de valeur."
+        }
+      ],
+      "simulateur": {
+        "formule": "interet_compose",
+        "variables": [
+          {
+            "id": "capital",
+            "label": "Épargne de départ",
+            "unite": "€",
+            "min": 100,
+            "max": 10000,
+            "pas": 100,
+            "valeurParDefaut": 1000
+          },
+          {
+            "id": "taux",
+            "label": "Taux d'inflation annuel",
+            "unite": "%",
+            "min": -10,
+            "max": 0,
+            "pas": 0.5,
+            "valeurParDefaut": -2
+          },
+          {
+            "id": "duree",
+            "label": "Durée",
+            "unite": "ans",
+            "min": 1,
+            "max": 30,
+            "pas": 1,
+            "valeurParDefaut": 10
+          }
+        ],
+        "resultat": {
+          "label": "Valeur réelle dans le futur",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "s3-quiz",
+      "ordre": 11,
+      "titre": "Quiz · Inflation",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un petit quiz pour vérifier que l'effet de l'inflation est bien compris."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "s3-quiz-q1",
+            "question": "Que signifie \"inflation\" ?",
+            "choix": [
+              "Une baisse générale des prix",
+              "Une hausse générale des prix",
+              "Une hausse des salaires uniquement"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "s3-quiz-q2",
+            "question": "Si ton épargne ne rapporte aucun intérêt et que l'inflation est positive, sa valeur réelle...",
+            "choix": [
+              "Augmente",
+              "Reste identique",
+              "Diminue"
             ],
             "bonneReponseIndex": 2
           }
@@ -113,38 +539,416 @@
       }
     },
     {
-      "id": "intro-situation-1",
-      "ordre": 4,
-      "titre": "Ta première décision d'épargne",
+      "id": "s4-lecon-credit",
+      "ordre": 12,
+      "titre": "Emprunter : comment ça marche",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un crédit, c'est de l'argent que la banque t'avance aujourd'hui, que tu rembourses ensuite en plusieurs fois, avec des intérêts en plus : c'est le coût de l'emprunt."
+        },
+        {
+          "type": "definition",
+          "terme": "Mensualité",
+          "texte": "La somme que tu rembourses chaque mois, intérêts inclus."
+        },
+        {
+          "type": "texte",
+          "texte": "Plus le taux est élevé ou la durée longue, plus le coût total du crédit augmente — même si la mensualité, elle, peut sembler plus légère sur une durée longue."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "10 000 € à 5 % : ce que coûtent les intérêts",
+            "legende": "La mensualité baisse avec la durée, mais la facture totale grimpe.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Sur 2 ans",
+                "valeur": 529,
+                "role": "principal"
+              },
+              {
+                "label": "Sur 4 ans",
+                "valeur": 1054,
+                "role": "principal"
+              },
+              {
+                "label": "Sur 6 ans",
+                "valeur": 1596,
+                "role": "secondaire"
+              },
+              {
+                "label": "Sur 8 ans",
+                "valeur": 2154,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Un crédit, c'est de l'argent loué",
+            "Mensualité = capital + intérêts",
+            "Plus c'est long, plus c'est cher au total"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-exemple-mensualite",
+      "ordre": 13,
+      "titre": "Calcule une mensualité de crédit",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Fais varier le montant emprunté, le taux et la durée pour voir leur effet sur la mensualité."
+        }
+      ],
+      "simulateur": {
+        "formule": "mensualite_credit",
+        "variables": [
+          {
+            "id": "montant",
+            "label": "Montant emprunté",
+            "unite": "€",
+            "min": 1000,
+            "max": 50000,
+            "pas": 1000,
+            "valeurParDefaut": 10000
+          },
+          {
+            "id": "taux",
+            "label": "Taux d'intérêt annuel",
+            "unite": "%",
+            "min": 0,
+            "max": 15,
+            "pas": 0.5,
+            "valeurParDefaut": 5
+          },
+          {
+            "id": "duree",
+            "label": "Durée de remboursement",
+            "unite": "mois",
+            "min": 6,
+            "max": 120,
+            "pas": 6,
+            "valeurParDefaut": 48
+          }
+        ],
+        "resultat": {
+          "label": "Mensualité",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "s4-situation-credit",
+      "ordre": 14,
+      "titre": "Un téléphone à 900 €",
       "type": "situation",
       "contenu": [
         {
           "type": "texte",
-          "texte": "Mets-toi à la place d'un conseiller : un client te demande où placer une petite somme d'argent qu'il n'aura pas besoin d'utiliser à court terme."
+          "texte": "Le crédit est un outil : tout dépend de ce qu'on finance, et à quel prix."
         }
       ],
       "situation": {
-        "contexte": "Un client a 1000€ de côté. Il n'en aura pas besoin avant au moins 2 ans et souhaite un placement simple, sans risque de perdre son capital. Que lui conseilles-tu ?",
+        "contexte": "Une amie veut le dernier téléphone à 900 €. Elle n'a pas la somme, mais a 150 € de marge chaque mois. La boutique lui propose un paiement en 24 fois via une réserve d'argent renouvelable à un taux très élevé. Que lui conseilles-tu ?",
         "choix": [
           {
-            "id": "livret-a",
-            "texte": "Un Livret A",
-            "feedback": "Bon choix : le Livret A est sans risque, disponible à tout moment, et rapporte un peu plus que de l'argent qui dort sur un compte courant.",
+            "id": "epargner",
+            "texte": "Mettre 150 € de côté pendant six mois, puis acheter comptant",
+            "feedback": "Le choix le plus sain pour un achat qui peut attendre : zéro intérêt payé, et six mois pour vérifier que l'envie tient. Beaucoup d'achats \"urgents\" ne survivent pas à ce délai.",
             "qualite": "recommande"
           },
           {
-            "id": "especes",
-            "texte": "Garder l'argent en espèces chez lui",
-            "feedback": "Ça ne rapporte rien et l'argent perd de la valeur avec l'inflation au fil du temps — ce n'est pas la meilleure option pour une somme mise de côté.",
-            "qualite": "deconseille"
+            "id": "credit-classique",
+            "texte": "Comparer avec un crédit à la consommation classique, moins cher que la réserve renouvelable",
+            "feedback": "Si l'achat ne peut vraiment pas attendre, c'est bien mieux que la réserve renouvelable : le taux est plus bas et le remboursement a une fin claire. Mais on paie quand même des intérêts pour un bien qui perd de la valeur dès la sortie de la boîte.",
+            "qualite": "acceptable"
           },
           {
-            "id": "actions",
-            "texte": "Tout investir en actions",
-            "feedback": "Les actions peuvent bien rapporter sur le long terme, mais elles comportent un risque de perte en capital — pas idéal pour quelqu'un qui veut avant tout la sécurité de son épargne.",
-            "qualite": "acceptable"
+            "id": "reserve-renouvelable",
+            "texte": "Accepter le paiement en 24 fois proposé par la boutique",
+            "feedback": "La réserve d'argent renouvelable est le crédit le plus cher du marché. Sur 24 mois, elle peut faire payer le téléphone bien plus que 900 € — et la réserve, une fois ouverte, a tendance à resservir.",
+            "qualite": "deconseille"
           }
         ]
+      }
+    },
+    {
+      "id": "s4-exercice-credit",
+      "ordre": 15,
+      "titre": "Le vrai prix d'un crédit",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre calculs pour ne plus jamais regarder uniquement la mensualité."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 50,
+        "items": [
+          {
+            "id": "s4-ex-1",
+            "type": "nombre",
+            "enonce": "Un crédit de 6 000 € remboursé 300 € par mois pendant 24 mois. Combien rembourses-tu en tout ?",
+            "reponse": 7200,
+            "tolerance": 50,
+            "unite": "€",
+            "indice": "Mensualité × nombre de mois : 3 × 24 = 72.",
+            "explication": "300 × 24 = 7 200 €. Le crédit coûte donc 1 200 € d'intérêts, soit 20 % du montant emprunté."
+          },
+          {
+            "id": "s4-ex-2",
+            "type": "nombre",
+            "enonce": "Combien d'intérêts as-tu payés dans ce crédit ?",
+            "reponse": 1200,
+            "tolerance": 50,
+            "unite": "€",
+            "explication": "7 200 − 6 000 = 1 200 €. C'est le seul chiffre qui compte pour comparer deux offres de même durée.",
+            "indice": "Ce que tu rembourses, moins ce que tu as emprunté."
+          },
+          {
+            "id": "s4-ex-3",
+            "type": "vrai_faux",
+            "enonce": "Allonger la durée d'un crédit réduit la mensualité et le coût total.",
+            "reponse": false,
+            "explication": "Faux : la mensualité baisse, mais on paie des intérêts plus longtemps. Le coût total augmente toujours."
+          },
+          {
+            "id": "s4-ex-4",
+            "type": "vrai_faux",
+            "enonce": "Une réserve d'argent renouvelable est en général le crédit le plus cher du marché.",
+            "reponse": true,
+            "explication": "Vrai : ses taux frôlent souvent le taux d'usure, bien au-delà d'un crédit à la consommation classique — et elle se reconstitue à mesure qu'on rembourse."
+          }
+        ]
+      }
+    },
+    {
+      "id": "s4-quiz",
+      "ordre": 16,
+      "titre": "Quiz · Crédit",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Vérifie que les mécanismes du crédit sont bien compris."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "s4-quiz-q1",
+            "question": "La mensualité d'un crédit inclut...",
+            "choix": [
+              "Uniquement le capital emprunté",
+              "Le capital et les intérêts",
+              "Uniquement les intérêts"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "s4-quiz-q2",
+            "question": "Toutes choses égales par ailleurs, un taux d'intérêt plus élevé...",
+            "choix": [
+              "Diminue le coût total du crédit",
+              "N'a aucun effet sur le coût total",
+              "Augmente le coût total du crédit"
+            ],
+            "bonneReponseIndex": 2
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "s5-lecon-banque",
+      "ordre": 17,
+      "titre": "Le monde de la banque",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La voie Banque explore les produits qu'une banque propose au quotidien : comptes, livrets, épargne, crédits... les bases pour bien utiliser les services bancaires."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Le circuit de ton argent",
+            "etapes": [
+              {
+                "label": "Le salaire arrive",
+                "detail": "sur le compte courant"
+              },
+              {
+                "label": "Une part file vers l'épargne de précaution",
+                "detail": "livret, disponible à tout moment"
+              },
+              {
+                "label": "Une autre vers le long terme",
+                "detail": "assurance-vie, PEA…"
+              },
+              {
+                "label": "Le reste est le budget du mois",
+                "detail": "loyer, courses, sorties"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Comptes, livrets, crédits : les outils du quotidien",
+            "La voie la plus utile dès demain matin",
+            "Aucun prérequis, que du concret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5-lecon-marche",
+      "ordre": 18,
+      "titre": "Le monde du marché",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La voie Marché t'emmène du côté de la bourse : actions, obligations, risque et rendement — comment fonctionne l'investissement sur les marchés financiers."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Comment ton épargne devient une action",
+            "etapes": [
+              {
+                "label": "Tu achètes une action",
+                "detail": "un morceau d'entreprise"
+              },
+              {
+                "label": "L'entreprise investit",
+                "detail": "machines, salariés, recherche"
+              },
+              {
+                "label": "Elle fait des bénéfices",
+                "detail": "ou pas — c'est le risque"
+              },
+              {
+                "label": "Tu es rémunéré",
+                "detail": "dividende, ou hausse du cours"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Actions, obligations, risque et rendement",
+            "Comprendre avant d'investir un euro",
+            "La voie qui demande le plus de sang-froid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5-lecon-entreprise",
+      "ordre": 19,
+      "titre": "Le monde de l'entreprise",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La voie Entreprise s'intéresse à la finance vue de l'intérieur d'une société : comment une entreprise se finance, investit, et crée (ou détruit) de la valeur."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Le cycle de l'argent dans une entreprise",
+            "etapes": [
+              {
+                "label": "Capital et emprunts",
+                "detail": "l'argent de départ"
+              },
+              {
+                "label": "Investissements",
+                "detail": "machines, stocks, salaires"
+              },
+              {
+                "label": "Ventes",
+                "detail": "le chiffre d'affaires"
+              },
+              {
+                "label": "Bénéfice",
+                "detail": "réinvesti, ou distribué aux actionnaires"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "La finance vue de l'intérieur d'une société",
+            "Bilan, financement, trésorerie",
+            "La voie utile si tu crées ou diriges"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5-quiz",
+      "ordre": 20,
+      "titre": "Quiz · Les 3 voies",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Dernier arrêt avant de choisir ta voie : vérifie que tu sais ce qui t'attend dans chacune."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "s5-quiz-q1",
+            "question": "Quelle voie explore les comptes, livrets et crédits au quotidien ?",
+            "choix": [
+              "Marché",
+              "Banque",
+              "Entreprise"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "s5-quiz-q2",
+            "question": "Quelle voie s'intéresse aux actions et à la bourse ?",
+            "choix": [
+              "Marché",
+              "Banque",
+              "Entreprise"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "s5-quiz-q3",
+            "question": "Quelle voie regarde la finance du point de vue d'une société ?",
+            "choix": [
+              "Marché",
+              "Banque",
+              "Entreprise"
+            ],
+            "bonneReponseIndex": 2
+          }
+        ],
+        "seuilReussite": 70
       }
     }
   ]

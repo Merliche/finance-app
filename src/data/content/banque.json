@@ -1,0 +1,2025 @@
+{
+  "id": "banque",
+  "titre": "La voie Banque",
+  "description": "Comptes, frais, épargne, crédit : maîtriser les outils bancaires du quotidien.",
+  "ordre": 1,
+  "type": "voie",
+  "prerequisParcoursId": "intro",
+  "version": 9,
+  "chiffresVerifiesLe": "2026-09-12",
+  "sources": [
+    {
+      "libelle": "Service-public.fr — banque et crédit",
+      "url": "https://www.service-public.fr"
+    },
+    {
+      "libelle": "Banque de France — taux et livrets réglementés",
+      "url": "https://www.banque-france.fr"
+    },
+    {
+      "libelle": "impots.gouv.fr — fiscalité de l'épargne",
+      "url": "https://www.impots.gouv.fr"
+    }
+  ],
+  "etapes": [
+    {
+      "id": "banque-s1-lecon-compte",
+      "ordre": 1,
+      "titre": "Le compte courant, ton QG financier",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le compte courant n'est pas fait pour faire fructifier ton argent : c'est une gare de triage. L'argent y entre (salaire, virements), y transite, et en ressort (prélèvements, cartes, retraits)."
+        },
+        {
+          "type": "definition",
+          "terme": "Compte courant",
+          "texte": "Aussi appelé compte de dépôt. Il sert aux opérations du quotidien et ne rapporte pratiquement jamais d'intérêts."
+        },
+        {
+          "type": "definition",
+          "terme": "Découvert autorisé",
+          "texte": "Un montant négatif que la banque tolère sur ton compte, moyennant des intérêts appelés agios. Autorisé ne veut pas dire gratuit."
+        },
+        {
+          "type": "texte",
+          "texte": "Règle simple : sur un compte courant, on garde de quoi vivre le mois et payer les prélèvements — pas plus. Le reste a mieux à faire ailleurs, comme tu vas le voir dans les sessions suivantes."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Un compte courant fait circuler, pas fructifier",
+            "Découvert autorisé ne veut pas dire gratuit",
+            "On y garde le mois, pas l'épargne"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s1-lecon-frais",
+      "ordre": 2,
+      "titre": "Les frais bancaires, ce qui se paie vraiment",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une banque se rémunère en grande partie sur des frais peu visibles, prélevés par petites touches tout au long de l'année."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Les frais les plus courants",
+          "texte": "Tenue de compte (un forfait mensuel), cotisation de la carte bancaire, commissions d'intervention quand un paiement passe alors que le compte est à découvert, frais de retrait hors réseau, et frais sur les opérations à l'étranger."
+        },
+        {
+          "type": "texte",
+          "texte": "Toutes les banques doivent t'envoyer chaque année un récapitulatif des frais prélevés sur ton compte. C'est le document le plus rentable à lire de l'année : cinq minutes peuvent te faire économiser plusieurs dizaines d'euros."
+        },
+        {
+          "type": "texte",
+          "texte": "Beaucoup de frais se négocient ou disparaissent en changeant d'offre : une carte moins haut de gamme, un forfait groupé, ou tout simplement une autre banque."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Ce que coûte un compte sur un an (ordres de grandeur)",
+            "legende": "La ligne la plus chère n'est jamais la carte : ce sont les incidents.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Néobanque, sans incident",
+                "valeur": 0,
+                "role": "attenue"
+              },
+              {
+                "label": "Banque en ligne",
+                "valeur": 24,
+                "role": "principal"
+              },
+              {
+                "label": "Banque traditionnelle",
+                "valeur": 180,
+                "role": "principal"
+              },
+              {
+                "label": "Avec découvert régulier",
+                "valeur": 320,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Les frais se paient par petites touches",
+            "Le récapitulatif annuel est obligatoire — lis-le",
+            "Beaucoup de frais se négocient ou s'évitent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s1-situation-frais",
+      "ordre": 3,
+      "titre": "Un client paie trop de frais",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Mets-toi à la place d'un conseiller : ton client découvre le montant annuel de ses frais bancaires et tombe de sa chaise."
+        }
+      ],
+      "situation": {
+        "contexte": "Un client t'appelle : il vient de recevoir son récapitulatif annuel de frais, 180 € sur l'année. Il a une carte haut de gamme dont il ne se sert jamais à l'étranger, et il a été à découvert trois mois d'affilée. Que lui proposes-tu en priorité ?",
+        "choix": [
+          {
+            "id": "analyser",
+            "texte": "Décortiquer le détail des frais avec lui, puis ajuster la carte et le découvert",
+            "feedback": "Le bon réflexe : on regarde d'abord d'où vient précisément l'argent. Ici, une carte surdimensionnée et des découverts répétés sont deux causes qu'on peut traiter séparément.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "changer-banque",
+            "texte": "Lui conseiller de changer de banque immédiatement",
+            "feedback": "Ce n'est pas absurde, et ça peut être la conclusion — mais avant de tout déménager, autant comprendre quels frais sont évitables. Certains le suivraient dans sa nouvelle banque.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "ne-rien-faire",
+            "texte": "Lui expliquer que ces frais sont normaux et incompressibles",
+            "feedback": "Faux, et coûteux pour lui. Une bonne partie des frais bancaires dépend de l'offre choisie et du comportement du compte : les deux se modifient.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "banque-s1-quiz",
+      "ordre": 4,
+      "titre": "Quiz · Le compte au quotidien",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Vérifions que les bases du compte courant sont bien en place."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "banque-s1-quiz-q1",
+            "question": "À quoi sert principalement un compte courant ?",
+            "choix": [
+              "À faire fructifier son épargne",
+              "À faire circuler l'argent du quotidien",
+              "À emprunter de l'argent"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s1-quiz-q2",
+            "question": "Un découvert \"autorisé\", ça veut dire...",
+            "choix": [
+              "Que la banque le tolère, mais qu'il coûte des intérêts",
+              "Que c'est gratuit tant qu'on reste dans la limite",
+              "Que la banque ne peut plus prélever de frais"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "banque-s1-quiz-q3",
+            "question": "Le récapitulatif annuel des frais bancaires sert à...",
+            "choix": [
+              "Justifier les frais auprès des impôts",
+              "Voir en un seul document ce que la banque t'a facturé sur l'année",
+              "Calculer les intérêts de ton épargne"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "banque-s2-lecon-precaution",
+      "ordre": 5,
+      "titre": "L'épargne de précaution, ton airbag",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Avant de penser rendement, il faut penser sécurité. L'épargne de précaution, c'est la somme que tu peux mobiliser immédiatement quand la vie déraille : voiture en panne, mois sans revenu, déménagement imprévu."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Combien mettre de côté ?",
+          "texte": "Un repère répandu : l'équivalent de 3 à 6 mois de dépenses courantes. Si tu dépenses 1 200 € par mois, cela représente une cible entre 3 600 € et 7 200 €. C'est un objectif, pas une condition d'entrée : on y va progressivement."
+        },
+        {
+          "type": "texte",
+          "texte": "Trois critères comptent pour cette épargne, dans cet ordre : elle doit être disponible immédiatement, sans risque de perte, et seulement ensuite un peu rémunérée. C'est exactement le cahier des charges des livrets réglementés."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Le cercle vicieux sans réserve",
+            "legende": "Trois mois de dépenses d'avance cassent ce cercle dès la première case.",
+            "etapes": [
+              {
+                "label": "Un imprévu de 800 €",
+                "detail": "voiture, dentiste, machine à laver"
+              },
+              {
+                "label": "Découvert ou crédit renouvelable",
+                "detail": "à 15 ou 20 % par an"
+              },
+              {
+                "label": "Intérêts et frais s'ajoutent",
+                "detail": "le mois suivant commence en négatif"
+              },
+              {
+                "label": "Le prochain imprévu tombe plus tôt",
+                "detail": "et le trou se creuse"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "3 à 6 mois de dépenses, disponibles tout de suite",
+            "Elle passe avant tout rendement",
+            "Un objectif à atteindre progressivement"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s2-lecon-livrets",
+      "ordre": 6,
+      "titre": "Les livrets réglementés",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Certains livrets d'épargne sont encadrés par l'État : c'est lui qui fixe leur taux et leur plafond, identiques dans toutes les banques. Inutile donc de comparer les banques sur ce point, seulement sur le reste."
+        },
+        {
+          "type": "definition",
+          "terme": "Livret A",
+          "texte": "Le plus connu. Disponible à tout moment, sans risque de perte en capital, et ses intérêts ne sont ni imposés ni soumis aux prélèvements sociaux. Son plafond de versement est de l'ordre de 23 000 €."
+        },
+        {
+          "type": "definition",
+          "terme": "LDDS",
+          "texte": "Livret de Développement Durable et Solidaire. Fonctionne comme le Livret A, avec un plafond plus bas (environ 12 000 €). Souvent utilisé en complément une fois le Livret A rempli."
+        },
+        {
+          "type": "definition",
+          "terme": "LEP",
+          "texte": "Livret d'Épargne Populaire, réservé aux revenus modestes sous conditions. Son taux est habituellement supérieur à celui du Livret A : si tu y as droit, c'est en général le premier à remplir."
+        },
+        {
+          "type": "texte",
+          "texte": "Les taux évoluent dans le temps au gré des décisions publiques : vérifie toujours le taux en vigueur avant de faire un calcul. Ce qui ne change pas, c'est le principe : disponibilité totale, capital garanti, fiscalité nulle."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Plafonds des livrets réglementés",
+            "legende": "Le LEP, réservé aux revenus modestes, est aussi le mieux rémunéré.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Livret A",
+                "valeur": 22950,
+                "role": "principal"
+              },
+              {
+                "label": "LDDS",
+                "valeur": 12000,
+                "role": "principal"
+              },
+              {
+                "label": "LEP",
+                "valeur": 10000,
+                "role": "secondaire"
+              },
+              {
+                "label": "Livret jeune",
+                "valeur": 1600,
+                "role": "attenue"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Sans risque, sans impôt, disponibles",
+            "Chacun son plafond, le LEP est le mieux payé",
+            "Parfaits pour la précaution, pas pour le long terme"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s2-exemple-livret",
+      "ordre": 7,
+      "titre": "Ce que rapporte vraiment un livret",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un livret ne rendra personne riche, mais il travaille pendant que tu dors. Fais varier le capital, le taux et la durée pour voir ce que ça donne — et garde en tête que le taux réel dépend de la période."
+        }
+      ],
+      "simulateur": {
+        "formule": "interet_compose",
+        "variables": [
+          {
+            "id": "capital",
+            "label": "Somme placée",
+            "unite": "€",
+            "min": 500,
+            "max": 23000,
+            "pas": 500,
+            "valeurParDefaut": 5000
+          },
+          {
+            "id": "taux",
+            "label": "Taux annuel du livret",
+            "unite": "%",
+            "min": 0.5,
+            "max": 6,
+            "pas": 0.25,
+            "valeurParDefaut": 2.5
+          },
+          {
+            "id": "duree",
+            "label": "Durée",
+            "unite": "ans",
+            "min": 1,
+            "max": 20,
+            "pas": 1,
+            "valeurParDefaut": 5
+          }
+        ],
+        "resultat": {
+          "label": "Somme au bout du compte",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "banque-s2-quiz",
+      "ordre": 8,
+      "titre": "Quiz · L'épargne de précaution",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions pour valider la session."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "banque-s2-quiz-q1",
+            "question": "Quel est le critère le plus important pour une épargne de précaution ?",
+            "choix": [
+              "Le rendement le plus élevé possible",
+              "La disponibilité immédiate et l'absence de risque",
+              "La durée de blocage la plus longue"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s2-quiz-q2",
+            "question": "Le taux du Livret A est fixé par...",
+            "choix": [
+              "Chaque banque librement",
+              "L'État, et il est le même partout",
+              "Le client, à l'ouverture"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s2-quiz-q3",
+            "question": "Les intérêts d'un Livret A sont...",
+            "choix": [
+              "Imposés comme un salaire",
+              "Soumis aux prélèvements sociaux uniquement",
+              "Ni imposés ni soumis aux prélèvements sociaux"
+            ],
+            "bonneReponseIndex": 2
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "banque-s3-lecon-assurance-vie",
+      "ordre": 9,
+      "titre": "L'assurance-vie, le couteau suisse",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Malgré son nom, l'assurance-vie n'est pas une assurance décès : c'est une enveloppe dans laquelle tu peux loger différents placements, et dont la fiscalité devient intéressante avec le temps."
+        },
+        {
+          "type": "definition",
+          "terme": "Fonds en euros",
+          "texte": "La poche sécurisée d'une assurance-vie : le capital versé est garanti par l'assureur. En contrepartie, le rendement est modéré."
+        },
+        {
+          "type": "definition",
+          "terme": "Unités de compte (UC)",
+          "texte": "La poche investie en marchés (actions, immobilier, obligations). Potentiellement plus rémunératrice, mais sans garantie : la valeur peut baisser."
+        },
+        {
+          "type": "texte",
+          "texte": "Point clé : l'argent n'est pas bloqué, contrairement à une idée reçue tenace. Tu peux retirer à tout moment. Ce qui change avec le temps, c'est la fiscalité des gains, nettement plus douce après huit ans de détention du contrat."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Une enveloppe, pas un placement",
+            "Fonds euros garanti ou unités de compte risquées",
+            "La fiscalité s'adoucit nettement après 8 ans"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s3-lecon-horizon",
+      "ordre": 10,
+      "titre": "À chaque horizon son placement",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La bonne question n'est pas \"quel est le meilleur placement ?\" mais \"dans combien de temps ai-je besoin de cet argent ?\". L'horizon commande tout le reste."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Trois horizons, trois logiques",
+          "texte": "Besoin à tout moment : livrets, capital garanti. Besoin dans 2 à 5 ans : sécurité encore prioritaire, fonds en euros par exemple. Besoin au-delà de 8 ans : on peut accepter des variations en échange d'un rendement espéré supérieur."
+        },
+        {
+          "type": "texte",
+          "texte": "L'erreur classique consiste à placer sur un support volatil de l'argent dont on aura besoin dans six mois : si le marché baisse au mauvais moment, on est forcé de vendre à perte."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Trois horizons, trois poches",
+            "etapes": [
+              {
+                "label": "Moins de 2 ans",
+                "detail": "livret : disponible, sans risque"
+              },
+              {
+                "label": "De 2 à 8 ans",
+                "detail": "assurance-vie, fonds euros et un peu d'actions"
+              },
+              {
+                "label": "Plus de 8 ans",
+                "detail": "actions (PEA, unités de compte) : le temps absorbe les secousses"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "L'horizon décide du placement, pas l'inverse",
+            "Court terme : disponibilité. Long terme : rendement",
+            "Ne jamais placer à long terme un argent dont on aura besoin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s3-situation-horizon",
+      "ordre": 11,
+      "titre": "Trois projets, trois placements",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le conseil bancaire, c'est surtout écouter le projet avant de proposer le produit."
+        }
+      ],
+      "situation": {
+        "contexte": "Une cliente a 15 000 € de côté. Elle prévoit d'acheter une voiture dans un an avec environ 10 000 €, et n'a pas de projet identifié pour les 5 000 € restants. Que lui proposes-tu ?",
+        "choix": [
+          {
+            "id": "separer",
+            "texte": "Séparer : les 10 000 € sur un support disponible et garanti, les 5 000 € sur un horizon plus long",
+            "feedback": "Exactement la bonne démarche : on ne traite pas une somme comme un bloc, on la découpe par projet et par horizon.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "tout-securise",
+            "texte": "Tout placer sur des livrets, par prudence",
+            "feedback": "Ce n'est pas dangereux, et c'est déjà mieux que de laisser dormir l'argent sur le compte courant. Mais les 5 000 € sans projet pourraient viser un peu mieux sur la durée.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "tout-investi",
+            "texte": "Tout placer sur des supports investis en marchés, pour maximiser le rendement",
+            "feedback": "Risqué : l'achat de la voiture tombe dans un an. Si les marchés baissent d'ici là, elle devra vendre à perte pour financer un projet certain.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "banque-s3-quiz",
+      "ordre": 12,
+      "titre": "Quiz · L'épargne qui dure",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "On vérifie, puis on passe au crédit."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "banque-s3-quiz-q1",
+            "question": "Dans une assurance-vie, le fonds en euros...",
+            "choix": [
+              "Garantit le capital versé",
+              "Est investi intégralement en actions",
+              "Bloque l'argent pendant 8 ans"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "banque-s3-quiz-q2",
+            "question": "Que se passe-t-il au bout de 8 ans sur une assurance-vie ?",
+            "choix": [
+              "L'argent devient disponible",
+              "La fiscalité des gains devient plus avantageuse",
+              "Le contrat se ferme automatiquement"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s3-quiz-q3",
+            "question": "Quelle question doit venir en premier avant de choisir un placement ?",
+            "choix": [
+              "Quel est le placement qui rapporte le plus ?",
+              "Dans combien de temps aurai-je besoin de cet argent ?",
+              "Quelle banque a la meilleure publicité ?"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "banque-s4-lecon-credits",
+      "ordre": 13,
+      "titre": "Les grandes familles de crédit",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Emprunter n'est ni bien ni mal en soi : c'est un outil. Tout dépend de ce qu'on finance et à quel coût."
+        },
+        {
+          "type": "definition",
+          "terme": "Crédit immobilier",
+          "texte": "Sert à financer un logement. Montants élevés, durées longues (souvent 15 à 25 ans), taux généralement parmi les plus bas car la banque a une garantie solide : le bien lui-même."
+        },
+        {
+          "type": "definition",
+          "terme": "Crédit à la consommation",
+          "texte": "Sert à financer un bien ou un projet du quotidien (voiture, travaux, équipement). Durées plus courtes, taux nettement plus élevés."
+        },
+        {
+          "type": "texte",
+          "texte": "Cas particulier à connaître : le crédit renouvelable (ou revolving), une réserve d'argent réutilisable dont le taux est souvent très supérieur au reste. C'est le crédit le plus cher du marché, à manier avec précaution."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Amortissable : une fin claire, un taux raisonnable",
+            "Renouvelable : le plus cher du marché",
+            "Le crédit affecté protège si la vente échoue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s4-lecon-taeg",
+      "ordre": 14,
+      "titre": "Le TAEG, le seul chiffre à comparer",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quand on compare deux crédits, le taux affiché en gros dans la publicité ne suffit pas : il ignore une partie du coût réel."
+        },
+        {
+          "type": "definition",
+          "terme": "TAEG",
+          "texte": "Taux Annuel Effectif Global. Il intègre le taux d'intérêt, les frais de dossier, le coût de l'assurance obligatoire et les frais annexes. C'est le seul taux qui permet de comparer deux offres à armes égales — et la loi oblige à l'afficher."
+        },
+        {
+          "type": "texte",
+          "texte": "Deuxième chiffre à regarder : le coût total du crédit, c'est-à-dire la somme de tout ce que tu rembourses en plus du capital emprunté. Un crédit sur une durée longue affiche une mensualité douce mais un coût total bien plus salé."
+        },
+        {
+          "type": "texte",
+          "texte": "Enfin, l'assurance emprunteur peut représenter une part importante du coût. Elle est négociable, et tu as le droit d'en changer pour une autre moins chère à garanties équivalentes."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "10 000 € sur 4 ans : le coût selon le TAEG",
+            "legende": "Le même montant, la même durée — seul le taux change. C'est lui qu'on compare.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "TAEG 3 %",
+                "valeur": 624,
+                "role": "principal"
+              },
+              {
+                "label": "TAEG 5 %",
+                "valeur": 1054,
+                "role": "principal"
+              },
+              {
+                "label": "TAEG 8 %",
+                "valeur": 1718,
+                "role": "secondaire"
+              },
+              {
+                "label": "TAEG 15 % (renouvelable)",
+                "valeur": 3359,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le TAEG inclut tout : intérêts, frais, assurance",
+            "C'est le seul chiffre comparable entre deux offres",
+            "Une mensualité basse peut cacher un TAEG élevé"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s4-exemple-mensualite",
+      "ordre": 15,
+      "titre": "Mensualité et durée : l'arbitrage",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Allonge la durée et regarde la mensualité baisser. Puis demande-toi ce que ça change au coût total : la mensualité plus faible est payée plus longtemps, et les intérêts courent sur toute la période."
+        }
+      ],
+      "simulateur": {
+        "formule": "mensualite_credit",
+        "variables": [
+          {
+            "id": "montant",
+            "label": "Montant emprunté",
+            "unite": "€",
+            "min": 1000,
+            "max": 60000,
+            "pas": 1000,
+            "valeurParDefaut": 18000
+          },
+          {
+            "id": "taux",
+            "label": "Taux annuel",
+            "unite": "%",
+            "min": 0,
+            "max": 15,
+            "pas": 0.25,
+            "valeurParDefaut": 5
+          },
+          {
+            "id": "duree",
+            "label": "Durée",
+            "unite": "mois",
+            "min": 12,
+            "max": 120,
+            "pas": 6,
+            "valeurParDefaut": 48
+          }
+        ],
+        "resultat": {
+          "label": "Mensualité",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "banque-s4-exercice-taeg",
+      "ordre": 16,
+      "titre": "Comparer deux offres",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre calculs dans la peau de quelqu'un qui compare deux propositions de crédit."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 60,
+        "items": [
+          {
+            "id": "banque-s4-ex-1",
+            "type": "nombre",
+            "enonce": "Offre A : 12 000 € remboursés 400 € par mois pendant 36 mois. Coût total du crédit ?",
+            "reponse": 2400,
+            "tolerance": 50,
+            "unite": "€",
+            "indice": "(400 × 36) − 12 000. Et 4 × 36 = 144.",
+            "explication": "400 × 36 = 14 400 €, soit 2 400 € d'intérêts et de frais."
+          },
+          {
+            "id": "banque-s4-ex-2",
+            "type": "nombre",
+            "enonce": "Offre B : mêmes 12 000 €, 250 € par mois pendant 60 mois. Coût total ?",
+            "reponse": 3000,
+            "tolerance": 50,
+            "unite": "€",
+            "explication": "250 × 60 = 15 000 €, soit 3 000 €. La mensualité est pourtant plus légère de 150 € : c'est la durée qui fait la différence, et elle ne se voit que sur le coût total.",
+            "indice": "(250 × 60) − 12 000. Et 25 × 6 = 150."
+          },
+          {
+            "id": "banque-s4-ex-3",
+            "type": "vrai_faux",
+            "enonce": "L'offre dont la mensualité est la plus basse est toujours la moins chère.",
+            "reponse": false,
+            "explication": "Faux : une mensualité basse vient souvent d'une durée longue, donc de plus d'intérêts. Seul le TAEG, ou le coût total, permet de trancher."
+          },
+          {
+            "id": "banque-s4-ex-4",
+            "type": "vrai_faux",
+            "enonce": "Le TAEG inclut les frais de dossier et l'assurance obligatoire.",
+            "reponse": true,
+            "explication": "Vrai : c'est précisément ce qui en fait le seul chiffre comparable. Un taux nominal alléchant peut cacher des frais qui font bondir le TAEG."
+          }
+        ]
+      }
+    },
+    {
+      "id": "banque-s4-quiz",
+      "ordre": 17,
+      "titre": "Quiz · Emprunter",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Dernière ligne droite avant la session finale."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "banque-s4-quiz-q1",
+            "question": "Pour comparer deux offres de crédit, on regarde en priorité...",
+            "choix": [
+              "Le taux affiché dans la publicité",
+              "Le TAEG",
+              "Le montant de la première mensualité"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s4-quiz-q2",
+            "question": "Allonger la durée d'un crédit, à montant et taux identiques...",
+            "choix": [
+              "Baisse la mensualité mais augmente le coût total",
+              "Baisse la mensualité et le coût total",
+              "N'a aucun effet sur le coût total"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "banque-s4-quiz-q3",
+            "question": "L'assurance emprunteur...",
+            "choix": [
+              "Est imposée par la banque sans alternative",
+              "Peut être remplacée par un contrat équivalent moins cher",
+              "Est incluse gratuitement dans le crédit"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "banque-s5-lecon-types-banques",
+      "ordre": 18,
+      "titre": "Banque traditionnelle, en ligne, néobanque",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois modèles coexistent, et aucun n'est meilleur dans l'absolu : ils répondent à des besoins différents."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Ce qui les distingue",
+          "texte": "La banque traditionnelle offre une agence et un conseiller identifié, avec des frais plus élevés. La banque en ligne réduit les frais en supprimant l'agence, tout en proposant une gamme complète (crédit, épargne). La néobanque se concentre sur le paiement du quotidien, très simple d'usage, mais avec une gamme souvent plus limitée."
+        },
+        {
+          "type": "texte",
+          "texte": "Beaucoup de gens combinent : une banque principale pour le crédit et l'épargne, et une carte secondaire pour les voyages ou la gestion du budget."
+        },
+        {
+          "type": "texte",
+          "texte": "Bon à savoir : la mobilité bancaire est encadrée. Ta nouvelle banque peut se charger gratuitement de transférer tes prélèvements et virements récurrents à ta place."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Traditionnelle : du conseil, des frais",
+            "En ligne : moins cher, tout à distance",
+            "Néobanque : simple et mobile, services limités"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s5-situation-choix-banque",
+      "ordre": 19,
+      "titre": "Aider à choisir sa banque",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Dernier cas pratique de la voie Banque."
+        }
+      ],
+      "situation": {
+        "contexte": "Un ami te dit : « Je paie 15 € par mois de frais bancaires, je ne vais jamais en agence, et je fais tout depuis mon téléphone. Mais j'ai un crédit immobilier dans cette banque. » Que lui conseilles-tu ?",
+        "choix": [
+          {
+            "id": "comparer-garder-credit",
+            "texte": "Comparer des offres moins chères, en vérifiant l'impact sur son crédit en cours",
+            "feedback": "Le bon réflexe. Changer de banque au quotidien est simple, mais un crédit immobilier s'accompagne souvent d'engagements (domiciliation des revenus, assurance) : on vérifie avant de bouger.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "ouvrir-second-compte",
+            "texte": "Garder sa banque et ouvrir un compte secondaire moins cher pour le quotidien",
+            "feedback": "Solution pragmatique, souvent utilisée. Elle réduit une partie des frais sans toucher au crédit — mais elle ne supprime pas les frais de la banque d'origine.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "tout-fermer",
+            "texte": "Fermer immédiatement son compte actuel et tout transférer",
+            "feedback": "Trop rapide. Avec un crédit en cours, une fermeture précipitée peut déclencher des conditions moins favorables sur le prêt, voire une renégociation à son désavantage.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "banque-s5-quiz",
+      "ordre": 20,
+      "titre": "Quiz · Choisir sa banque",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Cinq sessions bouclées. Les deux dernières montent d'un cran : fiscalité, puis immobilier."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "banque-s5-quiz-q1",
+            "question": "Quel est le principal avantage d'une banque en ligne ?",
+            "choix": [
+              "Des frais généralement plus faibles",
+              "Un conseiller en agence disponible",
+              "Des taux de livrets plus élevés"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "banque-s5-quiz-q2",
+            "question": "La mobilité bancaire permet...",
+            "choix": [
+              "De négocier le taux de son crédit",
+              "De faire transférer gratuitement ses prélèvements par la nouvelle banque",
+              "D'ouvrir plusieurs Livrets A"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s5-quiz-q3",
+            "question": "Avant de quitter une banque où l'on a un crédit immobilier, il faut...",
+            "choix": [
+              "Vérifier les engagements liés au prêt",
+              "Rembourser tout le crédit par anticipation",
+              "Attendre la fin du crédit, c'est obligatoire"
+            ],
+            "bonneReponseIndex": 0
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "banque-s6-lecon-brut-net",
+      "ordre": 21,
+      "titre": "Rendement brut, rendement net",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Jusqu'ici, on a raisonné en rendement brut. Sauf que sur la plupart des placements, une partie des gains repart en impôts et en prélèvements sociaux. Comparer deux placements sans regarder ce qu'il en reste, c'est comparer deux salaires bruts en croyant parler de ce qui tombe sur le compte."
+        },
+        {
+          "type": "definition",
+          "terme": "Prélèvement forfaitaire unique (PFU)",
+          "texte": "Aussi appelé « flat tax ». Par défaut, les gains de la plupart des placements (intérêts, dividendes, plus-values) sont taxés à 30 % : 12,8 % d'impôt sur le revenu et 17,2 % de prélèvements sociaux."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Ce que ça change concrètement",
+          "texte": "Un placement affiché à 4 % brut soumis au PFU rapporte en réalité 4 × 0,7 = 2,8 % net. Un Livret A à 2,5 % net d'impôt n'est donc pas si loin — et il est garanti, disponible, sans frais."
+        },
+        {
+          "type": "texte",
+          "texte": "Les exceptions sont précisément celles qu'on a croisées : les livrets réglementés (aucune fiscalité), le PEA après cinq ans et l'assurance-vie après huit ans (impôt allégé, prélèvements sociaux toujours dus). Ce n'est pas un hasard si ce sont les enveloppes que tout le monde recommande d'ouvrir tôt."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "1 000 € d'intérêts bruts : ce qu'il reste",
+            "legende": "Un livret à 3 % exonéré bat un placement à 4 % taxé à 30 %.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Livret A (exonéré)",
+                "valeur": 1000,
+                "role": "principal"
+              },
+              {
+                "label": "Compte à terme, PFU 30 %",
+                "valeur": 700,
+                "role": "secondaire"
+              },
+              {
+                "label": "Barème à 41 % + 17,2 %",
+                "valeur": 418,
+                "role": "attenue"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le brut ne veut rien dire seul",
+            "PFU à 30 %, ou barème si c'est plus avantageux",
+            "Compare toujours du net au net"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s6-lecon-bareme",
+      "ordre": 22,
+      "titre": "PFU ou barème : le choix qu'on oublie",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le PFU s'applique par défaut, mais chaque année, au moment de la déclaration, on peut choisir à la place le barème progressif de l'impôt sur le revenu. Ce choix est global : il s'applique à tous les revenus de placement de l'année."
+        },
+        {
+          "type": "definition",
+          "terme": "Tranche marginale d'imposition (TMI)",
+          "texte": "Le taux qui s'applique au dernier euro que tu gagnes. C'est lui qui compte pour savoir si le barème est plus doux que les 12,8 % du PFU."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Quand le barème gagne",
+          "texte": "Si ta tranche marginale est à 0 % ou 11 %, le barème est en général plus avantageux que les 12,8 % du PFU — et une partie des prélèvements sociaux devient déductible l'année suivante. À 30 % et au-delà, le PFU l'emporte presque toujours."
+        },
+        {
+          "type": "texte",
+          "texte": "Ce n'est pas une optimisation d'expert : c'est une case à cocher. Beaucoup de contribuables faiblement imposés laissent chaque année quelques dizaines d'euros par ignorance de cette option."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le choix barème/PFU se fait chaque année",
+            "Le barème gagne quand la TMI est basse",
+            "Option globale : elle s'applique à tous les revenus du capital"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s6-situation-fiscalite",
+      "ordre": 23,
+      "titre": "Le compte à terme trop beau",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le brut fait vendre. Le net fait décider."
+        }
+      ],
+      "situation": {
+        "contexte": "Une cliente hésite pour placer 15 000 € sur un an : un compte à terme affiché à 3,4 % brut, ou son Livret A à 2,5 % net qu'elle n'a pas encore rempli. Elle est imposée dans la tranche à 30 %. Que lui dis-tu ?",
+        "choix": [
+          {
+            "id": "livret",
+            "texte": "Remplir le Livret A d'abord : 2,5 % net bat 3,4 % brut une fois le PFU passé",
+            "feedback": "Exactement. 3,4 % brut sous PFU, c'est 3,4 × 0,7 = 2,38 % net : moins que le livret, qui en plus reste disponible à tout moment. Le compte à terme n'a de sens que pour ce qui dépasse le plafond du livret.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "partager",
+            "texte": "Faire moitié-moitié pour diversifier",
+            "feedback": "Diversifier a du sens entre placements de nature différente. Ici les deux sont des placements sûrs à court terme : on choisit simplement le mieux rémunéré net, pas besoin de couper la poire en deux.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "compte-terme",
+            "texte": "Le compte à terme : 3,4 % c'est plus que 2,5 %",
+            "feedback": "C'est le piège de la comparaison brut/net. Après 30 % de PFU, il reste 2,38 % — moins que le livret, avec l'argent bloqué en plus.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "banque-s6-quiz",
+      "ordre": 24,
+      "titre": "Quiz · Fiscalité de l'épargne",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "On monte d'un cran : trois questions où le piège est dans le détail."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "banque-s6-quiz-q1",
+            "question": "Un placement à 5 % brut soumis au PFU rapporte net environ...",
+            "choix": [
+              "5 %",
+              "3,5 %",
+              "4,4 %"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s6-quiz-q2",
+            "question": "Le PFU de 30 % se décompose en...",
+            "choix": [
+              "30 % d'impôt sur le revenu",
+              "12,8 % d'impôt et 17,2 % de prélèvements sociaux",
+              "15 % d'impôt et 15 % de prélèvements sociaux"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s6-quiz-q3",
+            "question": "L'option pour le barème progressif est intéressante surtout...",
+            "choix": [
+              "Quand on est dans une tranche marginale faible (0 % ou 11 %)",
+              "Quand on est dans la tranche à 45 %",
+              "Jamais, le PFU est toujours meilleur"
+            ],
+            "bonneReponseIndex": 0
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "banque-s7-lecon-capacite",
+      "ordre": 25,
+      "titre": "Combien peux-tu emprunter, vraiment",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un achat immobilier est le plus gros engagement financier de la plupart des vies. La banque ne regarde pas ce que tu voudrais, elle regarde ce que tu peux rembourser — et elle a une règle chiffrée pour ça."
+        },
+        {
+          "type": "definition",
+          "terme": "Taux d'endettement",
+          "texte": "La part de tes revenus nets consacrée au remboursement de crédits, assurance emprunteur comprise. La règle des autorités bancaires plafonne ce taux à 35 % dans la grande majorité des dossiers, sur une durée maximale de 25 ans."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "L'apport et les frais qu'on oublie",
+          "texte": "Un achat dans l'ancien coûte le prix affiché plus environ 7 à 8 % de frais de notaire (2 à 3 % dans le neuf). La banque demande en général au moins de quoi couvrir ces frais en apport personnel, souvent davantage. Sur un bien à 250 000 €, c'est vite 20 000 € à sortir avant même la première mensualité."
+        },
+        {
+          "type": "texte",
+          "texte": "La capacité d'emprunt n'est pas un plafond à atteindre : c'est une limite. Un dossier calé à 35 % pile ne laisse aucune marge pour une voiture, une naissance ou une baisse de revenus."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "repartition",
+            "titre": "2 500 € nets, vus par la banque",
+            "legende": "35 % au maximum pour rembourser, le reste doit faire vivre le foyer.",
+            "parts": [
+              {
+                "label": "Mensualité de crédit maximale",
+                "valeur": 35
+              },
+              {
+                "label": "Reste à vivre",
+                "valeur": 65
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "35 % des revenus nets au maximum",
+            "L'apport couvre les frais, il ne s'ajoute pas au prêt",
+            "Le reste à vivre compte autant que le ratio"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s7-lecon-levier-immo",
+      "ordre": 26,
+      "titre": "L'effet de levier, version immobilier",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "L'immobilier est le seul placement que la banque accepte de financer presque intégralement à crédit. C'est ce qui fait sa force — et son danger."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Le levier en action",
+          "texte": "Tu achètes un bien 200 000 € avec 20 000 € d'apport. Si le bien prend 10 % en cinq ans, il vaut 220 000 € : tu as gagné 20 000 € sur 20 000 € investis, soit 100 % — le crédit a multiplié ta mise. Si le bien perd 10 %, la logique est la même : tu as perdu 100 % de ton apport, et la dette, elle, n'a pas bougé."
+        },
+        {
+          "type": "definition",
+          "terme": "Rendement locatif brut",
+          "texte": "Loyers annuels divisés par le prix d'achat total. Un repère grossier : il ignore la vacance, les travaux, les charges non récupérables, la taxe foncière et la fiscalité des loyers — qui, ensemble, peuvent en manger la moitié."
+        },
+        {
+          "type": "texte",
+          "texte": "Nuance importante : la résidence principale n'est pas un investissement au sens financier. On n'en touche aucun loyer, et on ne peut pas la vendre sans devoir se reloger. On l'achète pour y vivre, avec un raisonnement de budget, pas de rendement."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Le levier : 20 000 € d'apport, un bien à 200 000 €",
+            "legende": "Une hausse de 10 % du bien double la mise de départ. Une baisse de 10 % l'efface.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Apport",
+                "valeur": 20000,
+                "role": "attenue"
+              },
+              {
+                "label": "Bien financé",
+                "valeur": 200000,
+                "role": "principal"
+              },
+              {
+                "label": "Gain si le bien prend 10 %",
+                "valeur": 20000,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Emprunter démultiplie gains et pertes",
+            "Le locataire rembourse une partie du crédit",
+            "Le levier ne transforme pas un mauvais bien en bon investissement"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s7-exemple-immo",
+      "ordre": 27,
+      "titre": "Une mensualité immobilière, en vrai",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Des ordres de grandeur réalistes cette fois : 200 000 € sur 25 ans. Fais bouger le taux d'un demi-point et regarde ce que ça change sur la mensualité — puis multiplie par 300 mois."
+        }
+      ],
+      "simulateur": {
+        "formule": "mensualite_credit",
+        "variables": [
+          {
+            "id": "montant",
+            "label": "Montant emprunté",
+            "unite": "€",
+            "min": 50000,
+            "max": 500000,
+            "pas": 10000,
+            "valeurParDefaut": 200000
+          },
+          {
+            "id": "taux",
+            "label": "Taux annuel (hors assurance)",
+            "unite": "%",
+            "min": 1,
+            "max": 7,
+            "pas": 0.25,
+            "valeurParDefaut": 3.5
+          },
+          {
+            "id": "duree",
+            "label": "Durée",
+            "unite": "mois",
+            "min": 120,
+            "max": 300,
+            "pas": 12,
+            "valeurParDefaut": 300
+          }
+        ],
+        "resultat": {
+          "label": "Mensualité hors assurance",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "banque-s7-situation-achat",
+      "ordre": 28,
+      "titre": "Le couple au plafond",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un dossier qui « passe » n'est pas forcément un dossier sain."
+        }
+      ],
+      "situation": {
+        "contexte": "Un couple gagne 3 200 € nets par mois à deux. Ils ont trouvé un appartement dont le crédit reviendrait à 1 100 € par mois assurance comprise, soit 34 % d'endettement. Ils n'ont pas de crédit en cours et 12 000 € d'épargne, dont 10 000 € partiraient en apport. Que leur dis-tu ?",
+        "choix": [
+          {
+            "id": "marge",
+            "texte": "Le dossier passe, mais il ne reste ni marge mensuelle ni épargne de précaution : viser un peu moins cher ou attendre",
+            "feedback": "C'est la lecture d'un conseiller sérieux. 34 % est sous le plafond, mais 2 000 € d'épargne restante pour un logement (chaudière, charges de copropriété, imprévus) est trop peu. Un bien un peu moins cher, ou six mois de plus à épargner, change tout.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "allonger",
+            "texte": "Passer sur 25 ans pour baisser la mensualité",
+            "feedback": "Ça réduit le taux d'endettement, au prix d'un coût total nettement plus élevé — et ça ne règle pas l'absence d'épargne de précaution après l'achat. Une solution partielle, pas une solution.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "foncer",
+            "texte": "Foncer : 34 %, c'est sous les 35 % autorisés",
+            "feedback": "Confondre la limite réglementaire avec un objectif. Un foyer à 34 % sans épargne est à un incident près du découvert permanent. Le plafond dit ce que la banque accepte, pas ce qui est confortable.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "banque-s7-quiz",
+      "ordre": 29,
+      "titre": "Quiz · Immobilier et patrimoine",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre questions sur l'immobilier, il en faut trois. Puis une dernière session pour tout assembler."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "banque-s7-quiz-q1",
+            "question": "Le taux d'endettement maximal habituellement accepté est de...",
+            "choix": [
+              "25 % des revenus, hors assurance",
+              "35 % des revenus, assurance comprise",
+              "50 % des revenus"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s7-quiz-q2",
+            "question": "Avec 20 000 € d'apport sur un bien à 200 000 € qui perd 10 %, l'apport...",
+            "choix": [
+              "Perd 10 %",
+              "Est intégralement perdu",
+              "N'est pas concerné, seul le crédit compte"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s7-quiz-q3",
+            "question": "Les frais de notaire dans l'ancien représentent environ...",
+            "choix": [
+              "1 % du prix",
+              "7 à 8 % du prix",
+              "20 % du prix"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s7-quiz-q4",
+            "question": "Pourquoi la résidence principale n'est-elle pas un investissement au sens financier ?",
+            "choix": [
+              "Parce qu'elle ne peut jamais prendre de valeur",
+              "Parce qu'elle ne rapporte pas de loyer et qu'il faut se reloger pour la vendre",
+              "Parce que la banque refuse de la financer"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 75
+      }
+    },
+    {
+      "id": "banque-s8-lecon-priorites",
+      "ordre": 30,
+      "titre": "L'ordre des priorités",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Tu as maintenant tous les outils. Reste la question que personne ne pose clairement : dans quel ordre s'en servir ? Il existe une hiérarchie simple, valable pour presque tout le monde."
+        },
+        {
+          "type": "liste",
+          "titre": "Les cinq marches",
+          "items": [
+            "Une épargne de précaution disponible : 3 à 6 mois de dépenses.",
+            "Rembourser les dettes chères — tout crédit au-dessus de 5 ou 6 % rapporte plus à rembourser qu'à placer.",
+            "Remplir les enveloppes sans fiscalité (livrets réglementés).",
+            "Ouvrir tôt les enveloppes qui mûrissent avec le temps (PEA, assurance-vie), même avec peu : c'est la date d'ouverture qui compte.",
+            "Seulement ensuite, viser du rendement sur le long terme."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Sauter une marche se paie : investir en bourse avec un crédit renouvelable en cours, c'est emprunter à 15 % pour espérer 6 %."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Précaution d'abord, rendement en dernier",
+            "Une dette chère se rembourse avant tout placement",
+            "Ouvrir les enveloppes tôt, même avec 50 €"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s8-lecon-plan",
+      "ordre": 31,
+      "titre": "Un plan en une page",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un plan financier n'est pas un tableur de trente onglets. C'est une page : ce qui rentre, ce qui sort, ce qui est mis de côté automatiquement, et pour quoi."
+        },
+        {
+          "type": "definition",
+          "terme": "Virement automatique",
+          "texte": "Un ordre permanent qui déplace une somme fixe le jour de la paie vers l'épargne, avant qu'on ait pu la dépenser. La méthode la plus efficace jamais mesurée pour épargner : elle ne repose sur aucune volonté."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Se payer en premier",
+          "texte": "Sur 2 300 € nets, 230 € partent automatiquement le 2 du mois : 100 € vers le Livret A tant qu'il n'est pas à niveau, 130 € vers une assurance-vie ouverte à 25 ans. Le reste est le budget du mois — et il n'y a plus jamais à choisir entre épargner et sortir."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Le jour de la paie",
+            "etapes": [
+              {
+                "label": "Le salaire arrive le 1er"
+              },
+              {
+                "label": "Le virement automatique part le 2",
+                "detail": "230 €, vers les livrets et l'assurance-vie"
+              },
+              {
+                "label": "Le reste est le budget du mois",
+                "detail": "plus rien à décider"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Automatise le jour de la paie",
+            "Une page, quatre lignes : entrées, sorties, épargne, objectif",
+            "Revois le plan une fois par an, pas tous les jours"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s8-exemple-objectif",
+      "ordre": 32,
+      "titre": "Ton objectif à cinq ans",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le plan de la leçon précédente, en chiffres. Fais varier le versement automatique et regarde ce que cinq ans de régularité représentent — puis compare avec ce que tu aurais eu en attendant « le bon moment »."
+        }
+      ],
+      "simulateur": {
+        "formule": "epargne_programmee",
+        "variables": [
+          {
+            "id": "versement",
+            "label": "Virement automatique mensuel",
+            "unite": "€",
+            "min": 50,
+            "max": 1500,
+            "pas": 50,
+            "valeurParDefaut": 230
+          },
+          {
+            "id": "taux",
+            "label": "Rendement annuel moyen",
+            "unite": "%",
+            "min": 0,
+            "max": 6,
+            "pas": 0.25,
+            "valeurParDefaut": 3
+          },
+          {
+            "id": "duree",
+            "label": "Durée",
+            "unite": "ans",
+            "min": 1,
+            "max": 10,
+            "pas": 1,
+            "valeurParDefaut": 5
+          }
+        ],
+        "resultat": {
+          "label": "Somme réunie",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "banque-s8-situation-plan",
+      "ordre": 33,
+      "titre": "Le plan de Léa",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un cas complet, avec tout ce que tu as vu. Il n'y a qu'une seule bonne première marche."
+        }
+      ],
+      "situation": {
+        "contexte": "Léa, 27 ans, gagne 2 300 € nets. Elle a 1 500 € sur son compte courant, un crédit auto à 6 % dont il reste 4 000 €, et elle vient d'hériter de 8 000 €. Elle veut « bien placer » cet argent. Par quoi commencer ?",
+        "choix": [
+          {
+            "id": "marches",
+            "texte": "Rembourser le crédit auto, constituer trois mois de précaution sur livret, puis placer le reste à long terme",
+            "feedback": "L'ordre des marches, appliqué. Solder un crédit à 6 % est un placement garanti à 6 %. Une fois le filet de sécurité en place, le reste peut viser plus loin sans qu'un imprévu la force à vendre.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "livret",
+            "texte": "Tout mettre sur le Livret A en attendant d'y voir plus clair",
+            "feedback": "Pas dangereux, et mieux que de laisser dormir sur le compte courant. Mais le crédit à 6 % continue de courir pendant que le livret rapporte moins : elle perd la différence chaque mois.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "bourse",
+            "texte": "Ouvrir un compte-titres et investir les 8 000 € en actions : elle est jeune, ça rapporte",
+            "feedback": "Avec un crédit à 6 % et 1 500 € de précaution, c'est sauter trois marches. Au premier imprévu, elle vendra ses actions au mauvais moment pour payer une facture.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "banque-s8-quiz",
+      "ordre": 34,
+      "titre": "Quiz · Bâtir son plan",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre questions sur le plan, il en faut trois. Puis une dernière session, sur l'impôt."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "banque-s8-quiz-q1",
+            "question": "Quelle est la première marche d'un plan financier ?",
+            "choix": [
+              "Investir en bourse",
+              "Constituer une épargne de précaution disponible",
+              "Ouvrir un PEA"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s8-quiz-q2",
+            "question": "Rembourser un crédit à 6 % équivaut à...",
+            "choix": [
+              "Un placement garanti à 6 %",
+              "Une perte de 6 %",
+              "Rien de particulier"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "banque-s8-quiz-q3",
+            "question": "Pourquoi ouvrir tôt un PEA ou une assurance-vie, même avec peu ?",
+            "choix": [
+              "Parce que les frais sont plus bas les premières années",
+              "Parce que c'est la date d'ouverture qui fait courir les avantages fiscaux",
+              "Parce que la banque l'exige"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s8-quiz-q4",
+            "question": "La méthode la plus efficace pour épargner régulièrement est...",
+            "choix": [
+              "Décider chaque mois ce qu'il reste",
+              "Un virement automatique le jour de la paie",
+              "Attendre les primes"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 75
+      }
+    },
+    {
+      "id": "banque-s9-lecon-tranches",
+      "ordre": 35,
+      "titre": "Le barème : tranches et taux marginal",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "L'impôt sur le revenu fait peur parce qu'on l'imagine mal. Beaucoup croient qu'en « changeant de tranche », tout leur revenu serait taxé plus fort. C'est faux, et cette erreur coûte de vraies décisions : primes refusées, heures supplémentaires évitées."
+        },
+        {
+          "type": "definition",
+          "terme": "Taux marginal d'imposition (TMI)",
+          "texte": "Le taux qui s'applique au dernier euro gagné — celui de la tranche la plus haute que ton revenu atteint. Ce n'est pas le taux payé sur l'ensemble : celui-là, le taux moyen, est toujours plus bas."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Le barème par part (revenus 2024)",
+            "legende": "Chaque tranche ne taxe que la part du revenu qui se trouve dedans.",
+            "unite": "%",
+            "barres": [
+              {
+                "label": "Jusqu'à 11 497 €",
+                "valeur": 0,
+                "role": "attenue"
+              },
+              {
+                "label": "11 498 à 29 315 €",
+                "valeur": 11,
+                "role": "principal"
+              },
+              {
+                "label": "29 316 à 83 823 €",
+                "valeur": 30,
+                "role": "principal"
+              },
+              {
+                "label": "83 824 à 180 294 €",
+                "valeur": 41,
+                "role": "secondaire"
+              },
+              {
+                "label": "Au-delà",
+                "valeur": 45,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "30 000 € imposables, une part",
+          "texte": "0 € sur les 11 497 premiers euros. 11 % sur les 17 818 suivants : 1 960 €. 30 % sur les 685 derniers : 205 €. Total : 2 165 €, soit un taux moyen de 7,2 % — alors que le TMI est de 30 %. Gagner 100 € de plus coûterait 30 € d'impôt, et rapporterait donc 70 €."
+        },
+        {
+          "type": "texte",
+          "texte": "Le barème s'applique par « part » : un couple compte deux parts, un enfant en ajoute une demie. Le revenu est divisé par le nombre de parts avant de passer dans le barème, puis l'impôt est multiplié — c'est le quotient familial."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Seule la part du revenu dans une tranche est taxée à son taux",
+            "TMI : le taux du dernier euro, pas de tous",
+            "Un revenu en plus rapporte toujours plus qu'il ne coûte"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s9-lecon-avantages",
+      "ordre": 36,
+      "titre": "Déduction, réduction, crédit : trois mots, trois effets",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Les « avantages fiscaux » se ressemblent sur les publicités et n'ont rien à voir dans la vraie vie. La différence tient à l'endroit où le mécanisme intervient : avant le barème, ou après."
+        },
+        {
+          "type": "definition",
+          "terme": "Déduction",
+          "texte": "Une somme retirée du revenu avant le calcul de l'impôt (versement sur un PER, pension alimentaire…). Son effet dépend de ta TMI : 1 000 € déduits font économiser 300 € à 30 % de TMI, 110 € à 11 %, et rien du tout à 0 %."
+        },
+        {
+          "type": "definition",
+          "terme": "Réduction d'impôt",
+          "texte": "Une somme retirée de l'impôt lui-même (dons aux associations, certains investissements). Elle vaut la même chose pour tout le monde… mais ne peut pas dépasser l'impôt dû : sans impôt, pas de réduction."
+        },
+        {
+          "type": "definition",
+          "terme": "Crédit d'impôt",
+          "texte": "Comme une réduction, mais remboursé si l'impôt est trop faible pour l'absorber (garde d'enfant, emploi à domicile). Le seul avantage qui profite pleinement à ceux qui ne paient pas d'impôt."
+        },
+        {
+          "type": "liste",
+          "titre": "Le bon réflexe avant chaque « avantage »",
+          "items": [
+            "Quel mot exact figure dans le texte : déduction, réduction ou crédit ?",
+            "Quelle est ma TMI ? Une déduction vaut peu en dessous de 30 %.",
+            "Est-ce que je paie assez d'impôt pour qu'une réduction serve à quelque chose ?",
+            "L'avantage justifie-t-il le placement, ou masque-t-il un mauvais produit ?"
+          ]
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Déduction : sur le revenu, vaut ta TMI",
+            "Réduction : sur l'impôt, plafonnée à l'impôt dû",
+            "Crédit : sur l'impôt, remboursé même sans impôt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banque-s9-exercice-impot",
+      "ordre": 37,
+      "titre": "À toi de calculer",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Cinq petits calculs pour rendre le barème concret. La calculatrice est autorisée — c'est ce que tout le monde fait dans la vraie vie."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 60,
+        "items": [
+          {
+            "id": "banque-s9-ex-1",
+            "type": "nombre",
+            "enonce": "Revenu imposable de 21 500 €, une part. Combien d'impôt, avec 0 % jusqu'à 11 500 € (seuil arrondi) puis 11 % au-delà ?",
+            "reponse": 1100,
+            "tolerance": 30,
+            "unite": "€",
+            "indice": "Seule la part au-dessus de 11 500 € est taxée : 10 000 × 11 %.",
+            "explication": "21 500 − 11 500 = 10 000 €, taxés à 11 % : 1 100 €. Le taux moyen n'est que de 5 %, pour une tranche marginale de 11 %."
+          },
+          {
+            "id": "banque-s9-ex-2",
+            "type": "vrai_faux",
+            "enonce": "Passer dans la tranche à 30 % fait payer 30 % sur tout son revenu.",
+            "reponse": false,
+            "explication": "Faux, et c'est l'erreur la plus répandue. Seuls les euros situés dans la tranche à 30 % sont taxés à 30 % ; le reste garde ses taux de 0 et 11 %."
+          },
+          {
+            "id": "banque-s9-ex-3",
+            "type": "nombre",
+            "enonce": "Un don de 100 € à une association ouvre droit à une réduction d'impôt de 66 %. Combien te coûte réellement ce don ?",
+            "reponse": 34,
+            "tolerance": 1,
+            "unite": "€",
+            "explication": "100 € donnés, 66 € rendus par l'impôt : le don ne coûte que 34 €. À condition de payer au moins 66 € d'impôt — sinon, la réduction est perdue."
+          },
+          {
+            "id": "banque-s9-ex-4",
+            "type": "vrai_faux",
+            "enonce": "Une déduction de 1 000 € fait économiser plus à quelqu'un dont la TMI est de 30 % qu'à quelqu'un à 11 %.",
+            "reponse": true,
+            "explication": "Vrai : la déduction retire 1 000 € du revenu, donc 1 000 € qui auraient été taxés à la TMI. 300 € économisés à 30 %, 110 € à 11 %."
+          },
+          {
+            "id": "banque-s9-ex-5",
+            "type": "nombre",
+            "enonce": "TMI de 30 %. Tu verses 2 000 € sur un PER, entièrement déductibles. Économie d'impôt cette année ?",
+            "reponse": 600,
+            "tolerance": 10,
+            "unite": "€",
+            "indice": "Déduction × TMI.",
+            "explication": "2 000 € × 30 % = 600 € d'impôt en moins. Attention : à la sortie du PER, les sommes seront imposées — l'avantage est un report, pas un cadeau."
+          }
+        ]
+      }
+    },
+    {
+      "id": "banque-s9-situation-prime",
+      "ordre": 38,
+      "titre": "La prime et la peur de la tranche",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une conversation qu'on entend dans toutes les entreprises."
+        }
+      ],
+      "situation": {
+        "contexte": "Karim gagne 28 000 € imposables, une part : sa TMI est de 11 %. Son employeur lui propose une prime exceptionnelle de 3 000 €. Il hésite à la refuser : « avec ça je passe dans la tranche à 30 %, je vais y perdre ». Que lui dis-tu ?",
+        "choix": [
+          {
+            "id": "accepter",
+            "texte": "Accepter sans hésiter : seule la part au-dessus de 29 315 € sera taxée à 30 %, il garde au moins 70 € sur chaque 100 € de prime",
+            "feedback": "C'est exactement ça. Sur les 3 000 €, 1 315 € restent dans la tranche à 11 % et 1 685 € passent à 30 % : environ 650 € d'impôt en plus, et 2 350 € nets dans sa poche. Il n'existe aucun cas où gagner plus fait toucher moins.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "etaler",
+            "texte": "Demander à étaler la prime sur deux ans pour rester sous le seuil",
+            "feedback": "Ça fonctionne, mais pour gagner quelques dizaines d'euros d'impôt en repoussant 1 500 € d'un an. Le jeu n'en vaut pas la chandelle — et rien ne garantit la prime l'an prochain.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "refuser",
+            "texte": "Lui donner raison : mieux vaut ne pas changer de tranche",
+            "feedback": "L'erreur classique, qui coûte ici 2 350 € nets. Changer de tranche ne modifie que l'impôt sur les euros au-dessus du seuil — jamais sur ceux d'en dessous.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "banque-s9-scenario-deux-ans",
+      "ordre": 39,
+      "titre": "Deux ans de décisions",
+      "type": "scenario",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Toute la voie tient dans ces cinq décisions. Elles s'enchaînent : chacune part de ce que la précédente a laissé."
+        }
+      ],
+      "scenario": {
+        "intro": "Camille, 28 ans, vient d'être titularisée : 2 400 € nets par mois. Elle a 1 200 € sur son compte courant, aucun crédit, et deux ans devant elle.",
+        "decisions": [
+          {
+            "id": "premier-surplus",
+            "situation": "Après trois mois, son budget est stable : il lui reste environ 350 € en fin de mois. Elle veut « faire quelque chose » de cet argent.",
+            "options": [
+              {
+                "id": "precaution",
+                "texte": "Constituer d'abord trois mois de dépenses sur un livret, par virement automatique",
+                "consequence": "En huit mois, 2 800 € dorment sur un livret disponible. Le filet est en place avant tout le reste — et il servira plus tôt qu'elle ne le croit.",
+                "points": 2
+              },
+              {
+                "id": "assurance-vie",
+                "texte": "Ouvrir directement une assurance-vie et y verser 300 € par mois",
+                "consequence": "Le contrat prend date, ce qui est excellent. Mais sans réserve disponible, le moindre imprévu l'obligera à retirer avant huit ans, en perdant l'avantage fiscal.",
+                "points": 1
+              },
+              {
+                "id": "attendre",
+                "texte": "Laisser l'argent s'accumuler sur le compte courant en attendant d'y voir clair",
+                "consequence": "Huit mois plus tard, le solde a à peine bougé : l'argent visible sur un compte courant se dépense. Rien n'a été mis de côté.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "impreu",
+            "situation": "Quatorzième mois : sa voiture lâche. La réparation coûte 900 €, à payer tout de suite.",
+            "options": [
+              {
+                "id": "epargne",
+                "texte": "Payer avec l'épargne de précaution, puis la reconstituer les mois suivants",
+                "consequence": "C'est exactement à ça qu'elle servait. Aucun intérêt payé, aucun stress, et la réserve se reconstitue en trois mois.",
+                "points": 2
+              },
+              {
+                "id": "decouvert",
+                "texte": "Passer en découvert autorisé pendant un mois",
+                "consequence": "Quelques dizaines d'euros d'agios, et un mois qui commence dans le rouge. Supportable une fois, ruineux si ça devient une habitude.",
+                "points": 1
+              },
+              {
+                "id": "renouvelable",
+                "texte": "Utiliser la réserve d'argent renouvelable proposée par sa banque",
+                "consequence": "À plus de 15 % par an, les 900 € en coûteront près de 1 100. Et la réserve, une fois ouverte, a tendance à resservir.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "prime",
+            "situation": "Dix-huitième mois : elle touche une prime exceptionnelle de 3 000 €. Son collègue lui conseille de la refuser l'an prochain, « pour ne pas changer de tranche d'impôt ».",
+            "options": [
+              {
+                "id": "accepter-placer",
+                "texte": "Accepter la prime et la répartir : reconstitution de la réserve, puis versement sur son PEA",
+                "consequence": "Refuser une prime ne fait jamais gagner d'argent : seuls les euros au-dessus du seuil sont taxés plus fort. Elle garde plus de 2 000 € nets et prend date sur un PEA.",
+                "points": 2
+              },
+              {
+                "id": "accepter-livret",
+                "texte": "Accepter la prime et tout mettre sur le livret",
+                "consequence": "Aucun risque, et le raisonnement sur l'impôt est juste. Mais un livret déjà bien rempli plafonne : une partie de cette somme pouvait viser plus loin.",
+                "points": 1
+              },
+              {
+                "id": "refuser",
+                "texte": "Suivre le conseil du collègue et demander à étaler la prime",
+                "consequence": "Elle repousse 1 500 € d'un an pour économiser quelques dizaines d'euros d'impôt — et rien ne garantit la prime l'année suivante.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "credit-conso",
+            "situation": "Vingtième mois : elle veut changer de voiture. Le concessionnaire propose un crédit à 6,9 % sur cinq ans, mensualité « très douce ». Sa banque lui propose 4,2 % sur trois ans.",
+            "options": [
+              {
+                "id": "banque-court",
+                "texte": "Comparer les TAEG et prendre l'offre à 4,2 % sur trois ans",
+                "consequence": "Mensualité plus élevée, mais près de 1 800 € d'intérêts économisés sur la durée. C'est le coût total, pas la mensualité, qui dit le prix d'un crédit.",
+                "points": 2
+              },
+              {
+                "id": "negocier",
+                "texte": "Repousser l'achat de six mois pour augmenter l'apport et emprunter moins",
+                "consequence": "Le plus économique de tous, si la voiture actuelle tient. Elle emprunte moins et paie moins d'intérêts — au prix de six mois d'attente.",
+                "points": 2
+              },
+              {
+                "id": "concession",
+                "texte": "Prendre l'offre du concessionnaire : la mensualité rentre facilement dans le budget",
+                "consequence": "Une mensualité douce sur cinq ans à 6,9 %, c'est le crédit le plus cher des deux, de loin. La facilité mensuelle masque la facture totale.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "immobilier",
+            "situation": "Vingt-quatrième mois : elle envisage d'acheter. Avec 2 400 € nets, sa banque accepterait jusqu'à 840 € de mensualité. Un bien lui plaît, à 835 € par mois assurance comprise, et il ne lui resterait que 3 000 € d'épargne après les frais de notaire.",
+            "options": [
+              {
+                "id": "viser-moins",
+                "texte": "Viser un bien un peu moins cher, pour garder de la marge et une réserve",
+                "consequence": "Le plafond de 35 % dit ce que la banque accepte, pas ce qui est vivable. Avec une mensualité plus basse et une réserve intacte, elle achète sans se mettre en tension.",
+                "points": 2
+              },
+              {
+                "id": "attendre-apport",
+                "texte": "Attendre encore un an pour augmenter l'apport",
+                "consequence": "Prudent et raisonnable. Elle emprunte moins et garde sa réserve — au risque que les prix ou les taux bougent entre-temps.",
+                "points": 2
+              },
+              {
+                "id": "au-plafond",
+                "texte": "Y aller : le dossier passe, c'est le principal",
+                "consequence": "À 835 € de mensualité et 3 000 € de réserve, la moindre chaudière à changer se paie à crédit. Un dossier qui « passe » n'est pas un dossier confortable.",
+                "points": 0
+              }
+            ]
+          }
+        ],
+        "bilans": [
+          {
+            "seuil": 80,
+            "titre": "Deux ans qui construisent",
+            "texte": "Précaution d'abord, dette chère évitée, prime acceptée sans crainte de la tranche, crédit choisi sur son TAEG et achat calibré sous le plafond. Camille finit ces deux ans avec une réserve, un PEA qui a pris date et aucune dette coûteuse. C'est exactement l'ordre des priorités de la session 8."
+          },
+          {
+            "seuil": 50,
+            "titre": "Deux ans corrects, quelques euros laissés en route",
+            "texte": "L'essentiel tient : pas de crédit renouvelable, une épargne qui existe, un achat immobilier soutenable. Quelques décisions ont coûté plus que nécessaire — un placement pris avant la réserve, ou une mensualité choisie à la place d'un coût total. Ce sont les mêmes arbitrages qui reviendront."
+          },
+          {
+            "seuil": 0,
+            "titre": "Deux ans qui coûtent cher",
+            "texte": "L'argent laissé sur le compte courant n'a rien construit, l'imprévu s'est payé à 15 %, et l'achat au plafond ne laisse aucune marge. Rien d'irréversible, mais chacune de ces décisions a un coût mesurable — et toutes se prennent autrement avec ce que tu viens d'apprendre."
+          }
+        ]
+      }
+    },
+    {
+      "id": "banque-s9-quiz",
+      "ordre": 40,
+      "titre": "Quiz final · Voie Banque",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le tout dernier quiz de la voie. Quatre questions, il en faut trois."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 75,
+        "questions": [
+          {
+            "id": "banque-s9-quiz-q1",
+            "question": "Le taux marginal d'imposition, c'est le taux…",
+            "choix": [
+              "Payé sur l'ensemble du revenu",
+              "Du dernier euro gagné",
+              "Moyen des trois dernières années"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s9-quiz-q2",
+            "question": "Quel avantage fiscal est remboursé même si l'on ne paie pas d'impôt ?",
+            "choix": [
+              "La déduction",
+              "La réduction",
+              "Le crédit d'impôt"
+            ],
+            "bonneReponseIndex": 2
+          },
+          {
+            "id": "banque-s9-quiz-q3",
+            "question": "Une déduction de 1 000 € avec une TMI de 30 % fait économiser…",
+            "choix": [
+              "1 000 €",
+              "300 €",
+              "Rien"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "banque-s9-quiz-q4",
+            "question": "Refuser une augmentation « pour ne pas changer de tranche », c'est…",
+            "choix": [
+              "Prudent",
+              "Toujours perdant : on garde au moins 55 % de chaque euro en plus",
+              "Rentable au-dessus de 30 % de TMI"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    }
+  ]
+}

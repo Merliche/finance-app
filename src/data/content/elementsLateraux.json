@@ -1,0 +1,793 @@
+[
+  {
+    "id": "intro-comparateur-epargner-depenser",
+    "parcoursId": "intro",
+    "session": 1,
+    "type": "comparateur",
+    "titre": "Épargner vs tout dépenser",
+    "optionA": {
+      "label": "Mettre 50€ de côté chaque mois",
+      "points": [
+        "600€ économisés en un an",
+        "Un filet de sécurité en cas d'imprévu",
+        "La base pour faire fructifier plus tard"
+      ]
+    },
+    "optionB": {
+      "label": "Tout dépenser chaque mois",
+      "points": [
+        "Rien de côté en cas de coup dur",
+        "Chaque imprévu devient un problème",
+        "Aucune marge pour investir plus tard"
+      ]
+    },
+    "conclusion": "Pas besoin de grosses sommes : la régularité compte plus que le montant."
+  },
+  {
+    "id": "intro-saviez-vous-salaire",
+    "parcoursId": "intro",
+    "session": 1,
+    "type": "saviez_vous",
+    "titre": "L'origine du mot \"salaire\"",
+    "anecdote": "Le mot \"salaire\" vient du latin salarium, la ration de sel donnée aux soldats romains — le sel étant à l'époque une denrée précieuse servant presque de monnaie."
+  },
+  {
+    "id": "intro-glossaire-budget",
+    "parcoursId": "intro",
+    "session": 1,
+    "type": "glossaire",
+    "titre": "Glossaire · Budget",
+    "entrees": [
+      { "terme": "Revenu", "definition": "Toute somme d'argent que tu reçois : salaire, allocation, cadeau, vente d'un objet..." },
+      { "terme": "Dépense", "definition": "Toute somme d'argent que tu donnes en échange d'un bien ou d'un service." }
+    ]
+  },
+  {
+    "id": "intro-badge-session-1",
+    "parcoursId": "intro",
+    "session": 1,
+    "type": "badge",
+    "titre": "Bases du budget",
+    "description": "Tu as terminé la Session 1 : L'argent et le budget."
+  },
+  {
+    "id": "intro-calculateur-interet-compose",
+    "parcoursId": "intro",
+    "session": 2,
+    "type": "calculateur",
+    "titre": "Simulateur libre · Intérêts composés",
+    "description": "Rejoue le calcul avec tes propres chiffres, à tout moment.",
+    "simulateur": {
+      "formule": "interet_compose",
+      "variables": [
+        { "id": "capital", "label": "Capital de départ", "unite": "€", "min": 100, "max": 20000, "pas": 100, "valeurParDefaut": 2000 },
+        { "id": "taux", "label": "Taux d'intérêt annuel", "unite": "%", "min": 0, "max": 12, "pas": 0.5, "valeurParDefaut": 4 },
+        { "id": "duree", "label": "Durée", "unite": "ans", "min": 1, "max": 40, "pas": 1, "valeurParDefaut": 15 }
+      ],
+      "resultat": { "label": "Capital final", "unite": "€" }
+    }
+  },
+  {
+    "id": "intro-saviez-vous-regle-72",
+    "parcoursId": "intro",
+    "session": 2,
+    "type": "saviez_vous",
+    "titre": "La règle des 72",
+    "anecdote": "Pour estimer en combien d'années un capital double, divise 72 par le taux annuel. À 6 % par an, il faut environ 12 ans (72 ÷ 6). Une approximation vieille de plusieurs siècles, qui reste étonnamment juste."
+  },
+  {
+    "id": "intro-glossaire-interets",
+    "parcoursId": "intro",
+    "session": 2,
+    "type": "glossaire",
+    "titre": "Glossaire · Intérêts",
+    "entrees": [
+      { "terme": "Intérêt simple", "definition": "Chaque année, les intérêts sont calculés uniquement sur le capital de départ." },
+      { "terme": "Intérêt composé", "definition": "Chaque année, les intérêts s'ajoutent au capital et rapportent eux-mêmes des intérêts l'année suivante." }
+    ]
+  },
+  {
+    "id": "intro-badge-session-2",
+    "parcoursId": "intro",
+    "session": 2,
+    "type": "badge",
+    "titre": "As des intérêts composés",
+    "description": "Tu as terminé la Session 2 : Intérêts simples et composés."
+  },
+  {
+    "id": "intro-calculateur-inflation",
+    "parcoursId": "intro",
+    "session": 3,
+    "type": "calculateur",
+    "titre": "Simulateur libre · Érosion par l'inflation",
+    "description": "Même formule que les intérêts composés, avec un taux négatif : c'est ce que fait l'inflation à une épargne qui ne rapporte rien.",
+    "simulateur": {
+      "formule": "interet_compose",
+      "variables": [
+        { "id": "capital", "label": "Épargne de départ", "unite": "€", "min": 100, "max": 20000, "pas": 100, "valeurParDefaut": 2000 },
+        { "id": "taux", "label": "Taux d'inflation annuel", "unite": "%", "min": -10, "max": 0, "pas": 0.5, "valeurParDefaut": -2 },
+        { "id": "duree", "label": "Durée", "unite": "ans", "min": 1, "max": 40, "pas": 1, "valeurParDefaut": 15 }
+      ],
+      "resultat": { "label": "Valeur réelle", "unite": "€" }
+    }
+  },
+  {
+    "id": "intro-comparateur-livret-inflation",
+    "parcoursId": "intro",
+    "session": 3,
+    "type": "comparateur",
+    "titre": "Livret A vs inflation",
+    "optionA": {
+      "label": "Livret A (~3%/an)",
+      "points": ["Sans risque", "Disponible à tout moment", "Protège à peu près le pouvoir d'achat"]
+    },
+    "optionB": {
+      "label": "Compte courant qui dort (~0%/an)",
+      "points": ["Aucun rendement", "L'inflation grignote la valeur réelle chaque année", "Perte de pouvoir d'achat silencieuse"]
+    },
+    "conclusion": "Un placement même modeste vaut mieux que de l'argent qui ne bouge pas."
+  },
+  {
+    "id": "intro-calculateur-mensualite",
+    "parcoursId": "intro",
+    "session": 4,
+    "type": "calculateur",
+    "titre": "Simulateur libre · Mensualité de crédit",
+    "description": "Fais varier montant, taux et durée pour voir l'effet sur la mensualité.",
+    "simulateur": {
+      "formule": "mensualite_credit",
+      "variables": [
+        { "id": "montant", "label": "Montant emprunté", "unite": "€", "min": 1000, "max": 80000, "pas": 1000, "valeurParDefaut": 15000 },
+        { "id": "taux", "label": "Taux d'intérêt annuel", "unite": "%", "min": 0, "max": 15, "pas": 0.5, "valeurParDefaut": 5 },
+        { "id": "duree", "label": "Durée de remboursement", "unite": "mois", "min": 6, "max": 180, "pas": 6, "valeurParDefaut": 60 }
+      ],
+      "resultat": { "label": "Mensualité", "unite": "€" }
+    }
+  },
+  {
+    "id": "intro-badge-final",
+    "parcoursId": "intro",
+    "session": 5,
+    "type": "badge",
+    "titre": "Fondations posées",
+    "description": "Tu as parcouru toutes les bases : budget, intérêts, inflation, crédit. Les trois voies t'attendent."
+  },
+
+  {
+    "id": "banque-glossaire-compte",
+    "parcoursId": "banque",
+    "session": 1,
+    "type": "glossaire",
+    "titre": "Glossaire · Le compte",
+    "entrees": [
+      { "terme": "Compte courant", "definition": "Compte de dépôt servant aux opérations du quotidien. Il ne rapporte pratiquement jamais d'intérêts." },
+      { "terme": "Agios", "definition": "Les intérêts facturés par la banque quand ton compte est à découvert." },
+      { "terme": "Commission d'intervention", "definition": "Frais prélevés quand la banque laisse passer une opération alors que le compte est déjà à découvert." }
+    ]
+  },
+  {
+    "id": "banque-saviez-vous-frais",
+    "parcoursId": "banque",
+    "session": 1,
+    "type": "saviez_vous",
+    "titre": "Le document le plus rentable de l'année",
+    "anecdote": "Toutes les banques ont l'obligation de t'envoyer chaque année un récapitulatif de tous les frais prélevés sur ton compte. C'est souvent le seul document bancaire que personne n'ouvre — et celui dont la lecture rapporte le plus à l'heure passée."
+  },
+  {
+    "id": "banque-badge-session-1",
+    "parcoursId": "banque",
+    "session": 1,
+    "type": "badge",
+    "titre": "Compte maîtrisé",
+    "description": "Tu sais désormais à quoi sert un compte courant et d'où viennent les frais bancaires."
+  },
+  {
+    "id": "banque-calculateur-livret",
+    "parcoursId": "banque",
+    "session": 2,
+    "type": "calculateur",
+    "titre": "Simulateur libre · Épargne sur livret",
+    "description": "Combien rapporte une somme placée sur un livret, selon le taux et la durée.",
+    "simulateur": {
+      "formule": "interet_compose",
+      "variables": [
+        { "id": "capital", "label": "Somme placée", "unite": "€", "min": 500, "max": 23000, "pas": 500, "valeurParDefaut": 5000 },
+        { "id": "taux", "label": "Taux annuel", "unite": "%", "min": 0.5, "max": 6, "pas": 0.25, "valeurParDefaut": 2.5 },
+        { "id": "duree", "label": "Durée", "unite": "ans", "min": 1, "max": 20, "pas": 1, "valeurParDefaut": 5 }
+      ],
+      "resultat": { "label": "Somme au bout du compte", "unite": "€" }
+    }
+  },
+  {
+    "id": "banque-saviez-vous-livret-a",
+    "parcoursId": "banque",
+    "session": 2,
+    "type": "saviez_vous",
+    "titre": "Un livret bicentenaire",
+    "anecdote": "Le Livret A a été créé en 1818, sous la Restauration, pour encourager l'épargne populaire après les guerres napoléoniennes. C'est l'un des plus anciens produits d'épargne encore commercialisés au monde."
+  },
+  {
+    "id": "banque-comparateur-livrets",
+    "parcoursId": "banque",
+    "session": 2,
+    "type": "comparateur",
+    "titre": "Livret réglementé vs compte courant",
+    "optionA": {
+      "label": "Épargne sur livret réglementé",
+      "points": [
+        "Capital garanti, disponible à tout moment",
+        "Intérêts non imposés",
+        "Taux identique dans toutes les banques"
+      ]
+    },
+    "optionB": {
+      "label": "Somme laissée sur le compte courant",
+      "points": [
+        "Aucun intérêt versé",
+        "Exposée en totalité à l'inflation",
+        "Plus facile à dépenser sans y penser"
+      ]
+    },
+    "conclusion": "Le compte courant sert à faire circuler l'argent, pas à le stocker."
+  },
+  {
+    "id": "banque-glossaire-epargne",
+    "parcoursId": "banque",
+    "session": 3,
+    "type": "glossaire",
+    "titre": "Glossaire · Assurance-vie",
+    "entrees": [
+      { "terme": "Fonds en euros", "definition": "La poche sécurisée d'une assurance-vie : le capital versé est garanti par l'assureur, en échange d'un rendement modéré." },
+      { "terme": "Unités de compte", "definition": "La poche investie en marchés. Potentiellement plus rémunératrice, mais la valeur peut baisser." },
+      { "terme": "Horizon de placement", "definition": "Le délai au bout duquel tu prévois d'avoir besoin de l'argent. C'est lui qui détermine le niveau de risque acceptable." }
+    ]
+  },
+  {
+    "id": "banque-comparateur-duree-credit",
+    "parcoursId": "banque",
+    "session": 4,
+    "type": "comparateur",
+    "titre": "Crédit court vs crédit long",
+    "optionA": {
+      "label": "Durée courte",
+      "points": ["Mensualité plus élevée", "Coût total nettement plus faible", "Libère plus vite la capacité d'emprunt"]
+    },
+    "optionB": {
+      "label": "Durée longue",
+      "points": ["Mensualité plus douce", "Coût total bien supérieur", "Engagement sur de nombreuses années"]
+    },
+    "conclusion": "La mensualité est ce qu'on ressent, le coût total est ce qu'on paie. Regarde les deux."
+  },
+  {
+    "id": "banque-calculateur-mensualite",
+    "parcoursId": "banque",
+    "session": 4,
+    "type": "calculateur",
+    "titre": "Simulateur libre · Mensualité",
+    "description": "Teste l'effet du montant, du taux et de la durée sur ta mensualité.",
+    "simulateur": {
+      "formule": "mensualite_credit",
+      "variables": [
+        { "id": "montant", "label": "Montant emprunté", "unite": "€", "min": 1000, "max": 100000, "pas": 1000, "valeurParDefaut": 20000 },
+        { "id": "taux", "label": "Taux annuel", "unite": "%", "min": 0, "max": 15, "pas": 0.25, "valeurParDefaut": 5 },
+        { "id": "duree", "label": "Durée", "unite": "mois", "min": 12, "max": 300, "pas": 12, "valeurParDefaut": 60 }
+      ],
+      "resultat": { "label": "Mensualité", "unite": "€" }
+    }
+  },
+  {
+    "id": "banque-badge-final",
+    "parcoursId": "banque",
+    "session": 8,
+    "type": "badge",
+    "titre": "Banquier averti",
+    "description": "Comptes, frais, épargne, crédit, choix de banque : tu as fait le tour de la voie Banque."
+  },
+
+  {
+    "id": "marche-glossaire-bases",
+    "parcoursId": "marche",
+    "session": 1,
+    "type": "glossaire",
+    "titre": "Glossaire · Bases du marché",
+    "entrees": [
+      { "terme": "Action", "definition": "Un titre de propriété sur une part du capital d'une entreprise." },
+      { "terme": "Dividende", "definition": "La part du bénéfice qu'une entreprise choisit de reverser à ses actionnaires." },
+      { "terme": "Marché secondaire", "definition": "Là où les titres déjà émis s'échangent entre investisseurs. L'entreprise n'y reçoit rien." }
+    ]
+  },
+  {
+    "id": "marche-saviez-vous-origine-bourse",
+    "parcoursId": "marche",
+    "session": 1,
+    "type": "saviez_vous",
+    "titre": "D'où vient le mot \"bourse\"",
+    "anecdote": "On fait généralement remonter le mot à la famille Van der Beurze, dont la maison à Bruges servait de lieu de rendez-vous aux marchands dès le Moyen Âge. Le nom de la famille est resté pour désigner le lieu d'échange."
+  },
+  {
+    "id": "marche-comparateur-action-obligation",
+    "parcoursId": "marche",
+    "session": 2,
+    "type": "comparateur",
+    "titre": "Action vs obligation",
+    "optionA": {
+      "label": "Action — tu possèdes",
+      "points": [
+        "Part de propriété de l'entreprise",
+        "Gain potentiel sans plafond",
+        "Aucune garantie, dernier servi en cas de faillite"
+      ]
+    },
+    "optionB": {
+      "label": "Obligation — tu prêtes",
+      "points": [
+        "Titre de dette, tu es créancier",
+        "Intérêts connus à l'avance",
+        "Prioritaire sur l'actionnaire en cas de faillite"
+      ]
+    },
+    "conclusion": "Moins de risque va de pair avec moins de gain potentiel. Toujours."
+  },
+  {
+    "id": "marche-saviez-vous-tulipes",
+    "parcoursId": "marche",
+    "session": 3,
+    "type": "saviez_vous",
+    "titre": "La bulle des tulipes",
+    "anecdote": "Aux Pays-Bas, vers 1637, certains bulbes de tulipe rares se sont négociés à des prix équivalant à plusieurs années de salaire d'un artisan — avant de s'effondrer en quelques semaines. Le premier emballement spéculatif bien documenté de l'histoire."
+  },
+  {
+    "id": "marche-calculateur-long-terme",
+    "parcoursId": "marche",
+    "session": 3,
+    "type": "calculateur",
+    "titre": "Simulateur libre · Placement long terme",
+    "description": "Rendement moyen constant : une simplification commode pour visualiser l'effet du temps, jamais la réalité d'un marché.",
+    "simulateur": {
+      "formule": "interet_compose",
+      "variables": [
+        { "id": "capital", "label": "Somme investie", "unite": "€", "min": 500, "max": 100000, "pas": 500, "valeurParDefaut": 10000 },
+        { "id": "taux", "label": "Rendement annuel moyen supposé", "unite": "%", "min": -5, "max": 12, "pas": 0.5, "valeurParDefaut": 6 },
+        { "id": "duree", "label": "Durée", "unite": "ans", "min": 1, "max": 40, "pas": 1, "valeurParDefaut": 25 }
+      ],
+      "resultat": { "label": "Valeur estimée", "unite": "€" }
+    }
+  },
+  {
+    "id": "marche-comparateur-frais",
+    "parcoursId": "marche",
+    "session": 4,
+    "type": "comparateur",
+    "titre": "L'impact des frais",
+    "optionA": {
+      "label": "Fonds à frais réduits (~0,3 %/an)",
+      "points": [
+        "Gestion passive qui suit un indice",
+        "Les frais grignotent peu la performance",
+        "L'écart se creuse en ta faveur avec le temps"
+      ]
+    },
+    "optionB": {
+      "label": "Fonds à frais élevés (~2 %/an)",
+      "points": [
+        "Gestion active qui vise à battre le marché",
+        "Les frais sont prélevés que la performance soit bonne ou non",
+        "Sur 20 ans, l'écart cumulé devient considérable"
+      ]
+    },
+    "conclusion": "Les frais sont la seule variable de la performance future que tu connais à l'avance."
+  },
+  {
+    "id": "marche-glossaire-diversification",
+    "parcoursId": "marche",
+    "session": 4,
+    "type": "glossaire",
+    "titre": "Glossaire · Diversification",
+    "entrees": [
+      { "terme": "Diversification", "definition": "Répartir ses investissements entre plusieurs entreprises, secteurs et zones pour qu'un accident isolé ne mette pas tout en péril." },
+      { "terme": "ETF", "definition": "Fonds indiciel coté, qui réplique un indice au lieu de chercher à le battre. Frais généralement bien plus faibles." },
+      { "terme": "Volatilité", "definition": "L'ampleur des variations de prix d'un titre, à la hausse comme à la baisse." }
+    ]
+  },
+  {
+    "id": "marche-badge-final",
+    "parcoursId": "marche",
+    "session": 8,
+    "type": "badge",
+    "titre": "Tête froide",
+    "description": "Risque, diversification, frais, comportement : tu as fait le tour de la voie Marché."
+  },
+
+  {
+    "id": "entreprise-glossaire-acteurs",
+    "parcoursId": "entreprise",
+    "session": 1,
+    "type": "glossaire",
+    "titre": "Glossaire · Qui finance quoi",
+    "entrees": [
+      { "terme": "Actionnaire", "definition": "Il apporte de l'argent contre une part de l'entreprise. Aucune garantie de remboursement, mais il profite pleinement du succès." },
+      { "terme": "Créancier", "definition": "Il prête de l'argent et attend remboursement et intérêts, que l'entreprise réussisse ou non. Prioritaire sur l'actionnaire." },
+      { "terme": "Cycle d'exploitation", "definition": "Le délai entre les dépenses engagées et l'encaissement du client. Plus il est long, plus il faut de trésorerie d'avance." }
+    ]
+  },
+  {
+    "id": "entreprise-comparateur-bilan-resultat",
+    "parcoursId": "entreprise",
+    "session": 2,
+    "type": "comparateur",
+    "titre": "Bilan vs compte de résultat",
+    "optionA": {
+      "label": "Bilan — la photo",
+      "points": [
+        "Une situation à une date précise",
+        "Ce que l'entreprise possède et comment c'est financé",
+        "Actif toujours égal au passif"
+      ]
+    },
+    "optionB": {
+      "label": "Compte de résultat — le film",
+      "points": [
+        "Ce qui s'est passé sur une période",
+        "Produits moins charges égale résultat",
+        "Ne dit rien de l'argent réellement disponible"
+      ]
+    },
+    "conclusion": "Les deux documents se complètent : l'un raconte l'année, l'autre montre l'état des lieux."
+  },
+  {
+    "id": "entreprise-saviez-vous-partie-double",
+    "parcoursId": "entreprise",
+    "session": 2,
+    "type": "saviez_vous",
+    "titre": "Une invention de la Renaissance",
+    "anecdote": "La comptabilité en partie double — chaque opération inscrite deux fois, ce qui garantit l'équilibre du bilan — a été formalisée en 1494 par Luca Pacioli, un moine mathématicien italien. Cinq siècles plus tard, toutes les entreprises du monde l'utilisent encore."
+  },
+  {
+    "id": "entreprise-calculateur-emprunt",
+    "parcoursId": "entreprise",
+    "session": 3,
+    "type": "calculateur",
+    "titre": "Simulateur libre · Emprunt professionnel",
+    "description": "La mensualité doit pouvoir être honorée même en basse saison.",
+    "simulateur": {
+      "formule": "mensualite_credit",
+      "variables": [
+        { "id": "montant", "label": "Montant emprunté", "unite": "€", "min": 5000, "max": 500000, "pas": 5000, "valeurParDefaut": 100000 },
+        { "id": "taux", "label": "Taux annuel", "unite": "%", "min": 0, "max": 15, "pas": 0.25, "valeurParDefaut": 4.5 },
+        { "id": "duree", "label": "Durée", "unite": "mois", "min": 12, "max": 240, "pas": 12, "valeurParDefaut": 84 }
+      ],
+      "resultat": { "label": "Mensualité", "unite": "€" }
+    }
+  },
+  {
+    "id": "entreprise-comparateur-dette-capital",
+    "parcoursId": "entreprise",
+    "session": 3,
+    "type": "comparateur",
+    "titre": "Dette vs ouverture du capital",
+    "optionA": {
+      "label": "S'endetter",
+      "points": [
+        "Les fondateurs gardent 100 % du capital",
+        "Des échéances fixes à honorer quoi qu'il arrive",
+        "Adapté aux activités stables et prévisibles"
+      ]
+    },
+    "optionB": {
+      "label": "Ouvrir le capital",
+      "points": [
+        "Pas de remboursement à assurer",
+        "Dilution : on partage propriété et décisions",
+        "Adapté aux projets risqués ou à forte croissance"
+      ]
+    },
+    "conclusion": "On ne choisit pas le moins cher, on choisit celui qui correspond au risque du projet."
+  },
+  {
+    "id": "entreprise-badge-session-4",
+    "parcoursId": "entreprise",
+    "session": 4,
+    "type": "badge",
+    "titre": "Créateur de valeur",
+    "description": "Tu sais reconnaître un investissement qui crée de la valeur d'un investissement qui en détruit."
+  },
+  {
+    "id": "entreprise-glossaire-tresorerie",
+    "parcoursId": "entreprise",
+    "session": 5,
+    "type": "glossaire",
+    "titre": "Glossaire · Trésorerie",
+    "entrees": [
+      { "terme": "Trésorerie", "definition": "L'argent réellement disponible tout de suite sur les comptes. C'est avec elle qu'on paie les salaires." },
+      { "terme": "BFR", "definition": "Besoin en fonds de roulement : l'argent immobilisé en permanence par les stocks et les factures clients non encaissées." },
+      { "terme": "Seuil de rentabilité", "definition": "Le niveau d'activité à partir duquel l'entreprise couvre exactement toutes ses charges." }
+    ]
+  },
+  {
+    "id": "entreprise-saviez-vous-cash",
+    "parcoursId": "entreprise",
+    "session": 5,
+    "type": "saviez_vous",
+    "titre": "\"Le résultat est une opinion, la trésorerie est un fait\"",
+    "anecdote": "Cette formule résume pourquoi tant d'entreprises rentables déposent le bilan : le bénéfice dépend de choix comptables et de ventes pas encore encaissées, alors que la trésorerie est un montant que l'on peut vérifier sur un relevé bancaire."
+  },
+  {
+    "id": "entreprise-badge-final",
+    "parcoursId": "entreprise",
+    "session": 8,
+    "type": "badge",
+    "titre": "Directeur financier en herbe",
+    "description": "Bilan, financement, rentabilité, trésorerie, valorisation, signaux d'alerte : tu as fait le tour de la voie Entreprise."
+  },
+
+  {
+    "id": "banque-badge-session-6",
+    "parcoursId": "banque",
+    "session": 6,
+    "type": "badge",
+    "titre": "Net d'impôt",
+    "description": "Tu sais désormais lire un rendement après impôts — ce que la plupart des épargnants ne font jamais."
+  },
+  {
+    "id": "banque-saviez-vous-notaire",
+    "parcoursId": "banque",
+    "session": 7,
+    "type": "saviez_vous",
+    "titre": "Les frais de notaire ne vont pas au notaire",
+    "anecdote": "L'essentiel de ce qu'on appelle « frais de notaire » est en réalité constitué de droits de mutation perçus par l'État et les collectivités locales. La rémunération du notaire lui-même n'en représente qu'une petite part."
+  },
+  {
+    "id": "banque-calculateur-apport",
+    "parcoursId": "banque",
+    "session": 7,
+    "type": "calculateur",
+    "titre": "Simulateur libre · Se constituer un apport",
+    "description": "Combien tu peux réunir pour un achat immobilier en mettant de côté chaque mois, placé prudemment.",
+    "simulateur": {
+      "formule": "epargne_programmee",
+      "variables": [
+        { "id": "versement", "label": "Mise de côté mensuelle", "unite": "€", "min": 50, "max": 2000, "pas": 50, "valeurParDefaut": 300 },
+        { "id": "taux", "label": "Rendement annuel", "unite": "%", "min": 0, "max": 5, "pas": 0.25, "valeurParDefaut": 2.5 },
+        { "id": "duree", "label": "Durée", "unite": "ans", "min": 1, "max": 15, "pas": 1, "valeurParDefaut": 5 }
+      ],
+      "resultat": { "label": "Apport constitué", "unite": "€" }
+    }
+  },
+
+  {
+    "id": "marche-glossaire-analyse",
+    "parcoursId": "marche",
+    "session": 6,
+    "type": "glossaire",
+    "titre": "Glossaire · Lire une entreprise",
+    "entrees": [
+      { "terme": "PER", "definition": "Cours de l'action divisé par le bénéfice par action : combien on paie chaque euro de bénéfice annuel." },
+      { "terme": "Capitalisation boursière", "definition": "Cours multiplié par le nombre d'actions : ce que le marché pense que vaut l'entreprise entière." },
+      { "terme": "Rendement du dividende", "definition": "Dividende annuel divisé par le cours. Anormalement élevé, c'est souvent un cours qui a chuté, pas une entreprise généreuse." }
+    ]
+  },
+  {
+    "id": "marche-badge-session-6",
+    "parcoursId": "marche",
+    "session": 6,
+    "type": "badge",
+    "titre": "Lecteur de comptes",
+    "description": "Tu ne regardes plus le cours, tu regardes l'entreprise derrière."
+  },
+  {
+    "id": "marche-calculateur-programme",
+    "parcoursId": "marche",
+    "session": 7,
+    "type": "calculateur",
+    "titre": "Simulateur libre · Investissement programmé",
+    "description": "Un versement fixe chaque mois, capitalisé. Joue avec la durée avant de jouer avec le montant.",
+    "simulateur": {
+      "formule": "epargne_programmee",
+      "variables": [
+        { "id": "versement", "label": "Versement mensuel", "unite": "€", "min": 25, "max": 2000, "pas": 25, "valeurParDefaut": 100 },
+        { "id": "taux", "label": "Rendement annuel moyen supposé", "unite": "%", "min": -2, "max": 10, "pas": 0.5, "valeurParDefaut": 6 },
+        { "id": "duree", "label": "Durée", "unite": "ans", "min": 1, "max": 40, "pas": 1, "valeurParDefaut": 20 }
+      ],
+      "resultat": { "label": "Valeur estimée", "unite": "€" }
+    }
+  },
+  {
+    "id": "marche-comparateur-tout-dun-coup",
+    "parcoursId": "marche",
+    "session": 7,
+    "type": "comparateur",
+    "titre": "Tout d'un coup vs un peu chaque mois",
+    "optionA": {
+      "label": "Investir 12 000 € d'un coup",
+      "points": ["Tout exposé dès le premier jour", "Excellent si le marché monte ensuite… douloureux sinon", "Demande d'avoir la somme, et le sang-froid"]
+    },
+    "optionB": {
+      "label": "1 000 € par mois pendant un an",
+      "points": ["Le prix d'achat se lisse sur douze mois", "Retire l'émotion du « bon moment »", "En moyenne un peu moins performant, mais bien plus facile à tenir"]
+    },
+    "conclusion": "Le meilleur plan est celui qu'on tient. Régulier bat parfait."
+  },
+
+  {
+    "id": "entreprise-glossaire-valorisation",
+    "parcoursId": "entreprise",
+    "session": 6,
+    "type": "glossaire",
+    "titre": "Glossaire · Valorisation",
+    "entrees": [
+      { "terme": "EBITDA", "definition": "Résultat de l'activité avant intérêts, impôts, dépréciations et amortissements — ce que le cœur du métier dégage." },
+      { "terme": "Multiple", "definition": "Le nombre de fois l'EBITDA (ou un autre agrégat) auquel des entreprises comparables se sont vendues." },
+      { "terme": "Actualisation", "definition": "Ramener une somme future à sa valeur d'aujourd'hui. L'inverse exact des intérêts composés." }
+    ]
+  },
+  {
+    "id": "entreprise-badge-session-6",
+    "parcoursId": "entreprise",
+    "session": 6,
+    "type": "badge",
+    "titre": "Évaluateur",
+    "description": "Tu sais mettre un prix sur une promesse — et repérer quand le prix demandé n'en est pas un."
+  },
+  {
+    "id": "entreprise-saviez-vous-licorne",
+    "parcoursId": "entreprise",
+    "session": 7,
+    "type": "saviez_vous",
+    "titre": "Pourquoi « licorne »",
+    "anecdote": "Dans le jargon des levées de fonds, une licorne est une start-up valorisée plus d'un milliard de dollars. Le terme a été choisi en 2013 parce que ces entreprises étaient censées être aussi rares que l'animal. Elles se comptent aujourd'hui par centaines."
+  },
+  {
+    "id": "entreprise-calculateur-reserve",
+    "parcoursId": "entreprise",
+    "session": 7,
+    "type": "calculateur",
+    "titre": "Simulateur libre · Réserve de trésorerie",
+    "description": "Ce qu'une mise de côté régulière pendant les bons mois représente au bout de quelques années.",
+    "simulateur": {
+      "formule": "epargne_programmee",
+      "variables": [
+        { "id": "versement", "label": "Mise de côté mensuelle", "unite": "€", "min": 200, "max": 20000, "pas": 200, "valeurParDefaut": 1500 },
+        { "id": "taux", "label": "Rendement annuel", "unite": "%", "min": 0, "max": 5, "pas": 0.25, "valeurParDefaut": 2 },
+        { "id": "duree", "label": "Durée", "unite": "ans", "min": 1, "max": 10, "pas": 1, "valeurParDefaut": 2 }
+      ],
+      "resultat": { "label": "Réserve constituée", "unite": "€" }
+    }
+  },
+
+  {
+    "id": "banque-badge-session-7",
+    "parcoursId": "banque",
+    "session": 7,
+    "type": "badge",
+    "titre": "Propriétaire averti",
+    "description": "Capacité d'emprunt, levier, frais cachés : tu sais lire un projet immobilier avant de signer."
+  },
+  {
+    "id": "banque-comparateur-dette-placement",
+    "parcoursId": "banque",
+    "session": 8,
+    "type": "comparateur",
+    "titre": "Rembourser à 6 % vs placer à 3 %",
+    "optionA": {
+      "label": "Solder le crédit à 6 %",
+      "points": ["Un gain garanti de 6 % par an", "Une mensualité en moins, tout de suite", "Zéro risque, zéro fiscalité"]
+    },
+    "optionB": {
+      "label": "Placer à 3 % en gardant le crédit",
+      "points": ["Le crédit coûte plus que le placement rapporte", "On perd la différence chaque mois", "Sentiment d'avoir de l'argent de côté… qui coûte cher"]
+    },
+    "conclusion": "Tant qu'une dette coûte plus qu'un placement ne rapporte, la rembourser est le meilleur placement."
+  },
+  {
+    "id": "marche-badge-session-7",
+    "parcoursId": "marche",
+    "session": 7,
+    "type": "badge",
+    "titre": "Portefeuille solide",
+    "description": "Allocation, rééquilibrage, biais : tu construis et tu tiens un portefeuille."
+  },
+  {
+    "id": "marche-glossaire-securite",
+    "parcoursId": "marche",
+    "session": 8,
+    "type": "glossaire",
+    "titre": "Glossaire · Passer à l'action",
+    "entrees": [
+      { "terme": "Régulateur", "definition": "L'autorité qui autorise et surveille les professionnels de la finance — en France, l'AMF pour les marchés, l'ACPR pour banques et assurances." },
+      { "terme": "Fonds indiciel large", "definition": "Un fonds qui réplique un indice couvrant des milliers d'entreprises sur plusieurs pays : diversification maximale pour des frais très faibles." },
+      { "terme": "Versement programmé", "definition": "Une somme fixe investie chaque mois automatiquement, quel que soit l'état du marché." }
+    ]
+  },
+  {
+    "id": "entreprise-badge-session-7",
+    "parcoursId": "entreprise",
+    "session": 7,
+    "type": "badge",
+    "titre": "Anticipateur",
+    "description": "Tu lis les signaux avant la chute, et tu sais ce que vaut chaque tour de table."
+  },
+  {
+    "id": "entreprise-comparateur-remise",
+    "parcoursId": "entreprise",
+    "session": 8,
+    "type": "comparateur",
+    "titre": "Remise de 10 % vs hausse de 5 %",
+    "optionA": {
+      "label": "Baisser le prix de 10 %",
+      "points": ["Sur 30 € de marge, il en reste 20", "Il faut 50 % de volume en plus pour compenser", "Habitue les clients à négocier"]
+    },
+    "optionB": {
+      "label": "Monter le prix de 5 %",
+      "points": ["La marge passe de 30 à 35 €, soit +17 %", "On peut perdre 14 % des clients et gagner autant", "Demande du courage, pas de volume"]
+    },
+    "conclusion": "Le prix est le levier le plus puissant de l'entreprise. Et le moins utilisé."
+  },
+
+  { "id": "intro-calculateur-regle-72", "parcoursId": "intro", "session": 2, "type": "calculateur", "titre": "En combien de temps ça double ?", "description": "La règle des 72 : divise 72 par le taux, tu obtiens le nombre d'années qu'il faut pour doubler. Un calcul de tête qui impressionne, et qui est presque juste.", "simulateur": { "formule": "regle_72", "variables": [{ "id": "taux", "label": "Taux annuel", "unite": "%", "min": 0, "max": 15, "pas": 0.25, "valeurParDefaut": 6 }], "resultat": { "label": "Années pour doubler", "unite": "ans" } } },
+  { "id": "intro-calculateur-pouvoir-achat", "parcoursId": "intro", "session": 3, "type": "calculateur", "titre": "Ce que vaudra ton argent", "description": "Une somme qui dort ne baisse pas sur le relevé — elle baisse dans la vraie vie. Regarde ce que 5 000 € achèteront dans quinze ans.", "simulateur": { "formule": "pouvoir_achat", "variables": [{ "id": "capital", "label": "Somme aujourd'hui", "unite": "€", "min": 500, "max": 100000, "pas": 500, "valeurParDefaut": 5000 }, { "id": "inflation", "label": "Inflation annuelle", "unite": "%", "min": 0, "max": 10, "pas": 0.25, "valeurParDefaut": 2 }, { "id": "duree", "label": "Durée", "unite": "ans", "min": 1, "max": 40, "pas": 1, "valeurParDefaut": 15 }], "resultat": { "label": "Pouvoir d'achat équivalent", "unite": "€" } } },
+  { "id": "intro-calculateur-cout-credit", "parcoursId": "intro", "session": 4, "type": "calculateur", "titre": "Combien coûte vraiment ce crédit", "description": "Pas la mensualité : le total des intérêts. C'est le chiffre que les publicités ne montrent jamais en gros.", "simulateur": { "formule": "cout_total_credit", "variables": [{ "id": "montant", "label": "Montant emprunté", "unite": "€", "min": 500, "max": 50000, "pas": 500, "valeurParDefaut": 10000 }, { "id": "taux", "label": "TAEG", "unite": "%", "min": 0, "max": 21, "pas": 0.5, "valeurParDefaut": 6 }, { "id": "duree", "label": "Durée", "unite": "mois", "min": 6, "max": 120, "pas": 6, "valeurParDefaut": 48 }], "resultat": { "label": "Intérêts payés en tout", "unite": "€" } } },
+  { "id": "intro-saviez-vous-72", "parcoursId": "intro", "session": 2, "type": "saviez_vous", "titre": "Pourquoi 72 ?", "anecdote": "Le nombre 72 n'a rien de magique : il tombe juste bien. Mathématiquement, la valeur exacte serait 69,3 — mais 72 se divise par 2, 3, 4, 6, 8, 9 et 12, ce qui en fait le chiffre le plus commode pour un calcul de tête. Cette astuce est attribuée à Luca Pacioli, moine et mathématicien italien, qui la mentionne dès 1494." },
+  { "id": "intro-saviez-vous-inflation", "parcoursId": "intro", "session": 3, "type": "saviez_vous", "titre": "La baguette comme étalon", "anecdote": "En 1970, une baguette coûtait environ 0,15 franc, soit à peu près 2 centimes d'euro. Aujourd'hui, elle tourne autour de 1,10 €. Le pain n'a pas changé : c'est la valeur de la monnaie qui s'est érodée, année après année, sans qu'on s'en aperçoive jamais sur le moment." },
+  { "id": "banque-calculateur-capacite", "parcoursId": "banque", "session": 7, "type": "calculateur", "titre": "Combien peux-tu emprunter ?", "description": "La banque plafonne la mensualité à 35 % des revenus nets. Voilà, en une ligne, ce que ça donne — avant apport et frais de notaire.", "simulateur": { "formule": "capacite_emprunt", "variables": [{ "id": "revenu", "label": "Revenus nets du foyer", "unite": "€/mois", "min": 1000, "max": 10000, "pas": 100, "valeurParDefaut": 2500 }, { "id": "taux", "label": "Taux du crédit", "unite": "%", "min": 0.5, "max": 8, "pas": 0.1, "valeurParDefaut": 3.5 }, { "id": "duree", "label": "Durée", "unite": "ans", "min": 5, "max": 25, "pas": 1, "valeurParDefaut": 20 }], "resultat": { "label": "Montant empruntable", "unite": "€" } } },
+  { "id": "banque-calculateur-rendement-locatif", "parcoursId": "banque", "session": 7, "type": "calculateur", "titre": "Le rendement d'un bien locatif", "description": "Rendement brut : loyer annuel divisé par le prix. Retire ensuite 30 à 40 % pour les charges, la taxe foncière et la vacance — c'est ça, le vrai.", "simulateur": { "formule": "rendement_locatif", "variables": [{ "id": "loyer", "label": "Loyer mensuel", "unite": "€", "min": 200, "max": 3000, "pas": 50, "valeurParDefaut": 700 }, { "id": "prix", "label": "Prix d'achat, frais compris", "unite": "€", "min": 30000, "max": 600000, "pas": 5000, "valeurParDefaut": 150000 }], "resultat": { "label": "Rendement brut", "unite": "%" } } },
+  { "id": "banque-badge-session-9", "parcoursId": "banque", "session": 9, "type": "badge", "titre": "Contribuable éclairé", "description": "Tranches, taux marginal, déduction et crédit d'impôt : tu ne refuseras plus jamais une prime par peur de la tranche." },
+  { "id": "banque-glossaire-impot", "parcoursId": "banque", "session": 9, "type": "glossaire", "titre": "Glossaire · L'impôt sur le revenu", "entrees": [{ "terme": "Taux marginal (TMI)", "definition": "Le taux qui frappe le dernier euro gagné — jamais l'ensemble du revenu." }, { "terme": "Taux moyen", "definition": "L'impôt total divisé par le revenu. Toujours plus bas que la TMI." }, { "terme": "Quotient familial", "definition": "Le revenu divisé par le nombre de parts avant le barème : c'est ce qui allège l'impôt des familles." }, { "terme": "Prélèvement à la source", "definition": "L'impôt retenu chaque mois sur la paie. Il ne change pas le montant dû, seulement le moment où on le paie." }] },
+  { "id": "banque-comparateur-per-av", "parcoursId": "banque", "session": 9, "type": "comparateur", "titre": "PER ou assurance-vie ?", "optionA": { "label": "PER", "points": ["Les versements se déduisent du revenu imposable", "L'économie d'impôt vaut ta TMI", "Argent bloqué jusqu'à la retraite (sauf achat de la résidence principale)", "Imposé à la sortie : l'avantage est un report"] }, "optionB": { "label": "Assurance-vie", "points": ["Aucune déduction à l'entrée", "Disponible à tout moment", "Fiscalité très douce après 8 ans", "Transmission avantageuse en cas de décès"] }, "conclusion": "En dessous de 30 % de TMI, le PER perd beaucoup de son intérêt : l'assurance-vie, souple et peu taxée après huit ans, suffit souvent." },
+  { "id": "banque-saviez-vous-hlm", "parcoursId": "banque", "session": 2, "type": "saviez_vous", "titre": "Ton Livret A construit des HLM", "anecdote": "Une grande partie de l'argent déposé sur les Livrets A ne dort pas à ta banque : elle est centralisée à la Caisse des Dépôts, qui s'en sert pour prêter aux bailleurs sociaux sur très longue durée. Épargner sur un Livret A, c'est littéralement prêter de l'argent à la construction de logements sociaux — et être remboursé en intérêts chaque 31 décembre." },
+  { "id": "marche-calculateur-regle-72", "parcoursId": "marche", "session": 3, "type": "calculateur", "titre": "Doubler son capital : en combien d'années", "description": "À 7 % — la moyenne historique des actions sur très longue période — un capital double environ tous les dix ans. Fais varier le taux pour sentir l'effet.", "simulateur": { "formule": "regle_72", "variables": [{ "id": "taux", "label": "Rendement annuel moyen", "unite": "%", "min": 0, "max": 15, "pas": 0.5, "valeurParDefaut": 7 }], "resultat": { "label": "Années pour doubler", "unite": "ans" } } },
+  { "id": "marche-calculateur-reel", "parcoursId": "marche", "session": 9, "type": "calculateur", "titre": "Ton capital en euros d'aujourd'hui", "description": "Un portefeuille qui vaudra 100 000 € dans vingt ans, ça sonne bien. Mais combien ça achètera vraiment ? Voilà la réponse.", "simulateur": { "formule": "pouvoir_achat", "variables": [{ "id": "capital", "label": "Valeur future du portefeuille", "unite": "€", "min": 1000, "max": 500000, "pas": 5000, "valeurParDefaut": 100000 }, { "id": "inflation", "label": "Inflation annuelle moyenne", "unite": "%", "min": 0, "max": 8, "pas": 0.25, "valeurParDefaut": 2 }, { "id": "duree", "label": "Dans combien d'années", "unite": "ans", "min": 1, "max": 40, "pas": 1, "valeurParDefaut": 20 }], "resultat": { "label": "Équivalent aujourd'hui", "unite": "€" } } },
+  { "id": "marche-badge-session-9", "parcoursId": "marche", "session": 9, "type": "badge", "titre": "Lecteur d'économie", "description": "Taux directeurs, obligations, rendement réel : les nouvelles économiques ont cessé d'être du bruit." },
+  { "id": "marche-glossaire-economie", "parcoursId": "marche", "session": 9, "type": "glossaire", "titre": "Glossaire · Lire l'économie", "entrees": [{ "terme": "Taux directeur", "definition": "Le taux auquel la banque centrale prête aux banques : le prix de gros de l'argent." }, { "terme": "Rendement réel", "definition": "Rendement moins inflation. Le seul chiffre qui dit si l'on s'enrichit." }, { "terme": "Récession", "definition": "Deux trimestres consécutifs de recul de l'activité. Douloureuse, mais normale dans un cycle." }, { "terme": "Courbe des taux", "definition": "Les taux selon l'échéance. Quand le court terme dépasse le long terme, elle « s'inverse » — un signal historiquement associé aux récessions." }] },
+  { "id": "marche-comparateur-taux", "parcoursId": "marche", "session": 9, "type": "comparateur", "titre": "Taux qui montent, taux qui baissent", "optionA": { "label": "Les taux montent", "points": ["Les obligations existantes perdent de la valeur", "Les nouvelles obligations rapportent plus", "Le crédit coûte cher, l'économie ralentit", "Les entreprises endettées souffrent"] }, "optionB": { "label": "Les taux baissent", "points": ["Les obligations détenues prennent de la valeur", "Les nouvelles rapportent moins", "Le crédit est bon marché, l'activité repart", "Les actifs risqués sont recherchés"] }, "conclusion": "Personne ne prévoit les taux de façon fiable. La bonne réponse n'est pas de deviner, mais d'avoir un portefeuille qui tient dans les deux cas." },
+  { "id": "marche-saviez-vous-patience", "parcoursId": "marche", "session": 5, "type": "saviez_vous", "titre": "Les meilleurs investisseurs sont… les distraits", "anecdote": "Une étude interne d'un grand courtier américain a comparé la performance des comptes clients : les meilleurs résultats appartenaient à des personnes qui avaient oublié leur compte — ou qui étaient décédées, leurs héritiers n'y ayant pas touché pendant des années. Ne rien faire est souvent la stratégie la plus difficile, et la plus payante." },
+  { "id": "entreprise-calculateur-point-mort", "parcoursId": "entreprise", "session": 8, "type": "calculateur", "titre": "Le point mort du mois", "description": "Le chiffre d'affaires à atteindre avant de gagner le premier euro. À connaître par cœur quand on dirige : c'est lui qui dit si le mois est sauvé.", "simulateur": { "formule": "point_mort", "variables": [{ "id": "chargesFixes", "label": "Charges fixes mensuelles", "unite": "€", "min": 500, "max": 100000, "pas": 500, "valeurParDefaut": 10000 }, { "id": "tauxMarge", "label": "Taux de marge brute", "unite": "%", "min": 5, "max": 90, "pas": 1, "valeurParDefaut": 40 }], "resultat": { "label": "Chiffre d'affaires nécessaire", "unite": "€" } } },
+  { "id": "entreprise-calculateur-cout-emprunt", "parcoursId": "entreprise", "session": 3, "type": "calculateur", "titre": "Le coût total d'un emprunt pro", "description": "Une machine à 60 000 € financée sur sept ans coûte bien plus que 60 000 €. Voilà l'écart, en euros.", "simulateur": { "formule": "cout_total_credit", "variables": [{ "id": "montant", "label": "Montant financé", "unite": "€", "min": 5000, "max": 500000, "pas": 5000, "valeurParDefaut": 60000 }, { "id": "taux", "label": "Taux du prêt", "unite": "%", "min": 0.5, "max": 12, "pas": 0.25, "valeurParDefaut": 4.5 }, { "id": "duree", "label": "Durée", "unite": "mois", "min": 12, "max": 120, "pas": 12, "valeurParDefaut": 84 }], "resultat": { "label": "Intérêts payés en tout", "unite": "€" } } },
+  { "id": "entreprise-badge-session-9", "parcoursId": "entreprise", "session": 9, "type": "badge", "titre": "Analyste financier", "description": "Marge nette, ROE, endettement, DSO : tu juges une entreprise en quatre calculs et dix minutes." },
+  { "id": "entreprise-glossaire-ratios", "parcoursId": "entreprise", "session": 9, "type": "glossaire", "titre": "Glossaire · Les ratios", "entrees": [{ "terme": "Marge nette", "definition": "Résultat net / chiffre d'affaires. Ce qu'il reste de 100 € vendus." }, { "terme": "ROE", "definition": "Résultat net / capitaux propres. Ce que rapporte 100 € d'actionnaire." }, { "terme": "Ratio d'endettement", "definition": "Dettes financières / capitaux propres. Au-dessus de 1, la dette dépasse les fonds propres." }, { "terme": "DSO", "definition": "Créances clients / chiffre d'affaires × 365 : le nombre de jours que mettent les clients à payer." }, { "terme": "BFR", "definition": "Stocks + créances − dettes fournisseurs : l'argent que l'activité immobilise en permanence." }] },
+  { "id": "entreprise-saviez-vous-faillites", "parcoursId": "entreprise", "session": 5, "type": "saviez_vous", "titre": "Rentables, et pourtant en faillite", "anecdote": "En France, une défaillance d'entreprise sur quatre concerne une société qui était bénéficiaire sur son dernier exercice connu. La cause n'est presque jamais le manque de clients : c'est le décalage entre le moment où l'on paie et celui où l'on est payé. On ne fait pas faillite faute de bénéfice, mais faute de trésorerie." },
+
+  { "id": "intro-badge-session-3", "parcoursId": "intro", "session": 3, "type": "badge", "titre": "Radar à inflation", "description": "Tu sais pourquoi une somme qui dort perd de la valeur, même quand le chiffre ne bouge pas." },
+  { "id": "intro-badge-session-4", "parcoursId": "intro", "session": 4, "type": "badge", "titre": "Emprunteur lucide", "description": "Mensualité, taux, coût total : un crédit ne te sera plus présenté sans que tu poses les bonnes questions." },
+  { "id": "banque-badge-session-2", "parcoursId": "banque", "session": 2, "type": "badge", "titre": "Filet de sécurité", "description": "Épargne de précaution et livrets réglementés : ton airbag financier est en place." },
+  { "id": "banque-badge-session-3", "parcoursId": "banque", "session": 3, "type": "badge", "titre": "Vision longue", "description": "Assurance-vie et horizon de placement : à chaque projet, la bonne poche." },
+  { "id": "banque-badge-session-4", "parcoursId": "banque", "session": 4, "type": "badge", "titre": "Lecteur de TAEG", "description": "Un crédit ne se compare plus à sa mensualité, mais au seul chiffre qui compte." },
+  { "id": "banque-badge-session-5", "parcoursId": "banque", "session": 5, "type": "badge", "titre": "Client exigeant", "description": "Traditionnelle, en ligne ou néobanque : tu choisis désormais en connaissance de cause." },
+  { "id": "marche-badge-session-1", "parcoursId": "marche", "session": 1, "type": "badge", "titre": "Premiers pas en bourse", "description": "Marché primaire, secondaire, action : la bourse a cessé d'être un casino abstrait." },
+  { "id": "marche-badge-session-2", "parcoursId": "marche", "session": 2, "type": "badge", "titre": "Actions et obligations", "description": "Posséder ou prêter : tu sais ce que tu achètes, et ce que ça implique." },
+  { "id": "marche-badge-session-3", "parcoursId": "marche", "session": 3, "type": "badge", "titre": "Risque apprivoisé", "description": "Pas de rendement sans risque — la règle que toutes les arnaques violent." },
+  { "id": "marche-badge-session-4", "parcoursId": "marche", "session": 4, "type": "badge", "titre": "Œufs bien répartis", "description": "Diversification, fonds, ETF : le seul repas gratuit de la finance est dans ton assiette." },
+  { "id": "marche-badge-session-5", "parcoursId": "marche", "session": 5, "type": "badge", "titre": "Investisseur discipliné", "description": "Enveloppes fiscales et sang-froid : tu connais ton pire ennemi, et c'est toi." },
+  { "id": "entreprise-badge-session-1", "parcoursId": "entreprise", "session": 1, "type": "badge", "titre": "Dans le moteur", "description": "Cycle d'exploitation, actionnaires, créanciers : tu sais qui met l'argent et pourquoi." },
+  { "id": "entreprise-badge-session-2", "parcoursId": "entreprise", "session": 2, "type": "badge", "titre": "Lecteur de comptes", "description": "Bilan et compte de résultat : la photo et le film ne te font plus peur." },
+  { "id": "entreprise-badge-session-3", "parcoursId": "entreprise", "session": 3, "type": "badge", "titre": "Financier avisé", "description": "Dette ou capital : tu sais ce que chaque euro coûte vraiment à l'entreprise." },
+  { "id": "entreprise-badge-session-5", "parcoursId": "entreprise", "session": 5, "type": "badge", "titre": "Gardien de la trésorerie", "description": "Rentable mais à sec : le paradoxe qui tue les entreprises n'en est plus un pour toi." },
+
+  { "id": "quotidien-badge-session-1", "parcoursId": "quotidien", "session": 1, "type": "badge", "titre": "Fiche de paie décodée", "description": "Brut, net, net imposable, prélèvement à la source : la feuille du mois n'a plus de secret." },
+  { "id": "quotidien-badge-session-2", "parcoursId": "quotidien", "session": 2, "type": "badge", "titre": "Locataire averti", "description": "Bail, dépôt de garantie, état des lieux : tu sais ce que tu signes et ce que ça coûte vraiment." },
+  { "id": "quotidien-badge-session-3", "parcoursId": "quotidien", "session": 3, "type": "badge", "titre": "Bien assuré", "description": "Franchise, plafond, exclusions : tu compares un contrat sur les bonnes lignes." },
+  { "id": "quotidien-badge-session-4", "parcoursId": "quotidien", "session": 4, "type": "badge", "titre": "Pare-arnaques", "description": "SMS, faux conseiller, lien piégé : tu les repères en quelques secondes." },
+  { "id": "quotidien-badge-session-5", "parcoursId": "quotidien", "session": 5, "type": "badge", "titre": "Consommateur informé", "description": "Garantie légale, rétractation, abonnements dormants : tes droits, et ton argent." },
+  { "id": "quotidien-badge-session-6", "parcoursId": "quotidien", "session": 6, "type": "badge", "titre": "Au volant du budget", "description": "Décote, LOA, crédit auto : tu compares le coût total, pas la mensualité." },
+  { "id": "quotidien-badge-session-7", "parcoursId": "quotidien", "session": 7, "type": "badge", "titre": "Patient éclairé", "description": "Sécu, mutuelle, reste à charge : tu sais qui paie quoi, et ce que tu paies en trop." },
+  { "id": "quotidien-badge-session-8", "parcoursId": "quotidien", "session": 8, "type": "badge", "titre": "Prévoyant", "description": "Trimestres, points, effet du temps : la retraite a cessé d'être une abstraction." },
+  { "id": "quotidien-badge-session-12", "parcoursId": "quotidien", "session": 12, "type": "badge", "titre": "Autonome", "description": "Tu as traversé une première année entière de décisions — et tu sais pourquoi tu les prends." },
+  { "id": "quotidien-calculateur-net", "parcoursId": "quotidien", "session": 1, "type": "calculateur", "titre": "Brut → net, en une seconde", "description": "L'outil à sortir en entretien d'embauche : un brut annoncé, un net estimé. Environ 22 % de cotisations pour un non-cadre, 25 % pour un cadre.", "simulateur": { "formule": "salaire_net", "variables": [{ "id": "brut", "label": "Salaire brut mensuel", "unite": "€", "min": 1500, "max": 10000, "pas": 50, "valeurParDefaut": 2500 }, { "id": "cotisations", "label": "Taux de cotisations", "unite": "%", "min": 15, "max": 30, "pas": 0.5, "valeurParDefaut": 22 }], "resultat": { "label": "Net à payer estimé", "unite": "€" } } },
+  { "id": "quotidien-calculateur-reste", "parcoursId": "quotidien", "session": 2, "type": "calculateur", "titre": "Ton reste à vivre", "description": "Le seul chiffre qui dise si un budget tient. Fais-le tourner avant de visiter un logement, pas après.", "simulateur": { "formule": "reste_a_vivre", "variables": [{ "id": "revenu", "label": "Revenu net mensuel", "unite": "€", "min": 800, "max": 8000, "pas": 50, "valeurParDefaut": 1900 }, { "id": "loyer", "label": "Logement, charges comprises", "unite": "€", "min": 0, "max": 3000, "pas": 50, "valeurParDefaut": 650 }, { "id": "charges", "label": "Autres charges fixes", "unite": "€", "min": 0, "max": 2000, "pas": 25, "valeurParDefaut": 250 }], "resultat": { "label": "Reste à vivre", "unite": "€" } } },
+  { "id": "quotidien-calculateur-auto", "parcoursId": "quotidien", "session": 6, "type": "calculateur", "titre": "Ce que coûte un crédit auto", "description": "Le chiffre que le concessionnaire ne met jamais en gros : le total des intérêts.", "simulateur": { "formule": "cout_total_credit", "variables": [{ "id": "montant", "label": "Montant emprunté", "unite": "€", "min": 2000, "max": 50000, "pas": 500, "valeurParDefaut": 12000 }, { "id": "taux", "label": "TAEG", "unite": "%", "min": 0, "max": 18, "pas": 0.25, "valeurParDefaut": 5.5 }, { "id": "duree", "label": "Durée", "unite": "mois", "min": 12, "max": 96, "pas": 6, "valeurParDefaut": 48 }], "resultat": { "label": "Intérêts payés en tout", "unite": "€" } } },
+  { "id": "quotidien-glossaire-paie", "parcoursId": "quotidien", "session": 1, "type": "glossaire", "titre": "Glossaire · La fiche de paie", "entrees": [{ "terme": "Salaire brut", "definition": "Le salaire du contrat, avant cotisations. Celui dont on parle en entretien, jamais celui qu'on touche." }, { "terme": "Cotisations sociales", "definition": "Les prélèvements qui financent maladie, retraite, chômage et famille. Un salaire différé, pas une taxe." }, { "terme": "Net à payer", "definition": "Ce qui est versé sur le compte, une fois cotisations et impôt à la source retirés." }, { "terme": "Net imposable", "definition": "La base de calcul de l'impôt, légèrement supérieure au net à payer." }, { "terme": "Taux de prélèvement", "definition": "Le pourcentage d'impôt retenu chaque mois, modifiable en cours d'année si la situation change." }] },
+  { "id": "quotidien-glossaire-assurance", "parcoursId": "quotidien", "session": 3, "type": "glossaire", "titre": "Glossaire · L'assurance", "entrees": [{ "terme": "Franchise", "definition": "La part qui reste à ta charge à chaque sinistre, quelle que soit l'indemnisation." }, { "terme": "Plafond de garantie", "definition": "Le maximum que l'assureur versera. Au-delà, c'est pour toi." }, { "terme": "Exclusion", "definition": "Ce que le contrat ne couvre jamais. La section à lire en premier." }, { "terme": "Responsabilité civile", "definition": "La garantie qui couvre les dommages causés à autrui. La plus importante de toutes." }] },
+  { "id": "quotidien-glossaire-sante", "parcoursId": "quotidien", "session": 7, "type": "glossaire", "titre": "Glossaire · La santé", "entrees": [{ "terme": "Ticket modérateur", "definition": "La part qui reste après le remboursement de la Sécu — ce que couvre la mutuelle." }, { "terme": "Reste à charge", "definition": "Ce que tu paies vraiment, participation forfaitaire et dépassements compris." }, { "terme": "Base de remboursement (BR)", "definition": "Le tarif de référence de la Sécu, sur lequel se calculent tous les pourcentages." }, { "terme": "Dépassement d'honoraires", "definition": "Ce qu'un praticien facture au-delà du tarif de référence. Jamais remboursé par la Sécu." }] },
+  { "id": "quotidien-comparateur-loa", "parcoursId": "quotidien", "session": 6, "type": "comparateur", "titre": "LOA ou occasion ?", "optionA": { "label": "LOA sur une neuve", "points": ["Mensualité connue, aucune panne à craindre", "Aucune décote à subir", "Rien ne t'appartient au bout", "Frais de restitution : kilométrage, rayures"] }, "optionB": { "label": "Occasion de 4 ans", "points": ["La grosse décote a été payée par le premier propriétaire", "Un bien revendable à tout moment", "Il faut une réserve pour l'entretien", "Mensualité plus basse, ou aucune"] }, "conclusion": "La LOA achète de la tranquillité, l'occasion achète un bien. À revenu modeste, posséder laisse plus de marge de manœuvre." },
+  { "id": "quotidien-comparateur-garantie", "parcoursId": "quotidien", "session": 5, "type": "comparateur", "titre": "Garantie légale ou extension payante ?", "optionA": { "label": "Garantie légale de conformité", "points": ["Deux ans, automatique, gratuite", "C'est au vendeur de prouver que le défaut n'existait pas", "Réparation ou remplacement", "S'applique à tout produit neuf"] }, "optionB": { "label": "Extension de garantie payante", "points": ["Se déclenche souvent après les deux ans légaux", "Coûte fréquemment 15 à 20 % du prix du produit", "Exclusions nombreuses, à lire", "Utile surtout sur du gros électroménager"] }, "conclusion": "Avant d'accepter une extension en caisse, demande ce qu'elle couvre en plus des deux ans légaux. La réponse est souvent embarrassée." },
+  { "id": "quotidien-saviez-vous-bulletin", "parcoursId": "quotidien", "session": 1, "type": "saviez_vous", "titre": "La fiche de paie a maigri", "anecdote": "Un bulletin de salaire français comptait une quarantaine de lignes avant 2018. La « clarification » réglementaire l'a ramené à une quinzaine, regroupées par risque : santé, retraite, chômage, famille. Les cotisations n'ont pas disparu pour autant — elles ont simplement été rassemblées. Le montant, lui, n'a pas bougé d'un centime." },
+  { "id": "quotidien-saviez-vous-arnaques", "parcoursId": "quotidien", "session": 4, "type": "saviez_vous", "titre": "Ce n'est pas une question de naïveté", "anecdote": "Les études sur les victimes d'arnaques bancaires montrent qu'elles ne sont ni plus âgées ni moins instruites que la moyenne. Le facteur qui revient systématiquement est le moment : un appel reçu pendant qu'on conduit, qu'on couche un enfant ou qu'on sort d'une réunion. Les escrocs ne cherchent pas des gens crédules, ils cherchent des gens occupés — ce qui est la meilleure raison de s'imposer la règle du rappel, toujours, sans exception." },
+  { "id": "quotidien-saviez-vous-retraite", "parcoursId": "quotidien", "session": 8, "type": "saviez_vous", "titre": "Un job d'été peut valoir un trimestre", "anecdote": "Un trimestre de retraite ne s'obtient pas en travaillant trois mois, mais en atteignant un certain revenu dans l'année — environ 150 fois le SMIC horaire. Un job d'été correctement payé peut donc valider un trimestre entier, et quatre mois bien rémunérés peuvent en valider quatre, soit une année complète. Beaucoup d'étudiants ont ainsi des trimestres acquis sans le savoir : ils apparaissent sur le relevé de carrière, à condition d'aller le regarder." },
+
+  { "id": "quotidien-badge-session-9", "parcoursId": "quotidien", "session": 9, "type": "badge", "titre": "Funambule", "description": "Revenus en dents de scie : tu budgètes sur ton plancher et tu lisses le reste." },
+  { "id": "quotidien-badge-session-10", "parcoursId": "quotidien", "session": 10, "type": "badge", "titre": "Duo réglé", "description": "Compte joint, statuts, contribution au prorata : l'argent à deux ne se devine plus." },
+  { "id": "quotidien-badge-session-11", "parcoursId": "quotidien", "session": 11, "type": "badge", "titre": "Rien d'oublié", "description": "Tu sais vérifier tes droits en dix minutes, et tu sais quand refaire le test." },
+  { "id": "quotidien-comparateur-contribution", "parcoursId": "quotidien", "session": 10, "type": "comparateur", "titre": "Partager à parts égales ou au prorata ?", "optionA": { "label": "50/50, quels que soient les revenus", "points": ["Très simple à expliquer et à tenir", "Sur 1 700 € et 2 700 €, chacun verse 700 €", "Il reste 1 000 € à l'un, 2 000 € à l'autre", "L'écart de marge double, sans que personne ne le dise"] }, "optionB": { "label": "Au prorata des revenus", "points": ["Chacun verse la même part de ce qu'il gagne", "39 % et 61 % dans le même exemple", "Il reste la même proportion à chacun", "Demande de se dire ses revenus, ce qui est déjà utile"] }, "conclusion": "Le 50/50 paraît neutre et ne l'est pas. Au prorata, c'est l'effort qui est partagé, pas seulement la facture." },
+  { "id": "quotidien-glossaire-couple", "parcoursId": "quotidien", "session": 10, "type": "glossaire", "titre": "Glossaire · L'argent à deux", "entrees": [{ "terme": "Concubinage", "definition": "Union libre : aucun lien patrimonial, aucune solidarité de dettes, aucun héritage sans testament." }, { "terme": "Communauté réduite aux acquêts", "definition": "Régime du mariage sans contrat : ce qui est acquis pendant le mariage appartient aux deux époux." }, { "terme": "Indivision", "definition": "Un bien détenu par plusieurs personnes, chacune pour une part. À préciser dans l'acte, sinon elle est présumée égale." }, { "terme": "Solidarité des dettes", "definition": "L'obligation, pour chacun, de répondre des dettes du ménage. Elle existe en mariage et en PACS, pas en concubinage." }] },
+  { "id": "quotidien-glossaire-independant", "parcoursId": "quotidien", "session": 9, "type": "glossaire", "titre": "Glossaire · Revenus irréguliers", "entrees": [{ "terme": "Revenu plancher", "definition": "Le plus bas des douze derniers mois — la base d'un budget qui tient toute l'année." }, { "terme": "Compte de lissage", "definition": "Un compte séparé qui absorbe le surplus des bons mois et finance les creux." }, { "terme": "Chiffre d'affaires encaissé", "definition": "Ce qui est réellement reçu. C'est là-dessus, et non sur le bénéfice, que portent les cotisations d'un micro-entrepreneur." }, { "terme": "Versement libératoire", "definition": "Option qui prélève l'impôt en même temps que les cotisations, à un petit pourcentage du chiffre d'affaires." }] },
+  { "id": "quotidien-saviez-vous-non-recours", "parcoursId": "quotidien", "session": 11, "type": "saviez_vous", "titre": "Le contraire de la fraude", "anecdote": "On parle beaucoup de fraude aux prestations sociales. On parle très peu du phénomène inverse, pourtant bien plus massif en montants : le non-recours, c'est-à-dire les aides auxquelles des gens ont droit et qu'ils ne demandent jamais. Les évaluations publiques situent le non-recours autour d'un tiers des ayants droit pour les principaux dispositifs — un ordre de grandeur sans commune mesure avec celui de la fraude." }
+]

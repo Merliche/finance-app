@@ -1,0 +1,1951 @@
+{
+  "id": "marche",
+  "titre": "La voie Marché",
+  "description": "Actions, obligations, risque et diversification : comprendre les marchés financiers.",
+  "ordre": 2,
+  "type": "voie",
+  "prerequisParcoursId": "intro",
+  "version": 9,
+  "chiffresVerifiesLe": "2026-09-12",
+  "sources": [
+    {
+      "libelle": "AMF — Autorité des marchés financiers",
+      "url": "https://www.amf-france.org"
+    },
+    {
+      "libelle": "impots.gouv.fr — PEA et compte-titres",
+      "url": "https://www.impots.gouv.fr"
+    },
+    {
+      "libelle": "Banque de France — ABE Info Service",
+      "url": "https://www.abe-infoservice.fr"
+    }
+  ],
+  "etapes": [
+    {
+      "id": "marche-s1-lecon-bourse",
+      "ordre": 1,
+      "titre": "À quoi sert vraiment la bourse",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Dans l'imaginaire collectif, la bourse est un casino avec des écrans rouges et verts. Dans les faits, c'est d'abord un lieu de rencontre entre deux besoins très concrets."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Deux besoins qui se rencontrent",
+          "texte": "D'un côté, des entreprises qui ont besoin d'argent pour se développer (construire une usine, embaucher, racheter un concurrent). De l'autre, des épargnants qui ont de l'argent disponible et cherchent à le faire fructifier. Le marché financier met les deux en relation."
+        },
+        {
+          "type": "definition",
+          "terme": "Marché primaire",
+          "texte": "Là où les titres sont créés : l'entreprise émet des actions et reçoit directement l'argent des investisseurs."
+        },
+        {
+          "type": "definition",
+          "terme": "Marché secondaire",
+          "texte": "Là où les titres déjà existants s'échangent entre investisseurs. C'est ce qu'on appelle couramment « la bourse ». L'entreprise ne reçoit rien lors de ces échanges."
+        },
+        {
+          "type": "texte",
+          "texte": "Cette seconde partie est essentielle : c'est parce qu'on sait pouvoir revendre facilement qu'on accepte d'acheter au départ. Sans marché secondaire, presque personne ne financerait les entreprises."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Le circuit d'une introduction en bourse",
+            "etapes": [
+              {
+                "label": "Une entreprise a besoin d'argent",
+                "detail": "pour grandir, s'équiper, embaucher"
+              },
+              {
+                "label": "Elle vend des actions au public",
+                "detail": "c'est l'introduction en bourse"
+              },
+              {
+                "label": "Les acheteurs deviennent copropriétaires",
+                "detail": "à hauteur de leurs actions"
+              },
+              {
+                "label": "Les actions s'échangent ensuite entre investisseurs",
+                "detail": "l'entreprise ne touche plus rien sur ces échanges"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Primaire : l'entreprise reçoit l'argent",
+            "Secondaire : les investisseurs s'échangent les titres",
+            "Sans revente possible, personne n'achèterait"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s1-lecon-action",
+      "ordre": 2,
+      "titre": "Une action, c'est un morceau d'entreprise",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Acheter une action, ce n'est pas parier sur une courbe : c'est devenir propriétaire d'une fraction, souvent minuscule, d'une entreprise réelle."
+        },
+        {
+          "type": "definition",
+          "terme": "Action",
+          "texte": "Un titre de propriété sur une part du capital d'une entreprise. Il donne droit à une part des bénéfices et, en général, à un droit de vote en assemblée générale."
+        },
+        {
+          "type": "definition",
+          "terme": "Dividende",
+          "texte": "La part du bénéfice qu'une entreprise décide de reverser à ses actionnaires. Elle n'y est jamais obligée : elle peut préférer réinvestir ses bénéfices pour grandir."
+        },
+        {
+          "type": "texte",
+          "texte": "Il y a donc deux façons de gagner de l'argent avec une action : les dividendes reçus, et la plus-value si tu revends plus cher que ton prix d'achat. Et deux façons d'en perdre, symétriquement."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Une action, c'est une part d'entreprise",
+            "Deux gains : dividende et plus-value",
+            "Aucun dividende n'est garanti"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s1-quiz",
+      "ordre": 3,
+      "titre": "Quiz · Les bases du marché",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Petit point d'étape avant d'aller plus loin."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "marche-s1-quiz-q1",
+            "question": "Quand tu achètes une action en bourse à un autre investisseur, l'entreprise...",
+            "choix": [
+              "Reçoit l'argent de ton achat",
+              "Ne reçoit rien : l'échange a lieu entre investisseurs",
+              "Doit te verser un dividende immédiatement"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s1-quiz-q2",
+            "question": "Une action représente...",
+            "choix": [
+              "Un prêt fait à l'entreprise",
+              "Une part de propriété de l'entreprise",
+              "Une assurance sur les bénéfices"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s1-quiz-q3",
+            "question": "Une entreprise qui fait des bénéfices...",
+            "choix": [
+              "Doit obligatoirement verser un dividende",
+              "Peut choisir de les réinvestir plutôt que de les distribuer",
+              "Ne peut jamais verser de dividende"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "marche-s2-lecon-obligation",
+      "ordre": 4,
+      "titre": "L'obligation : prêter plutôt que posséder",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Il existe une seconde grande famille de titres, souvent moins médiatisée que les actions, mais bien plus volumineuse sur les marchés mondiaux."
+        },
+        {
+          "type": "definition",
+          "terme": "Obligation",
+          "texte": "Un titre de dette. En l'achetant, tu prêtes de l'argent à un émetteur (une entreprise ou un État) qui s'engage à te verser des intérêts puis à te rembourser à une date fixée."
+        },
+        {
+          "type": "definition",
+          "terme": "Coupon",
+          "texte": "L'intérêt périodique versé au détenteur d'une obligation. C'est l'équivalent du loyer de l'argent prêté."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Action ou obligation ?",
+          "texte": "Avec une action, tu es copropriétaire : ton gain dépend des résultats, sans plafond mais sans garantie. Avec une obligation, tu es créancier : ton gain est connu d'avance, mais tu ne profites pas du succès de l'entreprise. En cas de faillite, le créancier est remboursé avant l'actionnaire."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Une obligation, c'est un prêt",
+            "Gain connu d'avance, plafonné",
+            "Le créancier passe avant l'actionnaire"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s2-lecon-prix",
+      "ordre": 5,
+      "titre": "Pourquoi les prix bougent",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le cours d'une action n'est pas décrété par une autorité : c'est simplement le prix auquel un acheteur et un vendeur se sont mis d'accord, à l'instant t."
+        },
+        {
+          "type": "texte",
+          "texte": "Ce prix reflète surtout les anticipations. Une entreprise peut annoncer d'excellents résultats et voir son cours baisser, parce que le marché espérait encore mieux. À l'inverse, une mauvaise nouvelle déjà anticipée peut ne rien changer."
+        },
+        {
+          "type": "definition",
+          "terme": "Volatilité",
+          "texte": "L'ampleur des variations de prix d'un titre. Une forte volatilité signifie des mouvements amples dans les deux sens, à la hausse comme à la baisse."
+        },
+        {
+          "type": "texte",
+          "texte": "Conséquence pratique : sur une journée, la bourse ressemble à un sondage d'humeur. Sur dix ans, elle ressemble davantage à une mesure de la performance économique réelle des entreprises."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "courbes",
+            "titre": "Une action sur dix ans : du bruit, une tendance",
+            "legende": "Les baisses font peur, la pente de fond fait la performance.",
+            "axeX": [
+              "An 1",
+              "An 3",
+              "An 5",
+              "An 7",
+              "An 10"
+            ],
+            "unite": "€",
+            "series": [
+              {
+                "label": "Cours de l'action",
+                "role": "principal",
+                "points": [
+                  100,
+                  82,
+                  128,
+                  115,
+                  165
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le cours est un accord entre acheteur et vendeur",
+            "Ce sont les anticipations qui bougent les prix",
+            "Volatilité : l'ampleur des mouvements, dans les deux sens"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s2-quiz",
+      "ordre": 6,
+      "titre": "Quiz · Actions et obligations",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "On valide, puis on parle du risque."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "marche-s2-quiz-q1",
+            "question": "En achetant une obligation, tu deviens...",
+            "choix": [
+              "Propriétaire d'une part de l'entreprise",
+              "Créancier de l'émetteur",
+              "Salarié de l'entreprise"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s2-quiz-q2",
+            "question": "En cas de faillite de l'entreprise, qui est remboursé en premier ?",
+            "choix": [
+              "L'actionnaire",
+              "Le créancier obligataire",
+              "Les deux en même temps"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s2-quiz-q3",
+            "question": "Une entreprise publie de très bons résultats et son cours baisse. C'est...",
+            "choix": [
+              "Impossible, il y a forcément une erreur",
+              "Possible : le marché en attendait davantage",
+              "Le signe d'une manipulation systématique"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "marche-s3-lecon-risque",
+      "ordre": 7,
+      "titre": "Pas de rendement sans risque",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "C'est la règle la plus importante de toute la finance, et celle que les arnaques violent systématiquement : un rendement espéré plus élevé se paie toujours par un risque plus élevé."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "L'échelle du risque",
+          "texte": "Un livret réglementé : capital garanti, rendement modeste. Une obligation d'État solide : risque faible, rendement un peu supérieur. Des actions : aucune garantie, fortes variations, mais espérance de rendement supérieure sur longue durée."
+        },
+        {
+          "type": "texte",
+          "texte": "Une conséquence directe : si on te promet un rendement élevé ET garanti ET disponible à tout moment, ce n'est pas une opportunité, c'est un signal d'alarme."
+        },
+        {
+          "type": "texte",
+          "texte": "Le risque en bourse se réduit avec la durée de détention, sans jamais disparaître. Plus l'horizon est long, plus les mauvaises années ont de chances d'être compensées par les bonnes — mais aucun rendement passé ne garantit le futur."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "courbes",
+            "titre": "Livret contre actions : cinq années fictives",
+            "legende": "Plus de rendement, plus de secousses : les deux vont ensemble, toujours.",
+            "axeX": [
+              "Départ",
+              "1 an",
+              "2 ans",
+              "3 ans",
+              "4 ans",
+              "5 ans"
+            ],
+            "unite": "€",
+            "series": [
+              {
+                "label": "Actions",
+                "role": "principal",
+                "points": [
+                  100,
+                  92,
+                  118,
+                  110,
+                  140,
+                  160
+                ]
+              },
+              {
+                "label": "Livret à 2 %",
+                "role": "secondaire",
+                "points": [
+                  100,
+                  102,
+                  104,
+                  106,
+                  108,
+                  110
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Plus de rendement espéré = plus de risque accepté",
+            "Aucun rendement élevé n'est garanti",
+            "Le temps est ce qui rend le risque supportable"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s3-exemple-long-terme",
+      "ordre": 8,
+      "titre": "L'effet du temps sur un investissement",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Ce simulateur applique un rendement moyen constant, ce qui n'arrive jamais en vrai : les marchés montent et descendent. Il sert à visualiser une chose précise, l'effet du temps. Fais varier la durée et regarde l'écart se creuser."
+        }
+      ],
+      "simulateur": {
+        "formule": "interet_compose",
+        "variables": [
+          {
+            "id": "capital",
+            "label": "Somme investie au départ",
+            "unite": "€",
+            "min": 500,
+            "max": 50000,
+            "pas": 500,
+            "valeurParDefaut": 5000
+          },
+          {
+            "id": "taux",
+            "label": "Rendement annuel moyen supposé",
+            "unite": "%",
+            "min": -5,
+            "max": 12,
+            "pas": 0.5,
+            "valeurParDefaut": 6
+          },
+          {
+            "id": "duree",
+            "label": "Durée de détention",
+            "unite": "ans",
+            "min": 1,
+            "max": 40,
+            "pas": 1,
+            "valeurParDefaut": 20
+          }
+        ],
+        "resultat": {
+          "label": "Valeur estimée à l'arrivée",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "marche-s3-exercice-risque",
+      "ordre": 9,
+      "titre": "Risque et rendement en chiffres",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre calculs pour mesurer ce que « risqué » veut dire, concrètement."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 50,
+        "items": [
+          {
+            "id": "marche-s3-ex-1",
+            "type": "nombre",
+            "enonce": "Un placement perd 50 % une année. Quel gain faut-il ensuite pour revenir au point de départ ?",
+            "reponse": 100,
+            "tolerance": 5,
+            "unite": "%",
+            "indice": "De 100 € on tombe à 50 €. Pour revenir à 100…",
+            "explication": "Il faut +100 % : de 50 € à 100 €, c'est un doublement. Les pertes coûtent toujours plus cher que les gains ne rapportent — la première raison de ne pas viser n'importe quel rendement."
+          },
+          {
+            "id": "marche-s3-ex-2",
+            "type": "nombre",
+            "enonce": "Un capital double tous les dix ans. Tu places 10 000 € : combien au bout de vingt ans ?",
+            "reponse": 40000,
+            "tolerance": 200,
+            "unite": "€",
+            "indice": "Il double une fois, puis le résultat double à son tour.",
+            "explication": "40 000 €. 10 000 → 20 000 sur la première décennie, puis 20 000 → 40 000 sur la seconde : le deuxième doublement rapporte à lui seul autant que tout ce qui précède. C'est ça, les intérêts composés."
+          },
+          {
+            "id": "marche-s3-ex-3",
+            "type": "vrai_faux",
+            "enonce": "Un placement qui promet 8 % garantis sans risque existe.",
+            "reponse": false,
+            "explication": "Faux. Si un tel produit existait, tout le monde y placerait son argent et le rendement s'effondrerait. « Garanti » et « élevé » dans la même phrase : c'est le marqueur d'une arnaque."
+          },
+          {
+            "id": "marche-s3-ex-4",
+            "type": "vrai_faux",
+            "enonce": "Sur une longue période, un horizon plus lointain rend le risque des actions plus supportable.",
+            "reponse": true,
+            "explication": "Vrai : plus l'horizon est long, plus les mauvaises années ont le temps d'être compensées. Le risque ne disparaît pas, mais il devient tenable."
+          }
+        ]
+      }
+    },
+    {
+      "id": "marche-s3-quiz",
+      "ordre": 10,
+      "titre": "Quiz · Risque et rendement",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une session essentielle : on vérifie sérieusement."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "marche-s3-quiz-q1",
+            "question": "Un placement promettant un rendement élevé, garanti et disponible à tout moment est...",
+            "choix": [
+              "Une bonne opportunité à saisir vite",
+              "Un signal d'alarme : ces trois promesses sont incompatibles",
+              "Un produit bancaire classique"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s3-quiz-q2",
+            "question": "Allonger la durée de détention d'un placement en actions...",
+            "choix": [
+              "Supprime totalement le risque",
+              "Réduit le risque sans le supprimer",
+              "Augmente le risque"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s3-quiz-q3",
+            "question": "Les performances passées d'un placement...",
+            "choix": [
+              "Garantissent les performances futures",
+              "Ne garantissent pas les performances futures",
+              "Sont interdites de publication"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "marche-s4-lecon-diversification",
+      "ordre": 11,
+      "titre": "Ne pas mettre tous ses œufs dans le même panier",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "C'est le seul repas gratuit de la finance : répartir son argent sur plusieurs placements réduit le risque global sans réduire mécaniquement le rendement espéré."
+        },
+        {
+          "type": "definition",
+          "terme": "Diversification",
+          "texte": "Répartir ses investissements entre plusieurs entreprises, plusieurs secteurs d'activité, plusieurs zones géographiques et plusieurs types de titres, pour qu'un accident isolé ne mette pas tout en péril."
+        },
+        {
+          "type": "texte",
+          "texte": "Concrètement : détenir une seule action, c'est lier son sort à celui d'une entreprise unique. Si elle fait faillite, tout est perdu. En détenir des centaines, c'est accepter que certaines échouent sans que l'ensemble s'effondre."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "repartition",
+            "titre": "Un portefeuille diversifié (exemple)",
+            "legende": "Quand une poche baisse, une autre tient : le total bouge moins que chaque partie.",
+            "parts": [
+              {
+                "label": "Actions monde",
+                "valeur": 60
+              },
+              {
+                "label": "Obligations",
+                "valeur": 25
+              },
+              {
+                "label": "Immobilier",
+                "valeur": 10
+              },
+              {
+                "label": "Liquidités",
+                "valeur": 5
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Répartir réduit le risque sans réduire l'espérance",
+            "Diversifier par secteur, pays et type d'actif",
+            "Le seul repas gratuit de la finance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s4-lecon-fonds",
+      "ordre": 12,
+      "titre": "Fonds et ETF : la diversification clé en main",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Acheter une par une des centaines d'actions serait coûteux et fastidieux. C'est précisément le problème que résolvent les fonds d'investissement."
+        },
+        {
+          "type": "definition",
+          "terme": "Fonds d'investissement",
+          "texte": "Un véhicule qui rassemble l'argent de nombreux épargnants pour acheter un ensemble de titres. En achetant une part du fonds, tu détiens indirectement une fraction de tout ce qu'il contient."
+        },
+        {
+          "type": "definition",
+          "terme": "ETF (ou fonds indiciel)",
+          "texte": "Un fonds qui se contente de répliquer un indice boursier, sans chercher à faire mieux que le marché. Cette gestion passive permet des frais nettement plus faibles qu'un fonds géré activement."
+        },
+        {
+          "type": "texte",
+          "texte": "Les frais méritent l'attention : prélevés chaque année sur l'encours, ils se composent eux aussi dans le temps. Un écart de 1,5 % de frais annuels change considérablement le résultat sur vingt ans."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Un fonds achète des dizaines d'actifs pour toi",
+            "L'ETF réplique un indice, pour très peu de frais",
+            "Les frais se paient chaque année, la performance non"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s4-situation-diversifier",
+      "ordre": 13,
+      "titre": "Un portefeuille déséquilibré",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un cas très fréquent, surtout chez les salariés actionnaires de leur propre entreprise."
+        }
+      ],
+      "situation": {
+        "contexte": "Un collègue t'explique fièrement que toute son épargne investie, soit 20 000 €, est placée en actions de l'entreprise où il travaille depuis quinze ans. « Je connais la boîte mieux que personne », dit-il. Que lui réponds-tu ?",
+        "choix": [
+          {
+            "id": "diversifier",
+            "texte": "Lui faire remarquer que son salaire ET son épargne dépendent de la même entreprise",
+            "feedback": "C'est le point central : si l'entreprise va mal, il peut perdre son emploi et son épargne en même temps. Bien connaître une entreprise ne protège pas de ce cumul de risques.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "reduire-un-peu",
+            "texte": "Lui suggérer d'en garder une partie et de répartir le reste",
+            "feedback": "Raisonnable et souvent plus acceptable psychologiquement qu'un changement radical. L'essentiel est d'amorcer la répartition.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "feliciter",
+            "texte": "Le féliciter : connaître l'entreprise réduit le risque",
+            "feedback": "Piège classique. La familiarité donne un sentiment de sécurité, mais ne change rien au risque réel : de grandes entreprises très connues de leurs salariés ont fait faillite.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "marche-s4-quiz",
+      "ordre": 14,
+      "titre": "Quiz · Diversification",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Avant-dernière session."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "marche-s4-quiz-q1",
+            "question": "Diversifier son portefeuille permet surtout de...",
+            "choix": [
+              "Garantir un gain",
+              "Réduire le risque lié à un placement particulier",
+              "Éviter tous les frais"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s4-quiz-q2",
+            "question": "Un ETF se caractérise par...",
+            "choix": [
+              "Une gestion passive qui réplique un indice, avec des frais réduits",
+              "Une garantie du capital investi",
+              "Un rendement fixé à l'avance"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "marche-s4-quiz-q3",
+            "question": "Les frais annuels d'un fonds...",
+            "choix": [
+              "Sont négligeables sur le long terme",
+              "Se cumulent année après année et pèsent lourd sur la durée",
+              "Ne sont prélevés qu'à la revente"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "marche-s5-lecon-enveloppes",
+      "ordre": 15,
+      "titre": "Où loger ses investissements",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Avant d'acheter quoi que ce soit, il faut un contenant. En France, trois grandes enveloppes coexistent, avec des règles fiscales différentes."
+        },
+        {
+          "type": "definition",
+          "terme": "PEA",
+          "texte": "Plan d'Épargne en Actions. Réservé principalement aux actions européennes, avec un plafond de versement de 150 000 €. Passé cinq ans, les gains bénéficient d'une fiscalité allégée (les prélèvements sociaux restent dus)."
+        },
+        {
+          "type": "definition",
+          "terme": "Compte-titres ordinaire",
+          "texte": "L'enveloppe la plus souple : aucun plafond, accès au monde entier, mais aucun avantage fiscal particulier."
+        },
+        {
+          "type": "texte",
+          "texte": "L'assurance-vie, vue dans la voie Banque, joue aussi ce rôle via ses unités de compte. Le choix de l'enveloppe dépend de l'horizon, des supports visés et de la situation fiscale."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "PEA : fiscalité douce après 5 ans",
+            "Compte-titres : tout est permis, tout est taxé",
+            "L'enveloppe compte autant que le placement"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s5-lecon-comportement",
+      "ordre": 16,
+      "titre": "Le pire ennemi de l'investisseur",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Les études sur le sujet convergent : ce qui dégrade le plus les résultats d'un investisseur particulier, ce n'est pas le choix des titres, c'est son propre comportement dans les moments extrêmes."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Les deux réflexes coûteux",
+          "texte": "Acheter dans l'euphorie, quand tout le monde en parle et que les prix sont hauts. Et vendre dans la panique, quand les marchés chutent — ce qui transforme une perte théorique en perte définitive."
+        },
+        {
+          "type": "definition",
+          "terme": "Investissement programmé",
+          "texte": "Investir une somme fixe à intervalle régulier, quel que soit l'état du marché. Ce mécanisme retire l'émotion de la décision et lisse le prix d'achat dans le temps."
+        },
+        {
+          "type": "texte",
+          "texte": "Une baisse des marchés n'est une perte que si l'on vend. Tant qu'on ne vend pas, on détient toujours les mêmes parts des mêmes entreprises — c'est leur prix affiché qui a changé, pas ce qu'on possède."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "courbes",
+            "titre": "Vendre dans la panique, racheter dans l'euphorie",
+            "legende": "Le marché est le même. Seul le comportement change le résultat.",
+            "axeX": [
+              "Départ",
+              "Euphorie",
+              "Krach",
+              "Reprise",
+              "5 ans"
+            ],
+            "unite": "€",
+            "series": [
+              {
+                "label": "Rester investi",
+                "role": "principal",
+                "points": [
+                  100,
+                  130,
+                  95,
+                  125,
+                  155
+                ]
+              },
+              {
+                "label": "Vendre au creux, racheter au sommet",
+                "role": "secondaire",
+                "points": [
+                  100,
+                  130,
+                  95,
+                  100,
+                  118
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Vendre en panique acte la perte",
+            "Rester investi bat le timing sur longue période",
+            "Le plus grand risque, c'est soi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s5-situation-krach",
+      "ordre": 17,
+      "titre": "Les marchés chutent de 25 %",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La théorie est simple. C'est dans ce genre de moment qu'elle se vérifie."
+        }
+      ],
+      "situation": {
+        "contexte": "Une cliente a investi 10 000 € en fonds diversifiés il y a deux ans, pour sa retraite dans vingt-cinq ans. Les marchés viennent de chuter de 25 %, son portefeuille affiche 7 500 €. Elle t'appelle, paniquée, et veut tout vendre. Que lui dis-tu ?",
+        "choix": [
+          {
+            "id": "rappeler-horizon",
+            "texte": "Lui rappeler son horizon à vingt-cinq ans et que vendre figerait la perte",
+            "feedback": "Le bon réflexe : son projet n'a pas changé, seul le prix affiché a changé. Vendre maintenant transformerait une baisse temporaire en perte définitive.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "verifier-situation",
+            "texte": "Vérifier d'abord si elle a besoin de cet argent à court terme",
+            "feedback": "Prudent et légitime : si sa situation personnelle a changé (perte d'emploi, dépense urgente), la réponse peut être différente. On ne raisonne jamais hors contexte.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "vendre",
+            "texte": "L'aider à tout vendre pour limiter les dégâts",
+            "feedback": "C'est précisément l'erreur la plus coûteuse : vendre après la baisse. L'investisseur encaisse la chute et rate le rebond éventuel.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "marche-s5-quiz",
+      "ordre": 18,
+      "titre": "Quiz · Investir en pratique",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Les bases sont posées. Les deux sessions suivantes passent à l'analyse et à la construction d'un vrai portefeuille."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "marche-s5-quiz-q1",
+            "question": "Le PEA se caractérise par...",
+            "choix": [
+              "Un plafond de versement et une fiscalité allégée après 5 ans",
+              "Un accès illimité aux marchés mondiaux",
+              "Une garantie du capital"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "marche-s5-quiz-q2",
+            "question": "Investir une somme fixe à intervalle régulier permet de...",
+            "choix": [
+              "Garantir un gain à la fin",
+              "Lisser le prix d'achat et retirer l'émotion de la décision",
+              "Éviter totalement les baisses de marché"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s5-quiz-q3",
+            "question": "Tant qu'on ne vend pas après une baisse des marchés...",
+            "choix": [
+              "La perte est déjà définitive",
+              "On détient toujours les mêmes titres, à un prix affiché plus bas",
+              "On ne peut plus rien récupérer"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "marche-s6-lecon-chiffres",
+      "ordre": 19,
+      "titre": "Les cinq chiffres qui comptent",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Avant d'acheter une action, il faut lire l'entreprise comme on lirait un bilan de santé. Cinq chiffres suffisent pour un premier tri — et pour éviter les pièges les plus courants."
+        },
+        {
+          "type": "definition",
+          "terme": "Capitalisation boursière",
+          "texte": "Le prix d'une action multiplié par le nombre d'actions en circulation : ce que le marché pense que vaut toute l'entreprise, à l'instant t."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Les quatre autres",
+          "texte": "Le chiffre d'affaires (l'activité), la marge nette (ce qu'il reste de chaque euro vendu), la croissance du chiffre d'affaires sur plusieurs années (la dynamique), et la dette nette (ce que l'entreprise doit, moins sa trésorerie). Une entreprise qui vend beaucoup mais ne garde rien, ou qui croît à crédit, se lit dans ces chiffres."
+        },
+        {
+          "type": "texte",
+          "texte": "Ces chiffres sont publics et gratuits : chaque société cotée publie ses comptes chaque trimestre. Ne pas les regarder, c'est acheter une maison sans visiter."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Chiffre d'affaires, marge, dette, trésorerie, croissance",
+            "Une tendance vaut mieux qu'un chiffre isolé",
+            "Comparer à un concurrent, jamais dans le vide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s6-lecon-per",
+      "ordre": 20,
+      "titre": "Le PER, ou combien on paie chaque euro de bénéfice",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Deux entreprises peuvent avoir le même bénéfice et des prix d'action très différents. Le PER sert justement à comparer ce qu'on paie pour un euro de bénéfice."
+        },
+        {
+          "type": "definition",
+          "terme": "PER",
+          "texte": "Price Earnings Ratio : le cours de l'action divisé par le bénéfice par action. Un PER de 15 signifie qu'on paie 15 fois le bénéfice annuel. À bénéfice constant, il faudrait quinze ans pour « rembourser » le prix payé."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Ce qu'un PER raconte",
+          "texte": "Un PER élevé (30, 40, plus) signifie que le marché anticipe une forte croissance des bénéfices — ou que l'action est chère. Un PER faible (8, 10) peut signaler une bonne affaire… ou une entreprise en difficulté que le marché a déjà sanctionnée. Le chiffre ne se lit jamais seul : on le compare à celui des concurrents et à l'historique de l'entreprise."
+        },
+        {
+          "type": "definition",
+          "terme": "Rendement du dividende",
+          "texte": "Le dividende annuel divisé par le cours. Attention au piège : un rendement anormalement élevé vient souvent d'un cours qui s'est effondré, pas d'une entreprise généreuse."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "PER : le prix payé pour 1 € de bénéfice annuel",
+            "legende": "Un PER élevé n'est pas forcément cher — il faut une croissance qui le justifie.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Entreprise mûre (PER 12)",
+                "valeur": 12,
+                "role": "principal"
+              },
+              {
+                "label": "Entreprise en croissance (PER 25)",
+                "valeur": 25,
+                "role": "principal"
+              },
+              {
+                "label": "Valeur « star » (PER 40)",
+                "valeur": 40,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "PER : le prix payé pour 1 € de bénéfice",
+            "Élevé n'est pas cher si la croissance suit",
+            "Il ne veut rien dire hors de son secteur"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s6-situation-analyse",
+      "ordre": 21,
+      "titre": "Deux entreprises, un seul achat",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Les chiffres sont là. Reste à les faire parler."
+        }
+      ],
+      "situation": {
+        "contexte": "Tu compares deux entreprises du même secteur. A : PER de 12, chiffre d'affaires stable depuis cinq ans, dividende de 6 %, dette élevée. B : PER de 25, chiffre d'affaires en hausse de 15 % par an, pas de dividende, aucune dette. Laquelle mérite d'être creusée en premier ?",
+        "choix": [
+          {
+            "id": "b",
+            "texte": "B, malgré son PER plus élevé : croissance et bilan sain justifient qu'on paie plus",
+            "feedback": "Le bon réflexe d'analyse. Un PER de 25 sur une entreprise qui croît de 15 % par an sans dette n'est pas forcément cher. Reste ensuite à vérifier que cette croissance est solide, et à quel prix elle est déjà anticipée.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "les-deux",
+            "texte": "Les deux, en petite quantité, pour ne pas choisir",
+            "feedback": "Diversifier est sain, mais on ne diversifie pas pour éviter de réfléchir. Ici, les signaux de A (dette élevée, dividende suspect) méritent d'être compris avant d'y mettre un euro.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "a",
+            "texte": "A : PER bas et 6 % de dividende, c'est la bonne affaire évidente",
+            "feedback": "Le piège classique. Un dividende de 6 % avec une activité qui stagne et une dette élevée ressemble à une entreprise qui distribue plus qu'elle ne le devrait, sur un cours déjà sanctionné. « Pas cher » et « bonne affaire » sont deux choses différentes.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "marche-s6-quiz",
+      "ordre": 22,
+      "titre": "Quiz · Lire une entreprise",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Niveau analyse : on lit les chiffres, pas les titres de presse."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "marche-s6-quiz-q1",
+            "question": "Un PER de 20 signifie que...",
+            "choix": [
+              "L'action a pris 20 % cette année",
+              "On paie 20 fois le bénéfice annuel par action",
+              "L'entreprise verse 20 % de dividende"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s6-quiz-q2",
+            "question": "Un rendement du dividende anormalement élevé est souvent le signe...",
+            "choix": [
+              "D'une entreprise particulièrement généreuse",
+              "D'un cours qui a fortement chuté",
+              "D'une croissance rapide"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s6-quiz-q3",
+            "question": "La capitalisation boursière, c'est...",
+            "choix": [
+              "Le chiffre d'affaires annuel",
+              "Le cours multiplié par le nombre d'actions",
+              "La trésorerie de l'entreprise"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "marche-s7-lecon-allocation",
+      "ordre": 23,
+      "titre": "Répartir avant de choisir",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Les études sur les portefeuilles convergent : la répartition entre grandes familles d'actifs explique l'essentiel du résultat à long terme, bien plus que le choix des titres eux-mêmes. C'est la décision numéro un — et la moins médiatisée."
+        },
+        {
+          "type": "definition",
+          "terme": "Allocation d'actifs",
+          "texte": "La part de ton épargne investie dans chaque grande famille : actions, obligations, immobilier, liquidités. Plus l'horizon est long et la tolérance aux baisses élevée, plus la part d'actions peut être importante."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Un repère, pas une règle",
+          "texte": "Une vieille approximation propose de détenir en actions « 100 moins son âge » en pourcentage : 70 % à trente ans, 40 % à soixante. C'est grossier — ça ignore ta situation, ton horizon réel, ton tempérament — mais ça dit une chose juste : la part de risque doit diminuer à mesure qu'on approche du moment où on aura besoin de l'argent."
+        },
+        {
+          "type": "definition",
+          "terme": "Rééquilibrage",
+          "texte": "Ramener périodiquement le portefeuille à sa répartition cible. Après une forte hausse des actions, elles pèsent plus que prévu : on en vend un peu pour racheter le reste. Mécaniquement, on vend haut et on achète bas — sans avoir à prédire quoi que ce soit."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "repartition",
+            "titre": "Une allocation à trente ans (exemple)",
+            "legende": "Plus l'horizon est long, plus la part d'actions peut être grande.",
+            "parts": [
+              {
+                "label": "Actions",
+                "valeur": 70
+              },
+              {
+                "label": "Obligations",
+                "valeur": 20
+              },
+              {
+                "label": "Liquidités",
+                "valeur": 10
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "L'allocation explique l'essentiel du résultat",
+            "Elle se décide avant de choisir des titres",
+            "Rééquilibrer, c'est vendre ce qui a monté"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s7-exemple-epargne-programmee",
+      "ordre": 24,
+      "titre": "Investir un peu, longtemps",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Voici l'outil le plus puissant de toute cette voie, et le plus sous-estimé : un versement modeste, chaque mois, pendant longtemps. Fais varier la durée avant le montant — c'est elle qui fait la différence."
+        }
+      ],
+      "simulateur": {
+        "formule": "epargne_programmee",
+        "variables": [
+          {
+            "id": "versement",
+            "label": "Versement mensuel",
+            "unite": "€",
+            "min": 50,
+            "max": 1000,
+            "pas": 25,
+            "valeurParDefaut": 150
+          },
+          {
+            "id": "taux",
+            "label": "Rendement annuel moyen supposé",
+            "unite": "%",
+            "min": 0,
+            "max": 10,
+            "pas": 0.5,
+            "valeurParDefaut": 6
+          },
+          {
+            "id": "duree",
+            "label": "Durée",
+            "unite": "ans",
+            "min": 1,
+            "max": 40,
+            "pas": 1,
+            "valeurParDefaut": 25
+          }
+        ],
+        "resultat": {
+          "label": "Valeur estimée à l'arrivée",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "marche-s7-lecon-biais",
+      "ordre": 25,
+      "titre": "Les pièges que ton cerveau te tend",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Tu connais maintenant les règles. Le plus dur reste de les appliquer quand ton propre cerveau travaille contre toi. Les économistes ont un nom pour chacun de ces réflexes."
+        },
+        {
+          "type": "definition",
+          "terme": "Aversion aux pertes",
+          "texte": "Une perte de 100 € fait environ deux fois plus mal qu'un gain de 100 € ne fait plaisir. C'est ce qui pousse à vendre dans la panique — et à garder trop longtemps une mauvaise position pour ne pas « matérialiser » la perte."
+        },
+        {
+          "type": "definition",
+          "terme": "Biais de confirmation",
+          "texte": "Chercher les informations qui confirment ce qu'on croit déjà. L'investisseur convaincu par une action ne lit que les articles qui lui donnent raison."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "La peur de rater (FOMO)",
+          "texte": "Quand tout le monde parle d'un placement qui a déjà beaucoup monté, l'envie d'y aller est maximale — précisément au moment où c'est le plus cher. La règle inverse est plus sûre : ce dont tout le monde parle est déjà dans le prix."
+        },
+        {
+          "type": "texte",
+          "texte": "L'antidote n'est pas de se croire plus fort que ces biais — personne ne l'est. C'est de décider à froid, par avance : une allocation cible, un versement programmé, un rééquilibrage à date fixe. Les décisions prises avant l'émotion survivent à l'émotion."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Nos biais nous coûtent plus que les krachs",
+            "Écrire ses règles à l'avance les neutralise",
+            "Voir clair ne suffit pas : il faut un garde-fou"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s7-situation-rebalancing",
+      "ordre": 26,
+      "titre": "Après une belle année",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La discipline se teste quand tout va bien, pas seulement quand tout va mal."
+        }
+      ],
+      "situation": {
+        "contexte": "Un client avait choisi une répartition 60 % actions / 40 % obligations. Après une très bonne année boursière, son portefeuille est à 72 % actions. Il te dit : « Les actions marchent, autant en profiter, je laisse comme ça. » Que lui réponds-tu ?",
+        "choix": [
+          {
+            "id": "reequilibrer",
+            "texte": "Rééquilibrer vers 60/40 : vendre un peu d'actions au plus haut, sans chercher à deviner la suite",
+            "feedback": "C'est exactement à ça que sert une allocation cible. Il prend plus de risque qu'il ne l'avait décidé à froid, au moment où les actions sont chères. Rééquilibrer, c'est vendre haut mécaniquement.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "versements",
+            "texte": "Arrêter les nouveaux versements en actions jusqu'à retrouver 60/40",
+            "feedback": "Une façon douce de rééquilibrer sans vendre, souvent utilisée quand on verse régulièrement. Plus lente, et elle ne réduit pas immédiatement le risque, mais la logique est la bonne.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "laisser",
+            "texte": "Le laisser faire : on ne vend pas ce qui monte",
+            "feedback": "C'est le biais de confirmation en action. « Ce qui monte » n'a aucune raison de continuer, et il porte désormais un risque qu'il n'a pas choisi. La répartition décidée à froid existe précisément pour ces moments-là.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "marche-s7-quiz",
+      "ordre": 27,
+      "titre": "Quiz · Construire un portefeuille",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre questions, il en faut trois. Puis une dernière session pour passer à l'action."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "marche-s7-quiz-q1",
+            "question": "Ce qui explique l'essentiel du résultat d'un portefeuille à long terme, c'est...",
+            "choix": [
+              "Le choix des meilleurs titres",
+              "La répartition entre familles d'actifs",
+              "Le moment d'achat"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s7-quiz-q2",
+            "question": "Rééquilibrer un portefeuille après une hausse des actions revient à...",
+            "choix": [
+              "Acheter davantage d'actions",
+              "Vendre un peu d'actions pour revenir à la répartition cible",
+              "Tout vendre"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s7-quiz-q3",
+            "question": "L'aversion aux pertes pousse typiquement à...",
+            "choix": [
+              "Vendre dans la panique ou garder une mauvaise position trop longtemps",
+              "Diversifier davantage",
+              "Investir régulièrement"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "marche-s7-quiz-q4",
+            "question": "Le meilleur antidote aux biais comportementaux est...",
+            "choix": [
+              "Suivre l'actualité de très près",
+              "Décider à froid et automatiser : allocation, versements, rééquilibrage",
+              "Faire confiance à son instinct"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 75
+      }
+    },
+    {
+      "id": "marche-s8-lecon-premiers-pas",
+      "ordre": 28,
+      "titre": "Première fois : par où commencer",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Après sept sessions, la tentation est d'attendre d'en savoir encore plus. C'est l'erreur la plus courante : l'expérience s'acquiert avec de petites sommes, pas en lisant."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Un premier pas raisonnable",
+          "texte": "Ouvrir l'enveloppe qui fait courir le temps (un PEA, par exemple). Y programmer un versement modeste, mensuel, sur un fonds indiciel large et peu coûteux. Puis ne pas regarder pendant des mois. Pas d'action individuelle au début : on apprend le marché avant d'apprendre à choisir des entreprises."
+        },
+        {
+          "type": "definition",
+          "terme": "Fonds indiciel large",
+          "texte": "Un fonds qui réplique un indice couvrant des centaines ou des milliers d'entreprises, sur plusieurs pays. La diversification maximale en un seul achat, pour des frais très faibles."
+        },
+        {
+          "type": "texte",
+          "texte": "La somme n'a pas d'importance au début. Ce qui compte, c'est de vivre une première baisse sans vendre — c'est là que l'investisseur se forme."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Commence petit, mais commence",
+            "Fonds large et peu coûteux avant toute action individuelle",
+            "Programme, puis oublie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s8-lecon-arnaques",
+      "ordre": 29,
+      "titre": "Reconnaître une arnaque en trente secondes",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Plus tu en sais, plus tu deviens une cible : les arnaques financières visent les gens qui se croient informés. Elles partagent presque toutes les mêmes signatures."
+        },
+        {
+          "type": "liste",
+          "titre": "Les signaux qui ne trompent pas",
+          "items": [
+            "Un rendement élevé présenté comme garanti.",
+            "Une urgence artificielle : « offre valable jusqu'à ce soir ».",
+            "Un intermédiaire qu'on ne peut pas vérifier auprès d'un régulateur.",
+            "Une demande de virement vers un compte à l'étranger ou en crypto.",
+            "Des témoignages de gains spectaculaires — jamais de pertes."
+          ]
+        },
+        {
+          "type": "definition",
+          "terme": "Régulateur",
+          "texte": "L'autorité publique qui autorise et surveille les professionnels de la finance. En France, l'AMF pour les marchés, l'ACPR pour les banques et assurances. Un intermédiaire absent de leurs registres n'a pas le droit d'exercer."
+        },
+        {
+          "type": "texte",
+          "texte": "Un doute suffit : on ne signe rien, on ne vire rien, on vérifie le registre. Aucune opportunité réelle ne disparaît parce qu'on a pris deux jours pour réfléchir."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Garanti + élevé + urgent = arnaque",
+            "Vérifie l'intermédiaire au registre du régulateur",
+            "Deux jours de réflexion ne font rater aucune vraie opportunité"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s8-situation-message",
+      "ordre": 30,
+      "titre": "Le message privé",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un scénario qui arrive chaque jour à des milliers de personnes."
+        }
+      ],
+      "situation": {
+        "contexte": "Un compte que tu suis sur les réseaux, aux vidéos sérieuses sur l'investissement, t'envoie un message privé : un « club fermé » propose 4 % par mois grâce à une stratégie de trading automatisée, places limitées, ticket d'entrée 500 €, résultats garantis les trois premiers mois. Que fais-tu ?",
+        "choix": [
+          {
+            "id": "rien",
+            "texte": "Rien : 4 % par mois garanti, c'est 60 % par an sans risque — ça n'existe pas, et le message privé est le mode opératoire classique",
+            "feedback": "Tous les signaux sont là : rendement irréaliste, garantie, urgence, canal privé. Le sérieux des vidéos publiques est précisément ce qui sert d'appât.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "verifier",
+            "texte": "Demander le nom de la société pour vérifier le registre de l'AMF avant de répondre",
+            "feedback": "Bonne méthode — et le résultat de la vérification sera presque à coup sûr négatif. Attention à ne pas se laisser convaincre par un document envoyé en retour : les faux registres et faux agréments existent aussi.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "tester",
+            "texte": "Tester avec 500 €, on ne risque pas grand-chose",
+            "feedback": "Les 500 € ne sont que l'entrée. Le mécanisme consiste à afficher de faux gains les premiers mois pour obtenir des dépôts bien plus gros — puis tout disparaît. Personne ne « teste » une arnaque à petit prix.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "marche-s8-exemple-frais",
+      "ordre": 31,
+      "titre": "Le coût réel des frais",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Deux fonds au même rendement brut de 7 %, l'un à 0,3 % de frais annuels, l'autre à 2 %. Simule d'abord à 6,7 %, puis à 5 %. L'écart au bout de trente ans, c'est le prix de la gestion « active »."
+        }
+      ],
+      "simulateur": {
+        "formule": "interet_compose",
+        "variables": [
+          {
+            "id": "capital",
+            "label": "Somme investie",
+            "unite": "€",
+            "min": 1000,
+            "max": 100000,
+            "pas": 1000,
+            "valeurParDefaut": 10000
+          },
+          {
+            "id": "taux",
+            "label": "Rendement net de frais",
+            "unite": "%",
+            "min": 0,
+            "max": 10,
+            "pas": 0.1,
+            "valeurParDefaut": 6.7
+          },
+          {
+            "id": "duree",
+            "label": "Durée",
+            "unite": "ans",
+            "min": 1,
+            "max": 40,
+            "pas": 1,
+            "valeurParDefaut": 30
+          }
+        ],
+        "resultat": {
+          "label": "Valeur estimée",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "marche-s8-quiz",
+      "ordre": 32,
+      "titre": "Quiz · Passer à l'action",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre questions, il en faut trois. Puis une dernière session pour lire l'économie."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "marche-s8-quiz-q1",
+            "question": "Pour un premier investissement, on privilégie...",
+            "choix": [
+              "Une action individuelle bien choisie",
+              "Un fonds indiciel large et peu coûteux",
+              "Une crypto prometteuse"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s8-quiz-q2",
+            "question": "Un rendement de 4 % par mois garanti est...",
+            "choix": [
+              "Réaliste pour un bon trader",
+              "Un signal d'arnaque quasi certain",
+              "Le rendement moyen de la bourse"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s8-quiz-q3",
+            "question": "Avant de confier de l'argent à un intermédiaire, on vérifie...",
+            "choix": [
+              "Son nombre d'abonnés",
+              "Sa présence au registre du régulateur",
+              "Ses résultats des trois derniers mois"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s8-quiz-q4",
+            "question": "Deux fonds à 7 % brut, frais de 0,3 % contre 2 % : sur trente ans, l'écart est...",
+            "choix": [
+              "Négligeable",
+              "De quelques pour cent",
+              "Considérable, souvent plus d'un tiers du capital final"
+            ],
+            "bonneReponseIndex": 2
+          }
+        ],
+        "seuilReussite": 75
+      }
+    },
+    {
+      "id": "marche-s9-lecon-banque-centrale",
+      "ordre": 33,
+      "titre": "La banque centrale et le prix de l'argent",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "« La BCE relève ses taux » : la phrase revient dans toutes les actualités, et presque personne ne sait ce qu'elle change dans sa vie. Pourtant, elle touche ton crédit, ton livret, ton portefeuille et le prix de ton pain."
+        },
+        {
+          "type": "definition",
+          "terme": "Taux directeur",
+          "texte": "Le taux auquel la banque centrale (la BCE pour l'euro) prête aux banques. C'est le « prix de gros » de l'argent : tous les autres taux — crédits, livrets, obligations — s'alignent dessus, avec un décalage."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Quand la BCE monte ses taux",
+            "legende": "À la baisse, le même mécanisme joue en sens inverse : crédit moins cher, activité relancée, prix qui repartent.",
+            "etapes": [
+              {
+                "label": "La BCE relève son taux directeur"
+              },
+              {
+                "label": "Les banques empruntent plus cher",
+                "detail": "et répercutent sur leurs clients"
+              },
+              {
+                "label": "Les crédits renchérissent",
+                "detail": "immobilier, auto, entreprises"
+              },
+              {
+                "label": "On consomme et on investit moins",
+                "detail": "l'économie ralentit"
+              },
+              {
+                "label": "Les prix montent moins vite",
+                "detail": "l'inflation ralentit — c'était le but"
+              }
+            ]
+          }
+        },
+        {
+          "type": "texte",
+          "texte": "La banque centrale ne vise ni la croissance ni la bourse : sa mission est la stabilité des prix, autour de 2 % d'inflation par an. Tout le reste — le coût de ton crédit, la valeur de tes placements — est un effet secondaire assumé."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Le taux directeur est le prix de gros de l'argent",
+            "Taux en hausse : crédit cher, économie freinée, inflation calmée",
+            "L'objectif de la BCE : 2 % d'inflation, pas ton portefeuille"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s9-lecon-taux-actifs",
+      "ordre": 34,
+      "titre": "Taux, obligations, actions : la bascule",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quand les taux montent, tout ce qui promet des revenus futurs vaut moins aujourd'hui. C'est la règle la plus importante des marchés, et la moins intuitive."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Pourquoi une obligation baisse quand les taux montent",
+          "texte": "Hier, tu as acheté une obligation qui verse 2 % par an pendant dix ans. Aujourd'hui, les nouvelles obligations versent 4 %. Personne ne rachètera la tienne à son prix d'origine : pour qu'elle intéresse quelqu'un, son prix doit baisser jusqu'à ce que ses 2 % « rattrapent » les 4 % du marché. Plus l'échéance est lointaine, plus la baisse est forte."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "courbes",
+            "titre": "Prix d'une obligation à 10 ans selon le taux du marché",
+            "legende": "Le coupon ne change pas ; c'est le prix qui s'ajuste, en sens inverse des taux.",
+            "axeX": [
+              "1 %",
+              "2 %",
+              "3 %",
+              "4 %",
+              "5 %"
+            ],
+            "unite": "€",
+            "series": [
+              {
+                "label": "Prix pour 100 € de nominal",
+                "role": "principal",
+                "points": [
+                  109,
+                  100,
+                  91,
+                  84,
+                  77
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "definition",
+          "terme": "Rendement réel",
+          "texte": "Le rendement d'un placement une fois l'inflation retirée : 3 % de livret avec 4 % d'inflation, c'est −1 % réel. Le seul chiffre qui dit si l'on s'enrichit vraiment."
+        },
+        {
+          "type": "texte",
+          "texte": "Les actions subissent le même effet, avec plus de nuances : des taux plus hauts rendent l'épargne sans risque plus attirante, et les bénéfices lointains moins précieux. Les entreprises très endettées ou dont les profits sont repoussés à plus tard souffrent le plus."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Taux qui montent = obligations existantes qui baissent",
+            "Plus l'échéance est longue, plus l'effet est fort",
+            "Rendement réel = rendement − inflation : le seul qui compte"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marche-s9-exercice-reel",
+      "ordre": 35,
+      "titre": "Calculer en réel",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Cinq calculs de tête pour lire les taux comme un investisseur."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 60,
+        "items": [
+          {
+            "id": "marche-s9-ex-1",
+            "type": "nombre",
+            "enonce": "Un livret rapporte 3 %, l'inflation est à 4 %. Rendement réel ?",
+            "reponse": -1,
+            "tolerance": 0.1,
+            "unite": "%",
+            "indice": "Rendement − inflation.",
+            "explication": "3 − 4 = −1 % : l'épargne perd 1 % de pouvoir d'achat par an, malgré des intérêts positifs."
+          },
+          {
+            "id": "marche-s9-ex-2",
+            "type": "vrai_faux",
+            "enonce": "Quand les taux montent, le prix des obligations déjà émises baisse.",
+            "reponse": true,
+            "explication": "Vrai : leurs coupons, fixés plus bas, ne deviennent attractifs qu'à un prix réduit. Prix et taux évoluent en sens inverse."
+          },
+          {
+            "id": "marche-s9-ex-3",
+            "type": "nombre",
+            "enonce": "Une action cotée 50 € verse 2 € de dividende par an. Rendement du dividende ?",
+            "reponse": 4,
+            "tolerance": 0.1,
+            "unite": "%",
+            "explication": "2 / 50 = 4 %. Si le cours monte à 100 € pour le même dividende, le rendement tombe à 2 % : c'est le prix payé qui fait le rendement."
+          },
+          {
+            "id": "marche-s9-ex-4",
+            "type": "vrai_faux",
+            "enonce": "Une hausse des taux directeurs vise d'abord à faire monter la bourse.",
+            "reponse": false,
+            "explication": "Faux : elle vise à freiner l'inflation en rendant le crédit plus cher. La bourse en subit plutôt les conséquences."
+          },
+          {
+            "id": "marche-s9-ex-5",
+            "type": "nombre",
+            "enonce": "Ton portefeuille a gagné 12 % sur l'année, avec 3 % d'inflation. Gain réel approximatif ?",
+            "reponse": 9,
+            "tolerance": 0.5,
+            "unite": "%",
+            "explication": "Environ 9 % (12 − 3). Le calcul exact donne 8,7 % — l'approximation par soustraction suffit au quotidien."
+          }
+        ]
+      }
+    },
+    {
+      "id": "marche-s9-situation-hausse-taux",
+      "ordre": 36,
+      "titre": "Les taux montent, que faire ?",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un scénario vécu par des millions d'épargnants en 2022."
+        }
+      ],
+      "situation": {
+        "contexte": "Nora, 32 ans, investit 200 € par mois depuis trois ans dans un fonds actions monde, pour sa retraite. En un an, les taux sont passés de 0 à 4 %, son portefeuille affiche −15 %, et son livret rapporte désormais 3 %. Elle te demande quoi faire.",
+        "choix": [
+          {
+            "id": "continuer",
+            "texte": "Ne rien changer et continuer ses versements : à trente ans de l'objectif, la baisse est une occasion d'acheter moins cher",
+            "feedback": "Le bon réflexe. Son horizon est long, ses versements mensuels achètent plus de parts quand les prix baissent, et les taux élevés d'aujourd'hui finiront par redescendre. Le livret à 3 % reste le bon endroit pour sa précaution, pas pour sa retraite.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "reorienter",
+            "texte": "Garder le plan, mais loger l'épargne prévue à moins de cinq ans sur le livret et des obligations courtes",
+            "feedback": "Sensé, si une partie de son épargne a un horizon court : des taux à 4 % rendent enfin les placements prudents intéressants. À condition de ne pas toucher à la part retraite.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "vendre",
+            "texte": "Tout vendre pour mettre sur le livret à 3 %, garanti",
+            "feedback": "C'est acter une perte de 15 % pour un rendement réel proche de zéro, et rater la reprise. Vendre après la baisse est exactement le comportement que la session 5 décrivait comme le pire ennemi de l'investisseur.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "marche-s9-scenario-portefeuille",
+      "ordre": 37,
+      "titre": "Ton premier portefeuille",
+      "type": "scenario",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Cinq ans d'investissement en cinq décisions — dont un krach, parce qu'il y en a toujours un."
+        }
+      ],
+      "scenario": {
+        "intro": "Tu as 26 ans, une épargne de précaution déjà constituée, et 300 € par mois que tu peux investir sans y toucher pendant très longtemps. Cinq ans commencent.",
+        "decisions": [
+          {
+            "id": "demarrage",
+            "situation": "Première décision : par quoi commencer ? Un collègue ne jure que par deux ou trois actions qu'il « suit de près ». Ton conseiller propose un fonds maison. Internet parle beaucoup d'ETF mondiaux.",
+            "options": [
+              {
+                "id": "etf-pea",
+                "texte": "Ouvrir un PEA et programmer 300 € par mois sur un fonds indiciel mondial peu coûteux",
+                "consequence": "L'enveloppe prend date, les versements sont automatiques, et tu détiens des milliers d'entreprises dès le premier euro. Il n'y a rien à surveiller.",
+                "points": 2
+              },
+              {
+                "id": "fonds-maison",
+                "texte": "Prendre le fonds proposé par ton conseiller, plus rassurant",
+                "consequence": "Tu investis, c'est déjà l'essentiel. Mais 2 % de frais annuels au lieu de 0,3 %, sur trente ans, mangeront une part considérable du résultat final.",
+                "points": 1
+              },
+              {
+                "id": "actions",
+                "texte": "Acheter les deux ou trois actions que suit ton collègue",
+                "consequence": "Tu lies ton épargne au sort de trois entreprises, en te fiant à quelqu'un qui n'en sait pas plus que toi. C'est un pari, pas un portefeuille.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "crypto",
+            "situation": "Huitième mois. Une cryptomonnaie a triplé en six semaines, tout le monde en parle, et un ami te montre ses gains. Tu as 2 000 € de disponible en plus de tes versements.",
+            "options": [
+              {
+                "id": "rien",
+                "texte": "Ne rien changer : ce dont tout le monde parle est déjà dans le prix",
+                "consequence": "Quatre mois plus tard, l'actif a perdu 70 %. Ton plan, lui, n'a pas bougé d'un centimètre.",
+                "points": 2
+              },
+              {
+                "id": "petite-part",
+                "texte": "Y mettre 200 €, une somme que tu acceptes de perdre entièrement",
+                "consequence": "La part reste marginale et la leçon sera bon marché quoi qu'il arrive. À condition, précisément, de s'en tenir à une somme qu'on accepte de perdre.",
+                "points": 1
+              },
+              {
+                "id": "tout",
+                "texte": "Y placer les 2 000 € : la fenêtre est en train de se refermer",
+                "consequence": "L'euphorie est exactement le moment où c'est le plus cher. Quatre mois plus tard, il reste 600 €.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "krach",
+            "situation": "Vingtième mois : les marchés chutent de 28 % en six semaines. Ton portefeuille affiche −24 %. Les titres de presse parlent de « décennie perdue ».",
+            "options": [
+              {
+                "id": "continuer",
+                "texte": "Ne rien changer et laisser les versements automatiques tourner",
+                "consequence": "Chaque versement achète désormais bien plus de parts. Deux ans plus tard, ce sont ces parts-là qui portent l'essentiel de ta performance.",
+                "points": 2
+              },
+              {
+                "id": "renforcer",
+                "texte": "Maintenir les versements et ajouter ce que tu peux, sans toucher à ta précaution",
+                "consequence": "Acheter quand les prix baissent est cohérent — à condition de ne jamais entamer la réserve d'urgence, et de tenir si la baisse continue.",
+                "points": 2
+              },
+              {
+                "id": "vendre",
+                "texte": "Vendre pour arrêter l'hémorragie et racheter quand ça sera reparti",
+                "consequence": "La perte devient définitive, et le rebond se produit trois mois plus tard sans toi. C'est l'erreur la plus coûteuse de toute la voie.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "rebalancing",
+            "situation": "Trente-huitième mois : la reprise a été forte. Ton allocation cible était 70 % actions / 30 % obligations ; tu es à 84 % actions.",
+            "options": [
+              {
+                "id": "reequilibrer",
+                "texte": "Rééquilibrer vers 70/30 en vendant une part d'actions",
+                "consequence": "Tu vends haut mécaniquement, sans rien prédire, et tu reviens au niveau de risque que tu avais choisi à froid.",
+                "points": 2
+              },
+              {
+                "id": "versements",
+                "texte": "Rediriger les nouveaux versements vers les obligations jusqu'à revenir à la cible",
+                "consequence": "Une façon douce de rééquilibrer sans vendre. Plus lente, mais la logique est la bonne.",
+                "points": 2
+              },
+              {
+                "id": "laisser",
+                "texte": "Laisser courir : les actions performent, pourquoi les brider",
+                "consequence": "Tu portes désormais un risque que tu n'as pas choisi, au moment précis où les actions sont chères. C'est le biais de confirmation en action.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "conseiller",
+            "situation": "Cinquième année : ton conseiller propose de transférer ton portefeuille vers un contrat « géré par des experts », à 2,4 % de frais annuels, avec une performance passée flatteuse.",
+            "options": [
+              {
+                "id": "refuser",
+                "texte": "Demander le détail des frais, comparer au coût actuel, et refuser",
+                "consequence": "2,1 points de frais en plus par an, sur trente ans, représentent souvent plus d'un tiers du capital final. Aucune performance passée ne garantit de les compenser.",
+                "points": 2
+              },
+              {
+                "id": "partie",
+                "texte": "N'y transférer qu'une petite partie, pour comparer sur quelques années",
+                "consequence": "Prudent, et instructif. Mais comparer deux portefeuilles sur quelques années dit surtout quelque chose sur la chance, rarement sur la gestion.",
+                "points": 1
+              },
+              {
+                "id": "accepter",
+                "texte": "Accepter : des experts feront mieux que toi",
+                "consequence": "Les frais, eux, sont certains ; la surperformance ne l'est pas. Sur longue durée, la grande majorité des fonds gérés activement ne battent pas leur indice, frais déduits.",
+                "points": 0
+              }
+            ]
+          }
+        ],
+        "bilans": [
+          {
+            "seuil": 80,
+            "titre": "Cinq ans de discipline",
+            "texte": "Enveloppe ouverte tôt, frais minimes, versements automatiques, krach traversé sans vendre, allocation rééquilibrée à froid et frais refusés. Tu n'as rien prédit — et c'est exactement pour ça que ça a marché. C'est la voie Marché en entier, appliquée."
+          },
+          {
+            "seuil": 50,
+            "titre": "Cinq ans honnêtes, deux frottements",
+            "texte": "Tu es resté investi et tu as évité les pires décisions. Quelques choix ont coûté : des frais trop élevés, une part prise dans l'euphorie, ou une allocation laissée dériver. Rien de dramatique, mais ce sont ces points-là qui font l'écart sur trente ans."
+          },
+          {
+            "seuil": 0,
+            "titre": "Cinq ans d'apprentissage coûteux",
+            "texte": "Acheter dans l'euphorie, vendre dans la panique, payer des frais élevés : ce sont les trois erreurs que la session 5 décrivait, et elles se sont toutes produites. La bonne nouvelle est qu'elles se corrigent entièrement par des décisions prises à froid, une fois pour toutes."
+          }
+        ]
+      }
+    },
+    {
+      "id": "marche-s9-quiz",
+      "ordre": 38,
+      "titre": "Quiz final · Voie Marché",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le tout dernier quiz de la voie. Quatre questions, il en faut trois."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 75,
+        "questions": [
+          {
+            "id": "marche-s9-quiz-q1",
+            "question": "La mission première de la BCE est…",
+            "choix": [
+              "Faire monter la bourse",
+              "La stabilité des prix, autour de 2 % d'inflation",
+              "Financer les États"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s9-quiz-q2",
+            "question": "Quand les taux montent, une obligation déjà émise…",
+            "choix": [
+              "Prend de la valeur",
+              "Perd de la valeur",
+              "Ne bouge pas"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "marche-s9-quiz-q3",
+            "question": "Livret à 3 %, inflation à 5 % : le rendement réel est…",
+            "choix": [
+              "+3 %",
+              "+8 %",
+              "−2 %"
+            ],
+            "bonneReponseIndex": 2
+          },
+          {
+            "id": "marche-s9-quiz-q4",
+            "question": "Face à une baisse de 15 % avec un horizon de trente ans, la réaction cohérente est…",
+            "choix": [
+              "Continuer ses versements",
+              "Tout vendre",
+              "Emprunter pour investir plus"
+            ],
+            "bonneReponseIndex": 0
+          }
+        ]
+      }
+    }
+  ]
+}

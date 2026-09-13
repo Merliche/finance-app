@@ -1,0 +1,1854 @@
+{
+  "id": "entreprise",
+  "titre": "La voie Entreprise",
+  "description": "Bilan, financement, rentabilité, trésorerie : la finance vue de l'intérieur d'une société.",
+  "ordre": 3,
+  "type": "voie",
+  "prerequisParcoursId": "intro",
+  "version": 9,
+  "chiffresVerifiesLe": "2026-09-12",
+  "sources": [
+    {
+      "libelle": "entreprendre.service-public.fr",
+      "url": "https://entreprendre.service-public.fr"
+    },
+    {
+      "libelle": "economie.gouv.fr — financement des entreprises",
+      "url": "https://www.economie.gouv.fr"
+    },
+    {
+      "libelle": "Bpifrance Création",
+      "url": "https://bpifrance-creation.fr"
+    }
+  ],
+  "etapes": [
+    {
+      "id": "entreprise-s1-lecon-role",
+      "ordre": 1,
+      "titre": "À quoi sert la finance dans une entreprise",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une entreprise doit presque toujours dépenser avant d'encaisser : acheter des matières, payer des salaires, louer des locaux — tout cela bien avant que le premier client ne règle sa facture."
+        },
+        {
+          "type": "texte",
+          "texte": "La finance d'entreprise répond à trois questions, et seulement trois : de combien d'argent avons-nous besoin, où le trouver, et comment l'employer pour qu'il rapporte plus qu'il ne coûte ?"
+        },
+        {
+          "type": "definition",
+          "terme": "Cycle d'exploitation",
+          "texte": "Le temps qui s'écoule entre le moment où l'entreprise dépense (achats, production) et celui où elle encaisse le paiement du client. Plus ce cycle est long, plus il faut d'argent d'avance pour le financer."
+        },
+        {
+          "type": "texte",
+          "texte": "C'est pour cette raison qu'une entreprise en pleine croissance peut manquer d'argent : plus elle vend, plus elle doit avancer de trésorerie avant d'être payée."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Dépenser avant d'encaisser",
+            "legende": "Entre la première case et la dernière, quelqu'un doit avancer l'argent : c'est ça, la finance d'entreprise.",
+            "etapes": [
+              {
+                "label": "Acheter les matières",
+                "detail": "payées tout de suite"
+              },
+              {
+                "label": "Produire, payer les salaires",
+                "detail": "chaque mois, quoi qu'il arrive"
+              },
+              {
+                "label": "Vendre",
+                "detail": "la facture part"
+              },
+              {
+                "label": "Encaisser… 60 jours plus tard",
+                "detail": "quand le client paie"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Dépenser vient toujours avant encaisser",
+            "Trois questions : combien, où le trouver, comment l'employer",
+            "Croître consomme de la trésorerie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s1-lecon-acteurs",
+      "ordre": 2,
+      "titre": "Qui met l'argent, et pourquoi",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Deux grandes familles apportent l'argent d'une entreprise, avec des logiques opposées qu'il faut bien distinguer."
+        },
+        {
+          "type": "definition",
+          "terme": "Actionnaire",
+          "texte": "Il apporte de l'argent en échange d'une part de l'entreprise. Il n'a aucune garantie d'être remboursé, mais profite pleinement du succès. C'est le dernier servi en cas de faillite."
+        },
+        {
+          "type": "definition",
+          "terme": "Créancier",
+          "texte": "Il prête de l'argent (une banque, un fournisseur, un porteur d'obligations) et attend un remboursement assorti d'intérêts, que l'entreprise réussisse ou non. Il est prioritaire sur l'actionnaire."
+        },
+        {
+          "type": "texte",
+          "texte": "Cette hiérarchie explique tout le reste : le créancier accepte un rendement plus faible parce qu'il prend moins de risque, l'actionnaire exige davantage parce qu'il encaisse les pertes en premier."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "L'actionnaire possède, le créancier prête",
+            "Le créancier est remboursé en premier",
+            "Plus de risque, plus de rendement attendu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s1-quiz",
+      "ordre": 3,
+      "titre": "Quiz · Le rôle de la finance",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Trois questions pour démarrer."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "entreprise-s1-quiz-q1",
+            "question": "Pourquoi une entreprise en forte croissance peut-elle manquer d'argent ?",
+            "choix": [
+              "Parce qu'elle vend à perte forcément",
+              "Parce qu'elle doit avancer de plus en plus de dépenses avant d'être payée",
+              "Parce que les banques refusent de prêter aux entreprises qui grandissent"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s1-quiz-q2",
+            "question": "En cas de faillite, qui est servi en dernier ?",
+            "choix": [
+              "Le créancier",
+              "L'actionnaire",
+              "Le fournisseur"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s1-quiz-q3",
+            "question": "Pourquoi un actionnaire attend-il un rendement supérieur à celui d'un prêteur ?",
+            "choix": [
+              "Parce qu'il prend plus de risque",
+              "Parce que la loi l'impose",
+              "Parce qu'il travaille dans l'entreprise"
+            ],
+            "bonneReponseIndex": 0
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "entreprise-s2-lecon-bilan",
+      "ordre": 4,
+      "titre": "Le bilan : une photo à un instant donné",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le bilan répond à deux questions posées côte à côte : qu'est-ce que l'entreprise possède, et avec quel argent l'a-t-elle financé ?"
+        },
+        {
+          "type": "definition",
+          "terme": "Actif",
+          "texte": "La colonne de gauche : tout ce que l'entreprise possède et utilise. Machines, bâtiments, stocks, créances clients, argent en banque."
+        },
+        {
+          "type": "definition",
+          "terme": "Passif",
+          "texte": "La colonne de droite : d'où vient l'argent. Les capitaux propres (apports des actionnaires et bénéfices conservés) et les dettes (banques, fournisseurs, impôts à payer)."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Pourquoi les deux colonnes sont toujours égales",
+          "texte": "Ce n'est pas une coïncidence comptable mais une évidence : tout ce que l'entreprise possède a bien fallu le financer d'une manière ou d'une autre. Chaque euro à gauche a une origine à droite."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "repartition",
+            "titre": "D'où vient l'argent d'un bilan (exemple)",
+            "legende": "Le passif dit qui a financé l'entreprise ; l'actif, ce qu'elle en a fait.",
+            "parts": [
+              {
+                "label": "Capitaux propres",
+                "valeur": 40
+              },
+              {
+                "label": "Dettes bancaires",
+                "valeur": 35
+              },
+              {
+                "label": "Dettes fournisseurs",
+                "valeur": 25
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Actif : ce qu'on possède. Passif : d'où vient l'argent",
+            "Les deux colonnes sont toujours égales",
+            "C'est une photo, pas un film"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s2-lecon-resultat",
+      "ordre": 5,
+      "titre": "Le compte de résultat : le film de l'année",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Là où le bilan est une photo prise à une date précise, le compte de résultat raconte ce qui s'est passé sur toute une période, en général douze mois."
+        },
+        {
+          "type": "definition",
+          "terme": "Chiffre d'affaires",
+          "texte": "Le total des ventes réalisées sur la période. Attention : vendre n'est pas encaisser, une vente peut être facturée aujourd'hui et payée dans trois mois."
+        },
+        {
+          "type": "definition",
+          "terme": "Résultat net",
+          "texte": "Ce qui reste du chiffre d'affaires une fois retirées toutes les charges : achats, salaires, loyers, intérêts d'emprunt et impôts. C'est le bénéfice — ou la perte si le chiffre est négatif."
+        },
+        {
+          "type": "texte",
+          "texte": "À retenir absolument : le résultat net n'est pas de l'argent disponible sur le compte en banque. C'est un solde comptable, qui inclut des ventes pas encore encaissées et exclut certaines sorties d'argent bien réelles."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Du chiffre d'affaires au résultat net",
+            "legende": "À chaque étage, une famille de charges. Le bénéfice, c'est ce qui survit au dernier.",
+            "unite": "k€",
+            "barres": [
+              {
+                "label": "Chiffre d'affaires",
+                "valeur": 1000,
+                "role": "attenue"
+              },
+              {
+                "label": "Marge brute",
+                "valeur": 400,
+                "role": "principal"
+              },
+              {
+                "label": "Résultat d'exploitation",
+                "valeur": 120,
+                "role": "principal"
+              },
+              {
+                "label": "Résultat net",
+                "valeur": 80,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Il raconte une période, pas un instant",
+            "Vendre n'est pas encaisser",
+            "Le résultat net est ce qui survit à toutes les charges"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s2-quiz",
+      "ordre": 6,
+      "titre": "Quiz · Lire les comptes",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La lecture des comptes est la base de tout le reste."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "entreprise-s2-quiz-q1",
+            "question": "Dans un bilan, les stocks et les machines se trouvent...",
+            "choix": [
+              "À l'actif",
+              "Au passif",
+              "Dans le compte de résultat"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "entreprise-s2-quiz-q2",
+            "question": "Pourquoi l'actif est-il toujours égal au passif ?",
+            "choix": [
+              "Par convention arbitraire des comptables",
+              "Parce que tout ce que l'entreprise possède a forcément été financé",
+              "Parce que les dettes sont toujours égales aux stocks"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s2-quiz-q3",
+            "question": "Un résultat net positif signifie...",
+            "choix": [
+              "Qu'il y a forcément cet argent sur le compte en banque",
+              "Que l'activité dégage un bénéfice comptable sur la période",
+              "Que l'entreprise n'a aucune dette"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "entreprise-s3-lecon-financement",
+      "ordre": 7,
+      "titre": "Fonds propres ou dette : le grand arbitrage",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Pour financer son développement, une entreprise a deux leviers, et chacun se paie d'une manière différente."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Ouvrir son capital",
+          "texte": "L'entreprise émet de nouvelles parts et encaisse de l'argent qu'elle n'aura pas à rembourser. Le prix à payer : les fondateurs détiennent une part plus petite de l'entreprise et partagent le pouvoir de décision. C'est ce qu'on appelle la dilution."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "S'endetter",
+          "texte": "L'entreprise emprunte et garde 100 % de son capital. Le prix à payer : des échéances à honorer quoi qu'il arrive, y compris pendant une mauvaise année."
+        },
+        {
+          "type": "definition",
+          "terme": "Effet de levier",
+          "texte": "Le fait d'utiliser la dette pour augmenter la rentabilité des fonds propres. Il fonctionne tant que ce que rapporte l'argent emprunté dépasse son coût — et se retourne violemment dans le cas inverse."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "1 M€ à financer : ce que ça coûte par an",
+            "legende": "La dette est moins chère… tant qu'on peut la rembourser.",
+            "unite": "k€",
+            "barres": [
+              {
+                "label": "Dette bancaire à 4 %",
+                "valeur": 40,
+                "role": "principal"
+              },
+              {
+                "label": "Capital (rendement attendu 12 %)",
+                "valeur": 120,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "La dette coûte moins cher mais se rembourse",
+            "Le capital ne se rembourse pas mais dilue",
+            "Trop de dette transforme un incident en faillite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s3-exemple-emprunt",
+      "ordre": 8,
+      "titre": "Le poids d'un emprunt professionnel",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une entreprise qui emprunte doit pouvoir sortir la mensualité tous les mois, même en basse saison. Simule un emprunt et demande-toi si l'activité peut absorber cette charge en période creuse."
+        }
+      ],
+      "simulateur": {
+        "formule": "mensualite_credit",
+        "variables": [
+          {
+            "id": "montant",
+            "label": "Montant emprunté",
+            "unite": "€",
+            "min": 5000,
+            "max": 300000,
+            "pas": 5000,
+            "valeurParDefaut": 80000
+          },
+          {
+            "id": "taux",
+            "label": "Taux annuel",
+            "unite": "%",
+            "min": 0,
+            "max": 15,
+            "pas": 0.25,
+            "valeurParDefaut": 4.5
+          },
+          {
+            "id": "duree",
+            "label": "Durée",
+            "unite": "mois",
+            "min": 12,
+            "max": 180,
+            "pas": 12,
+            "valeurParDefaut": 84
+          }
+        ],
+        "resultat": {
+          "label": "Mensualité à honorer",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "entreprise-s3-situation-financement",
+      "ordre": 9,
+      "titre": "Financer une nouvelle machine",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un arbitrage de financement, comme il s'en présente tous les jours."
+        }
+      ],
+      "situation": {
+        "contexte": "Une PME rentable et stable veut acheter une machine à 80 000 € qui augmentera sa production de 15 %. Elle a le choix entre emprunter à la banque ou faire entrer un investisseur au capital. Que recommandes-tu ?",
+        "choix": [
+          {
+            "id": "emprunt",
+            "texte": "L'emprunt bancaire, puisque l'activité est stable et l'investissement identifié",
+            "feedback": "Cohérent : une entreprise rentable avec des revenus prévisibles peut absorber des échéances fixes, et évite ainsi de céder une part de son capital pour un besoin ponctuel et mesurable.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "mixte",
+            "texte": "Un financement mixte, une partie en emprunt et une partie sur la trésorerie disponible",
+            "feedback": "Prudent et courant : cela réduit la charge de remboursement. Attention toutefois à ne pas vider la trésorerie, qui sert justement d'amortisseur.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "capital",
+            "texte": "Ouvrir le capital à un investisseur",
+            "feedback": "Disproportionné ici : céder une part définitive de l'entreprise pour financer une machine unique est cher payé. L'ouverture du capital se justifie davantage pour des projets risqués ou une croissance rapide difficile à financer par la dette.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "entreprise-s3-quiz",
+      "ordre": 10,
+      "titre": "Quiz · Se financer",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "On valide l'arbitrage fonds propres / dette."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "entreprise-s3-quiz-q1",
+            "question": "Ouvrir son capital à un investisseur implique...",
+            "choix": [
+              "De rembourser la somme avec intérêts",
+              "De partager la propriété et le pouvoir de décision",
+              "De payer une mensualité fixe"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s3-quiz-q2",
+            "question": "L'effet de levier fonctionne tant que...",
+            "choix": [
+              "L'argent emprunté rapporte plus qu'il ne coûte",
+              "Les taux d'intérêt augmentent",
+              "L'entreprise n'a aucun fonds propre"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "entreprise-s3-quiz-q3",
+            "question": "Le principal danger de la dette pour une entreprise, c'est...",
+            "choix": [
+              "La dilution des fondateurs",
+              "Les échéances à payer même pendant une mauvaise année",
+              "L'obligation de verser des dividendes"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "entreprise-s4-lecon-rentabilite",
+      "ordre": 11,
+      "titre": "Un investissement rentable, c'est quoi ?",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Investir, pour une entreprise, c'est immobiliser de l'argent aujourd'hui en espérant qu'il en rapporte davantage demain. Encore faut-il savoir mesurer ce « davantage »."
+        },
+        {
+          "type": "definition",
+          "terme": "Rentabilité",
+          "texte": "Le rapport entre ce que rapporte un investissement et ce qu'il a coûté. Une machine à 80 000 € qui dégage 12 000 € de gain annuel affiche une rentabilité de 15 % par an."
+        },
+        {
+          "type": "texte",
+          "texte": "Une règle simple structure toutes les décisions : un investissement n'est intéressant que s'il rapporte plus que le coût de l'argent utilisé pour le financer. Emprunter à 5 % pour un projet qui rapporte 3 % détruit de la valeur, même si le projet est « rentable » au sens courant."
+        },
+        {
+          "type": "definition",
+          "terme": "Seuil de rentabilité",
+          "texte": "Le niveau de chiffre d'affaires à partir duquel l'entreprise couvre exactement toutes ses charges. En dessous, elle perd de l'argent ; au-dessus, chaque vente supplémentaire contribue au bénéfice."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "courbes",
+            "titre": "Un investissement de 100 k€ : flux cumulés",
+            "legende": "Là où la courbe repasse au-dessus de zéro, l'investissement est remboursé. Après, il rapporte.",
+            "axeX": [
+              "An 0",
+              "An 1",
+              "An 2",
+              "An 3",
+              "An 4"
+            ],
+            "unite": "k€",
+            "series": [
+              {
+                "label": "Trésorerie cumulée",
+                "role": "principal",
+                "points": [
+                  -100,
+                  -60,
+                  -15,
+                  35,
+                  90
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Un projet crée de la valeur s'il rapporte plus qu'il ne coûte",
+            "Le coût du capital est le minimum à battre",
+            "Comparer les projets, pas seulement les valider"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s4-situation-investissement",
+      "ordre": 12,
+      "titre": "Trois projets, un seul budget",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Arbitrer entre plusieurs projets est le quotidien d'un directeur financier."
+        }
+      ],
+      "situation": {
+        "contexte": "Une entreprise dispose de 100 000 € à investir et emprunte habituellement autour de 5 %. Trois projets sont sur la table : A rapporte 4 % par an de façon très sûre, B rapporte 9 % avec une incertitude moyenne, C promet 30 % mais repose sur un marché non testé. Que recommandes-tu d'analyser en priorité ?",
+        "choix": [
+          {
+            "id": "projet-b",
+            "texte": "Le projet B : il dépasse nettement le coût du financement pour un risque maîtrisé",
+            "feedback": "Le bon raisonnement : on compare d'abord le rendement au coût de l'argent (5 %), puis on regarde le risque. B crée de la valeur avec une incertitude acceptable.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "projet-c",
+            "texte": "Le projet C : 30 %, c'est de loin le plus rentable",
+            "feedback": "Attention au raisonnement sur le seul rendement affiché. Un marché non testé peut ne rien rapporter du tout. Ce type de projet peut se tenter, mais avec une somme qu'on accepte de perdre, pas avec la totalité du budget.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "projet-a",
+            "texte": "Le projet A : c'est le plus sûr",
+            "feedback": "Piège : il rapporte 4 % alors que l'argent coûte 5 %. Même très sûr, ce projet détruit de la valeur — l'entreprise paierait son financement plus cher que ce que le projet rapporte.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "entreprise-s4-quiz",
+      "ordre": 13,
+      "titre": "Quiz · Créer de la valeur",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une session courte mais décisive."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "entreprise-s4-quiz-q1",
+            "question": "Un investissement crée de la valeur quand...",
+            "choix": [
+              "Il rapporte plus que le coût de l'argent qui le finance",
+              "Il est financé sans emprunt",
+              "Il rapporte quelque chose, peu importe combien"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "entreprise-s4-quiz-q2",
+            "question": "Le seuil de rentabilité correspond au niveau d'activité où...",
+            "choix": [
+              "L'entreprise atteint son bénéfice maximum",
+              "L'entreprise couvre exactement ses charges",
+              "L'entreprise rembourse toutes ses dettes"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s4-quiz-q3",
+            "question": "Un projet très sûr à 4 % financé par un emprunt à 5 %...",
+            "choix": [
+              "Crée de la valeur car il est sûr",
+              "Détruit de la valeur",
+              "Est neutre pour l'entreprise"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "entreprise-s5-lecon-tresorerie",
+      "ordre": 14,
+      "titre": "On ne paie pas ses salaires avec du bénéfice",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Voici le paradoxe le plus meurtrier de la vie des entreprises : une société peut être rentable sur le papier et déposer le bilan quelques semaines plus tard."
+        },
+        {
+          "type": "definition",
+          "terme": "Trésorerie",
+          "texte": "L'argent réellement disponible, tout de suite, sur les comptes de l'entreprise. C'est avec elle — et seulement elle — qu'on paie les salaires, les fournisseurs et les échéances."
+        },
+        {
+          "type": "definition",
+          "terme": "Besoin en fonds de roulement (BFR)",
+          "texte": "L'argent immobilisé en permanence par le cycle d'exploitation : les stocks financés et les factures clients non encore encaissées, moins les dettes fournisseurs pas encore réglées."
+        },
+        {
+          "type": "texte",
+          "texte": "Quand une entreprise croît vite, son BFR gonfle mécaniquement : plus de stocks à financer, plus de factures en attente de paiement. Les bénéfices grandissent, la trésorerie s'assèche. D'où la formule consacrée : le résultat est une opinion, la trésorerie est un fait."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "flux",
+            "titre": "Le décalage qui assèche",
+            "etapes": [
+              {
+                "label": "Vente signée le 1er"
+              },
+              {
+                "label": "Salaires et fournisseurs payés à 30 jours"
+              },
+              {
+                "label": "Le client paie à 60 jours"
+              },
+              {
+                "label": "Un mois entier à financer",
+                "detail": "sur la trésorerie — ou le découvert"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "On paie les salaires avec de la trésorerie, pas du bénéfice",
+            "Le décalage encaissements/décaissements tue",
+            "Suivre la trésorerie à 90 jours, chaque semaine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s5-situation-tresorerie",
+      "ordre": 15,
+      "titre": "Rentable mais à sec",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le cas d'école — et une situation vécue par énormément de dirigeants."
+        }
+      ],
+      "situation": {
+        "contexte": "Une PME affiche un bénéfice annuel de 60 000 €, en croissance de 30 %. Pourtant, son dirigeant t'annonce qu'il ne pourra peut-être pas payer les salaires le mois prochain. Ses clients règlent à 90 jours, ses fournisseurs à 30. Quelle piste explores-tu en premier ?",
+        "choix": [
+          {
+            "id": "delais",
+            "texte": "Agir sur les délais de paiement : raccourcir ceux des clients, négocier ceux des fournisseurs",
+            "feedback": "C'est le cœur du problème. L'entreprise avance de l'argent pendant 60 jours sur chaque vente ; plus elle croît, plus ce décalage l'étrangle. Agir sur les délais libère de la trésorerie sans toucher à la rentabilité.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "credit-court-terme",
+            "texte": "Mettre en place un financement court terme pour passer le creux",
+            "feedback": "Utile en urgence, et c'est souvent nécessaire pour éviter la rupture immédiate. Mais cela traite le symptôme : sans action sur les délais, le problème réapparaîtra au prochain palier de croissance.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "baisser-prix",
+            "texte": "Baisser les prix pour vendre davantage et rentrer du cash",
+            "feedback": "Contre-productif : vendre plus avec des clients qui paient à 90 jours aggrave le besoin de trésorerie, tout en réduisant la marge. On accélère vers le mur.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "entreprise-s5-exercice-tresorerie",
+      "ordre": 16,
+      "titre": "La trésorerie, mois par mois",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre calculs de dirigeant : ceux qu'on fait le dimanche soir, avant le lundi."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 50,
+        "items": [
+          {
+            "id": "entreprise-s5-ex-1",
+            "type": "nombre",
+            "enonce": "Charges fixes de 8 000 € par mois, marge brute de 40 %. Quel chiffre d'affaires faut-il pour couvrir le mois ?",
+            "reponse": 20000,
+            "tolerance": 300,
+            "unite": "€",
+            "indice": "Charges fixes divisées par le taux de marge.",
+            "explication": "8 000 / 0,40 = 20 000 €. En dessous, le mois est perdant ; au-dessus, chaque euro de marge est du bénéfice."
+          },
+          {
+            "id": "entreprise-s5-ex-2",
+            "type": "nombre",
+            "enonce": "Une entreprise a 45 000 € en banque et 15 000 € de charges fixes par mois. Combien de mois tient-elle sans encaisser ?",
+            "reponse": 3,
+            "tolerance": 0.2,
+            "unite": "mois",
+            "explication": "45 000 / 15 000 = 3 mois. C'est le « runway » : le premier chiffre que regarde un investisseur, et le dernier qu'un dirigeant devrait ignorer."
+          },
+          {
+            "id": "entreprise-s5-ex-3",
+            "type": "vrai_faux",
+            "enonce": "Une entreprise bénéficiaire ne peut pas se retrouver en cessation de paiement.",
+            "reponse": false,
+            "explication": "Faux : le bénéfice est comptable, la cessation de paiement est une question de trésorerie. On peut être rentable et incapable de payer les salaires du mois."
+          },
+          {
+            "id": "entreprise-s5-ex-4",
+            "type": "nombre",
+            "enonce": "Un client paie à 60 jours au lieu de 30. Sur un chiffre d'affaires de 360 000 € par an, combien de trésorerie en plus faut-il avancer ?",
+            "reponse": 30000,
+            "tolerance": 2000,
+            "unite": "€",
+            "indice": "Le CA mensuel est de 30 000 €. Un mois de décalage supplémentaire, c'est…",
+            "explication": "30 000 € : un mois de chiffre d'affaires de plus immobilisé en permanence. Négocier les délais de paiement rapporte souvent plus que négocier les prix."
+          }
+        ]
+      }
+    },
+    {
+      "id": "entreprise-s5-quiz",
+      "ordre": 17,
+      "titre": "Quiz · La trésorerie",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Tu sais lire une entreprise qui va bien. Les deux dernières sessions t'apprennent à dire combien elle vaut, et à voir venir quand elle va mal."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "entreprise-s5-quiz-q1",
+            "question": "Une entreprise rentable peut-elle faire faillite ?",
+            "choix": [
+              "Non, jamais",
+              "Oui, si elle manque de trésorerie pour payer ses échéances",
+              "Oui, mais uniquement si elle n'a aucune dette"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s5-quiz-q2",
+            "question": "Le besoin en fonds de roulement augmente généralement quand...",
+            "choix": [
+              "L'activité croît rapidement",
+              "Les clients paient comptant",
+              "L'entreprise réduit ses stocks"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "entreprise-s5-quiz-q3",
+            "question": "Pour améliorer sa trésorerie sans toucher à sa rentabilité, une entreprise peut...",
+            "choix": [
+              "Raccourcir les délais de paiement de ses clients",
+              "Augmenter ses stocks",
+              "Baisser ses prix de vente"
+            ],
+            "bonneReponseIndex": 0
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "entreprise-s6-lecon-valeur",
+      "ordre": 18,
+      "titre": "Combien vaut une entreprise ?",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Question simple, réponse jamais définitive. Une entreprise ne vaut pas ce qu'elle possède, ni ce qu'elle a coûté : elle vaut ce qu'elle va rapporter — et ce qu'un acheteur accepte de payer pour cette promesse."
+        },
+        {
+          "type": "definition",
+          "terme": "EBITDA",
+          "texte": "Le résultat de l'activité avant intérêts, impôts, dépréciations et amortissements. Une mesure de ce que le cœur du métier dégage, indépendamment de la façon dont l'entreprise est financée ou de l'âge de ses machines. C'est la base de la plupart des valorisations."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "La méthode des multiples",
+          "texte": "On observe à combien de fois leur EBITDA se sont vendues des entreprises comparables, puis on applique ce multiple. Une PME dégageant 500 000 € d'EBITDA dans un secteur qui se vend « 5 fois » vaudrait autour de 2,5 millions — avant d'ajuster pour la dette, la trésorerie, et tout ce qui la rend différente des autres."
+        },
+        {
+          "type": "texte",
+          "texte": "Deux entreprises au même chiffre d'affaires peuvent valoir du simple au triple : celle qui a la meilleure marge, la croissance la plus régulière et la clientèle la moins dépendante d'un seul client obtient le multiple le plus élevé. Le chiffre d'affaires impressionne, la qualité des bénéfices vaut cher."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "La valeur dépend des bénéfices futurs attendus",
+            "Multiple ou flux actualisés : deux angles",
+            "Le prix se négocie, la valeur s'estime"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s6-lecon-actualisation",
+      "ordre": 19,
+      "titre": "Un euro demain vaut moins qu'un euro aujourd'hui",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Toute la finance repose sur une idée que chacun comprend intuitivement : entre 100 € tout de suite et 100 € dans cinq ans, personne n'hésite. Reste à mettre un chiffre sur cette préférence."
+        },
+        {
+          "type": "definition",
+          "terme": "Actualisation",
+          "texte": "Ramener une somme future à sa valeur d'aujourd'hui, en la divisant par (1 + taux) autant de fois qu'il y a d'années. C'est l'exact inverse des intérêts composés : au lieu de faire grossir un capital vers le futur, on fait rétrécir une promesse vers le présent."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Le taux qui change tout",
+          "texte": "Une promesse de 100 000 € dans dix ans vaut aujourd'hui environ 61 000 € si on exige 5 % par an, et seulement 39 000 € si on en exige 10 %. Plus le projet est risqué, plus le taux exigé est élevé, plus la valeur présente fond. C'est pourquoi une start-up prometteuse mais incertaine peut valoir moins qu'un commerce banal mais régulier."
+        },
+        {
+          "type": "texte",
+          "texte": "Valoriser une entreprise, c'est donc surtout répondre à deux questions : combien va-t-elle rapporter, et à quel point on en est sûr. Le multiple d'EBITDA n'est qu'un raccourci de ce raisonnement."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Que valent 100 € promis, à 8 % par an",
+            "legende": "Plus la promesse est lointaine, moins elle pèse aujourd'hui : c'est l'actualisation.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Aujourd'hui",
+                "valeur": 100,
+                "role": "principal"
+              },
+              {
+                "label": "Dans 1 an",
+                "valeur": 92.6,
+                "role": "principal"
+              },
+              {
+                "label": "Dans 5 ans",
+                "valeur": 68.1,
+                "role": "secondaire"
+              },
+              {
+                "label": "Dans 10 ans",
+                "valeur": 46.3,
+                "role": "attenue"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Un euro demain vaut moins qu'un euro aujourd'hui",
+            "Le taux d'actualisation reflète le risque",
+            "Plus c'est loin, moins ça pèse"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s6-situation-valorisation",
+      "ordre": 20,
+      "titre": "La boulangerie à vendre",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une valorisation se négocie. Encore faut-il savoir d'où partir."
+        }
+      ],
+      "situation": {
+        "contexte": "Une boulangerie est à vendre. Elle dégage 80 000 € d'EBITDA par an, stable depuis huit ans, avec un bail solide et une équipe fidèle. Le vendeur demande 600 000 €, soit 7,5 fois l'EBITDA. Dans ce secteur, les cessions se font habituellement entre 3 et 5 fois. Que conseilles-tu à l'acheteur ?",
+        "choix": [
+          {
+            "id": "multiple-secteur",
+            "texte": "Proposer un prix aligné sur les multiples du secteur, autour de 4 fois, en argumentant chiffres à l'appui",
+            "feedback": "Le raisonnement juste : la stabilité et la qualité de l'affaire peuvent justifier le haut de la fourchette, pas un multiple qu'aucune transaction comparable ne soutient. À 600 000 €, il faudrait sept ans et demi d'EBITDA total pour rentrer dans ses frais — avant même de se payer.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "prime",
+            "texte": "Accepter un prix un peu au-dessus du secteur pour la qualité, mais pas 7,5 fois",
+            "feedback": "Défendable : une affaire stable avec une équipe en place vaut une prime. Mais la prime a une limite, et il faut vérifier qu'à ce prix, une fois le crédit remboursé chaque mois, il reste de quoi vivre.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "prix-demande",
+            "texte": "Payer le prix demandé : huit ans de stabilité, ça ne se discute pas",
+            "feedback": "La stabilité passée ne crée pas de valeur illimitée. À 7,5 fois l'EBITDA, l'acheteur paierait un prix que le marché n'a jamais validé pour ce type de commerce, et se retrouverait avec un crédit disproportionné par rapport à ce que l'affaire dégage.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "entreprise-s6-quiz",
+      "ordre": 21,
+      "titre": "Quiz · Valoriser une entreprise",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Niveau expert : on met des chiffres sur une promesse."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "entreprise-s6-quiz-q1",
+            "question": "L'EBITDA mesure...",
+            "choix": [
+              "Le bénéfice net après impôts",
+              "Ce que dégage l'activité avant intérêts, impôts et amortissements",
+              "La trésorerie disponible"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s6-quiz-q2",
+            "question": "Actualiser une somme future, c'est...",
+            "choix": [
+              "La faire grossir avec des intérêts",
+              "La ramener à sa valeur d'aujourd'hui",
+              "La convertir en une autre devise"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s6-quiz-q3",
+            "question": "Plus un projet est risqué...",
+            "choix": [
+              "Plus le taux exigé est élevé et plus sa valeur présente diminue",
+              "Plus sa valeur présente augmente",
+              "Moins le taux d'actualisation compte"
+            ],
+            "bonneReponseIndex": 0
+          }
+        ],
+        "seuilReussite": 70
+      }
+    },
+    {
+      "id": "entreprise-s7-lecon-levee",
+      "ordre": 22,
+      "titre": "Lever des fonds sans se faire avoir",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quand une entreprise ouvre son capital à des investisseurs, tout se joue sur un chiffre négocié : la valorisation. C'est elle qui détermine quelle part les fondateurs cèdent pour l'argent reçu."
+        },
+        {
+          "type": "definition",
+          "terme": "Pre-money / post-money",
+          "texte": "La valorisation avant l'apport (pre-money) et après (post-money = pre-money + argent levé). Si un investisseur apporte 1 million pour 10 % de l'entreprise, la post-money est de 10 millions et la pre-money de 9 millions."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "La dilution, chiffrée",
+          "texte": "Deux fondateurs à 50/50 lèvent 1 million contre 20 % du capital. Ils passent chacun à 40 %. Une seconde levée, encore 20 % cédés, les amène à 32 % chacun. Après trois tours, il est fréquent que les fondateurs ne détiennent plus la majorité. Chaque tour se négocie donc aussi sur ce qu'il reste après."
+        },
+        {
+          "type": "texte",
+          "texte": "Céder une part n'est pas un échec : 32 % d'une entreprise qui vaut 50 millions valent bien plus que 100 % d'une entreprise qui n'a jamais pu se développer. La question n'est pas « combien je cède » mais « qu'est-ce que cet argent permet de construire »."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Lever des fonds, c'est vendre une part de l'entreprise",
+            "La valorisation détermine la dilution",
+            "Lever n'est pas un succès en soi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s7-exemple-reserve",
+      "ordre": 23,
+      "titre": "Se constituer une réserve, mois après mois",
+      "type": "exemple",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La meilleure protection contre la faillite vue en session 5, c'est une réserve de trésorerie constituée régulièrement pendant les bons mois. Simule ce qu'une mise de côté mensuelle représente au bout de quelques années — placée prudemment."
+        }
+      ],
+      "simulateur": {
+        "formule": "epargne_programmee",
+        "variables": [
+          {
+            "id": "versement",
+            "label": "Mise de côté mensuelle",
+            "unite": "€",
+            "min": 500,
+            "max": 20000,
+            "pas": 500,
+            "valeurParDefaut": 2000
+          },
+          {
+            "id": "taux",
+            "label": "Rendement annuel du placement de trésorerie",
+            "unite": "%",
+            "min": 0,
+            "max": 5,
+            "pas": 0.25,
+            "valeurParDefaut": 2
+          },
+          {
+            "id": "duree",
+            "label": "Durée",
+            "unite": "ans",
+            "min": 1,
+            "max": 10,
+            "pas": 1,
+            "valeurParDefaut": 3
+          }
+        ],
+        "resultat": {
+          "label": "Réserve constituée",
+          "unite": "€"
+        }
+      }
+    },
+    {
+      "id": "entreprise-s7-lecon-signaux",
+      "ordre": 24,
+      "titre": "Les signaux qui précèdent la chute",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Une entreprise ne meurt presque jamais d'un coup. Les signaux sont là des mois, parfois des années avant — encore faut-il savoir les lire, dans les comptes comme dans le quotidien."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Dans les chiffres",
+          "texte": "Une dette nette qui dépasse plusieurs années d'EBITDA (au-delà de 3 à 4 fois, on regarde de près). Un besoin en fonds de roulement qui grossit plus vite que les ventes. Une marge qui s'érode trimestre après trimestre. Des bénéfices comptables qui ne se retrouvent jamais en trésorerie."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Dans le quotidien",
+          "texte": "Des fournisseurs payés en retard, des remises inhabituelles accordées pour encaisser plus vite, un dirigeant qui ne parle plus que de « la prochaine grosse commande », des recrutements gelés sans explication."
+        },
+        {
+          "type": "definition",
+          "terme": "Procédures collectives",
+          "texte": "Quand une entreprise ne peut plus faire face, le droit prévoit une gradation : la sauvegarde (on anticipe avant la cessation des paiements), le redressement judiciaire (on tente de sauver l'activité sous contrôle du tribunal), la liquidation (on vend ce qui reste pour payer les créanciers, dans l'ordre vu en session 1)."
+        },
+        {
+          "type": "texte",
+          "texte": "Agir tôt change tout : une entreprise qui se déclare en difficulté avant d'être à sec garde des options. Celle qui attend le dernier salaire impayé n'en a presque plus."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Les délais de paiement s'allongent avant la chute",
+            "La trésorerie parle avant le résultat",
+            "Un signal isolé n'est rien, trois ensemble alertent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s7-situation-alerte",
+      "ordre": 25,
+      "titre": "Le dirigeant confiant",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le carnet de commandes est plein. Les comptes racontent autre chose."
+        }
+      ],
+      "situation": {
+        "contexte": "Tu accompagnes une PME. Le dirigeant est serein : le carnet de commandes est plein. Pourtant, en regardant les comptes, tu remarques que les délais de paiement clients sont passés de 45 à 80 jours en un an, que deux fournisseurs ont commencé à exiger un paiement à la commande, et que la dette nette atteint 4,5 fois l'EBITDA. Que fais-tu ?",
+        "choix": [
+          {
+            "id": "alerter",
+            "texte": "Alerter maintenant et ouvrir le sujet d'une procédure préventive, tant qu'il reste de la marge",
+            "feedback": "C'est le bon moment — le seul, en fait. Trois signaux concordants (clients qui paient tard, fournisseurs méfiants, dette lourde) avec un carnet plein, c'est le profil type de l'entreprise qui meurt de croissance. Agir avant la rupture de trésorerie laisse des options ; après, presque aucune.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "financement",
+            "texte": "Négocier en urgence un financement court terme pour tenir",
+            "feedback": "Utile pour passer un cap, et souvent nécessaire. Mais la dette est déjà à 4,5 fois l'EBITDA : en rajouter sans traiter les délais clients et la confiance des fournisseurs, c'est repousser le problème en le grossissant.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "confiance",
+            "texte": "Faire confiance au carnet de commandes : les ventes vont tout régler",
+            "feedback": "Un carnet plein ne paie pas les salaires. Avec des clients à 80 jours, chaque nouvelle commande creuse le besoin de trésorerie avant de rapporter quoi que ce soit. C'est exactement le paradoxe de la session 5, à l'échelle au-dessus.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "entreprise-s7-quiz",
+      "ordre": 26,
+      "titre": "Quiz · Croissance et signaux d'alerte",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre questions, il en faut trois. Puis une dernière session pour piloter au quotidien."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "entreprise-s7-quiz-q1",
+            "question": "Un investisseur apporte 2 millions pour 20 % du capital. La valorisation post-money est de...",
+            "choix": [
+              "2 millions",
+              "8 millions",
+              "10 millions"
+            ],
+            "bonneReponseIndex": 2
+          },
+          {
+            "id": "entreprise-s7-quiz-q2",
+            "question": "Après deux tours où 20 % du capital sont cédés à chaque fois, un fondateur qui avait 50 % détient...",
+            "choix": [
+              "30 %",
+              "32 %",
+              "40 %"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s7-quiz-q3",
+            "question": "Une dette nette supérieure à 3 ou 4 fois l'EBITDA est...",
+            "choix": [
+              "Normale pour toute entreprise",
+              "Un signal à surveiller de près",
+              "Un signe de bonne santé"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s7-quiz-q4",
+            "question": "La procédure qui permet d'anticiper avant la cessation des paiements s'appelle...",
+            "choix": [
+              "La liquidation",
+              "Le redressement judiciaire",
+              "La sauvegarde"
+            ],
+            "bonneReponseIndex": 2
+          }
+        ],
+        "seuilReussite": 75
+      }
+    },
+    {
+      "id": "entreprise-s8-lecon-tableau-bord",
+      "ordre": 27,
+      "titre": "Le tableau de bord du dirigeant",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un dirigeant ne peut pas lire son bilan chaque matin. Il lui faut cinq chiffres, sur une page, mis à jour chaque semaine — et savoir lesquels."
+        },
+        {
+          "type": "liste",
+          "titre": "Les cinq indicateurs",
+          "items": [
+            "La trésorerie disponible, et sa projection à 90 jours.",
+            "Le carnet de commandes, en semaines d'activité.",
+            "La marge brute par produit ou prestation.",
+            "Le délai moyen de paiement des clients.",
+            "Le point mort du mois : le chiffre d'affaires à partir duquel le mois est gagné."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Ce qui ne figure pas ici : le résultat net. Il arrive trop tard — quand le comptable le calcule, la décision aurait dû être prise depuis trois mois."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Cinq chiffres, une page, chaque semaine",
+            "La trésorerie projetée avant le résultat",
+            "Le point mort dit chaque mois si l'on est sauvé"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s8-lecon-prix-marge",
+      "ordre": 28,
+      "titre": "Prix, marge et volume : l'arithmétique qui surprend",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Baisser ses prix « pour vendre plus » est le réflexe le plus naturel et le plus dangereux. Parce que le calcul ne se fait pas sur le chiffre d'affaires, mais sur la marge."
+        },
+        {
+          "type": "exemple_texte",
+          "titre": "Le calcul que peu font",
+          "texte": "Un produit vendu 100 €, qui coûte 70 € : 30 € de marge. Une remise de 10 % le vend 90 € : la marge tombe à 20 €, soit un tiers de moins. Pour gagner autant qu'avant, il faut vendre 50 % de volume en plus — pas 10 %. À l'inverse, une hausse de 5 % du prix, si les clients restent, augmente la marge de 17 %."
+        },
+        {
+          "type": "definition",
+          "terme": "Marge brute",
+          "texte": "Prix de vente moins coût direct du produit ou de la prestation. C'est elle, et non le chiffre d'affaires, qui paie les charges fixes et dégage le bénéfice."
+        },
+        {
+          "type": "texte",
+          "texte": "Le prix est le levier le plus puissant de l'entreprise, et celui qu'on touche avec le moins de calcul. Avant toute remise, une seule question : combien de volume en plus faut-il pour compenser ?"
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Produit vendu 100 €, qui coûte 70 €",
+            "legende": "Dix pour cent sur le prix, c'est un tiers de la marge. Cinq pour cent dans l'autre sens, c'est +17 %.",
+            "unite": "€",
+            "barres": [
+              {
+                "label": "Marge de base",
+                "valeur": 30,
+                "role": "principal"
+              },
+              {
+                "label": "Après remise de 10 %",
+                "valeur": 20,
+                "role": "secondaire"
+              },
+              {
+                "label": "Après hausse de 5 %",
+                "valeur": 35,
+                "role": "principal"
+              }
+            ]
+          }
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "10 % de remise peut effacer un tiers de la marge",
+            "Raisonne en marge, jamais en chiffre d'affaires",
+            "Le prix est le levier le plus puissant — et le plus sous-estimé"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s8-situation-remise",
+      "ordre": 29,
+      "titre": "La remise du gros client",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "La négociation la plus fréquente de la vie d'une PME — et la plus mal calculée."
+        }
+      ],
+      "situation": {
+        "contexte": "Ton plus gros client, 30 % du chiffre d'affaires, demande une remise de 15 % pour renouveler son contrat, en promettant d'augmenter ses volumes « à terme ». Ta marge brute sur ses commandes est de 25 %. Que fais-tu ?",
+        "choix": [
+          {
+            "id": "chiffrer",
+            "texte": "Chiffrer : à 15 % de remise, la marge passe de 25 à 10 % — il faudrait 2,5 fois le volume pour retrouver le même gain. Proposer une contrepartie mesurable plutôt qu'une remise sèche",
+            "feedback": "Le calcul avant l'émotion. Une remise de 15 % sur une marge de 25 % divise le gain par 2,5 : « augmenter les volumes à terme » ne compensera jamais ça. Une remise conditionnée à des volumes contractuels, ou un délai de paiement raccourci en échange, transforme une concession en négociation.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "petite-remise",
+            "texte": "Accepter une remise plus faible, 5 %, en échange d'un engagement de volume écrit",
+            "feedback": "Une position tenable : 5 % réduit la marge d'un cinquième, ce qu'un engagement ferme de volume peut compenser. À condition que l'engagement soit écrit et chiffré, pas « à terme ».",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "accepter",
+            "texte": "Accepter les 15 % : perdre 30 % du chiffre d'affaires serait bien pire",
+            "feedback": "C'est le raisonnement en chiffre d'affaires qui piège. À 10 % de marge sur ce client, chaque commande couvre à peine ses coûts — et le message envoyé aux autres clients est que les prix se négocient. Un client à 30 % du CA est aussi un risque de dépendance qu'il faut réduire, pas nourrir.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "entreprise-s8-quiz",
+      "ordre": 30,
+      "titre": "Quiz · Piloter au quotidien",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Quatre questions, il en faut trois. Puis une dernière session, sur les ratios."
+        }
+      ],
+      "quiz": {
+        "questions": [
+          {
+            "id": "entreprise-s8-quiz-q1",
+            "question": "Quel indicateur n'a pas sa place dans un tableau de bord hebdomadaire ?",
+            "choix": [
+              "La trésorerie projetée",
+              "Le résultat net",
+              "Le délai de paiement clients"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s8-quiz-q2",
+            "question": "Produit vendu 100 €, coût 70 €. Une remise de 10 % fait passer la marge à...",
+            "choix": [
+              "27 €",
+              "20 €",
+              "30 €"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s8-quiz-q3",
+            "question": "Pour compenser cette remise de 10 %, il faut vendre...",
+            "choix": [
+              "10 % de plus",
+              "50 % de plus",
+              "Deux fois plus"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s8-quiz-q4",
+            "question": "Le point mort mensuel indique...",
+            "choix": [
+              "Le bénéfice maximal du mois",
+              "Le chiffre d'affaires à partir duquel le mois couvre ses charges",
+              "Le montant des dettes"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ],
+        "seuilReussite": 75
+      }
+    },
+    {
+      "id": "entreprise-s9-lecon-rentabilite-ratios",
+      "ordre": 31,
+      "titre": "Les ratios de rentabilité",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Un chiffre seul ne dit rien : 80 000 € de bénéfice, c'est superbe pour une boulangerie et catastrophique pour un groupe. Les ratios rapportent chaque chiffre à un autre — et c'est là que les comptes se mettent à parler."
+        },
+        {
+          "type": "definition",
+          "terme": "Marge nette",
+          "texte": "Résultat net divisé par le chiffre d'affaires. Sur 100 € vendus, combien restent une fois tout payé, impôts compris ? 5 % est courant dans le commerce, 20 % dans le logiciel."
+        },
+        {
+          "type": "definition",
+          "terme": "Rentabilité des capitaux propres (ROE)",
+          "texte": "Résultat net divisé par les capitaux propres. Ce que rapporte chaque euro apporté par les actionnaires : 15 % de ROE, c'est 15 € par an pour 100 € investis. C'est le ratio que regardent les investisseurs."
+        },
+        {
+          "type": "schema",
+          "schema": {
+            "kind": "barres",
+            "titre": "Marge nette par secteur (ordres de grandeur)",
+            "legende": "Une marge se juge contre son secteur, jamais dans l'absolu.",
+            "unite": "%",
+            "barres": [
+              {
+                "label": "Grande distribution",
+                "valeur": 2,
+                "role": "attenue"
+              },
+              {
+                "label": "BTP",
+                "valeur": 4,
+                "role": "principal"
+              },
+              {
+                "label": "Logiciel",
+                "valeur": 20,
+                "role": "principal"
+              },
+              {
+                "label": "Luxe",
+                "valeur": 25,
+                "role": "secondaire"
+              }
+            ]
+          }
+        },
+        {
+          "type": "texte",
+          "texte": "Un ROE très élevé peut cacher un piège : si les capitaux propres sont minuscules et la dette énorme, le ratio explose alors que l'entreprise est fragile. On ne lit jamais la rentabilité sans regarder la structure — c'est la leçon suivante."
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "Marge nette : ce qu'il reste de 100 € vendus",
+            "ROE : ce que rapporte 100 € d'actionnaire",
+            "Un ratio se compare à son secteur et à son histoire"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s9-lecon-structure",
+      "ordre": 32,
+      "titre": "Dette, BFR, délais : la solidité",
+      "type": "lecon",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Les entreprises ne meurent pas d'un manque de rentabilité, mais d'un manque de solidité : trop de dette, des clients qui paient tard, un besoin de trésorerie qui grossit plus vite que les ventes. Trois ratios suffisent à le voir venir."
+        },
+        {
+          "type": "definition",
+          "terme": "Ratio d'endettement",
+          "texte": "Dettes financières divisées par les capitaux propres. À 0,5, l'entreprise doit un demi-euro aux banques pour chaque euro d'actionnaire ; au-dessus de 1, la dette dépasse les fonds propres et chaque mauvaise année devient dangereuse."
+        },
+        {
+          "type": "definition",
+          "terme": "Besoin en fonds de roulement (BFR)",
+          "texte": "L'argent immobilisé par l'activité : stocks + créances clients − dettes fournisseurs. Un BFR qui augmente absorbe la trésorerie, même quand les ventes explosent — surtout quand elles explosent."
+        },
+        {
+          "type": "definition",
+          "terme": "Délai de paiement clients (DSO)",
+          "texte": "Créances clients divisées par le chiffre d'affaires, multipliées par 365 : le nombre de jours qu'un client met en moyenne à payer. 30 jours est sain, 90 jours signifie que l'entreprise finance ses clients."
+        },
+        {
+          "type": "liste",
+          "titre": "Les seuils qui alertent",
+          "items": [
+            "Endettement supérieur à 1 : la dette dépasse les fonds propres.",
+            "DSO au-dessus de 60 jours : les clients se financent sur ton dos.",
+            "Un BFR qui grossit plus vite que le chiffre d'affaires.",
+            "Une trésorerie inférieure à un mois de charges fixes."
+          ]
+        },
+        {
+          "type": "a_retenir",
+          "points": [
+            "La solidité se lit dans la dette et les délais, pas dans le bénéfice",
+            "Un BFR qui grossit mange la trésorerie",
+            "Quatre seuils à connaître par cœur"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entreprise-s9-exercice-ratios",
+      "ordre": 33,
+      "titre": "Les ratios, à la main",
+      "type": "exercice",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Cinq calculs, ceux qu'un analyste fait en dix minutes devant n'importe quel bilan."
+        }
+      ],
+      "exercice": {
+        "seuilReussite": 60,
+        "items": [
+          {
+            "id": "entreprise-s9-ex-1",
+            "type": "nombre",
+            "enonce": "Chiffre d'affaires 800 000 €, résultat net 48 000 €. Marge nette ?",
+            "reponse": 6,
+            "tolerance": 0.1,
+            "unite": "%",
+            "indice": "Résultat net / chiffre d'affaires × 100.",
+            "explication": "48 000 / 800 000 = 6 %. Correct pour du commerce, faible pour du logiciel."
+          },
+          {
+            "id": "entreprise-s9-ex-2",
+            "type": "nombre",
+            "enonce": "Capitaux propres 200 000 €, dettes financières 300 000 €. Ratio d'endettement ?",
+            "reponse": 1.5,
+            "tolerance": 0.05,
+            "indice": "Dettes / capitaux propres.",
+            "explication": "300 000 / 200 000 = 1,5 : la dette vaut une fois et demie les fonds propres. Au-dessus de 1, une banque commence à poser des questions."
+          },
+          {
+            "id": "entreprise-s9-ex-3",
+            "type": "vrai_faux",
+            "enonce": "Un ROE de 15 % signifie que l'entreprise gagne 15 € par an pour 100 € apportés par ses actionnaires.",
+            "reponse": true,
+            "explication": "Vrai, c'est exactement la définition. Reste à vérifier que ce ROE n'est pas gonflé par une dette excessive."
+          },
+          {
+            "id": "entreprise-s9-ex-4",
+            "type": "nombre",
+            "enonce": "Créances clients 120 000 €, chiffre d'affaires annuel 720 000 €. Délai de paiement clients (DSO), en jours, sur une année commerciale de 360 jours ?",
+            "reponse": 60,
+            "tolerance": 3,
+            "unite": "jours",
+            "indice": "Créances / CA × 360. Les créances pèsent un sixième d'une année.",
+            "explication": "120 000 / 720 000 = un sixième d'année, soit 60 jours. À la limite du seuil d'alerte : les clients paient à deux mois."
+          },
+          {
+            "id": "entreprise-s9-ex-5",
+            "type": "vrai_faux",
+            "enonce": "Un BFR qui augmente signifie que l'entreprise a besoin de moins de trésorerie.",
+            "reponse": false,
+            "explication": "Faux : un BFR qui augmente immobilise plus d'argent dans les stocks et les créances. Il faut le financer — c'est le piège des entreprises qui grandissent vite."
+          }
+        ]
+      }
+    },
+    {
+      "id": "entreprise-s9-situation-deux-dossiers",
+      "ordre": 34,
+      "titre": "Deux dossiers, un seul prêt",
+      "type": "situation",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Tu es dans le fauteuil du banquier. Un seul prêt de 300 000 € à accorder."
+        }
+      ],
+      "situation": {
+        "contexte": "Dossier A : marge nette 8 %, endettement 0,6, clients payés à 35 jours, croissance de 5 % par an. Dossier B : marge nette 14 %, endettement 2,1, clients payés à 95 jours, croissance de 40 % par an. À qui prêtes-tu ?",
+        "choix": [
+          {
+            "id": "a",
+            "texte": "À A : moins rentable, mais solide, peu endetté et payé vite — il remboursera",
+            "feedback": "Le raisonnement d'un prêteur. A dégage de la trésorerie, a de la marge pour absorber un choc, et n'a pas besoin de courir après ses clients. B est peut-être une future star, mais ses 95 jours de délai et sa dette font qu'une seule commande impayée peut tout emporter.",
+            "qualite": "recommande"
+          },
+          {
+            "id": "b-conditions",
+            "texte": "À B, mais avec des garanties et un suivi trimestriel des ratios",
+            "feedback": "Défendable si la banque veut accompagner la croissance : des seuils contractuels d'endettement et de délais permettent de réagir avant la casse. Mais le risque reste élevé, et se paie en taux.",
+            "qualite": "acceptable"
+          },
+          {
+            "id": "b",
+            "texte": "À B : la rentabilité et la croissance sont bien meilleures",
+            "feedback": "C'est lire la rentabilité sans la solidité. Une croissance de 40 % avec 95 jours de délai client dévore la trésorerie ; l'endettement à 2,1 ne laisse aucune marge. C'est le profil type de l'entreprise rentable qui dépose le bilan.",
+            "qualite": "deconseille"
+          }
+        ]
+      }
+    },
+    {
+      "id": "entreprise-s9-scenario-dirigeant",
+      "ordre": 35,
+      "titre": "Ta première année de dirigeant",
+      "type": "scenario",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Douze mois à la tête d'une petite entreprise, et cinq décisions qui décident de sa survie."
+        }
+      ],
+      "scenario": {
+        "intro": "Tu reprends un atelier de menuiserie : 380 000 € de chiffre d'affaires, 32 % de marge brute, 9 000 € de charges fixes par mois, et 45 000 € de trésorerie au départ.",
+        "decisions": [
+          {
+            "id": "machine",
+            "situation": "Deuxième mois : une machine à commande numérique à 60 000 € permettrait d'augmenter la production de 25 %. Ta banque prête à 4,5 % sur sept ans ; un investisseur propose 60 000 € contre 20 % du capital.",
+            "options": [
+              {
+                "id": "emprunt",
+                "texte": "Emprunter : l'activité est stable et l'investissement identifié",
+                "consequence": "Environ 830 € de mensualité, absorbables par la marge dégagée. Tu gardes 100 % de ton entreprise pour un besoin ponctuel et mesurable.",
+                "points": 2
+              },
+              {
+                "id": "mixte",
+                "texte": "Emprunter 40 000 € et financer le reste sur la trésorerie",
+                "consequence": "La mensualité baisse, mais la trésorerie tombe à 25 000 €, soit moins de trois mois de charges fixes. Le coussin devient mince.",
+                "points": 1
+              },
+              {
+                "id": "capital",
+                "texte": "Faire entrer l'investisseur : pas de dette, pas d'échéance",
+                "consequence": "Céder 20 % de l'entreprise définitivement pour financer une machine, c'est le financement le plus cher qui existe pour ce type de besoin.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "gros-client",
+            "situation": "Cinquième mois : une enseigne régionale veut te confier 30 % de ton chiffre d'affaires annuel. Elle impose un paiement à 75 jours.",
+            "options": [
+              {
+                "id": "negocier",
+                "texte": "Accepter en négociant 45 jours, ou un acompte de 30 % à la commande",
+                "consequence": "Tu obtiens 40 % d'acompte. Le besoin de trésorerie reste finançable, et le contrat est signé sans mettre l'atelier en tension.",
+                "points": 2
+              },
+              {
+                "id": "accepter",
+                "texte": "Accepter tel quel : refuser 30 % du chiffre d'affaires serait absurde",
+                "consequence": "Il faut avancer près de 30 000 € en permanence, salaires et matières compris, avant d'être payé. La trésorerie fond, alors que les comptes affichent un bénéfice.",
+                "points": 0
+              },
+              {
+                "id": "refuser",
+                "texte": "Refuser : la dépendance à un client unique est trop risquée",
+                "consequence": "Le risque de dépendance est réel et bien vu. Mais refuser sans même tenter de négocier les délais laisse passer une croissance que l'atelier pouvait absorber.",
+                "points": 1
+              }
+            ]
+          },
+          {
+            "id": "embauche",
+            "situation": "Septième mois : le carnet de commandes déborde. Un ouvrier qualifié coûterait 2 800 € par mois chargés ; un sous-traitant facturerait à la commande, plus cher à l'unité.",
+            "options": [
+              {
+                "id": "sous-traitance",
+                "texte": "Sous-traiter d'abord, et n'embaucher que si la charge se confirme sur six mois",
+                "consequence": "Plus cher à l'unité, mais aucune charge fixe ajoutée. Quand la charge se confirme au dixième mois, l'embauche se fait sur une base solide.",
+                "points": 2
+              },
+              {
+                "id": "embaucher",
+                "texte": "Embaucher tout de suite pour ne pas rater les commandes",
+                "consequence": "2 800 € de charges fixes en plus chaque mois, quoi qu'il arrive. Le point mort passe de 28 000 à 37 000 € de chiffre d'affaires mensuel.",
+                "points": 1
+              },
+              {
+                "id": "refuser-commandes",
+                "texte": "Refuser les commandes en trop pour ne rien changer",
+                "consequence": "Aucun risque pris, mais des clients perdus — souvent définitivement, car ils trouvent un autre atelier.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "remise",
+            "situation": "Neuvième mois : ton plus gros client demande 12 % de remise pour renouveler, en promettant plus de volume « à terme ». Ta marge brute sur ses commandes est de 32 %.",
+            "options": [
+              {
+                "id": "chiffrer",
+                "texte": "Chiffrer : 12 % de remise ramène la marge à 20 %, il faudrait 60 % de volume en plus. Proposer une contrepartie chiffrée",
+                "consequence": "Tu offres 5 % contre un engagement de volume écrit et un paiement à 30 jours. Le client signe : la marge tient et la trésorerie s'améliore.",
+                "points": 2
+              },
+              {
+                "id": "petite",
+                "texte": "Accorder 5 % sans contrepartie, pour préserver la relation",
+                "consequence": "La marge passe de 32 à 27 %. Supportable, mais tu viens d'apprendre à ton plus gros client que les prix se négocient sans rien donner en échange.",
+                "points": 1
+              },
+              {
+                "id": "accepter-remise",
+                "texte": "Accepter les 12 % : perdre ce client serait pire",
+                "consequence": "Chaque commande rapporte désormais un tiers de moins, et la dépendance à ce client vient d'augmenter. C'est le raisonnement en chiffre d'affaires qui piège.",
+                "points": 0
+              }
+            ]
+          },
+          {
+            "id": "tension",
+            "situation": "Onzième mois : les comptes affichent 31 000 € de bénéfice annuel, mais il ne reste que 11 000 € en banque et les salaires du mois prochain représentent 14 000 €.",
+            "options": [
+              {
+                "id": "delais",
+                "texte": "Relancer les impayés, mobiliser les factures clients, et négocier un étalement avec deux fournisseurs",
+                "consequence": "Trois leviers sur la trésorerie, aucun sur la rentabilité. Le mois passe, et le problème de fond — les délais clients — est enfin traité.",
+                "points": 2
+              },
+              {
+                "id": "decouvert",
+                "texte": "Demander une autorisation de découvert pour passer le cap",
+                "consequence": "Utile en urgence, et souvent nécessaire. Mais sans action sur les délais de paiement, la même tension reviendra au prochain palier de croissance.",
+                "points": 1
+              },
+              {
+                "id": "baisser-prix",
+                "texte": "Lancer une promotion pour faire rentrer du chiffre d'affaires rapidement",
+                "consequence": "Vendre plus à des clients qui paient à 75 jours aggrave le besoin de trésorerie, tout en réduisant la marge. On accélère vers le mur.",
+                "points": 0
+              }
+            ]
+          }
+        ],
+        "bilans": [
+          {
+            "seuil": 80,
+            "titre": "Une première année maîtrisée",
+            "texte": "Financement adapté au besoin, délais négociés avant de signer, charges fixes ajoutées seulement quand la charge était confirmée, remise chiffrée avant d'être accordée, et tension de trésorerie traitée par les délais. L'atelier finit l'année rentable ET liquide — les deux, ce qui est tout l'enjeu."
+          },
+          {
+            "seuil": 50,
+            "titre": "Une année qui tient, avec des alertes",
+            "texte": "L'entreprise passe l'année, mais certaines décisions ont coûté de la marge ou de la trésorerie. Un délai client accepté trop vite, une charge fixe ajoutée trop tôt, une remise concédée sans contrepartie : chacune se rattrape, à condition d'être vue."
+          },
+          {
+            "seuil": 0,
+            "titre": "L'année type de l'entreprise rentable qui coule",
+            "texte": "Les comptes affichaient un bénéfice, et pourtant les salaires sont devenus difficiles à payer. C'est exactement le paradoxe de la session 5 : on ne fait pas faillite faute de bénéfice, mais faute de trésorerie. Chacune de ces décisions, prise autrement, changeait l'issue."
+          }
+        ]
+      }
+    },
+    {
+      "id": "entreprise-s9-quiz",
+      "ordre": 36,
+      "titre": "Quiz final · Voie Entreprise",
+      "type": "quiz",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le tout dernier quiz de la voie. Quatre questions, il en faut trois."
+        }
+      ],
+      "quiz": {
+        "seuilReussite": 75,
+        "questions": [
+          {
+            "id": "entreprise-s9-quiz-q1",
+            "question": "La marge nette, c'est…",
+            "choix": [
+              "Résultat net / chiffre d'affaires",
+              "Chiffre d'affaires / résultat net",
+              "Dettes / capitaux propres"
+            ],
+            "bonneReponseIndex": 0
+          },
+          {
+            "id": "entreprise-s9-quiz-q2",
+            "question": "Un ratio d'endettement de 2 signifie…",
+            "choix": [
+              "Deux fois plus de fonds propres que de dettes",
+              "Deux fois plus de dettes que de fonds propres",
+              "Deux ans pour rembourser"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s9-quiz-q3",
+            "question": "Un DSO de 90 jours indique que…",
+            "choix": [
+              "L'entreprise paie ses fournisseurs à 90 jours",
+              "Ses clients mettent trois mois à payer",
+              "Elle a 90 jours de trésorerie devant elle"
+            ],
+            "bonneReponseIndex": 1
+          },
+          {
+            "id": "entreprise-s9-quiz-q4",
+            "question": "Une entreprise très rentable peut faire faillite si…",
+            "choix": [
+              "Sa marge dépasse 20 %",
+              "Sa trésorerie ne suit pas un BFR qui grossit",
+              "Elle n'a aucune dette"
+            ],
+            "bonneReponseIndex": 1
+          }
+        ]
+      }
+    }
+  ]
+}
