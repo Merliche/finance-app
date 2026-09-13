@@ -8,7 +8,7 @@ import { useProgressStore } from "../../state/progressStore";
 import { useCouleurs, useStyles } from "../../theme/ModeCouleur";
 import type { Couleurs } from "../../theme/palettes";
 import { RAYONS, type ThemeParcours } from "../../theme/parcoursTheme";
-import { TYPO } from "../../theme/typographie";
+import { PLAFOND_PASTILLE, TYPO } from "../../theme/typographie";
 import { haptiqueErreur, haptiqueLegere, haptiqueSucces } from "../../utils/haptique";
 import { Apparition } from "../ui/Apparition";
 import { Reaction } from "../ui/Reaction";
@@ -132,6 +132,7 @@ export function Quiz({
                     <Ionicons name="close-sharp" size={15} color="#FFFFFF" />
                   ) : (
                     <Text
+                      maxFontSizeMultiplier={PLAFOND_PASTILLE}
                       style={[
                         styles.lettreTexte,
                         { color: selectionne ? "#FFFFFF" : couleurs.texteAttenue },

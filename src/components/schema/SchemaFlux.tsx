@@ -6,7 +6,7 @@ import type { Schema } from "../../domain/parcours/types";
 import { useCouleurs, useStyles } from "../../theme/ModeCouleur";
 import type { Couleurs } from "../../theme/palettes";
 import { RAYONS, type ThemeParcours } from "../../theme/parcoursTheme";
-import { TYPO } from "../../theme/typographie";
+import { PLAFOND_PASTILLE, TYPO } from "../../theme/typographie";
 
 type SchemaFlux = Extract<Schema, { kind: "flux" }>;
 
@@ -54,7 +54,9 @@ export function SchemaFlux({ schema, theme }: { schema: SchemaFlux; theme: Theme
               ]}
             >
               <View style={[styles.numero, { backgroundColor: theme.primary }]}>
-                <Text style={styles.numeroTexte}>{index + 1}</Text>
+                <Text style={styles.numeroTexte} maxFontSizeMultiplier={PLAFOND_PASTILLE}>
+                  {index + 1}
+                </Text>
               </View>
               <View style={styles.textes}>
                 <Text style={styles.label}>{etape.label}</Text>

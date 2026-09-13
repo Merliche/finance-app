@@ -21,7 +21,7 @@ import { avecAlpha, eclaircir, melanger } from "../../theme/couleurs";
 import { useCouleurs, useStyles } from "../../theme/ModeCouleur";
 import type { Couleurs } from "../../theme/palettes";
 import { PRESSION, RAYONS, type ThemeParcours } from "../../theme/parcoursTheme";
-import { TYPO } from "../../theme/typographie";
+import { PLAFOND_ETIQUETTE, TYPO } from "../../theme/typographie";
 import { haptiqueLegere } from "../../utils/haptique";
 import { ApercuEtape, type ApercuOuvert } from "./ApercuEtape";
 import { BanniereSession } from "./BanniereSession";
@@ -702,6 +702,7 @@ export function VueChemin({
                       )}
                       <Text
                         numberOfLines={2}
+                        maxFontSizeMultiplier={PLAFOND_ETIQUETTE}
                         style={[
                           styles.labelCible,
                           { color: ouverte ? cible.couleur : couleurs.texteAttenue, width: largeurLabel },

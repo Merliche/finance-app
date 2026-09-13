@@ -7,7 +7,7 @@ import type { ResultatEtape } from "../../domain/parcours/progress";
 import { useCouleurs, useStyles } from "../../theme/ModeCouleur";
 import type { Couleurs } from "../../theme/palettes";
 import { PRESSION, RAYONS, type ThemeParcours } from "../../theme/parcoursTheme";
-import { TYPO } from "../../theme/typographie";
+import { PLAFOND_PASTILLE, TYPO } from "../../theme/typographie";
 import { haptiqueLegere, haptiqueSucces } from "../../utils/haptique";
 import { Apparition } from "../ui/Apparition";
 import { AppuiRessort } from "../ui/AppuiRessort";
@@ -91,7 +91,12 @@ export function Scenario({
         <View key={scenario.decisions[indexChoisie].id} style={styles.passe}>
           <View style={styles.passeEntete}>
             <View style={[styles.passeNumero, { backgroundColor: theme.tintFort }]}>
-              <Text style={[styles.passeNumeroTexte, { color: theme.primaryDark }]}>{indexChoisie + 1}</Text>
+              <Text
+                style={[styles.passeNumeroTexte, { color: theme.primaryDark }]}
+                maxFontSizeMultiplier={PLAFOND_PASTILLE}
+              >
+                {indexChoisie + 1}
+              </Text>
             </View>
             <Text style={styles.passeChoix} numberOfLines={2}>
               {option.texte}

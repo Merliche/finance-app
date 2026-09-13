@@ -84,3 +84,23 @@ export const TYPO = {
     letterSpacing: -1,
   },
 } as const;
+
+/**
+ * Plafonds d'agrandissement du texte.
+ *
+ * Les textes de l'application suivent la taille de police du système : c'est le
+ * comportement par défaut de React Native, et il ne faut surtout pas le désactiver — c'est
+ * le premier réglage d'accessibilité qu'utilisent les personnes qui voient mal.
+ *
+ * Mais quelques textes vivent dans une boîte qui, elle, ne peut pas grandir : un numéro
+ * dans une pastille ronde, une lettre de réponse dans un carré. Agrandis sans limite, ils
+ * débordent ou se font rogner, et le réglage d'accessibilité produit alors l'inverse de ce
+ * qu'on cherchait. Ces textes-là, et uniquement ceux-là, reçoivent un plafond.
+ *
+ * Tout le reste grandit sans limite : paragraphes, titres, libellés de bouton, réponses de
+ * quiz. Leurs conteneurs s'étirent.
+ */
+export const PLAFOND_PASTILLE = 1.3;
+
+/** Pour un libellé contraint en largeur plutôt qu'enfermé dans un carré. */
+export const PLAFOND_ETIQUETTE = 1.6;

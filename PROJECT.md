@@ -223,9 +223,6 @@ interface ProgressionGlobale {
 - Codes promo uniques par utilisateur si la réutilisation/partage du code fixe devient un problème.
 - Notifications locales pour entretenir la série (le défi du jour est déjà là, il ne manque
   que le rappel).
-- Respect de la taille de police système (`allowFontScaling`) : les écrans utilisent des
-  tailles fixes, une passe dédiée est nécessaire pour supporter les réglages
-  d'accessibilité sans casser les mises en page.
 - Mesure d'usage anonyme (quelles étapes sont abandonnées, quels outils sont ouverts),
   à n'envisager qu'avec un consentement explicite.
 - Mode maintenance piloté depuis Supabase, pour afficher un message si le contenu distant
@@ -377,6 +374,12 @@ Fait :
 - **Transitions cohérentes** : les écrans de parcours glissent latéralement, les écrans
   utilitaires montent du bas comme des panneaux. La direction dit à elle seule si on
   s'enfonce dans le contenu ou si on ouvre un outil par-dessus.
+- **Taille de police du système respectée.** C'est le comportement par défaut de React
+  Native et il n'est désactivé nulle part : un test parcourt toutes les sources pour s'en
+  assurer. Six textes seulement portent un plafond (`PLAFOND_PASTILLE`,
+  `PLAFOND_ETIQUETTE`), ceux qui vivent dans une boîte qui ne peut pas grandir — un numéro
+  dans une pastille ronde, une lettre de réponse dans un carré. Agrandis sans limite, ils
+  déborderaient, et le réglage d'accessibilité produirait l'inverse de ce qu'on cherche.
 - **Mouvement réduit respecté** (`useMouvementReduit`) : le réglage d'accessibilité du
   système arrête toutes les animations décoratives — nappes, poussière, comète, reflets,
   confettis, ressorts, reflets, squelettes — et laisse les animations qui portent du sens. L'abonnement suit le
@@ -394,7 +397,7 @@ Fait :
   famille et un filet à la couleur de leur voie), Glossaire, Profil, Bilan, Révision,
   Mes chiffres, À propos + disclaimer.
 - Mode test (`src/constants/modeTest.ts`) : tout accessible en `__DEV__`.
-- 391 tests, 32 suites (`npx jest`), dont un jeu d'invariants sur le contenu embarqué
+- 396 tests, 33 suites (`npx jest`), dont un jeu d'invariants sur le contenu embarqué
   (`src/data/content/__tests__/contenu.test.ts`) dérivé de `VOIES` — ajouter une voie sans
   la bundler fait échouer les tests —, six tests de rendu, un par type d'étape
   (`src/components/etape/__tests__/rendu.test.tsx`), cinq sur le chemin lui-même
@@ -428,8 +431,10 @@ Reste à faire avant publication :
 - **Renseigner la fiche du magasin** : description, captures (iPhone 6,7" et 6,5"),
   catégorie, classification d'âge, adresse de support, et la déclaration de collecte de
   données (« adresse email », finalité marketing, liée à l'identité).
-- **Vérification sur appareil réel** (iOS/Android) : tout n'a été validé qu'au bundle et
-  par les tests de rendu.
+- **Première compilation et vérification sur appareil réel.** Aucune build n'a jamais été
+  produite : tout n'a été validé que par le bundler Metro, `expo-doctor` (21/21) et les
+  tests de rendu. Une première compilation EAS révèle souvent des choses qu'aucun test
+  JavaScript ne voit — polices, icônes, permissions, plugins.
 - Le **mode test** (`ACTIVER_MODE_TEST`) reste actif en développement. Il est neutralisé
   par `&& __DEV__`, donc inerte dans toute build de distribution : rien à faire avant
   publication, et le laisser permet de continuer à explorer l'app librement.

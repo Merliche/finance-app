@@ -9,7 +9,7 @@ import { avecAlpha, eclaircir } from "../../theme/couleurs";
 import { useCouleurs, useStyles } from "../../theme/ModeCouleur";
 import type { Couleurs } from "../../theme/palettes";
 import { PRESSION, RAYONS, type ThemeParcours } from "../../theme/parcoursTheme";
-import { TYPO } from "../../theme/typographie";
+import { PLAFOND_PASTILLE, TYPO } from "../../theme/typographie";
 import { Apparition } from "../ui/Apparition";
 import { AppuiRessort } from "../ui/AppuiRessort";
 import { MotifPoints } from "../ui/MotifPoints";
@@ -103,7 +103,10 @@ export function FicheSyntheseVue({ fiche, theme }: { fiche: FicheSynthese; theme
             >
               <View style={styles.sectionEntete}>
                 <View style={[styles.sectionNumero, { backgroundColor: avecAlpha(theme.primary, 0.13) }]}>
-                  <Text style={[styles.sectionNumeroTexte, { color: theme.primary }]}>
+                  <Text
+                    style={[styles.sectionNumeroTexte, { color: theme.primary }]}
+                    maxFontSizeMultiplier={PLAFOND_PASTILLE}
+                  >
                     {section.session}
                   </Text>
                 </View>

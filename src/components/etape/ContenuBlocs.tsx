@@ -8,7 +8,7 @@ import { assombrir, avecAlpha, eclaircir } from "../../theme/couleurs";
 import { useCouleurs, useStyles } from "../../theme/ModeCouleur";
 import type { Couleurs } from "../../theme/palettes";
 import { RAYONS, type ThemeParcours } from "../../theme/parcoursTheme";
-import { TYPO } from "../../theme/typographie";
+import { PLAFOND_PASTILLE, TYPO } from "../../theme/typographie";
 import { Schema } from "../schema/Schema";
 import { Apparition } from "../ui/Apparition";
 import { Reflet } from "../ui/Reflet";
@@ -95,7 +95,9 @@ function rendreBloc(
                 end={{ x: 1, y: 1 }}
                 style={styles.listeNumero}
               >
-                <Text style={styles.listeNumeroTexte}>{index + 1}</Text>
+                <Text style={styles.listeNumeroTexte} maxFontSizeMultiplier={PLAFOND_PASTILLE}>
+                  {index + 1}
+                </Text>
               </LinearGradient>
               <Text style={styles.listeTexte}>{item}</Text>
             </View>
